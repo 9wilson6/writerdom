@@ -1,0 +1,76 @@
+.forms2 {
+    text-align: left;
+    font-size: 80% !important;
+    &__input {
+        font-size: inherit;
+        height: 3.2rem !important;
+    }
+    &__textarea {
+        font-size: inherit;
+    }
+    &__label {
+        font-size: 1.5rem;
+        text-transform: capitalize;
+        color: $primary-color-4;
+        font-family: "Lato";
+        -webkit-box-shadow: 0px 1.2px 0px 0px rgba(204, 204, 204, .2);
+        -moz-box-shadow: 0px 1.2px 0px 0px rgba(204, 204, 204, .2);
+        box-shadow: 0px 1.2px 0px 0px rgba(204, 204, 204, .2);
+    }
+    small {
+        color: $primary-color-3;
+    }
+    &__files {
+        font-size: inherit;
+        height: 3.2rem !important;
+    }
+    &__select {
+        font-size: inherit !important;
+        height: 3.2rem !important;
+    }
+    &__button {
+        font-size: inherit;
+        text-transform: uppercase;
+        background: $primary-color-3;
+        color: $primary-color-5;
+        font-weight: 700;
+    }
+    .form-group {
+        margin-bottom: 2rem;
+    }
+}
+
+.files_edit {
+    .my_container {
+        display: block;
+        margin: 1rem auto;
+        width: 100% !important;
+        border-radius: .7rem;
+        height: 3.7rem;
+        border: 1px solid $primary-color-3;
+        border-left: none;
+        border-right: none;
+    }
+    &__input {
+        margin-top: 3px;
+        padding-top: 1px;
+        background: $primary-color-3;
+        border-radius: .5rem;
+        color: $primary-color-0;
+    }
+    label {
+        height: 100%; // background: #eee;
+        padding-top: 4px;
+        padding-top: 4px;
+        color: $primary-color-3;
+    }
+    .btn {
+        background: $primary-color-3;
+        height: 31px;
+        width: 90% !important;
+        padding-top: 1px;
+        margin-top: 1.35px;
+        margin-bottom: 10px;
+        color: $primary-color-0;
+    }
+}

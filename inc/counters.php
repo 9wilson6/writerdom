@@ -1,0 +1,134 @@
+<?php
+require_once("../dbconfig/dbconnect.php");
+
+
+
+
+
+//////////////////////////IN PROGRESS//////////////////////////////////////////////
+///
+///
+///
+//////////////////////////IN PROGRESS//////////////////////////////////////////////
+function in_progress($user_type, $user_id){
+	global $db;
+if ($user_type==1) {
+	$query="SELECT * FROM on_progress WHERE student_id='$user_id' ";
+}elseif ($user_type==2) {
+	$query="SELECT * FROM on_progress WHERE tutor_id='$user_id' ";
+}
+$results=$db->get_results($query);
+return $db->num_rows;
+}
+////////////////////////////////////////////////////////////////////
+if ($_POST['target']=="in_progress") {
+	echo in_progress($_POST['user_type'], $_POST['user_id']);
+}
+
+//////////////////////////IN PROGRESS//////////////////////////////////////////////
+///
+///
+///
+//////////////////////////IN PROGRESS//////////////////////////////////////////////
+function on_revision($user_type,$user_id ){
+ global $db;
+if ($user_type==1) {
+	$query="SELECT * FROM revisions WHERE student_id='$user_id'";
+}elseif($user_type==2){
+	$query="SELECT * FROM revisions WHERE tutor_id='$user_id'";
+}
+$results=$db->get_results($query);
+return $db->num_rows;
+}
+////////////////////////////////////////////////////////////////////
+if ($_POST['target']=="on_revision") {
+	echo on_revision($_POST['user_type'], $_POST['user_id']);
+}
+function assigned(){
+
+}
+
+//////////////////////////DELIVERED//////////////////////////////////////////////
+///
+///
+///
+//////////////////////////DELIVERED//////////////////////////////////////////////
+
+function delivered($user_type, $user_id){
+	global $db;
+if ($user_type==1) {
+	$query="SELECT * FROM delivered WHERE student_id='$user_id'";
+}elseif($user_type==2){
+	$query="SELECT * FROM delivered WHERE tutor_id='$user_id'";
+}
+$results=$db->get_results($query);
+return $db->num_rows;
+}
+////////////////////////////////////////////////////////////////////////////////
+if ($_POST['target']=="delivered") {
+	echo delivered($_POST['user_type'], $_POST['user_id']);
+}
+//////////////////////////DELIVERED//////////////////////////////////////////////
+///
+///
+///
+//////////////////////////DELIVERED//////////////////////////////////////////////
+
+//////////////////////////AVAILABLE//////////////////////////////////////////////
+///
+///
+///
+//////////////////////////AVAILABLE//////////////////////////////////////////////
+function available($user_type, $user_id){
+global $db;
+if ($user_type==1) {
+	$query="SELECT * FROM projects WHERE student_id='$user_id' AND status=0";
+}elseif ($user_type==2) {
+	$query="SELECT * FROM projects WHERE status=0";
+}
+$results=$db->get_results($query);
+return $db->num_rows;
+}
+///////////////////////////////////////////////////////////////////////////////////
+if ($_POST['target']=="available") {
+	echo available($_POST['user_type'], $_POST['user_id']);
+}
+
+//////////////////////////AVAILABLE//////////////////////////////////////////////
+///
+///
+///
+//////////////////////////AVAILABLE//////////////////////////////////////////////
+
+//////////////////////////MESSAGES//////////////////////////////////////////////
+///
+///
+///
+//////////////////////////MESSAGES//////////////////////////////////////////////
+function messages($user_id, $user_type){
+	global $db;
+if ($user_type==1) {
+
+	$query="SELECT * FROM chats WHERE student_id='$user_id' AND status=0 AND user_type=2";
+}elseif ($user_type==2) {
+	$query="SELECT * FROM chats WHERE tutor_id='$user_id' AND status=0 AND user_type=1";
+}
+
+$results=$db->get_results($query);
+return $db->num_rows;
+}
+///////////////////////////////////////////////////////////////////////////////////
+if ($_POST['target']=="messages") {
+	echo messages($_POST["user_id"], $_POST["user_type"]);
+	}
+//////////////////////////MESSAGES//////////////////////////////////////////////
+///
+///
+///
+//////////////////////////MESSAGES//////////////////////////////////////////////
+function announcements(){
+
+}
+
+
+?>

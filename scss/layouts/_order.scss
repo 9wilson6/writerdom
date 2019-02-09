@@ -1,0 +1,57 @@
+.order {
+  // background: #000;
+  overflow-x: hidden; // margin-bottom: $margin-md;
+  margin-top: 3px;
+  -webkit-box-shadow: 0px -4px 3px 0px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 0px -4px 3px 0px rgba(0, 0, 0, 0.75);
+  box-shadow: 0px -4px 3px 0px rgba(0, 0, 0, 0.75);
+  background-image: radial-gradient(
+    circle,
+    #ffffff,
+    #fbfbfb,
+    #f6f6f6,
+    #f2f2f2,
+    #eeeeee
+  ); // background-image: url("../assets/noise.png");
+  &__content {
+    margin: $margin-sm 0;
+    padding: $margin-md 0;
+    .headingSecondary {
+      margin-bottom: $margin-md;
+    }
+  }
+  &__steps {
+  }
+  &__stepx {
+    padding: $margin-xsm;
+    -webkit-box-shadow: inset 0px 0px 4px -3px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: inset 0px 0px 4px -3px rgba(0, 0, 0, 0.75);
+    box-shadow: inset 0px 0px 4px -3px rgba(0, 0, 0, 0.75);
+    &--icon {
+      // color: red;
+      display: inline-block;
+      margin: $margin-xsm 22.2rem;
+      @include tablet {
+        margin: $margin-xsm 13rem;
+      }
+      @include smartphone {
+        // display: none;
+        margin: $margin-xsm 8rem;
+      }
+      @include smallScreen {
+        margin: $margin-xsm 14rem;
+      }
+      text-align: center;
+      background-image: linear-gradient(
+        to right,
+        $primary-color-3,
+        $primary-color-4,
+        $primary-color-3
+      );
+      -webkit-background-clip: text;
+      color: transparent;
+      height: 8rem;
+      font-size: 8rem;
+    }
+  }
+}

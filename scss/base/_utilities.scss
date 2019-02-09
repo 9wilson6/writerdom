@@ -1,0 +1,185 @@
+.headingPrimary {
+    text-transform: uppercase; // font-family: 'Khand', sans-serif;
+    font-family: 'Cardo', sans-serif;
+    display: block;
+    font-weight: 700;
+    margin-bottom: 2rem;
+    @include desktop {
+        letter-spacing: .2rem;
+        font-size: 5.7rem;
+    }
+    @include tablet {
+        font-size: 4.5rem;
+        letter-spacing: .2rem;
+    }
+    @include smartphone {
+        font-size: 3rem;
+        letter-spacing: .1rem;
+    }
+    @include smallScreen {
+        font-size: 2rem;
+    }
+}
+
+.headingSecondary {
+    text-transform: capitalize;
+    color: #000; // font-family: 'Khand', sans-serif;
+    // font-family: 'Arvo', sans-serif;
+    font-family: Calibri, sans-serif;
+    font-weight: normal;
+    display: block;
+    font-size: 3rem;
+    text-align: center; // margin-bottom: $margin-md;
+    &--light {
+        color: $primary-color-0;
+    }
+}
+
+.headingTertiary {
+    text-transform: uppercase;
+    font-family: 'Cardo', sans-serif; // font-family: 'Khand', sans-serif;
+    display: block;
+    margin-bottom: 2rem;
+    font-weight: 400;
+    @include desktop {
+        font-size: 3rem;
+    }
+    @include tablet {
+        font-size: 2.8rem;
+    }
+    @include smartphone {
+        font-size: 2.3rem;
+    }
+    @include smallScreen {
+        font-size: 1rem;
+    }
+}
+
+.quaternary {
+    font-size: 2.2rem;
+    margin: $margin-sm;
+    text-align: center;
+    font-weight: 500;
+    color: $primary-color-0_1; // font-family: 'Khand', sans-serif;
+    font-family: Calibri, sans-serif;
+    &--light {
+        font-size: 3rem;
+        color: $primary-color-0;
+        text-align: left;
+    }
+}
+
+.lead {
+    font-size: 1.7rem !important; // font-family: 'Cardo', sans-serif;
+    font-family: 'Merriweather', sans-serif;
+    font-weight: 400;
+}
+
+.paragraph {
+    color: $primary-color-0; // font-family: Calibri, sans-serif;
+    font-family: Calibri, 'Gill Sans', 'Gill Sans MT', 'Trebuchet MS', sans-serif;
+    font-weight: 400;
+    font-size: 1.7rem !important;
+    &--dark {
+        color: #383838;
+        text-align: center;
+        font-family: Calibri, 'Gill Sans', 'Gill Sans MT', 'Trebuchet MS', sans-serif;
+        font-weight: 400;
+    }
+}
+
+//font awesome icons
+.icon {
+    color: $primary-color-3;
+    margin-left: .7rem;
+    font-size: 1.7rem;
+    &-r {
+        margin-right: .7rem;
+    }
+}
+
+.active {
+    background: $primary-color-6;
+}
+
+.pill {
+    background: $primary-color-3;
+    border-radius: 30%;
+    padding: 3px 5px;
+    font-size: 1.2rem;
+    color: $primary-color-0;
+}
+
+.wide {
+    width: 50%;
+}
+
+.medium {
+    width: 32%;
+}
+
+.smalll {
+    width: 18%;
+}
+
+.table {
+    text-align: left;
+}
+
+#select {
+    border: none;
+    width: 60px;
+    font-size: 1.5rem;
+    &:focus {
+        outline: none !important;
+    }
+    option {
+        border: none;
+        font-size: 1.5rem; // &:focus {
+        //     outline: none !important;
+        // } // outline: 0 !important;
+    }
+}
+
+// select::-ms-expand {
+//     display: none;
+// }
+.ck-editor__editable {
+    min-height: 200px !important;
+}
+
+@include tablet1 {
+    .col-lg-12 {
+        margin-bottom: $margin-md;
+    }
+}
+
+.rating {
+    margin-left: 5px;
+    height: 20px;
+}
+
+.card-header {
+    background: #F7F9FB !important;
+}
+
+.action_card {
+    width: 100%;
+}
+
+.modal {
+    padding: 0 !important;
+}
+
+.modal-dialog {
+    max-width: 50% !important;
+    height: 90%;
+    padding: 0;
+    margin: 0;
+}
+
+.modal-content {
+    border-radius: 0 !important;
+    height: 90%;
+    overflow-y: auto;
+}

@@ -1,0 +1,122 @@
+.dashboard_nav {
+    position: relative;
+    .navbar {
+        background: $primary-color-7;
+        padding: 0 $margin-md;
+        animation-duration: 2s;
+        min-height: 30px;
+        &-brand {
+            font-size: 2rem;
+        }
+        .deco {
+            font-family: 'Bungee Inline', cursive;
+            font-size: 2.5rem;
+        }
+        &__logo {
+            height: 3.5rem;
+        }
+        &-toggler {
+            color: $primary-color-6;
+            font-size: 2.5rem;
+        }
+        .nav-item {
+            padding: $ul_links_padding_y $ul_links_padding_x;
+            transform: translateX(0);
+        }
+        .nav-link,
+        .dropdown-item {
+            color: $primary-color-6;
+            font-family: 'Arvo', serif;
+            transition: all .5s ease-in;
+            font-size: 1.5rem;
+            font-weight: 700;
+            display: inline-block;
+        }
+        .nav-link:hover,
+        .nav-link:active,
+        .dropdown-item:hover,
+        .dropdown-item:active {
+            color: $primary-color-1; // font-family: 'Bungee Inline', cursive;
+            background: $primary-color-6;
+        }
+        .btn {
+            font-size: 2rem;
+            font-family: 'Bungee Inline', cursive;
+        }
+        .nav-link--excemption {
+            color: $primary-color-3;
+            font-family: calibri;
+            &:hover {
+                background: $primary-color-0;
+                color: $primary-color-3;
+                -webkit-box-shadow: -2px 3px 5px 0px rgba(0, 0, 0, 0.75);
+                -moz-box-shadow: -2px 3px 5px 0px rgba(0, 0, 0, 0.75);
+                box-shadow: -2px 3px 5px 0px rgba(0, 0, 0, 0.75); // -ms-transform: scale(1.2, 1.2); // /* IE 9 */
+                // -webkit-transform: scale(1.2, 1.2);
+                // /* Safari */
+                // transform: scale(1.2, 1.2);
+            }
+        }
+        .dropdown-item {
+            // border-bottom: 1px solid $primary-color-2_2; // border-left: 1px solid $primary-color-6;
+            font-family: calibri !important;
+            color: $primary-color-3 !important;
+            font-size: 1.7rem;
+            margin-top: .3rem;
+            -webkit-box-shadow: -2px 3px 5px 0px rgba(0, 0, 0, 0.75);
+            -moz-box-shadow: -2px 3px 5px 0px rgba(0, 0, 0, 0.75);
+            box-shadow: -2px 3px 5px 0px rgba(0, 0, 0, 0.75);
+        }
+    } //side bar navigation
+    &_left {
+        background: $primary-color-7; // background: $primary-color-5 !important;
+        height: 94%;
+        width: 25rem;
+        transition: all .5s ease-out;
+        text-align: left;
+        @include tablet1 {
+            display: none;
+        }
+        position: absolute;
+        top: 53px;
+        left: 0;
+        z-index: 600;
+        &__content {
+            .list-group {
+                a,
+                a:hover,
+                a:active {
+                    text-decoration: none;
+                    cursor: pointer;
+                }
+                &-item {
+                    background: transparent;
+                    color: $primary-color-3;
+                    font-weight: 700;
+                    padding: $margin-sm 2rem;
+                    font-size: 1.8rem;
+                }
+            }
+        }
+    }
+    .left-toggler {
+        font-family: calibri !important;
+        padding: 1px 5px;
+        margin-right: 3rem;
+        display: none;
+        @include tablet1 {
+            display: inherit;
+        }
+        position: absolute;
+        top: 13px;
+        left: 10px;
+        z-index: 50000;
+    }
+    .icon-m {
+        color: $primary-color-3;
+        font-size: 2.5rem;
+    }
+    #check {
+        display: none;
+    }
+}

@@ -1,0 +1,27 @@
+.tutor {
+    background-image: linear-gradient(to right bottom, rgba(0, 0, 0, .75), rgba(0, 0, 0, .75)), url("../assets/headerbg2.jpeg");
+    background-position: top;
+    background-size: cover;
+    background-attachment: fixed;
+    width: auto;
+    background-repeat: no-repeat; // display: flex;
+    -webkit-clip-path: polygon(50% 2%, 51% 0, 100% 0, 100% 100%, 51% 100%, 50% 98%, 49% 100%, 0 100%, 0 0, 49% 0);
+    clip-path: polygon(50% 2%, 51% 0, 100% 0, 100% 100%, 51% 100%, 50% 98%, 49% 100%, 0 100%, 0 0, 49% 0);
+    text-align: center;
+    min-height: 40vh;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center; // margin-bottom: $margin-md;
+    &__content {
+        margin: $margin-lg 0;
+        padding: $margin-md 0;
+        .headingSecondary {
+            margin-bottom: $margin-md;
+        }
+    }
+    &__paragraph {
+        color: $primary-color-5;
+    }
+}

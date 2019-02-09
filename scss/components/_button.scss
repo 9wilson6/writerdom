@@ -1,0 +1,46 @@
+.button {
+    background-color: transparent; // color: $primary-color-7;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: $primary-color-7 !important;
+    border: 2px solid $primary-color-7;
+    cursor: pointer;
+    display: inline-block; // color: $primary-color-0;
+    border-radius: 2rem;
+    font-family: Calibri;
+    font-weight: 500;
+    margin-top: $margin-sm;
+    transition: all .5s ease-out;
+    @include desktop {
+        font-size: 3rem;
+        padding: 1.5rem 3rem;
+    }
+    @include tablet {
+        font-size: 2.8rem;
+        padding: 1rem 2rem;
+    }
+    @include smartphone {
+        font-size: 2.3rem;
+        padding: 1rem 2rem;
+    }
+    @include smallScreen {
+        font-size: 1rem;
+        padding: .5rem 1.5rem;
+    }
+}
+
+// 
+.button:hover,
+.button:active {
+    border: 2px solid $primary-color-5;
+    color: $primary-color-0 !important;
+    background: $primary-color-3;
+    text-decoration: none;
+}
+
+.button__small,
+.button:link,
+    {
+    padding: $margin-xsm $margin-sm !important;
+    font-size: 2rem;
+}

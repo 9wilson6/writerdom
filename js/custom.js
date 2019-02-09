@@ -1,0 +1,94 @@
+$(document).ready(function(){
+$('#check'). click(function(){
+	
+if($(this). prop("checked") == true){
+	$('.dashboard_nav_left').css("display","inline");
+}
+else if($(this). prop("checked") == false){
+$('.dashboard_nav_left').css("display","none");
+$(window).on('resize', function(event){
+    var windowWidth = $(window).innerWidth();
+	if(windowWidth >= 992){
+    $('.dashboard_nav_left').css("display","inline");
+}else{
+	$('.dashboard_nav_left').css("display","none");
+}
+});
+
+}
+	});
+
+
+
+
+});
+
+////////////////CHAT ///////////////
+$("#chat_form").submit(function(event) {
+event.preventDefault();
+
+let project_id= $("input[name='project_id']").val();
+let user_type= $("input[name='user_type']").val();
+let message= $("textarea").val();
+let student_id=$("input[name='student_id']").val();
+let tutor_id=$("input[name='tutor_id']").val();
+let submit = "submit";
+
+$.post("../chat", 
+{
+project_id: project_id,
+user_type: user_type,
+message: message,
+submit: submit,
+student_id: student_id,
+tutor_id: tutor_id
+} ,
+  function(data, status){
+   
+$("textarea").val("");
+ $('#files').stop().animate({ scrollTop: $('#files')[0].scrollHeight});
+ $('#messageBox').stop().animate({ scrollTop: $('#messageBox')[0].scrollHeight});
+});
+
+
+
+});
+
+$(function(){
+
+ 
+setInterval(function() {
+        $("#messageBox").load("../chat", {
+           aproject_id: project_id,
+           auser_type: user_type
+        })
+    //     $('#files').stop().animate({ scrollTop: $('#files')[0].scrollHeight});
+    // $('#messageBox').stop().animate({ scrollTop: $('#messageBox')[0].scrollHeight});
+    
+    }, 300);
+
+
+});
+
+//////////////////CHAT////////////
+
+//////////////////////////////////////////////////
+
+ 	$(function() {
+    $('#files').stop().animate({ scrollTop: $('#files')[0].scrollHeight});
+    $('#messageBox').stop().animate({ scrollTop: $('#messageBox')[0].scrollHeight});
+});
+
+/////////////////////////////////////////////////
+
+$(function(){
+  $('textarea').keyup(function(){
+    // alert(user_type);
+    $.post("../chat", {
+           project_id: project_id,
+           user_type: user_type,
+           event: "keylistener"
+        });   
+ });
+});
+

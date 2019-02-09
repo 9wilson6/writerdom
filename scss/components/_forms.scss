@@ -1,0 +1,154 @@
+.forms {
+    height: 100vh;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    background-image: linear-gradient(to right bottom, rgba(0, 0, 0, .5), rgba(0, 0, 0, .5)), url("../assets/headerbg2.jpeg");
+    background-position: top;
+    background-size: cover;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    .headingSecondary {
+        margin-bottom: $margin-md;
+        @include tablet {
+            display: none;
+        }
+        @include smartphone {
+            display: none;
+        }
+        @include smallScreen {
+            display: none;
+        }
+    }
+    &__content {
+        padding: $margin-lg;
+        margin: $margin-xlg;
+        text-align: center; // border: 2px solid $primary-color-0;
+        border-radius: 1%; // background-image: radial-gradient(circle, #ffffff, #fbfbfb, #f6f6f6, #f2f2f2, #eeeeee);
+        // background: rgba(255, 255, 255, 1);
+        // background-image: linear-gradient(to bottom, #00897b, #409fa4, #75b3c4, #a7c7dc, #d3ddec, #d3ddec, #d3ddec, #d3ddec, #a7c7dc, #75b3c4, #409fa4, #00897b); // -webkit-box-shadow: 0px 0px 13px 1px rgba(0, 0, 0, .1); // -moz-box-shadow: 0px 0px 13px 1px rgba(0, 0, 0, .1);
+        // box-shadow: 0px 0px 13px 1px rgba(0, 0, 0, .1);
+        background-image: url(../assets/noise.png);
+        @include smartphone {
+            display: block;
+            margin: 3px auto;
+            width: 100%; // width: 700px;
+        }
+    }
+    &__table {
+        width: 100%;
+    }
+    &__form {
+        margin: 0 auto; // width: 40vw;
+        @include tablet {
+            width: 100%;
+        }
+        @include smartphone {
+            width: 100%;
+        }
+        @include smallScreen {
+            width: 100%;
+        }
+        &__input {
+            outline: none;
+            margin: 0 auto;
+            border: 0;
+            height: $standard_input_height;
+            width: 100%;
+            font-size: $standard_font_height;
+            padding: $standard_form_padding;
+        }
+    }
+    .error {
+        border: 1px solid red;
+        &__text {
+            color: red;
+        }
+    }
+    .form {
+        margin: 0 auto;
+        width: 40vw;
+        &__input {
+            outline: none !important;
+            margin: 0 auto;
+            border: none;
+            height: $standard_input_height;
+            width: 100%;
+            font-size: $standard_font_height;
+            padding: $standard_form_padding;
+            transition: all .5 ease-in;
+            background: transparent;
+            border-bottom: 1px solid $primary-color-3;
+            color: $primary-color-3;
+            &:focus {
+                outline: none;
+                box-shadow: 0 1rem 2rem rgba($primary-color-0_1, .1);
+                border-bottom: 3px solid $primary-color-3;
+            }
+            &:focus:invalid {
+                border: none;
+                color: red;
+                outline: none;
+                border-bottom: 3px solid red;
+            }
+        }
+        &__label {
+            font-size: $default-font-size;
+            font-weight: 700;
+            display: block;
+            text-align: left;
+            color: $primary-color-3;
+            @include tablet {
+                display: none;
+            }
+            @include smartphone {
+                display: none;
+            }
+            @include smallScreen {
+                display: none;
+            }
+        }
+        &__group:not(:last-child) {
+            margin-bottom: 3rem;
+        }
+        &__buttons,
+        a {
+            display: block;
+            margin: 0 auto;
+            width: 100%;
+            border: 2px solid $primary-color-3;
+            color: $primary-color-3 !important;
+            background: transparent;
+            font-weight: 700;
+            border-radius: .8rem;
+            transition: all .5s ease-out;
+            @include desktop {
+                padding: 1rem 2rem;
+                font-size: 1.5rem;
+            }
+        }
+        &__buttons:last-child {
+            @include tablet {
+                margin-top: 1.5rem;
+            }
+            @include smartphone {
+                margin-top: 1.5rem;
+            }
+            @include smallScreen {
+                margin-top: 1.5rem;
+            }
+        }
+        &__buttons:hover,
+        &__buttons:active,
+        a {
+            border: 2px solid $primary-color-0 !important;
+            color: $primary-color-0 !important;
+            text-decoration: none;
+            background: $primary-color-3;
+        }
+    }
+    .headingSecondary {
+        color: $primary-color-3 !important;
+    }
+}

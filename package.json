@@ -1,0 +1,16 @@
+{
+  "name": "writerDom",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "node-sass": "^4.10.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "name": "node-sass -w scss/ -o css"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

@@ -1,0 +1,30 @@
+.blank {
+  margin-top: -2.1rem;
+  -webkit-box-shadow: 0px -4px 3px 0px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 0px -4px 3px 0px rgba(0, 0, 0, 0.75);
+  box-shadow: 0px -4px 3px 0px rgba(0, 0, 0, 0.75);
+  min-height: 2vh;
+  text-align: center; // background-image: url("../assets/noise.png"); // background-image: linear-gradient(to top, $primary-color-0_1, transparent, );
+  background-image: radial-gradient(
+    circle,
+    #eda719,
+    #ffa27e,
+    #ffb6c9,
+    #f8d5f0,
+    #eeeeee
+  );
+  &__content {
+    margin: $margin-sm 0;
+    padding: $margin-sm 0;
+    .headingSecondary {
+      margin-bottom: 5px;
+    }
+  }
+  .button--blue {
+    color: $primary-color-0_1 !important;
+    background: transparent;
+    border: 2px solid $primary-color-bright-1;
+    padding: 1rem 7rem !important;
+    font-weight: 700; // margin: 3px 0;
+  }
+}
