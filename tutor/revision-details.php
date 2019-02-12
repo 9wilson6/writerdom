@@ -189,12 +189,12 @@ require_once "../components/top_nav.php";
                                                 <td class="text-center"><?php echo $results->type_of_paper; ?></td>
                                                 <td class="text-center">
                                                     <?php  $sources=$results->sources;
-                      if ($sources==0) {
-                        echo "At least 1";
-                      }else{
-                        echo "{$sources}";
-                      }
-                     ?>
+                                                    if ($sources==0) {
+                                                      echo "At least 1";
+                                                    }else{
+                                                      echo "{$sources}";
+                                                    }
+                                                   ?>
                                                 </td>
                                             </tr>
                                         </tbody>
@@ -217,6 +217,11 @@ require_once "../components/top_nav.php";
                                 <div class="pl-5"><?php echo $results->instructions; ?></div>
                                 
                             </p>
+                             <div class="bg-dark text-warning">
+                                <STRONG>Revision Instructions:<br></STRONG>
+                                <div class="pl-5 bg-dark text-warning"><?php echo $results->revision_instructions; ?></div>
+                                
+                            </div>
                             <div class="row">
                                 <div class="col-sm-12 col-md-6 col lg-6">
                                     <div class="card">
@@ -242,11 +247,12 @@ require_once "../components/top_nav.php";
                                     <div class="card">
                                         <div class="card-header"><strong>Messages:</strong></div>
                                         <div class="card-body messages">
-                                            <div class="messages__view " id="messageBox">
-                                                <script>
+                                            <script>
                                                     let project_id="<?php echo $results->project_id; ?>";
                                                    let user_type="<?php echo $_SESSION['user_type'] ?>";
                                                 </script>
+                                            <div class="messages__view " id="messageBox">
+                                                
 
                                             </div>
 

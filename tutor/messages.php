@@ -2,10 +2,14 @@
 require_once "../inc/header_links.php";
 $page="messages" ;
 require_once "../components/top_nav.php";
+require_once("../dbconfig/dbconnect.php");
 ?>
+<?php $query="SELECT chats.user_type, chats.message, chats.date_sent, chats.project_id, chats.student_id, chats.tutor_id,projects.status FROM chats LEFT JOIN projects on chats.project_id=projects.project_id where chats.user_type=1 ORDER BY date_sent DESC LIMIT 10";
+$results=$db->get_results($query);
+ ?>
 <div class="display">
     <div class="display__content">
-        <?php require_once "../components/tutor_leftnav.php" ?>
+         <?php require_once "../components/tutor_leftnav.php" ?> 
         <div class="row">
             <div class="col-sm-12 col-md-12 col-lg-12 col-xl-9">
                 <h1 class="headingTertiary text-light">Messages</h1>
@@ -14,32 +18,80 @@ require_once "../components/top_nav.php";
                     <div class="card-header">Your recent messages</div>
 
                     <div class="card-body">
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta accusamus tempora numquam
-                        deserunt necessitatibus molestiae alias odio, debitis ipsam eligendi incidunt repudiandae dolor
-                        eaque omnis, ex similique consectetur ullam sequi, earum quis deleniti! Maxime veritatis
-                        repellendus, quia placeat suscipit ea adipisci enim aut odio numquam cum aliquid quibusdam
-                        cupiditate magnam quos et, sint dolores illum nobis perspiciatis ut, quaerat sed! Sapiente
-                        voluptatum nobis aliquid odit eum quas facere, reprehenderit omnis voluptatibus optio aliquam,
-                        cum eius laborum, necessitatibus alias. Nemo consequuntur, molestias cumque? Culpa illo maxime,
-                        veniam esse voluptatem, placeat, quidem ea quod sed ad quia impedit cupiditate at enim provident
-                        architecto dolorum autem hic! Quis doloremque sint fuga officiis eum quidem quas rem, distinctio
-                        corporis quisquam soluta asperiores atque vel. Eligendi, adipisci laudantium. Tempora dolorum
-                        odit voluptatem dignissimos rem architecto reiciendis, placeat quisquam libero eum perferendis
-                        autem numquam tenetur ratione maxime enim repellat, quas delectus dolorem animi. Maxime pariatur
-                        adipisci voluptatem libero architecto alias veniam ducimus minus sint corporis. Delectus fugit
-                        culpa commodi distinctio animi esse dolorum unde. Maiores saepe neque ipsa consectetur ad
-                        laboriosam, beatae libero blanditiis rerum veritatis quia quas quaerat esse cum voluptatem
-                        voluptatibus enim autem sapiente, labore alias facilis molestiae perspiciatis necessitatibus.
-                        Placeat minima voluptatem ipsum dignissimos, maxime voluptatum modi quae id, minus at ut
-                        molestias quos quibusdam deserunt cupiditate ab quaerat totam blanditiis. Iure, dicta,
-                        exercitationem! Quisquam provident fuga, atque nisi vel obcaecati inventore natus. Error odio
-                        impedit, numquam aperiam reiciendis animi, minima asperiores dicta perspiciatis modi dignissimos
-                        adipisci, repudiandae tenetur enim magni deleniti. Nobis repellendus eligendi vitae, aperiam
-                        fugit excepturi nostrum velit numquam, nisi, eius culpa atque unde sit, pariatur aut nulla
-                        laboriosam iusto minus aspernatur! Recusandae maiores autem nesciunt esse aspernatur error
-                        mollitia sed obcaecati eos quisquam sapiente cum repellendus iusto ullam amet voluptatem ipsa in
-                        a ipsum, animi similique ratione, perferendis repellat.
+
+                        <?php if ($db->num_rows >0): ?>
+                            <div class="table-responsive" id="meso">
+                          <table class="table">
+                                <table class="table table-bordered">
+                            <thead>
+                                <tr>
+                                    <th class="smalll">Order id</th>
+                                    <th class="smalll">From(student id)</th>
+                                    <th class="medium">Message</th>
+
+                                    <th class="smalll">Date</th>
+                                    <th class="wide">Action</th>
+                                </tr>
+                            </thead> <tbody>
+                                <div id="messages">
+                            <?php foreach ($results as $result ): ?>
+            
+                    <tr>
+                            <td><?php echo $result->project_id; ?></td>
+                            <td><?php echo $result->student_id; ?></td>
+                            <td>
+
+                                <script>let project_id="<?php echo $result->project_id ; ?>";
+                               let user_type="<?php echo $_SESSION['user_type'] ?>";
+                            </script>
+                                <p style="max-height: 30px; overflow: auto;"><?php echo $result->message; ?></p>
+                            </td>
+                            <td><?php echo $result->date_sent; ?></td>
+                            <?php if ($result->status==1): ?>
+                                <td>
+                                <a href="in-progress-details?pid=<?php echo urlencode(convert_uuencode($result->project_id)) ?>#messageBox" class="btn btn-sm btn-block btn-light">view</a>
+                            </td>
+                            <?php elseif($result->status==2): ?>
+                           
+                            <td>
+                                <a href="delivered-details?pid=<?php echo urlencode(convert_uuencode($result->project_id)) ?>#messageBox" class="btn btn-sm btn-block btn-light">view</a>
+                            </td>
+                            <?php elseif($result->status==3): ?>
+                           
+                            <td>
+                                <a href="revision-details?pid=<?php echo urlencode(convert_uuencode($result->project_id)) ?>#messageBox" class="btn btn-sm btn-block btn-light">view</a>
+                            </td>
+                            <?php elseif($result->status==4): ?>
+                            
+                            <td>
+                               <a href="" class="btn btn-sm btn-block btn-light">view</a>
+                            </td>
+                            <?php endif ?>
+                            
+                     </tr>
+           
+                            <?php endforeach ?> 
+                                </div>
+                             </tbody>  
+                        </table>
+                          </table>
+                        </div>
+                        <?php else: ?>
+                            <h2 class="headingSecondary">No Messages Yet</h2>
+                        <?php endif ?>
+
                     </div>
+                    <?php if ($db->num_rows>9): ?>
+                          <div class="card-footer">
+                        <select name="select" class="custom-select mb-2 ml-0 mr-sm-2 mb-sm-0" id="select">
+                            <option value="20">10</option>
+                            <option value="20">20</option>
+                            <option value="50">50</option>
+                            <option value="100">100</option>
+                            <option value="100">250</option>
+                            <option value="100">500</option>
+                        </select></div>
+                         <?php endif ?>
                 </div>
             </div>
             <div class="col-sm-12 col-md-12 col-lg-12  col-xl-3">
@@ -81,4 +133,27 @@ require_once "../components/top_nav.php";
 
 <?php
 require_once"../inc/footer_links.php";
+
  ?>
+<script>
+    $( document ).ready(function() {
+            $.post("../chat", {
+           project_id: project_id,
+           user_type: user_type,
+           event: "keylistener"
+        }); 
+
+
+
+    $("#select").change(function() {
+        let limit = $("#select").val();
+        let submit="submit";
+        $("#meso").load("messages_.php", {
+            limit: limit,
+            submit:submit
+        })
+    });
+
+  setTimeout('window.location.href=window.location.href;', 120000);
+});
+ </script>

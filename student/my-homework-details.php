@@ -198,14 +198,15 @@ $results=$db->get_row($query);
                         </div>
                         <div class="card-body">
 
-
+            <div class="table-responsive " id="bids">
                             <?php 
                   $query="SELECT * FROM bids WHERE project_id=$project_id";
                   $results=$db->get_results($query);
+
                   if ($db->num_rows<1) {?>
                             <h1 class="headingSecondary">Nothing To Show Yet</h1>
                             <?php }else{ ?>
-                            <div class="table-responsive">
+                            
                                 <table class="table">
                                     <thead>
                                         <th>Tutor Id</th>
@@ -214,7 +215,7 @@ $results=$db->get_row($query);
                                         <th>Bid Amount($)</th>
                                         <th>Action</th>
                                     </thead>
-                                    <tbody id="bids">
+                                    <tbody >
 
                                         <?php foreach ($results as $result) {?>
                                         <tr>
@@ -246,7 +247,8 @@ $results=$db->get_row($query);
                                             <td>
                                                 <form action="assing" method="POST">
                                                     <input type="hidden" name="project_id" value="<?php echo $project_id; ?>">
-                                                    <input type="hidden" name="user_id" value="<?php echo $_SESSION['user_id'] ?>">
+                                                    <input type="hidden" name="user_id" value="<?php echo $_SESSION['user_id']; ?>">
+                                                    <!-- <?php #echo $_SESSION['user_id']; die; ?> -->
                                                     <input type="hidden" name="tutor_id" value="<?php echo $result->tutor_id; ?>">
                                                     <input type="hidden" name="cost" value="<?php echo $result->bid_total_amount ?>">
                                                     <input type="hidden" name="charged" value="<?php echo $result->bid_amount ?>">
@@ -258,10 +260,11 @@ $results=$db->get_row($query);
                                         <?php } ?>
                                     </tbody>
                                 </table>
-                            </div>
+                            
                                 <?php }
 
 				       ?>
+                       </div>
                                 <p class="text-center"></p>
                             </div>
                         </div>

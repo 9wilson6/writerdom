@@ -14,11 +14,12 @@ if(isset($_POST['submit'])) {
 		
 	}
 }
-echo "no submit event recived";
 
-if (isset($_POST['aproject_id']) && isset($_POST['auser_type'])) {
-	$project_id=$_POST['aproject_id'];
-	$user_type=$_POST['auser_type'];
+
+if (isset($_POST['project_id']) && isset($_POST['user_type'])) {
+
+	$project_id=$_POST['project_id'];
+	$user_type=$_POST['user_type'];
 		$query="SELECT * FROM chats WHERE project_id='$project_id'";
 		$results=$db->get_results($query);
 

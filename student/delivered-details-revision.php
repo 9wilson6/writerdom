@@ -28,7 +28,7 @@ if (isset($_POST['submit'])) {
 	if ($db->query($query)) {
 			$query="DELETE FROM delivered WHERE project_id='$project_id'";
 			if ($db->query($query)) {
-				$query="UPDATE projects SET status=1 WHERE project_id='$project_id'";
+				$query="UPDATE projects SET status=3 WHERE project_id='$project_id'";
 				if ($db->query($query)) {
 
 					header("location:editing?pid=$pid");

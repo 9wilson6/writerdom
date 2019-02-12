@@ -8,13 +8,8 @@ require_once "../inc/header_links.php";
 require_once("../dbconfig/dbconnect.php");
 $query="SELECT * FROM on_progress LEFT JOIN projects ON on_progress.project_id=projects.project_id WHERE on_progress.student_id=".$_SESSION['user_id'];
 $results=$db->get_row($query);
-
-
 ?>
 
-<!-- <pre>
-    <?php #print_r($results); ?>
-</pre> -->
 <div class="display">
     <div class="display__content">
         <?php require_once "../components/stud_leftnav.php" ?>

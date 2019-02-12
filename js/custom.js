@@ -26,14 +26,12 @@ $(window).on('resize', function(event){
 ////////////////CHAT ///////////////
 $("#chat_form").submit(function(event) {
 event.preventDefault();
-
 let project_id= $("input[name='project_id']").val();
 let user_type= $("input[name='user_type']").val();
 let message= $("textarea").val();
 let student_id=$("input[name='student_id']").val();
 let tutor_id=$("input[name='tutor_id']").val();
 let submit = "submit";
-
 $.post("../chat", 
 {
 project_id: project_id,
@@ -44,7 +42,6 @@ student_id: student_id,
 tutor_id: tutor_id
 } ,
   function(data, status){
-   
 $("textarea").val("");
  $('#files').stop().animate({ scrollTop: $('#files')[0].scrollHeight});
  $('#messageBox').stop().animate({ scrollTop: $('#messageBox')[0].scrollHeight});
@@ -59,13 +56,14 @@ $(function(){
  
 setInterval(function() {
         $("#messageBox").load("../chat", {
-           aproject_id: project_id,
-           auser_type: user_type
-        })
+           project_id: project_id,
+           user_type: user_type
+        });
+        // alert(project_id+"user"+user_type);
     //     $('#files').stop().animate({ scrollTop: $('#files')[0].scrollHeight});
     // $('#messageBox').stop().animate({ scrollTop: $('#messageBox')[0].scrollHeight});
     
-    }, 300);
+    }, 100);
 
 
 });
@@ -90,5 +88,8 @@ $(function(){
            event: "keylistener"
         });   
  });
+
+
+
 });
 

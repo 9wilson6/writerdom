@@ -10,26 +10,13 @@ if (isset($_POST['submit'])) {
 	$project_id=$_POST['project_id'];
 	$student_id=$_POST['student_id'];
 	$tutor_id=$_SESSION['user_id'];
-	resultsUpload($student_id, $project_id, $result_type);
-	$query="INSERT INTO delivered(project_id, student_id, tutor_id)VALUES('$project_id', '$student_id', '$tutor_id')";
-	if ($db->query($query)) {
-		if ($result_type=="final") {
-           $query="DELETE FROM on_progress WHERE project_id='$project_id'";
-        if ($db->query($query)) {?>
-            <script>
-                alert("Assignment Results Uploaded Successfully");
-                window.location.assign("delivered");
-            </script>
-        <?php }
-    }else{ ?>
+	resultsUpload($student_id, $project_id, $result_type); ?>
 
             <script>
                 window.location.assign("#files");
             </script>
 
    <?php }
-        }
-    }
 
 # //////////////////////////////////////////////////////////////////////////////////// -->
 $tutor_id=$_SESSION['user_id'];

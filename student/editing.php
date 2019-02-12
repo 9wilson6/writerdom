@@ -20,7 +20,7 @@ $results=$db->get_row($query);
         <?php require_once "../components/stud_leftnav.php" ?>
         <div class="row">
             <div class="col-sm-12 col-md-12 col-lg-12 col-xl-9">
-                <h1 class="headingTertiary text-light">In Progress</h1>
+                <h1 class="headingTertiary text-light">Under Editing</h1>
                 <div class="card"> 
                     <div class="card-header">Relax our expert Tutors are working on your Homework</div>
                 <?php if ($db->num_rows<1) { ?>

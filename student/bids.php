@@ -5,12 +5,19 @@ if (isset($_POST['project_id'])) {
  					$project_id=$_POST['project_id'];
                   $query="SELECT * FROM bids WHERE project_id=$project_id";
                   $results=$db->get_results($query);
-                  if ($db->num_rows<1) {?>
+                 if ($db->num_rows<1) {?>
                             <h1 class="headingSecondary">Nothing To Show Yet</h1>
                             <?php }else{ ?>
-                            <div class="table-responsive">
-                                
-
+                            
+                                <table class="table">
+                                    <thead>
+                                        <th>Tutor Id</th>
+                                        <th>Rated</th>
+                                        <th>Orders Complited</th>
+                                        <th>Bid Amount($)</th>
+                                        <th>Action</th>
+                                    </thead>
+                                    <tbody >
 
                                         <?php foreach ($results as $result) {?>
                                         <tr>
@@ -18,9 +25,9 @@ if (isset($_POST['project_id'])) {
                                                 <?php echo $result->tutor_id ?>
                                             </td>
                                             <?php $query="SELECT * FROM users WHERE user_id='$result->tutor_id'";
-										$results=$db->get_row($query);
-										
-										 ?>
+                                        $results=$db->get_row($query);
+                                        
+                                         ?>
                                             <td>
                                                 <?php echo $results->rating ?>
                                                 <?php if ($results->rating==0): ?>
@@ -52,9 +59,16 @@ if (isset($_POST['project_id'])) {
                                         </tr>
 
                                         <?php } ?>
+                                    </tbody>
+                                </table>
+                            
+                                <?php }
+
+                       ?>
 
                             </div>
                                 <?php }
 
 				  
-	}
+	
+?>

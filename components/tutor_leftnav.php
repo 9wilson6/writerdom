@@ -86,6 +86,7 @@ require_once "../inc/sessios.php";
             user_type: user_type
       });
     }, 300);
+  /////////////////////////Reset messages when messages is checked///////
 
      });
 </script>

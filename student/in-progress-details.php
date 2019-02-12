@@ -124,9 +124,7 @@ $results=$db->get_row($query);
                             </table>
                         </div>
 
-                        <?php }
-
-					 ?>
+                     
                        <div class="row">
                                 <div class="col-sm-12 col-md-6 col lg-6">
                                     <div class="card">
@@ -147,11 +145,12 @@ $results=$db->get_row($query);
                                     </div>
 
                                 </div>
+
                                 <div class="col-sm-12 col-md-6 col lg-6">
                                     <div class="card">
                                         <div class="card-header"><strong>Messages:</strong></div>
                                         <div class="card-body messages">
-                                                                                        <div class="messages__view " id="messageBox">
+                                              <div class="messages__view " id="messageBox">
                                                 <script>
                                                     let project_id="<?php echo $results->project_id; ?>";
                                                    let user_type="<?php echo $_SESSION['user_type'] ?>";
@@ -201,12 +200,16 @@ $results=$db->get_row($query);
                                         </div>
                                     </div>
                                 </form>
+                                
+   <?php }
+
+                     ?>
                        </div>
 
 
 
-
                 </div>
+
             </div>
 
             <div class="col-sm-12 col-md-12 col-lg-12 col-xl-3">
@@ -249,7 +252,7 @@ $results=$db->get_row($query);
         </div>
     </div>
 </div>
-<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+<!-- <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script> -->
 <?php
 
 require_once"../inc/footer_links.php";
