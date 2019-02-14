@@ -21,10 +21,8 @@ if (isset($_POST['submit'])) {
 			alert("Date or time must have a value");
 			window.location.href="delivered-details?id=<?php echo $project_id ?>#chat_form";
 		</script>
-	<?php }
-
-
-	$query="INSERT INTO revisions(student_id, tutor_id, project_id, revision_instructions,revision_deadline)VALUES('$student_id','$tutor_id','$project_id','$instructions','$datetyme')";
+	<?php }else{
+			$query="INSERT INTO revisions(student_id, tutor_id, project_id, revision_instructions,revision_deadline)VALUES('$student_id','$tutor_id','$project_id','$instructions','$datetyme')";
 	if ($db->query($query)) {
 			$query="DELETE FROM delivered WHERE project_id='$project_id'";
 			if ($db->query($query)) {
@@ -34,7 +32,9 @@ if (isset($_POST['submit'])) {
 					header("location:editing?pid=$pid");
 				}
 			}
-		}	
+		}
+	}
+	
 }
  ?>
 
