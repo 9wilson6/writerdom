@@ -2,8 +2,9 @@
 require_once("dbconfig/dbconnect.php");
 if(isset($_POST['submit'])) {
 	require_once("dbconfig/dbconnect.php");
+
 	$chat=77;
-	require_once("inc/utilities.php");
+		require_once("inc/utilities.php");
 	$project_id=$_POST['project_id'];
 	$user_type=$_POST['user_type'];
 	$student_id=$_POST['student_id'];

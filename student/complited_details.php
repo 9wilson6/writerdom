@@ -133,10 +133,10 @@ $results=$db->get_row($query);
                             </div>
                             <div class="showFiles" id="files">
 
-                                <?php #manageFiles($_SESSION['user_id'], $project_id) ?>
+                                <?php  filesDownload($_SESSION['user_id'], $project_id) ?>
 
-                                <?php filesDownload($_SESSION['user_id'], $project_id) ?>
-
+                                <?php resultsDownload($_SESSION['user_id'], $project_id)  ?>
+        
                                 
                             </div>
 

@@ -283,8 +283,9 @@ require_once "../components/top_nav.php";
                     </div>
                    
                 </div>
+                <?php } ?>
             </div>
-            <?php } ?>
+            
             <div class="col-sm-12 col-md-12 col-lg-12  col-xl-3">
                 <h1 class="headingTertiary text-light">My Account</h1>
                 <div class="card">

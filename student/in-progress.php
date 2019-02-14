@@ -1,7 +1,7 @@
 <?php 
 require_once "../inc/header_links.php";
 $page="progress";
-// require_once "../components/top_nav.php";
+require_once "../components/top_nav.php";
 require_once("../inc/utilities.php");
 
 require_once "../inc/header_links.php";

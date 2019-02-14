@@ -132,9 +132,7 @@ $results=$db->get_row($query);
                             </table>
                         </div>
 
-                        <?php }
-
-					 ?>
+                 
                        <div class="row">
                                 <div class="col-sm-12 col-md-6 col lg-6">
                                     <div class="card">
@@ -209,12 +207,16 @@ $results=$db->get_row($query);
                                         </div>
                                     </div>
                                 </form>
+                            <?php }
+
+                     ?>
                        </div>
 
 
 
 
                 </div>
+
             </div>
 
             <div class="col-sm-12 col-md-12 col-lg-12 col-xl-3">

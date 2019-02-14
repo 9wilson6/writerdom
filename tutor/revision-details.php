@@ -11,9 +11,10 @@ if (isset($_POST['submit'])) {
 	$student_id=$_POST['student_id'];
 	$tutor_id=$_SESSION['user_id'];
 	resultsUpload($student_id, $project_id, $result_type);
-	$query="INSERT INTO delivered(project_id, student_id, tutor_id)VALUES('$project_id', '$student_id', '$tutor_id')";
-	if ($db->query($query)) {
-		if ($result_type=="final") {
+	   
+    if ($result_type=="final") {
+        $query="INSERT INTO delivered(project_id, student_id, tutor_id)VALUES('$project_id', '$student_id', '$tutor_id')";
+        if ($db->query($query)) {
            $query="DELETE FROM revisions WHERE project_id='$project_id'";
         if ($db->query($query)) {
             $query="UPDATE projects SET status=2 WHERE project_id='$project_id'";
@@ -26,14 +27,15 @@ if (isset($_POST['submit'])) {
         <?php
             }
          }
-    }else{ ?>
+    }
+        
+}else{ ?>
 
             <script>
                 window.location.assign("#files");
             </script>
 
    <?php }
-        }
     }
 
 # //////////////////////////////////////////////////////////////////////////////////// -->

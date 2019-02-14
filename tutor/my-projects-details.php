@@ -176,6 +176,7 @@ require_once "../components/top_nav.php";
                                         <div class="card-header"><strong>Files:</strong></div>
                                         <div class="card-body files">
                                             <p><?php filesDownload($results->student_id,$results->project_id) ?></p>
+                                            <p><?php resultsDownload($results->student_id,$results->project_id) ?></p>
                                         </div>
                                     </div>
 
