@@ -93,10 +93,10 @@ global $success, $error, $date_global;
 
   if ($db->query($query)) {
       $success="Homework Updated Successfully";
-       header("location:my-homework-details?id=".$project_id);
+       header("location:my-homework-details?id=".urlencode(convert_uuencode($project_id)));
   }else{
 $error="Was not Successfully Posted try again";
-header("location:homework_edit?id=".$project_id."&error=".$error);
+header("location:homework_edit?id=".urlencode(convert_uuencode($project_id))."&error=".$error);
   }
 }
 }

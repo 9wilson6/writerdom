@@ -8,7 +8,7 @@ if ($result_q>20) {
  
 $query="SELECT * FROM projects WHERE deadline>{$date_global_} AND status=0 ORDER BY project_id desc LIMIT 20 "; 
 }else{?>
-<meta http-equiv="refresh" content="30">
+<!-- <meta http-equiv="refresh" content="30"> -->
 
 <?php 
  $query="SELECT * FROM projects WHERE deadline>{$date_global_} AND status=0 ORDER BY project_id desc";

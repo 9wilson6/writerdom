@@ -170,7 +170,7 @@ $results=$db->get_row($query);
                                     class="btn btn-lg btn-block btn-danger text-uppercase"
                                     onclick="deleletconfig()">delete
                                     project</button></div>
-                            <div class="col-md-6 col-sm-12"><a href="homework_edit?id=<?php echo $project_id ?>"
+                            <div class="col-md-6 col-sm-12"><a href="homework_edit?id=<?php echo urlencode(convert_uuencode($project_id)) ?>"
                                     class="btn btn-lg btn-block btn-info text-uppercase">edit
                                     project</a></div>
                             <script>

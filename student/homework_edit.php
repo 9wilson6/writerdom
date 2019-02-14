@@ -13,7 +13,7 @@ $success=null;
 require_once("stud_functions.php");
 edit_post();
 if (isset($_REQUEST['id'])) {
-	$homework_id=$_REQUEST['id'];
+	$homework_id=convert_uudecode($_REQUEST['id']);
 	require_once('../dbconfig/dbconnect.php');
 $query="SELECT * FROM projects WHERE project_id='$homework_id'";
 if ($db->get_row($query)) {
