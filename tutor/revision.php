@@ -41,20 +41,29 @@ $results=$db->get_results($query)
                                                 class="fas fa-external-link-alt icon-r ml-4"></i></a></td>
                                     <td><?php echo $result->title; ?></td>
                                     <td><?php echo $result->charges; ?></td>
-                                    <td><?php $time=getDateTimeDiff($date_global, $result->revision_deadline );
-                                         $period= explode(" ", $time); ?>
-                                        <?php if ($period[1]=="days"): ?>
-                                        <span class="text-dark"><?php echo "{$time}"; ?></span>
-                                        <?php elseif($period[1]=="day"): ?>
-                                        <span class="text-success"><?php echo "{$time}"; ?></span>
-                                        <?php elseif($period[1]=="hours" || $period[1]=="hour"): ?>
-                                        <span class="text-warning"><?php echo "{$time}"; ?></span>
-                                        <?php elseif($period[1]=="mins" || $period[1]=="min"): ?>
-                                        <span class="text-danger"><?php echo "{$time}"; ?></span>
-                                        <?php elseif($period[1]=="secs" || $period[1]=="sec"): ?>
-                                        <span class="text-danger"><?php echo "{$time}"; ?></span>
-                                        <?php endif ?>
-                                    </td>
+                                     <td class="bg-light">
+                                            <?php $time=getDateTimeDiff($date_global, $result->revision_deadline );
+                                             $period= explode(" ", $time); ?>
+                                            <?php if ($period[1]=="days"): ?>
+                                            <span class="text-light">
+                                                <?php echo "{$time}"; ?></span>
+                                            <?php elseif($period[1]=="day"): ?>
+                                            <span class="text-success">
+                                                <?php echo "{$time}"; ?></span>
+                                            <?php elseif($period[1]=="hours" || $period[1]=="hour"): ?>
+                                            <span class="text-warning">
+                                                <?php echo "{$time}"; ?></span>
+                                            <?php elseif($period[1]=="mins" || $period[1]=="min"): ?>
+                                            <span class="text-danger">
+                                                <?php echo "{$time}"; ?></span>
+                                            <?php elseif($period[1]=="secs" || $period[1]=="sec"): ?>
+                                            <span class="text-danger">
+                                                <?php echo "{$time}"; ?></span>
+                                            <?php else: ?>
+                                            <span class="text-danger">
+                                                <?php echo "{$time}"; ?></span>
+                                            <?php endif ?>
+                                        </td>
                                 </tr>
                                 <?php endforeach ?>
 

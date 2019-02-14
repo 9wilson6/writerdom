@@ -767,7 +767,7 @@ body {
   .dashboard_nav #check {
     display: none; }
 
-#myModal .modal-dialog {
+#revision .modal-dialog {
   font-size: 4rem;
   -webkit-transform: translate(0, -50%);
   -o-transform: translate(0, -50%);
@@ -775,6 +775,16 @@ body {
   top: 50%;
   margin: 0 auto;
   z-index: 1000; }
+
+#satisfied .modal-dialog {
+  font-size: 4rem;
+  -webkit-transform: translate(0, -50%);
+  -o-transform: translate(0, -50%);
+  transform: translate(0, -50%);
+  top: 50%;
+  margin: 0 auto;
+  z-index: 1000;
+  height: 310px; }
 
 .modal-content, .modal-header, .modal-title, .modal-body, .modal-footer,
 .modal button {

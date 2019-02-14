@@ -22,7 +22,7 @@ session_student();
   <?php } ?>><li class="list-group-item"><i class="fas fa-redo-alt icon-r"></i></i>Under Editing <span class="pill float-right" id="on_revision">0</span></li></a>
    <a href="../student/completed" <?php if ($page=="completed") { ?>
    class="active"
-  <?php } ?>><li class="list-group-item"><i class="far fa-thumbs-up icon-r"></i>Closed<span class="pill float-right">90</span></li></a>
+  <?php } ?>><li class="list-group-item"><i class="far fa-thumbs-up icon-r"></i>Closed<span class="pill float-right" id="closed">0</span></li></a>
     <a href="../student/messages" <?php if ($page=="messages") { ?>
     	class="active"
    <?php } ?>><li class="list-group-item"><i class="far fa-envelope-open icon-r"></i>Messages<span class="pill float-right " id="messages">0</span></li></a>
@@ -76,7 +76,12 @@ session_student();
             user_id: user_id,
             user_type: user_type
       });
-    
+          $("#closed").load("../inc/counters",
+      {
+             target: "closed",
+            user_id: user_id,
+            user_type: user_type
+      });
     }, 300);
 
 

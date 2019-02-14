@@ -130,9 +130,7 @@ $results=$db->get_row($query);
                             </table>
                         </div>
 
-                        <?php }
-
-					 ?>
+                       
                         <div class="card">
                             <div class="card-header mb-3">
                                 <h1 class="headingSecondary mb-3">FILES/MESSAGES</h1>
@@ -193,11 +191,12 @@ $results=$db->get_row($query);
                                     <div class="card-body action_card">
                                        <div class="row">
                                            <div class="col-sm-12 col-md-6 col-lg-6 mb-3">
-                                            <button class="btn  btn-success btn-block text-uppercase">Satisfied</button>
+                                            <a class="btn  btn-success btn-block text-uppercase " href="#satisfied" data-toggle="modal" id="Mlauncher">Satisfied</a>
+                                            
                                            </div>
 
                                            <div class="col-sm-12 col-md-6 col-lg-6 mb-3">
-                                            <a class="btn  btn-danger btn-block text-uppercase " href="#myModal" data-toggle="modal" id="Mlauncher">Request Adjustments</a>
+                                            <a class="btn  btn-danger btn-block text-uppercase " href="#revision" data-toggle="modal" id="Mlauncher">Request Adjustments</a>
 <!--                                             <div class="container">
     <div class="row">
         <div class="col-md-12">
@@ -206,7 +205,8 @@ $results=$db->get_row($query);
         </div>
     </div> -->
 </div>
-<div class="modal fade" id="myModal">
+<!-- REVISION DIV -->
+<div class="modal fade" id="revision">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
@@ -228,6 +228,7 @@ $results=$db->get_row($query);
                                             min="0" max="12" id="datetyme" required>
                                           <input type="hidden" name="project_id" value="<?php echo $results->project_id ?>" >
                                             <input type="hidden" name="student_id" value="<?php echo $results->student_id ?>">
+
                                             <input type="hidden" name="tutor_id" value="<?php echo $results->tutor_id ?>">
 
                                     </div>
@@ -237,6 +238,7 @@ $results=$db->get_row($query);
                                                 deadline</small>)</label>
                                         <input type="number" name="tyme" id="datetyme"
                                             class="form-control forms2__select" max="24" min="0" required>
+
                                     </div>
                                 </div>
                                 <button type="submit" id="submit" class="btn btn-primary btn-block mt-5" name="submit">Submit Instruction</button>
@@ -250,15 +252,61 @@ $results=$db->get_row($query);
         </div>
     </div>
 </div>
+<!-- REVISION DIV -->
+<!-- SATISFIED DIV -->
+<div class="modal fade" id="satisfied">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title ml-lg-5">LET'S KNOW HOW YOU FEEL ABOUT THIS TUTOR</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p><form action="rate" method="post" id="revision">
+                   
+                    <div class="form-row">
+                                    <div class="col-8">
+                                        <textarea name="comment" 
+                                class="form-control" style="font-size: 18px; height: 35px;" 
+                                placeholder="leave a comment.....:)"></textarea>
+                                    </div>
+
+                                    <div class="col-4">
+                                      
+                                        <input type="number" name="rating" class="form-control forms2__select" max="10" min="0" placeholder="rate out of 10">
+                                             <input type="hidden" name="project_id" value="<?php echo $results->project_id ?>" >
+                                            <input type="hidden" name="student_id" value="<?php echo $results->student_id ?>">
+                                            <input type="hidden" name="tutor_id" value="<?php echo $results->tutor_id ?>">
+                                    </div>
+                                </div>
+                                <button type="submit" id="rate" class="btn btn-primary btn-block mt-5" name="rate">OK</button>
+                    </form>
+                </p>
+            </div>
+            <div class="modal-footer">
+                
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- SATISFIED DIV -->
                                         </div>
                                        </div>
                                     </div>
-                                
-                          
 
                      </div>
+                      <?php }
+
+                     ?>
                     </div>
+
+
                     </div>
+
+
                 </div>
             <div class="col-sm-12 col-md-12 col-lg-12 col-xl-3">
                 <h1 class="headingTertiary text-light">Notes</h1>

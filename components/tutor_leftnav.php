@@ -19,7 +19,7 @@ require_once "../inc/sessios.php";
 
   <a href="my-projects"  <?php if ($page=="projects") { ?>
   	class="active"
-  <?php } ?>><li class="list-group-item"><i class="far fa-thumbs-up icon-r"></i>Closed <span class="pill float-right">90</span></li></a>
+  <?php } ?>><li class="list-group-item"><i class="far fa-thumbs-up icon-r"></i>Closed <span class="pill float-right" id="closed">0</span></li></a>
 
   <a href="dashboard"  <?php if ($page=="dashboard") { ?>
   	class="active"
@@ -82,6 +82,12 @@ require_once "../inc/sessios.php";
       $("#on_revision").load("../inc/counters",
       {
              target: "on_revision",
+            user_id: user_id,
+            user_type: user_type
+      });
+      $("#closed").load("../inc/counters",
+      {
+             target: "closed",
             user_id: user_id,
             user_type: user_type
       });
