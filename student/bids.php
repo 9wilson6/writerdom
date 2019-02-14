@@ -2,6 +2,7 @@
 
 if (isset($_POST['project_id'])) {
  	require_once("../dbconfig/dbconnect.php");
+    require_once("../inc/header_links.php");
  					$project_id=$_POST['project_id'];
                   $query="SELECT * FROM bids WHERE project_id=$project_id";
                   $results=$db->get_results($query);
