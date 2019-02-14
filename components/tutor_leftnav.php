@@ -6,24 +6,30 @@ require_once "../inc/sessios.php";
 	<div class="dashboard_nav_left__content">
 <ul class="list-group">
 
+  <a href="dashboard"  <?php if ($page=="dashboard") { ?>
+    class="active"
+  <?php } ?>><li class="list-group-item"><i class="far fa-credit-card icon-r"></i>Available <span class="pill float-right" id="available">0</span></li></a>
+  
   <a href="in-progress"  <?php if ($page=="progress") { ?>
   	class="active"
   <?php } ?>><li class="list-group-item"><i class="fas fa-sync-alt icon-r"></i>In Progress <span class="pill float-right" id="in_progress">0</span></li></a>
+
+
+  <a href="delivered"  <?php if ($page=="delivered") { ?>
+    class="active"
+  <?php } ?>><li class="list-group-item"><i class="fas fa-check icon-r"></i>Delivered <span class="pill float-right" id="delivered">0</span></li></a>
+
   <a href="revision" <?php if ($page=="revision") { ?>
   	class="active"
   <?php } ?>><li class="list-group-item"><i class="fas fa-redo-alt icon-r" ></i></i>On Revision <span class="pill float-right" id="on_revision">0</span></li></a>
 
-  <a href="delivered"  <?php if ($page=="delivered") { ?>
-  	class="active"
-  <?php } ?>><li class="list-group-item"><i class="fas fa-check icon-r"></i>Delivered <span class="pill float-right" id="delivered">0</span></li></a>
 
   <a href="my-projects"  <?php if ($page=="projects") { ?>
   	class="active"
   <?php } ?>><li class="list-group-item"><i class="far fa-thumbs-up icon-r"></i>Closed <span class="pill float-right" id="closed">0</span></li></a>
 
-  <a href="dashboard"  <?php if ($page=="dashboard") { ?>
-  	class="active"
-  <?php } ?>><li class="list-group-item"><i class="far fa-credit-card icon-r"></i>Available <span class="pill float-right" id="available">0</span></li></a>
+
+
 
   <a href="messages"  <?php if ($page=="messages") { ?>
   	class="active"
@@ -33,13 +39,16 @@ require_once "../inc/sessios.php";
   	class="active"
   <?php } ?>><li class="list-group-item"><i class="fas fa-bullhorn icon-r"></i>Announcements <span class="pill float-right">900</span></li></a>
 
+
   <a href="feedback"   <?php if ($page=="feedback") { ?>
   	class="active"
   <?php } ?>><li class="list-group-item"><i class="far fa-comments icon-r"></i>Feedback </li></a>
 
+
   <a href="finance"   <?php if ($page=="finance") { ?>
   	class="active"
   <?php } ?>><li class="list-group-item"><i class="fas fa-credit-card icon-r"></i>Finacial overview</li></a>
+
 </ul>
 	</div>
 </section>
