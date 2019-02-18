@@ -1,7 +1,7 @@
 .display {
     font-size: 90% !important; // background-image: url(../assets/noise_d.png);
     margin-left: 25.5rem; // background-image: radial-gradient(circle, #ffffff, #fbfbfb, #f6f6f6, #f2f2f2, #eeeeee);
-    background: $primary-color-3;
+    background: $primary-color-3_1;
     @include tablet1 {
         margin-left: -1rem;
         .headingTertiary {

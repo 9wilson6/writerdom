@@ -14,6 +14,12 @@ if ($_SESSION['user_type'] !=2) {
 }
 }
 
+function session_admin(){
+if ($_SESSION['user_type'] !=3) {
+	header("LOCATION:../index");
+}
+}
+
 
 
 function session_gen (){

@@ -64,7 +64,7 @@
     font-family: Calibri, sans-serif;
     &--light {
         font-size: 3rem;
-        color: $primary-color-0;
+        color: $primary-color-1;
         text-align: left;
     }
 }
@@ -96,10 +96,16 @@
     &-r {
         margin-right: .7rem;
     }
+    &-l{
+      float:right;
+        margin-right: .5rem;
+        font-size: 2rem;
+        padding-top: .7rem;
+    }
 }
 
 .active {
-    background: $primary-color-6;
+    background: $primary-color-0;
 }
 
 .pill {

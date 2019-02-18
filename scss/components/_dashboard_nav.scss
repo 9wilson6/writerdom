@@ -1,7 +1,7 @@
 .dashboard_nav {
     position: relative;
     .navbar {
-        background: $primary-color-7;
+        background: $primary-color-3;
         padding: 0 $margin-md;
         animation-duration: 2s;
         min-height: 30px;
@@ -44,7 +44,7 @@
             font-family: 'Bungee Inline', cursive;
         }
         .nav-link--excemption {
-            color: $primary-color-3;
+            color: $primary-color-0;
             font-family: calibri;
             &:hover {
                 background: $primary-color-0;
@@ -69,8 +69,8 @@
         }
     } //side bar navigation
     &_left {
-        background: $primary-color-7; // background: $primary-color-5 !important;
-        height: 94%;
+        background: $primary-color-0_2; // background: $primary-color-5 !important;
+        min-height: 94%;
         width: 25rem;
         transition: all .5s ease-out;
         text-align: left;
@@ -113,7 +113,7 @@
         z-index: 50000;
     }
     .icon-m {
-        color: $primary-color-3;
+        color: $primary-color-6;
         font-size: 2.5rem;
     }
     #check {

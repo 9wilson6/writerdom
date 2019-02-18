@@ -3,6 +3,7 @@
 
 <?php require_once("inc/global_functions.php"); ?>
 <?php 
+require_once("dbconfig/dbconnect.php");
 $error="";
  Login();
  ?>

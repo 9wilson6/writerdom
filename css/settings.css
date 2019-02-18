@@ -29,7 +29,7 @@ body {
   font-weight: 400;
   box-sizing: border-box;
   min-width: 767px;
-  background: #EDA719; }
+  background: #D7DBD6; }
 
 .headingPrimary {
   text-transform: uppercase;
@@ -92,7 +92,7 @@ body {
   font-family: Calibri, sans-serif; }
   .quaternary--light {
     font-size: 3rem;
-    color: #EEEEEE;
+    color: #494e6b;
     text-align: left; }
 
 .lead {
@@ -117,9 +117,14 @@ body {
   font-size: 1.7rem; }
   .icon-r {
     margin-right: .7rem; }
+  .icon-l {
+    float: right;
+    margin-right: .5rem;
+    font-size: 2rem;
+    padding-top: .7rem; }
 
 .active {
-  background: #EDA719; }
+  background: #EEEEEE; }
 
 .pill {
   background: #00897B;
@@ -387,7 +392,7 @@ body {
 .display {
   font-size: 90% !important;
   margin-left: 25.5rem;
-  background: #00897B;
+  background: #D7DBD6;
   padding-top: 3rem; }
   @media (max-width: 992px) {
     .display {
@@ -674,7 +679,7 @@ body {
 .dashboard_nav {
   position: relative; }
   .dashboard_nav .navbar {
-    background: #f1b948;
+    background: #00897B;
     padding: 0 5rem;
     animation-duration: 2s;
     min-height: 30px; }
@@ -709,7 +714,7 @@ body {
       font-size: 2rem;
       font-family: 'Bungee Inline', cursive; }
     .dashboard_nav .navbar .nav-link--excemption {
-      color: #00897B;
+      color: #EEEEEE;
       font-family: calibri; }
       .dashboard_nav .navbar .nav-link--excemption:hover {
         background: #EEEEEE;
@@ -726,8 +731,8 @@ body {
       -moz-box-shadow: -2px 3px 5px 0px rgba(0, 0, 0, 0.75);
       box-shadow: -2px 3px 5px 0px rgba(0, 0, 0, 0.75); }
   .dashboard_nav_left {
-    background: #f1b948;
-    height: 94%;
+    background: #ffffff;
+    min-height: 94%;
     width: 25rem;
     transition: all .5s ease-out;
     text-align: left;
@@ -762,7 +767,7 @@ body {
       .dashboard_nav .left-toggler {
         display: inherit; } }
   .dashboard_nav .icon-m {
-    color: #00897B;
+    color: #EDA719;
     font-size: 2.5rem; }
   .dashboard_nav #check {
     display: none; }

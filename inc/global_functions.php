@@ -83,7 +83,7 @@ function Register(){
 function Login(){
 	if (isset($_POST['submit'])) {
 		global $error;
-		require_once("dbconfig/dbconnect.php");
+		global $db;
 		$email=$db->escape($_POST['email']);
 		$user_type=$db->escape(trim($_POST['user_type']));
 		$password=$db->escape($_POST['password']);
@@ -100,6 +100,9 @@ function Login(){
 				}elseif($user_type==2){
 					$_SESSION['user_type']=2;
 					header("location:tutor/dashboard");
+				}elseif ($user_type==3) {
+					$_SESSION['user_type']=3;
+					header("location:./index");
 				}
 			}else{
 				$error="Invalid credentials";
