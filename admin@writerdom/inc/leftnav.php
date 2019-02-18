@@ -4,51 +4,75 @@ session_admin();
 <section class="dashboard_nav_left">
 	<div class="dashboard_nav_left__content">
 <ul class="list-group">
-  <a href="#"  <?php if ($page=="dashboard") { ?>
+  <a href="index"  <?php if ($page=="dashboard") { ?>
     class="active"
   <?php } ?>><li class="list-group-item">Dashboard <i class="fas fa-tachometer-alt icon-l"></i></li></a>
 
  <a href="#"  <?php if ($page=="student") { ?>
     class="active" 
-  <?php } ?> data-toggle="collapse" data-target="#student"><li class="list-group-item">Students Management
-<i class="fas fa-angle-double-down icon-l"></i>
+  <?php } ?> data-toggle="collapse" data-target="#student">
+  <li class="list-group-item">Students Management
+<i class="fas fa-angle-double-down icon-l"></i></li></a>
 <div id="student" class="collapse">
 <ul class="list-group">
-	<li class="list-group-item">hhh</li>
-	<li class="list-group-item">hhh</li>
-	<li class="list-group-item">hhhh</li>
-	<li class="list-group-item">hhhhh</li>
+	<a href="stud_activate" <?php if ($page=="student") { ?>
+    class="active" 
+  <?php } ?> ><li class="list-group-item">Activate <i class="fas fa-toggle-on icon-l"></i></li></a>
+
+  <a href="stud_suspend" <?php if ($page=="stud_suspend") { ?>
+    class="active" 
+  <?php } ?> ><li class="list-group-item">Suspend <i class="fas fa-power-off icon-l"></i></li></a>
+
+  <a href="stud_message" <?php if ($page=="stud_message") { ?>
+    class="active" 
+  <?php } ?> ><li class="list-group-item">Message <i class="far fa-comments icon-l"></i></li></a>
+
+  <a href="stud_edit" <?php if ($page=="stud_edit") { ?>
+    class="active" 
+  <?php } ?> ><li class="list-group-item">Edit <i class="far fa-edit icon-l"></i></li></a>
 </ul>
 </div>
-  </li></a>
-   <a href="#"  <?php if ($page=="Tutor") { ?>
+  
+   <a href="#"  <?php if ($page=="tutor") { ?>
     class="active" 
-  <?php } ?> data-toggle="collapse" data-target="#tutor"><li class="list-group-item">Tutors Management<i class="fas fa-angle-double-down icon-l"></i>
+  <?php } ?> data-toggle="collapse" data-target="#tutor"><li class="list-group-item">Tutors Management<i class="fas fa-angle-double-down icon-l"></i> </li></a>
 
 <div id="tutor" class="collapse">
-<ul class="list-group">
-	<li class="list-group-item">hhh</li>
-	<li class="list-group-item">hhh</li>
-	<li class="list-group-item">hhhh</li>
-	<li class="list-group-item">hhhhh</li>
+
+  <ul class="list-group">
+   <a href="tut_activate" <?php if ($page=="tutor") { ?>
+    class="active" 
+  <?php } ?> ><li class="list-group-item">Activate <i class="fas fa-toggle-on icon-l"></i></li></a>
+
+<a href="tut_suspend" <?php if ($page=="tut_suspend") { ?>
+    class="active" 
+  <?php } ?> ><li class="list-group-item">Suspend <i class="fas fa-power-off icon-l"></i></li></a>
+
+<a href="tut_message" <?php if ($page=="tut_message") { ?>
+    class="active" 
+  <?php } ?> ><li class="list-group-item">Message <i class="far fa-comments icon-l"></i></li></a>
+  <a href="tut_edit" <?php if ($page=="tut_edit") { ?>
+    class="active" 
+  <?php } ?> ><li class="list-group-item">Edit <i class="far fa-edit icon-l"></i></li></a>
+
 </ul>
 </div>
-  </li></a>
+ 
 
      <a href="#"  <?php if ($page=="orders") { ?>
     class="active" 
   <?php } ?> data-toggle="collapse" data-target="#orders"><li class="list-group-item">Projects Management
-  	<i class="fas fa-angle-double-down icon-l"></i>
+  	<i class="fas fa-angle-double-down icon-l"></i></li></a>
 <div id="orders" class="collapse">
 <ul class="list-group">
-	<li class="list-group-item">hhh</li>
-	<li class="list-group-item">hhh</li>
+	<li class="list-group-item">Delete <i class="far fa-trash-alt icon-l"></i></li>
+	<li class="list-group-item">Edit <i class="far fa-edit icon-l"></i></li>
 	<li class="list-group-item">hhhh</li>
 	<li class="list-group-item">hhhhh</li>
 </ul>
 </div>
 
-  </li></a>
+  
 
   <a href="../logout"> <li class="list-group-item"><i class="fas fa-sign-out-alt icon-r"></i>Logout</li></a>
 

@@ -862,3 +862,29 @@ body {
 .showFiles {
   height: 20rem;
   overflow: auto; }
+
+.dashboard__content {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center; }
+  .dashboard__content--items {
+    background: #00897B;
+    padding: 2.5rem;
+    align-content: center;
+    color: #EEEEEE;
+    min-width: 20rem;
+    border-radius: 2rem;
+    cursor: pointer; }
+    .dashboard__content--items button {
+      background: #494e6b;
+      border: none;
+      color: #EEEEEE;
+      min-width: 16rem;
+      padding: 2rem;
+      border-radius: 2rem;
+      text-transform: uppercase;
+      font-weight: 700;
+      cursor: pointer; }
+  .dashboard__content--items:not(:first-child) {
+    margin-left: 4rem; }

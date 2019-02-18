@@ -1,0 +1,31 @@
+.dashboard__content{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  justify-content: center;
+    
+    &--items{
+        background: $primary-color-3;
+        padding: 2.5rem;
+        align-content: center;
+        color: $primary-color-0;
+        
+        min-width: 20rem;
+        border-radius: 2rem;
+        cursor: pointer;
+        button{
+            background: $primary-color-1;
+            border: none;
+            color:  $primary-color-0;
+            min-width: 16rem;
+            padding: 2rem;
+            border-radius: 2rem;
+            text-transform: uppercase;
+            font-weight: 700;
+            cursor: pointer;
+        }
+    }
+    &--items:not(:first-child){
+        margin-left: 4rem;
+    }
+}
