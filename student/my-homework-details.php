@@ -1,5 +1,4 @@
-<meta http-equiv="refresh" content="300">
-<?php 
+<?php
 $project_id=convert_uudecode($_GET['id']);
 require_once("../dbconfig/dbconnect.php");
 require_once("../inc/utilities.php");
@@ -15,7 +14,7 @@ $results=$db->get_row($query);
 // print_r($results);
 
  ?>
-
+<head>  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.2/jquery-confirm.min.css"></head>
 <div class="display">
     <div class="display__content">
         <?php $page="my-homework"; ?>
@@ -28,7 +27,7 @@ $results=$db->get_row($query);
                 <div class="card">
                     <div class="card-header text-uppercase">details</div>
                     <div class="card-body">
-                        <?php 
+                        <?php
 
 					if ($db->num_rows<1) {
             echo "Order is no longer available";
@@ -134,7 +133,7 @@ $results=$db->get_row($query);
                             <div class="showFiles" id="files">
 
                                 <?php manageFiles($_SESSION['user_id'], $project_id) ?>
-                                
+
                             </div>
                                 <p>
                                 <form action="" enctype="multipart/form-data" method="POST" class="files_edit">
@@ -162,7 +161,7 @@ $results=$db->get_row($query);
 
                         </div>
 
-               
+
 
                     <div class="card-footer">
                         <div class="row">
@@ -199,14 +198,14 @@ $results=$db->get_row($query);
                         <div class="card-body">
 
             <div class="table-responsive " id="bids">
-                            <?php 
+                            <?php
                   $query="SELECT * FROM bids WHERE project_id=$project_id";
                   $results=$db->get_results($query);
 
                   if ($db->num_rows<1) {?>
                             <h1 class="headingSecondary">Nothing To Show Yet</h1>
                             <?php }else{ ?>
-                            
+
                                 <table class="table">
                                     <thead>
                                         <th>Tutor Id</th>
@@ -224,7 +223,7 @@ $results=$db->get_row($query);
                                             </td>
                                             <?php $query="SELECT * FROM users WHERE user_id='$result->tutor_id'";
 										$results=$db->get_row($query);
-										
+
 										 ?>
                                             <td>
                                                 <?php echo $results->rating ?>
@@ -245,22 +244,22 @@ $results=$db->get_row($query);
                                                 <?php echo $result->bid_total_amount?>
                                             </td>
                                             <td>
-                                                <form action="assing" method="POST">
-                                                    <input type="hidden" name="project_id" value="<?php echo $project_id; ?>">
-                                                    <input type="hidden" name="user_id" value="<?php echo $_SESSION['user_id']; ?>">
-                                                    <!-- <?php #echo $_SESSION['user_id']; die; ?> -->
-                                                    <input type="hidden" name="tutor_id" value="<?php echo $result->tutor_id; ?>">
-                                                    <input type="hidden" name="cost" value="<?php echo $result->bid_total_amount ?>">
-                                                    <input type="hidden" name="charged" value="<?php echo $result->bid_amount ?>">
-                                                    <button type="submit" name="assing" class="btn btn-success">Award</button>
-                                                </form>
+                <form action="assing" method="POST" id="assing">
+                    <input type="hidden" name="project_id" value="<?php echo $project_id; ?>">
+                    <input type="hidden" name="user_id" value="<?php echo $_SESSION['user_id']; ?>">
+                    <!-- <?php #echo $_SESSION['user_id']; die; ?> -->
+                    <input type="hidden" name="tutor_id" value="<?php echo $result->tutor_id; ?>">
+                    <input type="hidden" name="cost" value="<?php echo $result->bid_total_amount ?>">
+                    <input type="hidden" name="charged" value="<?php echo $result->bid_amount ?>">
+                    <button type="submit" name="assing" class="btn btn-success">Award</button>
+                </form>
                                             </td>
                                         </tr>
 
                                         <?php } ?>
                                     </tbody>
                                 </table>
-                            
+
                                 <?php }
 
 				       ?>
@@ -314,10 +313,14 @@ $results=$db->get_row($query);
     </div>
 </div>
 <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+
 <?php
 
 require_once"../inc/footer_links.php";
+
  ?>
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.2/jquery-confirm.min.js"></script>
  <script>
      $(function(){
       setInterval(function(){
@@ -327,5 +330,10 @@ require_once"../inc/footer_links.php";
             project_id: project_id
         });
       }, 30000);
+        $("#assing").submit(function(){
+
+     var c = confirm("Note that in order to assigne tutor ID: <?php if (isset($result->tutor_id)) {echo $result->tutor_id;} ?> \n your homework you will need to load $<?php if (isset( $result->bid_total_amount)) {echo $result->bid_total_amount;} ?> \n to your Writedom account. \nThe funds will be held in your account until you release them.\n Press okay to proceed");
+    return c; //you can just return c because it will be true or false
+      });
      });
  </script>

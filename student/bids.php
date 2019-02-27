@@ -1,3 +1,4 @@
+<head>  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.2/jquery-confirm.min.css"></head>
 <?php 
 
 if (isset($_POST['project_id'])) {
@@ -48,7 +49,7 @@ if (isset($_POST['project_id'])) {
                                                 <?php echo $result->bid_total_amount?>
                                             </td>
                                             <td>
-                                                <form action="assing" method="POST">
+                                                <form action="assing" method="POST" id="assing">
                                                     <input type="hidden" name="project_id" value="<?php echo $project_id; ?>">
                                                     <input type="hidden" name="user_id" value="<?php echo $_SESSION['user_id'] ?>">
                                                     <input type="hidden" name="tutor_id" value="<?php echo $result->tutor_id; ?>">
@@ -73,3 +74,20 @@ if (isset($_POST['project_id'])) {
 				  
 	
 ?>
+
+<?php
+
+require_once"../inc/footer_links.php";
+
+ ?>
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.2/jquery-confirm.min.js"></script>
+<script>
+$("#assing").submit(function(){
+ // e.preventDefault();
+        $("#assing").submit(function(){
+
+     var c = confirm("Note that in order to assigne tutor ID: <?php if (isset($result->tutor_id)) {echo $result->tutor_id;} ?> \n your homework you will need to load $<?php if (isset( $result->bid_total_amount)) {echo $result->bid_total_amount;} ?> \n to your Writedom account. \nThe funds will be held in your account until you release them.\n Press okay to proceed");
+    return c; //you can just return c because it will be true or false
+      });
+      });
+</script>

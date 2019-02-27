@@ -10,7 +10,7 @@ $user_id= $_SESSION['user_id'];
 
 $query="SELECT * FROM on_progress LEFT JOIN projects ON on_progress.project_id=projects.project_id WHERE on_progress.student_id='$user_id'";
 
-$results=$db->get_row($query);
+$results=$db->get_results($query);
 ?>
 
 <div class="display">
@@ -38,13 +38,14 @@ $results=$db->get_row($query);
                             </thead>
                             <tbody>
                                 <tr>
-                                        <?php #$name=base64_encode("wilson")  ?>
-                                        <?php #$name=convert_uuencode("wilson") ?>
+                                       <?php foreach ($results  as $result): ?>
+                                           
+                                       
                                     <td class="smalll"><a href="in-progress-details?pid=<?php echo urlencode(convert_uuencode($results->project_id)) ?>"><?php echo $results->project_id."<i class='fas fa-external-link-alt icon-r ml-4'></i>"; ?></a></td>
-                                    <td><?php echo $results->title; ?></td>
-                                    <td><?php echo $results->tutor_id; ?></td>
+                                    <td><?php echo $result->title; ?></td>
+                                    <td><?php echo $result->tutor_id; ?></td>
                                     <td>
-                                        <?php $time=getDateTimeDiff($date_global, $results->deadline );
+                                        <?php $time=getDateTimeDiff($date_global, $result->deadline );
                                          $period= explode(" ", $time); ?>
                                         <?php if ($period[1]=="days"): ?>
                                         <span class="text-dark">
@@ -67,7 +68,7 @@ $results=$db->get_row($query);
                                         <?php endif ?>
                                     </td>
                                 </tr>
-
+                                <?php endforeach ?>
                             </tbody>
                         </table>
                     </div>
