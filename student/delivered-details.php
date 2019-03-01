@@ -1,7 +1,7 @@
 <!-- <meta http-equiv="refresh" content="300"> -->
-<?php 
+<?php
 if (isset($_REQUEST['id'])) {
-   
+
    $project_id=convert_uudecode(convert_uuencode($_REQUEST['id']));
 }else{
     $project_id=convert_uudecode($_REQUEST['pid']);
@@ -34,7 +34,7 @@ $results=$db->get_row($query);
                 <div class="card">
                     <div class="card-header text-uppercase">details</div>
                     <div class="card-body">
-                        <?php 
+                        <?php
 
 					if ($db->num_rows<1) {
             echo "Order is no longer available";
@@ -130,61 +130,61 @@ $results=$db->get_row($query);
                             </table>
                         </div>
 
-                       
-                        <div class="card">
-                            <div class="card-header mb-3">
-                                <h1 class="headingSecondary mb-3">FILES/MESSAGES</h1>
-                            </div>
-                          
+
+        <div class="card">
+            <div class="card-header mb-3">
+                <h1 class="headingSecondary mb-3">FILES/MESSAGES</h1>
+            </div>
+
          <div class="row">
-                                <div class="col-sm-12 col-md-6 col lg-6">
-                                    <div class="card">
-                                        <div class="card-header"><strong>Files:</strong></div>
-                                        <div class="card-body files" id="files">
-                                            <p class="assign">
-                                            <?php filesDownload($_SESSION['user_id'], $project_id) ?>
-                                            </p>
-                                            <hr>
-                                            <h3><STRONG>Results</STRONG></h3>
-                                            <hr>
-                                            <p class="results">
-                                            	<?php resultsDownload($_SESSION['user_id'], $project_id) ?>
-                                            </p>
-                                            
+                <div class="col-sm-12 col-md-6 col lg-6">
+                    <div class="card">
+                        <div class="card-header"><strong>Files:</strong></div>
+                        <div class="card-body files" id="files">
+                            <p class="assign">
+                            <?php filesDownload($_SESSION['user_id'], $project_id) ?>
+                            </p>
+                            <hr>
+                            <h3><STRONG>Results</STRONG></h3>
+                            <hr>
+                            <p class="results">
+                            	<?php resultsDownload($_SESSION['user_id'], $project_id) ?>
+                            </p>
 
-                                        </div>
-                                    </div>
 
-                                </div>
-                                <div class="col-sm-12 col-md-6 col lg-6">
-                                    <div class="card">
-                                        <div class="card-header"><strong>Messages:</strong></div>
-                                        <div class="card-body messages">
-                                            <div class="messages__view" id="messageBox">
-                                                <script>
-                                                    let project_id="<?php echo $project_id; ?>";
-                                                   let user_type="<?php echo $_SESSION['user_type'] ?>";
-                                                </script>
+                        </div>
+                    </div>
 
-                                            </div>
+                </div>
+                <div class="col-sm-12 col-md-6 col lg-6">
+                    <div class="card">
+                        <div class="card-header"><strong>Messages:</strong></div>
+                        <div class="card-body messages">
+                            <div class="messages__view" id="messageBox">
+                                <script>
+                                    let project_id="<?php echo $project_id; ?>";
+                                   let user_type="<?php echo $_SESSION['user_type'] ?>";
+                                </script>
 
-                                        <form action="../chat" method="POST" id="chat_form"> 
-                                            <p class="messages__form" > 
-                                            <textarea name="message" placeholder="Messaging not supported for delivered orders (:" required disabled></textarea>
-                                                
-                                            </p>
-                                            <input type="hidden" name="project_id" value="<?php echo $results->project_id ?>" >
-                                            <input type="hidden" name="user_type" value="<?php echo $_SESSION['user_type'] ?>">
-                                            <input type="hidden" name="student_id" value="<?php echo $results->student_id ?>">
-                                            <input type="hidden" name="tutor_id" value="<?php echo $results->tutor_id ?>">
-                                            <p class="send">
-                                             <input type="submit" value="Send" disabled class="btn btn-sm btn-basic" id="send">
-                                                </p>
-                                        </form>
-                                        </div>
-                                    </div>
-                                </div>
-                                    </div>
+                            </div>
+
+                        <form action="../chat" method="POST" id="chat_form">
+                            <p class="messages__form" >
+                            <textarea name="message" placeholder="Messaging not supported for delivered orders (:" required disabled></textarea>
+
+                            </p>
+                            <input type="hidden" name="project_id" value="<?php echo $results->project_id ?>" >
+                            <input type="hidden" name="user_type" value="<?php echo $_SESSION['user_type'] ?>">
+                            <input type="hidden" name="student_id" value="<?php echo $results->student_id ?>">
+                            <input type="hidden" name="tutor_id" value="<?php echo $results->tutor_id ?>">
+                            <p class="send">
+                             <input type="submit" value="Send" disabled class="btn btn-sm btn-basic" id="send">
+                                </p>
+                        </form>
+                        </div>
+                    </div>
+                </div>
+        </div>
 
                                 <div class="card">
                                     <div class="card-header">Action</div>
@@ -192,7 +192,7 @@ $results=$db->get_row($query);
                                        <div class="row">
                                            <div class="col-sm-12 col-md-6 col-lg-6 mb-3">
                                             <a class="btn  btn-success btn-block text-uppercase " href="#satisfied" data-toggle="modal" id="Mlauncher">Satisfied</a>
-                                            
+
                                            </div>
 
                                            <div class="col-sm-12 col-md-6 col-lg-6 mb-3">
@@ -246,7 +246,7 @@ $results=$db->get_row($query);
                 </p>
             </div>
             <div class="modal-footer">
-                
+
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
             </div>
         </div>
@@ -265,17 +265,17 @@ $results=$db->get_row($query);
             </div>
             <div class="modal-body">
                 <p><form action="rate" method="post" id="revision">
-                   
+
                     <div class="form-row">
                                     <div class="col-8">
-                                        <textarea name="comment" 
-                                class="form-control" style="font-size: 18px; height: 35px;" 
+                                        <textarea name="comment"
+                                class="form-control" style="font-size: 18px; height: 35px;"
                                 placeholder="leave a comment.....:)"></textarea>
                                     </div>
 
                                     <div class="col-4">
-                                      
-                                        <input type="number" name="rating" class="form-control forms2__select" max="10" min="0" placeholder="rate out of 10">
+
+                                        <input type="number" name="rating" class="form-control forms2__select" max="10" min="0" placeholder="rate out of 10" required>
                                              <input type="hidden" name="project_id" value="<?php echo $results->project_id ?>" >
                                             <input type="hidden" name="student_id" value="<?php echo $results->student_id ?>">
                                             <input type="hidden" name="tutor_id" value="<?php echo $results->tutor_id ?>">
@@ -286,7 +286,7 @@ $results=$db->get_row($query);
                 </p>
             </div>
             <div class="modal-footer">
-                
+
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
             </div>
         </div>
@@ -348,12 +348,13 @@ $results=$db->get_row($query);
         </div>
     </div>
 </div>
-<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
 <?php
 
 require_once"../inc/footer_links.php";
  ?>
-
+ <script src="../js/chat.js"></script>
+<script src="../js/files.js"></script>
 <script>
 CKEDITOR.replace('instructions');
 </script>

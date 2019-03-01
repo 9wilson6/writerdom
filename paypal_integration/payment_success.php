@@ -77,10 +77,20 @@ if ($db->query($query)) {
 
         $query="DELETE FROM bids WHERE project_id='$project_id'";
         if ($db->query($query)) {
+             /////////////////////////////////notification/////////////////////////////////////////////
+    $note="Student Id: ".$user_id." assigned project id: ".$project_id." to Tutor id:".$tutor_id." at ".$date_global;
+    $note2="You Assigned project id: ".$project_id." to Tutor id:".$tutor_id." at ". $date_global;
+    $user_type=$_SESSION['user_type'];
+    $querys="INSERT INTO notifications(user_type, note) VALUES('$user_type','$note')";
+    $db->query($querys);
+    $querys="INSERT INTO notifications(user_type, note) VALUES(3,'$note2')";
+    $db->query($querys);
+      /////////////////////////////////notification/////////////////////////////////////////////
             unset($_SESSION['project_id']);
             // unset($_SESSION['user_id']);
             unset($_SESSION['tutor_id']);
             unset($_SESSION['charges']);
+            unset($_SESSION['user_type_pass']);
             ?>
         <script>
             let x="<?php echo $tutor_id ?>"

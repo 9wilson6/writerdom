@@ -1,4 +1,4 @@
-<?php 
+<?php
 if (isset($_POST['rate'])) {
 require_once("../inc/utilities.php");
 require_once("../dbconfig/dbconnect.php");
@@ -17,7 +17,14 @@ if ($db->query($query)) {
 
 	$query="UPDATE projects SET status=4 WHERE project_id='$project_id'";
 	if ($db->query($query)) {
-
+		/////////////////////////////////notification/////////////////////////////////////////////
+$note="Student Id: ".$student_id." approved project id: ".$project_id." on ".$date_global;
+$note2="You approved project id: ".$project_id." on ". $date_global;
+$querys="INSERT INTO notifications(user_type, note) VALUES(1,'$note')";
+$db->query($querys);
+$querys="INSERT INTO notifications(user_type, note) VALUES(3,'$note2')";
+$db->query($querys);
+/////////////////////////////////notification/////////////////////////////////////////////
 		$query="DELETE FROM delivered WHERE project_id='$project_id'";
 		if ($db->query($query)) {?>
 			<script>
@@ -30,5 +37,3 @@ if ($db->query($query)) {
  }
 }
  ?>
-
- 

@@ -1,4 +1,4 @@
-<?php 
+<?php
 require_once "../inc/header_links.php";
 $page="messages" ;
 require_once "../components/top_nav.php";
@@ -9,7 +9,7 @@ $results=$db->get_results($query);
  ?>
 <div class="display">
     <div class="display__content">
-         <?php require_once "../components/tutor_leftnav.php" ?> 
+         <?php require_once "../components/tutor_leftnav.php" ?>
         <div class="row">
             <div class="col-sm-12 col-md-12 col-lg-12 col-xl-9">
                 <h1 class="headingTertiary text-light">Messages</h1>
@@ -35,15 +35,13 @@ $results=$db->get_results($query);
                             </thead> <tbody>
                                 <div id="messages">
                             <?php foreach ($results as $result ): ?>
-            
+
                     <tr>
                             <td><?php echo $result->project_id; ?></td>
                             <td><?php echo $result->student_id; ?></td>
                             <td>
 
-                                <script>let project_id="<?php echo $result->project_id ; ?>";
-                               let user_type="<?php echo $_SESSION['user_type'] ?>";
-                            </script>
+                              <?php $project_id=$result->project_id; ?>
                                 <p style="max-height: 30px; overflow: auto;"><?php echo $result->message; ?></p>
                             </td>
                             <td><?php echo $result->date_sent; ?></td>
@@ -52,27 +50,30 @@ $results=$db->get_results($query);
                                 <a href="in-progress-details?pid=<?php echo urlencode(convert_uuencode($result->project_id)) ?>#messageBox" class="btn btn-sm btn-block btn-light">view</a>
                             </td>
                             <?php elseif($result->status==2): ?>
-                           
+
                             <td>
                                 <a href="delivered-details?pid=<?php echo urlencode(convert_uuencode($result->project_id)) ?>#messageBox" class="btn btn-sm btn-block btn-light">view</a>
                             </td>
                             <?php elseif($result->status==3): ?>
-                           
+
                             <td>
                                 <a href="revision-details?pid=<?php echo urlencode(convert_uuencode($result->project_id)) ?>#messageBox" class="btn btn-sm btn-block btn-light">view</a>
                             </td>
                             <?php elseif($result->status==4): ?>
-                            
+
                             <td>
                                <a href="" class="btn btn-sm btn-block btn-light">view</a>
                             </td>
                             <?php endif ?>
-                            
+
                      </tr>
-           
-                            <?php endforeach ?> 
+
+                            <?php endforeach ?>
+                            <script>let project_id="<?php echo $project_id ; ?>";
+                           let user_type="<?php echo $_SESSION['user_type'] ?>";
+                        </script>
                                 </div>
-                             </tbody>  
+                             </tbody>
                         </table>
                           </table>
                         </div>
@@ -135,13 +136,15 @@ $results=$db->get_results($query);
 require_once"../inc/footer_links.php";
 
  ?>
+ <script src="../js/chat.js"></script>
+<script src="../js/files.js"></script>
 <script>
     $( document ).ready(function() {
             $.post("../chat", {
            project_id: project_id,
            user_type: user_type,
            event: "keylistener"
-        }); 
+        });
 
 
 

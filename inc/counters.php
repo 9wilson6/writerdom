@@ -1,10 +1,6 @@
 <?php
 require_once("../dbconfig/dbconnect.php");
 
-
-
-
-
 //////////////////////////IN PROGRESS//////////////////////////////////////////////
 ///
 ///
@@ -22,7 +18,12 @@ return $db->num_rows;
 }
 ////////////////////////////////////////////////////////////////////
 if ($_POST['target']=="in_progress") {
-	echo in_progress($_POST['user_type'], $_POST['user_id']);
+	if (in_progress($_POST['user_type'], $_POST['user_id'])>0) {
+		echo "<div class='my_pill'>".in_progress($_POST['user_type'], $_POST['user_id'])."</div>";
+	}else{
+		echo "<div class='pill'>".in_progress($_POST['user_type'], $_POST['user_id'])."</div>";
+	}
+
 }
 
 //////////////////////////IN PROGRESS//////////////////////////////////////////////
@@ -51,7 +52,12 @@ return $db->num_rows;
 }
 ////////////////////////////////////////////////////////////////////
 if ($_POST['target']=="closed") {
-	echo closed($_POST['user_type'], $_POST['user_id']);
+	if (closed($_POST['user_type'], $_POST['user_id'])>0) {
+echo "<div class='my_pill'>".closed($_POST['user_type'], $_POST['user_id'])."</div>";
+	}else{
+	echo "<div class='pill'>".closed($_POST['user_type'], $_POST['user_id'])."</div>";
+	}
+
 }
 
 //////////////////////////CLOSED//////////////////////////////////////////////
@@ -71,7 +77,12 @@ return $db->num_rows;
 }
 ////////////////////////////////////////////////////////////////////
 if ($_POST['target']=="on_revision") {
-	echo on_revision($_POST['user_type'], $_POST['user_id']);
+
+	if (on_revision($_POST['user_type'], $_POST['user_id'])>0) {
+echo "<div class='my_pill'>".on_revision($_POST['user_type'], $_POST['user_id'])."</div>";
+	}else{
+	echo "<div class='pill'>".on_revision($_POST['user_type'], $_POST['user_id'])."</div>";
+	}
 }
 function assigned(){
 
@@ -95,7 +106,12 @@ return $db->num_rows;
 }
 ////////////////////////////////////////////////////////////////////////////////
 if ($_POST['target']=="delivered") {
-	echo delivered($_POST['user_type'], $_POST['user_id']);
+
+	if (delivered($_POST['user_type'], $_POST['user_id'])>0) {
+echo "<div class='my_pill'>".delivered($_POST['user_type'], $_POST['user_id'])."</div>";
+	}else{
+	echo "<div class='pill'>".delivered($_POST['user_type'], $_POST['user_id'])."</div>";
+	}
 }
 //////////////////////////DELIVERED//////////////////////////////////////////////
 ///
@@ -120,7 +136,12 @@ return $db->num_rows;
 }
 ///////////////////////////////////////////////////////////////////////////////////
 if ($_POST['target']=="available") {
-	echo available($_POST['user_type'], $_POST['user_id']);
+
+	if (available($_POST['user_type'], $_POST['user_id'])>0) {
+echo "<div class='my_pill'>".available($_POST['user_type'], $_POST['user_id'])."</div>";
+	}else{
+	echo "<div class='pill'>".available($_POST['user_type'], $_POST['user_id'])."</div>";
+	}
 }
 
 //////////////////////////AVAILABLE//////////////////////////////////////////////
@@ -148,7 +169,12 @@ return $db->num_rows;
 }
 ///////////////////////////////////////////////////////////////////////////////////
 if ($_POST['target']=="messages") {
-	echo messages($_POST["user_id"], $_POST["user_type"]);
+
+	if (messages($_POST["user_id"], $_POST["user_type"])>0) {
+echo "<div class='my_pill'>".messages($_POST["user_id"], $_POST["user_type"])."</div>";
+	}else{
+	echo "<div class='pill'>".messages($_POST["user_id"], $_POST["user_type"])."</div>";
+	}
 	}
 //////////////////////////MESSAGES//////////////////////////////////////////////
 ///

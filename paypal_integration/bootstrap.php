@@ -9,15 +9,15 @@ $enableSandbox = true;
 // PayPal settings. Change these to your account details and the relevant URLs
 // for your site.
 $paypalConfig = [
-    'client_id' => 'AYJ-dW-Wx_Ubt7S12Fvl5uhodfyvQH3V8HOZxqN521Iazv8ptRwtTcMyUEyKdno4ZzfenglKKS2zKsLj',
-    'client_secret' => 'EBnnXZt7SEWvdjOisjyfc_K1mFsnuv5TROEenqrCzmFwCGwa3oLhpQdIh_o_RhMRTZiRmNWf6lVzeJw-',
+    'client_id' => 'ARm15qbnA4K-YqY1WCvq4KbsXYinKuMKb-GBozn9QmQB1WwzWADZyhuqf0WPsde1p6YqJ9ojoj9iXaYv',
+    'client_secret' => 'EH7kYum5tA25gBHmgzNSVa6O1_Sqfi7eZU60MMQsNUXcbluIabRd1NDM_97cZUsgMdPeBKXG7XEinKlH',
     'return_url' => 'http://localhost/writerdom/paypal_integration/payment_success.php',
     'cancel_url' => 'http://localhost/writerdom/paypal_integration/payment_cancel.php'
 ];
 // Database settings. Change these for your database configuration.
 $dbConfig = [
     'host' => 'localhost',
-    'username' => 'user',
+    'username' => 'root',
     'password' => '',
     'name' => 'writerdom'
 ];

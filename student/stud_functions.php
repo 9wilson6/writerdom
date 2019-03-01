@@ -36,14 +36,33 @@ global $success, $error, $date_global;
   $sql="INSERT INTO projects(title, subject, academic_level, style, type_of_paper, deadline, pages, slides, problems, sources, instructions, budget, student_id, DATE_CREATED) VALUES('$title', '$subject','$academic_level','$style','$papertype','$datetyme','$pages', '$slides','$problems','$sources', '$instructions', '$budget', '$student_id', '$date_global')";
   $result=$db->query($sql);
   if ($result==1) {
+$query="SELECT project_id FROM projects WHERE DATE_CREATED='$date_global' AND student_id='$student_id'";
+    $results=$db->get_row($query);
+
+  require_once("../inc/notifications.php");
+  $note="User ID: ". $student_id." posted project ID: ".$results->project_id." at ".date("Y-m-d H:i:sa",$date_global);
+  $note2="You posted project ID: ".$results->project_id." at ".date("Y-m-d H:i:sa",$date_global);
+  //,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,notification,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+  //
+  //
+  //
+  //,,,,,,,,,,,,,,,,,,,,,,,,,, // 
+  $user_type=$_SESSION['user_type'];
+ $querys="INSERT INTO notifications(user_type, note) VALUES('$user_type','$note')";
+  $db->query($querys);
+  $querys="INSERT INTO notifications(user_type, note) VALUES(3,'$note2')";
+  $db->query($querys);
+  // ........,,,,,,,,,,,,,,,,,,,,,,,,,,notification,,,,,,,,,,,,,,,,,
+  // 
+  // 
+  // ,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,//
     if(count($_FILES['file']['name'])==0) {
     $success="Homework Posted files Successfully";
 }else{
- $query="SELECT project_id FROM projects WHERE DATE_CREATED='$date_global' AND student_id='$student_id'";
-    $results=$db->get_row($query);
+ 
     filesUpload($student_id, $results->project_id);
       $success="Homework Posted Successfully";
-  
+
    }
    // $success="Homework Posted Successfully";
   
@@ -92,6 +111,15 @@ global $success, $error, $date_global;
 
 
   if ($db->query($query)) {
+    /////////////////////////////////notification/////////////////////////////////////////////
+    $note="Student Id: ".  $student_id." edited project id: ".$project_id." at ".date("Y-m-d H:i:sa",$date_global);
+    $note2="You Edited project id: ".$project_id." at ".date("Y-m-d H:i:sa",$date_global);
+    $user_type=$_SESSION['user_type'];
+    $querys="INSERT INTO notifications(user_type, note) VALUES('$user_type','$note')";
+    $db->query($querys);
+    $querys="INSERT INTO notifications(user_type, note) VALUES(3,'$note2')";
+    $db->query($querys);
+      /////////////////////////////////notification/////////////////////////////////////////////
       $success="Homework Updated Successfully";
        header("location:my-homework-details?id=".urlencode(convert_uuencode($project_id)));
   }else{

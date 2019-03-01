@@ -1,4 +1,4 @@
-<?php 
+<?php
 require_once "../inc/header_links.php";
 require_once"../inc/utilities.php";
 #//////////////////////////////////////////////////////////////////////////////////// -->
@@ -11,7 +11,7 @@ if (isset($_POST['submit'])) {
 	$student_id=$_POST['student_id'];
 	$tutor_id=$_SESSION['user_id'];
 	resultsUpload($student_id, $project_id, $result_type);
-	   
+
     if ($result_type=="final") {
         $query="INSERT INTO delivered(project_id, student_id, tutor_id)VALUES('$project_id', '$student_id', '$tutor_id')";
         if ($db->query($query)) {
@@ -19,6 +19,8 @@ if (isset($_POST['submit'])) {
         if ($db->query($query)) {
             $query="UPDATE projects SET status=2 WHERE project_id='$project_id'";
             if ($db->query($query)) {
+							$query="UPDATE chats SET status=1 WHERE project_id='$project_id'";
+							$db->query($query);
                ?>
             <script>
                 alert("Assignment Results Uploaded Successfully");
@@ -28,7 +30,7 @@ if (isset($_POST['submit'])) {
             }
          }
     }
-        
+
 }else{ ?>
 
             <script>
@@ -42,7 +44,7 @@ if (isset($_POST['submit'])) {
 $tutor_id=$_SESSION['user_id'];
 if (isset($_REQUEST['pid'])) {
 	$project_id=convert_uudecode($_REQUEST['pid']);
-	
+
 }else{
 	header("location:dashboard");
 }
@@ -56,7 +58,7 @@ require_once "../components/top_nav.php";
         <?php require_once "../components/tutor_leftnav.php";
 		require_once("../dbconfig/dbconnect.php");
 
-		
+
 		?>
         <div class="row">
 
@@ -217,12 +219,12 @@ require_once "../components/top_nav.php";
                             <p>
                                 <STRONG>Instructions:<br></STRONG>
                                 <div class="pl-5"><?php echo $results->instructions; ?></div>
-                                
+
                             </p>
                              <div class="bg-dark text-warning">
                                 <STRONG>Revision Instructions:<br></STRONG>
                                 <div class="pl-5 bg-dark text-warning"><?php echo $results->revision_instructions; ?></div>
-                                
+
                             </div>
                             <div class="row">
                                 <div class="col-sm-12 col-md-6 col lg-6">
@@ -239,7 +241,7 @@ require_once "../components/top_nav.php";
                                             <p class="results">
                                             	<?php resultsDownload($results->student_id,$results->project_id) ?>
                                             </p>
-                                            
+
 
                                         </div>
                                     </div>
@@ -254,14 +256,14 @@ require_once "../components/top_nav.php";
                                                    let user_type="<?php echo $_SESSION['user_type'] ?>";
                                                 </script>
                                             <div class="messages__view " id="messageBox">
-                                                
+
 
                                             </div>
 
-                                           <form action="../chat" method="POST" id="chat_form"> 
-                                           	<p class="messages__form" > 
+                                           <form action="../chat" method="POST" id="chat_form">
+                                           	<p class="messages__form" >
                                             	<textarea name="message" placeholder="type a message here......." required></textarea>
-												
+
                                             </p>
                                             <input type="hidden" name="project_id" value="<?php echo $results->project_id ?>" >
                                             <input type="hidden" name="user_type" value="<?php echo $_SESSION['user_type'] ?>">
@@ -276,7 +278,7 @@ require_once "../components/top_nav.php";
                                     </div>
                                 </div>
                             </div>
-                            
+
 
 	<div class="card">
 		<div class="card-header"></div>
@@ -302,7 +304,7 @@ require_once "../components/top_nav.php";
             </form>
 		</div>
 	</div>
-                               
+
 
                         </div>
                     </div>
@@ -470,8 +472,4 @@ require_once "../components/top_nav.php";
 
 <?php
 require_once"../inc/footer_links.php";
-
-
-
  ?>
-

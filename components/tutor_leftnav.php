@@ -8,32 +8,32 @@ require_once "../inc/sessios.php";
 
   <a href="dashboard"  <?php if ($page=="dashboard") { ?>
     class="active"
-  <?php } ?>><li class="list-group-item"><i class="far fa-credit-card icon-r"></i>Available <span class="pill float-right" id="available">0</span></li></a>
-  
+  <?php } ?>><li class="list-group-item"><i class="far fa-credit-card icon-r"></i>Available <span class=" float-right" id="available">0</span></li></a>
+
   <a href="in-progress"  <?php if ($page=="progress") { ?>
   	class="active"
-  <?php } ?>><li class="list-group-item"><i class="fas fa-sync-alt icon-r"></i>In Progress <span class="pill float-right" id="in_progress">0</span></li></a>
+  <?php } ?>><li class="list-group-item"><i class="fas fa-sync-alt icon-r"></i>In Progress <span class=" float-right" id="in_progress">0</span></li></a>
 
 
   <a href="delivered"  <?php if ($page=="delivered") { ?>
     class="active"
-  <?php } ?>><li class="list-group-item"><i class="fas fa-check icon-r"></i>Delivered <span class="pill float-right" id="delivered">0</span></li></a>
+  <?php } ?>><li class="list-group-item"><i class="fas fa-check icon-r"></i>Delivered <span class=" float-right" id="delivered">0</span></li></a>
 
   <a href="revision" <?php if ($page=="revision") { ?>
   	class="active"
-  <?php } ?>><li class="list-group-item"><i class="fas fa-redo-alt icon-r" ></i></i>On Revision <span class="pill float-right" id="on_revision">0</span></li></a>
+  <?php } ?>><li class="list-group-item"><i class="fas fa-redo-alt icon-r" ></i></i>On Revision <span class=" float-right" id="on_revision">0</span></li></a>
 
 
   <a href="my-projects"  <?php if ($page=="projects") { ?>
   	class="active"
-  <?php } ?>><li class="list-group-item"><i class="far fa-thumbs-up icon-r"></i>Closed <span class="pill float-right" id="closed">0</span></li></a>
+  <?php } ?>><li class="list-group-item"><i class="far fa-thumbs-up icon-r"></i>Closed <span class=" float-right" id="closed">0</span></li></a>
 
 
 
 
   <a href="messages"  <?php if ($page=="messages") { ?>
   	class="active"
-  <?php } ?>><li class="list-group-item"><i class="fas fa-sign-out-alt icon-r"></i>messages <span class="pill float-right" id="messages">0</span></li></a>
+  <?php } ?>><li class="list-group-item"><i class="fas fa-sign-out-alt icon-r"></i>messages <span class=" float-right" id="messages">0</span></li></a>
 
   <a href="announcements"  <?php if ($page=="announcements") { ?>
   	class="active"
@@ -57,9 +57,9 @@ require_once "../inc/sessios.php";
   <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 <script>
   $(function(){
-   
+
    setInterval(function() {
-       
+
        let user_id= "<?php echo $_SESSION['user_id']; ?>";
       let user_type="<?php echo $_SESSION['user_type']; ?>";
         // alert(user_type);
@@ -67,7 +67,7 @@ require_once "../inc/sessios.php";
             target: "messages",
             user_id: user_id,
             user_type: user_type
-           
+
         });
 
       $("#available").load("../inc/counters",{
@@ -75,12 +75,12 @@ require_once "../inc/sessios.php";
         user_id: user_id,
         user_type: user_type
       });
-    
+
       $("#delivered").load("../inc/counters", {
             target: "delivered",
             user_id: user_id,
             user_type: user_type
-           
+
         });
       $("#in_progress").load("../inc/counters",
       {

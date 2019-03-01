@@ -8,6 +8,7 @@ if (isset($_POST['assing'])) {
 	session_start();
 	$_SESSION['project_id']=$_POST['project_id'];
 	$_SESSION['user_id']=$_POST['user_id'];
+	$_SESSION['user_type_pass']=$_POST['user_type'];
 	$_SESSION['tutor_id']=$_POST['tutor_id'];
 	$_SESSION['cost']=$_POST['cost'];
 	$_SESSION['charges']=$_POST['charged'];
@@ -26,7 +27,7 @@ if (isset($_POST['assing'])) {
 	    ->setTotal($amountPayable);
 	$transaction = new Transaction();
 	$transaction->setAmount($amount)
-	    ->setDescription('Some description about the payment being made')
+	    ->setDescription("$".$_POST['cost']." TO BE PAID FOR COMPLETION OF PROJECT ID: ".$_POST['project_id'])
 	    ->setInvoiceNumber($invoiceNumber);
 	$redirectUrls = new RedirectUrls();
 	$redirectUrls->setReturnUrl($paypalConfig['return_url'])
@@ -39,7 +40,7 @@ if (isset($_POST['assing'])) {
 	try {
 	    $payment->create($apiContext);
 	} catch (Exception $e) {
-	    throw new Exception('Unable to create link for payment');
+	    throw new Exception('message: '.$e->getMessage());
 	}
 
 	header('location:' . $payment->getApprovalLink());

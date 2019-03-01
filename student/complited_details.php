@@ -1,5 +1,5 @@
 <meta http-equiv="refresh" content="300">
-<?php 
+<?php
 $project_id=convert_uudecode($_GET['id']);
 require_once("../dbconfig/dbconnect.php");
 require_once("../inc/utilities.php");
@@ -28,7 +28,7 @@ $results=$db->get_row($query);
                 <div class="card">
                     <div class="card-header text-uppercase">details</div>
                     <div class="card-body">
-                        <?php 
+                        <?php
 
 					if ($db->num_rows<1) {
             echo "Order is no longer available";
@@ -127,23 +127,64 @@ $results=$db->get_row($query);
                         <?php }
 
 					 ?>
-                        <div class="card">
-                            <div class="card-header">
-                                <h1 class="headingSecondary mb-3">Results</h1>
-                            </div>
-                            <div class="showFiles" id="files">
+					 <div class="card">
+							 <div class="card-header mb-3">
+									 <h1 class="headingSecondary mb-3">FILES/MESSAGES</h1>
+							 </div>
 
-                                <?php  filesDownload($_SESSION['user_id'], $project_id) ?>
+						<div class="row">
+									 <div class="col-sm-12 col-md-6 col lg-6">
+											 <div class="card">
+													 <div class="card-header"><strong>Files:</strong></div>
+													 <div class="card-body files" id="files">
+															 <p class="assign">
+															 <?php filesDownload($_SESSION['user_id'], $project_id) ?>
+															 </p>
+															 <hr>
+															 <h3><STRONG>Results</STRONG></h3>
+															 <hr>
+															 <p class="results">
+																 <?php resultsDownload($_SESSION['user_id'], $project_id) ?>
+															 </p>
 
-                                <?php resultsDownload($_SESSION['user_id'], $project_id)  ?>
-        
-                                
-                            </div>
 
-                        </div>
+													 </div>
+											 </div>
+
+									 </div>
+									 <div class="col-sm-12 col-md-6 col lg-6">
+											 <div class="card">
+													 <div class="card-header"><strong>Messages:</strong></div>
+													 <div class="card-body messages">
+															 <div class="messages__view" id="messageBox">
+																	 <script>
+																			 let project_id="<?php echo $project_id; ?>";
+																			let user_type="<?php echo $_SESSION['user_type'] ?>";
+																	 </script>
+
+															 </div>
+
+													 <form action="../chat" method="POST" id="chat_form">
+															 <p class="messages__form" >
+															 <textarea name="message" placeholder="Messaging not supported for closed orders (:" required disabled></textarea>
+
+															 </p>
+															 <input type="hidden" name="project_id" value="<?php echo $results->project_id ?>" >
+															 <input type="hidden" name="user_type" value="<?php echo $_SESSION['user_type'] ?>">
+															 <input type="hidden" name="student_id" value="<?php echo $results->student_id ?>">
+															 <input type="hidden" name="tutor_id" value="<?php echo $results->tutor_id ?>">
+															 <p class="send">
+																<input type="submit" value="Send" disabled class="btn btn-sm btn-basic" id="send">
+																	 </p>
+													 </form>
+													 </div>
+											 </div>
+									 </div>
+					 </div>
                     </div>
                 </div>
             </div>
+					</div>
 
 
             <div class="col-sm-12 col-md-12 col-lg-12 col-xl-3">
@@ -191,6 +232,8 @@ $results=$db->get_row($query);
 
 require_once"../inc/footer_links.php";
  ?>
+ <script src="../js/chat.js"></script>
+<script src="../js/files.js"></script>
  <script>
      $(function(){
       setInterval(function(){

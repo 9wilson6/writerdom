@@ -186,6 +186,19 @@ body {
   height: 90%;
   overflow-y: auto; }
 
+.my_pill {
+  background-color: red !important;
+  min-width: 25px;
+  min-height: 25px;
+  text-align: center;
+  margin: 0;
+  color: #EEEEEE;
+  border-radius: 12.5px;
+  font-size: 1.2rem; }
+
+.alert {
+  font-size: 14px; }
+
 .navbar {
   animation-duration: 2s;
   animation-delay: .3s;
@@ -873,7 +886,7 @@ body {
     padding: 2.5rem;
     align-content: center;
     color: #EEEEEE;
-    min-width: 20rem;
+    min-width: 10rem;
     border-radius: 2rem;
     cursor: pointer; }
     .dashboard__content--items button {

@@ -1,4 +1,4 @@
-<?php 
+<?php
 if (isset($_POST['submit'])) {
 	require_once("../dbconfig/dbconnect.php");
 	require_once("../inc/utilities.php");
@@ -24,6 +24,14 @@ if (isset($_POST['submit'])) {
 	<?php }else{
 			$query="INSERT INTO revisions(student_id, tutor_id, project_id, revision_instructions,revision_deadline)VALUES('$student_id','$tutor_id','$project_id','$instructions','$datetyme')";
 	if ($db->query($query)) {
+             /////////////////////////////////notification/////////////////////////////////////////////
+    $note="Student Id: ".$student_id." sent project id: ".$project_id." back for revision at ".$date_global;
+    $note2="You sent project id: ".$project_id." back for revision at ". $date_global;
+    $querys="INSERT INTO notifications(user_type, note) VALUES(1,'$note')";
+    $db->query($querys);
+    $querys="INSERT INTO notifications(user_type, note) VALUES(3,'$note2')";
+    $db->query($querys);
+      /////////////////////////////////notification/////////////////////////////////////////////
 			$query="DELETE FROM delivered WHERE project_id='$project_id'";
 			if ($db->query($query)) {
 				$query="UPDATE projects SET status=3, deadline='$datetyme' WHERE project_id='$project_id'";
@@ -34,11 +42,6 @@ if (isset($_POST['submit'])) {
 			}
 		}
 	}
-	
+
 }
  ?>
-
-
-
-				
-				

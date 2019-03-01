@@ -4,7 +4,7 @@ require_once("../dbconfig/dbconnect.php");
 if (isset($_POST['submit'])) {
 	function available(){
 	global $db;
-	$query="SELECT * FROM projects";
+	$query="SELECT * FROM projects WHERE status=0";
 	$results=$db->get_results($query);
 	return $db->num_rows;
 }
@@ -37,7 +37,7 @@ function delivered(){
 	return $db->num_rows;
 }
 if ($_POST['type']=="delivered") {
-	echo progress();
+	echo delivered();
 }
 function closed(){
 	global $db;

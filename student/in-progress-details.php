@@ -257,3 +257,5 @@ $results=$db->get_row($query);
 
 require_once"../inc/footer_links.php";
  ?>
+ <script src="../js/chat.js"></script>
+<script src="../js/files.js"></script>

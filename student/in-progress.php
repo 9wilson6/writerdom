@@ -1,4 +1,4 @@
-<?php 
+<?php
 require_once "../inc/header_links.php";
 $page="progress";
 require_once "../components/top_nav.php";
@@ -19,13 +19,13 @@ $results=$db->get_results($query);
         <div class="row">
             <div class="col-sm-12 col-md-12 col-lg-12 col-xl-9">
                 <h1 class="headingTertiary text-light">In Progress</h1>
-                <div class="card"> 
+                <div class="card">
                     <div class="card-header">Relax our expert Tutors are working on your Homework</div>
                 <?php if ($db->num_rows<1) { ?>
-                   <h1 class="headingSecondary text-light text-dark">There is nothing to show Yet</h1> 
+                   <h1 class="headingSecondary text-light text-dark">There is nothing to show Yet</h1>
                <?php }else{?>
-                          
-            
+
+
        <div class="card-body">
                         <table class="table table-bordered">
                             <thead>
@@ -39,9 +39,9 @@ $results=$db->get_results($query);
                             <tbody>
                                 <tr>
                                        <?php foreach ($results  as $result): ?>
-                                           
-                                       
-                                    <td class="smalll"><a href="in-progress-details?pid=<?php echo urlencode(convert_uuencode($results->project_id)) ?>"><?php echo $results->project_id."<i class='fas fa-external-link-alt icon-r ml-4'></i>"; ?></a></td>
+
+
+                                    <td class="smalll"><a href="in-progress-details?pid=<?php echo urlencode(convert_uuencode($result->project_id)) ?>"><?php echo $result->project_id."<i class='fas fa-external-link-alt icon-r ml-4'></i>"; ?></a></td>
                                     <td><?php echo $result->title; ?></td>
                                     <td><?php echo $result->tutor_id; ?></td>
                                     <td>
