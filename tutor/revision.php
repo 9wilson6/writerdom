@@ -45,7 +45,7 @@ $results=$db->get_results($query)
                                             <?php $time=getDateTimeDiff($date_global, $result->revision_deadline );
                                              $period= explode(" ", $time); ?>
                                             <?php if ($period[1]=="days"): ?>
-                                            <span class="text-light">
+                                            <span class="text-dark">
                                                 <?php echo "{$time}"; ?></span>
                                             <?php elseif($period[1]=="day"): ?>
                                             <span class="text-success">

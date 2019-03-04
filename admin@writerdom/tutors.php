@@ -3,6 +3,7 @@ require_once("../inc/header_links.php");
 require_once("./inc/topnav.php");
 require_once("../inc/utilities.php");
 $page="";
+$mainpage="";
 require_once("../inc/global_functions.php");
 require_once("../dbconfig/dbconnect.php");
 $query="SELECT * FROM users WHERE type =2";
@@ -14,10 +15,10 @@ $results=$db->get_results($query);
         <?php require_once "inc/leftnav.php" ?>
         <div class="row">
             <div class="col-sm-12 col-md-12 col-lg-12 col-xl-11">
-                <h1 class="headingTertiary text-light text-uppercase">Tutors</h1>
+                <h1 class="headingTertiary text-light text-uppercase">Registered Tutors</h1>
 
                 <div class="card">
-                   	<div class="card-header text-uppercase">Tutors</div>
+                   	<div class="card-header text-uppercase">Registered Tutors</div>
                    	<div class="card-body">
                   <?php if ($db->num_rows<1): ?>
                         <h1 class="classHeadingSecondary">There is Nothing To show Yet</h1>

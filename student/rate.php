@@ -8,6 +8,13 @@ $rating=$_POST['rating'];
 $project_id=$_POST['project_id'];
 $student_id=$_POST['student_id'];
 $tutor_id=$_POST['tutor_id'];
+$charges=$_POST['charges'];
+
+$query="SELECT dues FROM users WHERE user_id='$tutor_id'";
+$result=$db->get_var($query);
+$dues=($result+$charges);
+$query="UPDATE users SET dues='$dues' WHERE user_id='$tutor_id'";
+$db->query($query);
 
 $query_="UPDATE chats SET status=1 WHERE project_id='$project_id'";
 $db->query($query_);
@@ -26,6 +33,7 @@ $querys="INSERT INTO notifications(user_type, note) VALUES(3,'$note2')";
 $db->query($querys);
 /////////////////////////////////notification/////////////////////////////////////////////
 		$query="DELETE FROM delivered WHERE project_id='$project_id'";
+
 		if ($db->query($query)) {?>
 			<script>
 		alert("We are delighted to have worked with you (. ❛ ᴗ ❛.)");

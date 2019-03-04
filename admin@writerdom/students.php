@@ -2,7 +2,8 @@
 require_once("../inc/header_links.php");
 require_once("./inc/topnav.php");
 require_once("../inc/utilities.php");
-$page="";
+$page="students";
+$mainpage="";
 require_once("../inc/global_functions.php");
 require_once("../dbconfig/dbconnect.php");
 $query="SELECT * FROM users WHERE type =1";

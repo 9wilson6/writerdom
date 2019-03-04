@@ -25,7 +25,10 @@ session_gen ();
       <a class="nav-link dropdown-toggle nav-link--excemption" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Welcome, 
         <?php $name= explode(" ", $_SESSION['username']);
         echo ucfirst($name[0]);
-        $user_id=$_SESSION['user_id'];
+        if (isset($_SESSION['user_id'])) {
+          $user_id=$_SESSION['user_id'];
+        }
+        
 
        ?><i class="far fa-user-circle icon"></i></a>
       <div class="dropdown-menu navbar__toggle" aria-labelledby="navbarDropdown">

@@ -39,14 +39,14 @@ global $success, $error, $date_global;
 $query="SELECT project_id FROM projects WHERE DATE_CREATED='$date_global' AND student_id='$student_id'";
     $results=$db->get_row($query);
 
-  require_once("../inc/notifications.php");
-  $note="User ID: ". $student_id." posted project ID: ".$results->project_id." at ".date("Y-m-d H:i:sa",$date_global);
+   //,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,notification,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+  //
+  //
+  //
+  //,,,,,,,,,,,,,,,,,,,,,,,,,, //
+  $note="Student ID: ". $student_id." posted project ID: ".$results->project_id." at ".date("Y-m-d H:i:sa",$date_global);
   $note2="You posted project ID: ".$results->project_id." at ".date("Y-m-d H:i:sa",$date_global);
-  //,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,notification,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-  //
-  //
-  //
-  //,,,,,,,,,,,,,,,,,,,,,,,,,, // 
+  
   $user_type=$_SESSION['user_type'];
  $querys="INSERT INTO notifications(user_type, note) VALUES('$user_type','$note')";
   $db->query($querys);

@@ -12,7 +12,7 @@ if (isset($_POST['limit'])) {
 				  <?php echo $result->note; ?>
 				</div>
 			<?php }elseif ($result->user_type==2) { ?>
-				<div class="alert alert-success" role="alert">
+				<div class="alert alert-danger" role="alert">
 				  <?php echo $result->note; ?>
 				</div>
 			<?php }else{ ?>

@@ -1,6 +1,7 @@
 <?php
 require_once("../inc/header_links.php");
 require_once("./inc/topnav.php");
+$mainpage="dashboard";
 $page="dashboard";
 require_once("./inc/leftnav.php");
  ?>
@@ -16,30 +17,53 @@ require_once("./inc/leftnav.php");
             <div class="card-body">
 
                        <div class="dashboard__content mb-5">
-                        <a href="available"  class="dashboard__content--items"> <button >Available <br><span id="available"></span></button> </a>
-                        <a href="progress"  class="dashboard__content--items"> <button>Progress <br><span  id="progress"></span></button> </a> </div>
-                       <div class="dashboard__content mb-5">
-                          <a href="delivered"  class="dashboard__content--items"> <button >Delivered <br><span id="delivered"></span></button> </a>
-                        <a href="revision"  class="dashboard__content--items"> <button>Revisions <br><span id="revision"></span></button> </a>
-                         </div>
-                       <div class="dashboard__content mb-5">
-                        <a href="closed"  class="dashboard__content--items"> <button>Closed <br><span id="closed"></span></button> </a>
-                        <a href="disputed"  class="dashboard__content--items"> <button>Disputed <br>60</button> </a>
-                         </div>
-                       <div class="dashboard__content mb-5">
-                        <a href="tutors"  class="dashboard__content--items"> <button>Tutors <br><span id="tutors"></span></button> </a>
+                       <div class="row">
 
-                        <a href="students"  class="dashboard__content--items"> <button>Students <br><span id="students"></span></button> </a>
-                        </div>
+              <div class="col-sm-4">
+                 <div class="card-header">Order Summary</div>
+                 <ul class="list-group">
+               <a href="available"  class="dashboard__content--items"> <li class="list-group-item"> Available <span id="available"></span> </li></a>
+               <a href="progress"  class="dashboard__content--items"> <li class="list-group-item">Progress<span  id="progress"></span></li> </a>
+               <a href="delivered"  class="dashboard__content--items"> <li class="list-group-item">Delivered <span id="delivered"></span></li> </a>
+               <a href="revision"  class="dashboard__content--items"> <li class="list-group-item">Revisions <span id="revision"></span></li></a>
+               <a href="closed"  class="dashboard__content--items"> <li class="list-group-item">Closed <span id="closed"></span></li> </a>
+                <!-- <a href="disputed"  class="dashboard__content--items"> <li class="list-group-item">Disputed <span id="disputed"></span></li></a> -->
+              
+              </ul>
+    </div><!--col-1-->
+               <div class="col-sm-4">
+                 <div class="card-header">Accounts Summary</div>
+                 <ul class="list-group">
+                   <a href="tutors"  class="dashboard__content--items"> <li class="list-group-item">Tutors <span id="tutors"></span></li></a>  
+                  <a href="students"  class="dashboard__content--items">  <li class="list-group-item">Students <span              id="students"></span></li> </a>
+              
+               <a href="applications"  class="dashboard__content--items"> <li class="list-group-item">Applications <span id="applications"></span></li> </a>
+               <a href="suspended"  class="dashboard__content--items"> <li class="list-group-item">Suspended <span id="suspended"></span></li></a>
+               <!-- <a href="closed"  class="dashboard__content--items"> <li class="list-group-item">Closed <span id="closed"></span></li> </a>
+ -->
+              </ul>
+               </div><!--col-2-->
+                <div class="col-sm-4">
+                  <div class="card-header">Account status</div>
+                  <ul class="list-group">
+                   
+               <a href="dues"  class="dashboard__content--items"> <li class="list-group-item">Dues<span  id="dues"></span></li> </a>
+               <a href="acc_balance"  class="dashboard__content--items"> <li class="list-group-item"> Balance <span id="balance"></span> </li></a>
+             </ul>
+                </div><!--col-3-->
+             </div>
+             <!-- row end -->
+              </div>
             </div><!--card body-->
             </div><!--card-->
   </div> <!--col 1-->
-
+            
    <div class="col-sm-12 col-md-12 col-lg-12 col-xl-5">
              <div class="card">
             <div class="card-header text-uppercase">Notifications</div><!--card header-->
             <div class="card-body" id="cbody">
             </div><!--card body-->
+            <div class="card-footer"><a href="notes" class="btn btn-info btn-block">VIEW ALL</a></div>
             </div><!--card-->
           </div> <!--col2-->
 
@@ -79,7 +103,25 @@ require_once("./inc/leftnav.php");
 				type:'tutors',
 				submit: 'submit'
 			});
-      $("#cbody").load("notifications.php", {limit:14});
+      $("#suspended").load('dashboard_counters', {
+        type:'suspended',
+        submit: 'submit'
+      });
+      $("#applications").load('dashboard_counters', {
+        type:'applications',
+        submit: 'submit'
+      });
+      $("#dues").load('dashboard_counters', {
+        type:'dues',
+        submit: 'submit'
+      });
+
+       $("#balance").load('dashboard_counters', {
+        type:'balance',
+        submit: 'submit'
+      });
+      $("#cbody").load("notifications.php", {limit:10});
 		}, 300);
 	});
 </script>
+

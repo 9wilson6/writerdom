@@ -177,6 +177,7 @@ $results=$db->get_row($query);
                             <input type="hidden" name="user_type" value="<?php echo $_SESSION['user_type'] ?>">
                             <input type="hidden" name="student_id" value="<?php echo $results->student_id ?>">
                             <input type="hidden" name="tutor_id" value="<?php echo $results->tutor_id ?>">
+
                             <p class="send">
                              <input type="submit" value="Send" disabled class="btn btn-sm btn-basic" id="send">
                                 </p>
@@ -279,6 +280,8 @@ $results=$db->get_row($query);
                                              <input type="hidden" name="project_id" value="<?php echo $results->project_id ?>" >
                                             <input type="hidden" name="student_id" value="<?php echo $results->student_id ?>">
                                             <input type="hidden" name="tutor_id" value="<?php echo $results->tutor_id ?>">
+                                            <input type="hidden" name="charges" value="<?php echo $results->charges?>">
+                                            
                                     </div>
                                 </div>
                                 <button type="submit" id="rate" class="btn btn-primary btn-block mt-5" name="rate">OK</button>

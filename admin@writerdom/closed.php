@@ -3,6 +3,7 @@ require_once("../inc/header_links.php");
 require_once("./inc/topnav.php");
 require_once("../inc/utilities.php");
 $page="";
+$mainpage="";
 require_once("../inc/global_functions.php");
 require_once("../dbconfig/dbconnect.php");
 $query="SELECT * FROM closed LEFT JOIN projects ON closed.project_id=projects.project_id";
@@ -40,7 +41,7 @@ $results=$db->get_results($query);
                                        <?php foreach ($results as $result): ?>
                                 <tr>
                                     <td class="smalll"><a
-                                            href="#"><?php echo $result->project_id; ?><i
+                                            href="closed-details?pid=<?php echo urlencode(convert_uuencode($result->project_id)) ?>"><?php echo $result->project_id; ?><i
                                                 class="fas fa-external-link-alt icon-r ml-4"></i></a></td>
                                     <td class="wide">
                                         <?php echo (strlen($result->title) >35 )? substr($result->title, 0, 35).'...':$result->title; ?>

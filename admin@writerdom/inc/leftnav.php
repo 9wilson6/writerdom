@@ -8,18 +8,18 @@ session_admin();
     class="active"
   <?php } ?>><li class="list-group-item">Dashboard <i class="fas fa-tachometer-alt icon-l"></i></li></a>
 
- <a href="#"  <?php if ($page=="student") { ?>
+ <a href="#"  <?php if ($mainpage=="student") { ?>
     class="active" 
   <?php } ?> data-toggle="collapse" data-target="#student">
   <li class="list-group-item">Students Management
 <i class="fas fa-angle-double-down icon-l"></i></li></a>
 <div id="student" class="collapse">
 <ul class="list-group">
-	<a href="stud_activate" <?php if ($page=="student") { ?>
+	<a href="stud_activate" <?php if ($page=="student_activate") { ?>
     class="active" 
   <?php } ?> ><li class="list-group-item">Activate <i class="fas fa-toggle-on icon-l"></i></li></a>
 
-  <a href="stud_suspend" <?php if ($page=="stud_suspend") { ?>
+  <a href="student_suspend" <?php if ($page=="student_suspend") { ?>
     class="active" 
   <?php } ?> ><li class="list-group-item">Suspend <i class="fas fa-power-off icon-l"></i></li></a>
 
@@ -27,13 +27,11 @@ session_admin();
     class="active" 
   <?php } ?> ><li class="list-group-item">Message <i class="far fa-comments icon-l"></i></li></a>
 
-  <a href="stud_edit" <?php if ($page=="stud_edit") { ?>
-    class="active" 
-  <?php } ?> ><li class="list-group-item">Edit <i class="far fa-edit icon-l"></i></li></a>
+  
 </ul>
 </div>
   
-   <a href="#"  <?php if ($page=="tutor") { ?>
+   <a href="#"  <?php if ($mainpage=="tutor") { ?>
     class="active" 
   <?php } ?> data-toggle="collapse" data-target="#tutor"><li class="list-group-item">Tutors Management<i class="fas fa-angle-double-down icon-l"></i> </li></a>
 
@@ -44,22 +42,19 @@ session_admin();
     class="active" 
   <?php } ?> ><li class="list-group-item">Activate <i class="fas fa-toggle-on icon-l"></i></li></a>
 
-<a href="tut_suspend" <?php if ($page=="tut_suspend") { ?>
+<a href="tutor_suspend" <?php if ($page=="tut_suspend") { ?>
     class="active" 
   <?php } ?> ><li class="list-group-item">Suspend <i class="fas fa-power-off icon-l"></i></li></a>
 
 <a href="tut_message" <?php if ($page=="tut_message") { ?>
     class="active" 
   <?php } ?> ><li class="list-group-item">Message <i class="far fa-comments icon-l"></i></li></a>
-  <a href="tut_edit" <?php if ($page=="tut_edit") { ?>
-    class="active" 
-  <?php } ?> ><li class="list-group-item">Edit <i class="far fa-edit icon-l"></i></li></a>
-
+  
 </ul>
 </div>
  
 
-     <a href="#"  <?php if ($page=="orders") { ?>
+     <a href="#"  <?php if ($mainpage=="orders") { ?>
     class="active" 
   <?php } ?> data-toggle="collapse" data-target="#orders"><li class="list-group-item">Projects Management
   	<i class="fas fa-angle-double-down icon-l"></i></li></a>

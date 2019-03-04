@@ -4,7 +4,7 @@
 	$query="UPDATE users SET status=1 WHERE user_id='$user_id'";
 	if ($db->query($query)) { ?>
 		<script>
-			alert("Activated Successfully");
+			alert("Tutor id: <?php echo $user_id ?> activated successfully");
 			window.location.assign("tut_activate");
 		</script>
 	<?php }

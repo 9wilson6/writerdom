@@ -44,7 +44,7 @@ $results=$db->get_results($query);
                                     <td class="smalll"><a href="editing-details?pid=<?php echo urlencode(convert_uuencode($result->project_id)); ?>"><?php echo $result->project_id; ?><i
                                                 class="fas fa-external-link-alt icon-r ml-4"></i></a></td>
                                     <td><?php echo $result->title; ?></td>
-                                    <td><?php echo $result->charges; ?></td>
+                                    <td><?php echo $result->cost; ?></td>
                                     <td class="bg-light">
                                             <?php $time=getDateTimeDiff($date_global, $result->revision_deadline );
                                              $period= explode(" ", $time); ?>

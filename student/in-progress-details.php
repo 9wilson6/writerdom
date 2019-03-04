@@ -175,6 +175,7 @@ $results=$db->get_row($query);
                                             <input type="hidden" name="user_type" value="<?php echo $_SESSION['user_type'] ?>">
                                             <input type="hidden" name="student_id" value="<?php echo $results->student_id ?>">
                                             <input type="hidden" name="tutor_id" value="<?php echo $results->tutor_id ?>">
+                                            
                                             <p class="send">
                                                  <input type="submit" value="Send" class="btn btn-sm btn-info">
                                                 </p>

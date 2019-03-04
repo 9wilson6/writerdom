@@ -94,12 +94,24 @@ function Login(){
 				$_SESSION['username']=$results->username;
 				$_SESSION['user_id']=$results->user_id;
 				if ($user_type==1) {
-					$_SESSION['user_type']=1;
+					if ($results->status==1) {
+						$_SESSION['user_type']=1;
 					header("location:student/createpost");
+					}else{
+						$error="Sorry your account is under suspension. <br> contact admin for further details";
+					}
 					
 				}elseif($user_type==2){
-					$_SESSION['user_type']=2;
+					if ($results->status==1) {
+						if ($results->verified==1) {
+						$_SESSION['user_type']=2;
 					header("location:tutor/dashboard");
+					}else{
+					header("location:tutor/not_active");
+					}
+					}else{
+						$error="Sorry your account is under suspension. <br> contact admin for further details";
+					}
 				}elseif ($user_type==3) {
 					$_SESSION['user_type']=3;
 					header("location:./index");

@@ -21,7 +21,23 @@ if (isset($_POST['submit'])) {
   $results=$db->query($query);
 
 
-    if ($db->query("UPDATE projects SET bids='$bids' WHERE project_id='$project_id'"));
+$db->query("UPDATE projects SET bids='$bids' WHERE project_id='$project_id'");
+
+       //,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,notification,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+  //
+  //
+  //
+  //,,,,,,,,,,,,,,,,,,,,,,,,,, //
+  $note="Tutor ID: ". $tutor_id." has placed a bid for project ID: ".$project_id." at ".$date_global."bid amnt: ".$bid_total_amount;
+  $note2="You have placed a bid for project ID: ".$project_id." at ".$date_global."bid amnt: ".$bid_total_amount;
+ $querys="INSERT INTO notifications(user_type, note) VALUES(2,'$note')";
+  $db->query($querys);
+  $querys="INSERT INTO notifications(user_type, note) VALUES(3,'$note2')";
+  $db->query($querys);
+  // ........,,,,,,,,,,,,,,,,,,,,,,,,,,notification,,,,,,,,,,,,,,,,,
+  // 
+  // 
+  // ,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,//
 
 }
 if (isset($_POST['delete'])) {
@@ -30,6 +46,22 @@ if (isset($_POST['delete'])) {
     $bids=$_POST['bids']-1;
     $db->query("DELETE FROM bids WHERE tutor_id='$tutor_id' AND project_id='$project_id'");
     $db->query("UPDATE projects SET bids='$bids' WHERE project_id='$project_id'");
+
+       //,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,notification,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+  //
+  //
+  //
+  //,,,,,,,,,,,,,,,,,,,,,,,,,, //
+  $note="Tutor ID: ". $tutor_id." has deleted his bid for project ID: ".$project_id." at ".$date_global;
+  $note2="You have deleted your bid for project ID: ".$project_id." at ".$date_global;
+ $querys="INSERT INTO notifications(user_type, note) VALUES(2,'$note')";
+  $db->query($querys);
+  $querys="INSERT INTO notifications(user_type, note) VALUES(3,'$note2')";
+  $db->query($querys);
+  // ........,,,,,,,,,,,,,,,,,,,,,,,,,,notification,,,,,,,,,,,,,,,,,
+  // 
+  // 
+  // ,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,//
     ?>
 <script>
 // window.location.href="d_details?id=<?php #echo $project_id ?>";
@@ -63,8 +95,8 @@ require_once "../components/top_nav.php";
                 <h1 class="headingTertiary text-light">Project # <?php echo $project_id. " Details"; ?></h1>
                 <ul class="d_table_1 mb-5">
                     <?php  $query=("SELECT * FROM projects WHERE project_id='$project_id' and status=0");
-     $results=$db->get_row($query);
-     if ($db->num_rows<1) {?>
+                 $results=$db->get_row($query);
+                 if ($db->num_rows<1) {?>
 
                     <div class="card-body">
                         <h1 class="headingSeconadry text-uppercase">
@@ -153,7 +185,7 @@ require_once "../components/top_nav.php";
                                         <div class="row">
                                             <div class="col-8">
                                                 <h3 class="bg-warning forms2__input pt-2 text-light">Your Bid amount is:
-                                                    $<?php echo $check_q->bid_total_amount; ?></h3>
+                                                    $<?php echo $check_q->bid_amount; ?></h3>
                                                 <input type="hidden" name="project_id"
                                                     value="<?php echo $project_id ?>">
                                                 <input type="hidden" name="tutor_id" value="<?php echo $tutor_id ?>">

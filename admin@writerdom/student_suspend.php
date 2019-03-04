@@ -2,23 +2,33 @@
 require_once("../inc/header_links.php");
 require_once("./inc/topnav.php");
 require_once("../inc/utilities.php");
-$mainpage="tutor";
-$page="tutor";
+$mainpage="student";
+$page="student_suspend";
 require_once("../inc/global_functions.php");
 require_once("../dbconfig/dbconnect.php");
-$query="SELECT * FROM users WHERE type =2 and status=0";
+$query="SELECT * FROM users WHERE type =1 and status=1";
 $results=$db->get_results($query);
+if (isset($_POST['submit'])) {
+    $user_id=$_POST['user_id'];
+     $query="UPDATE users SET status=0 WHERE type =1 AND user_id=$user_id";
+   if ($db->query($query)) { ?>
+      <script>
+        alert("Student ID: <?php echo $user_id  ?> has been suspended");
+        window.location.assign("student_suspend");
+  </script>  
 
+   <?php } 
+}
  ?>
  <div class="display">
     <div class="display__content">
         <?php require_once "inc/leftnav.php" ?>
         <div class="row">
             <div class="col-sm-12 col-md-12 col-lg-12 col-xl-11">
-                <h1 class="headingTertiary text-light text-uppercase">Tutors</h1>
+                <h1 class="headingTertiary text-light text-uppercase">Student suspension panel</h1>
 
                 <div class="card">
-                   	<div class="card-header text-uppercase">Tutors</div>
+                   	<div class="card-header text-uppercase">Active Student Accounts</div>
                    	<div class="card-body">
                   <?php if ($db->num_rows<1): ?>
                         <h1 class="classHeadingSecondary">There is Nothing To show Yet</h1>
@@ -26,7 +36,7 @@ $results=$db->get_results($query);
                         <table class="table table-bordered text-center">
                             <thead>
                                 <tr>
-                                    <th >Tutor Id</th>
+                                    <th >Student Id</th>
                                     <th >Username</th>
                                     <th >Email</th>
                                     <th class="wide">Date Registered</th>
@@ -44,9 +54,9 @@ $results=$db->get_results($query);
                                     <td><?php echo $result->email; ?></td>
                                     <td><?php echo $result->created_on; ?></td>
                                     <td class="wide">
-                                        <form action="tut_activate_" method="POST">
+                                        <form action="" method="POST">
                                             <input type="hidden" name="user_id" value="<?php echo $result->user_id?>">
-                                        <input type="submit" name="submit" class="btn btn-block btn-primary" value="ACTIVATE">
+                                        <input type="submit" name="submit" class="btn btn-block btn-danger" value="SUSPEND!!">
                                     </form>
                                 </td>
 

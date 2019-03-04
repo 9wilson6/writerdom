@@ -21,6 +21,21 @@ if (isset($_POST['submit'])) {
             if ($db->query($query)) {
 							$query="UPDATE chats SET status=1 WHERE project_id='$project_id'";
 							$db->query($query);
+              //,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,notification,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+              //
+              //
+              //
+              //,,,,,,,,,,,,,,,,,,,,,,,,,, //
+              $note="Tutor ID: ". $tutor_id." has submited final revision results for project ID: ".$project_id." at ".$date_global;
+              $note2="You have submited final revision results for project ID: ".$project_id." at ".$date_global;
+             $querys="INSERT INTO notifications(user_type, note) VALUES(2,'$note')";
+              $db->query($querys);
+              $querys="INSERT INTO notifications(user_type, note) VALUES(3,'$note2')";
+              $db->query($querys);
+              // ........,,,,,,,,,,,,,,,,,,,,,,,,,,notification,,,,,,,,,,,,,,,,,
+              // 
+              // 
+              // ,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,//
                ?>
             <script>
                 alert("Assignment Results Uploaded Successfully");
@@ -31,7 +46,24 @@ if (isset($_POST['submit'])) {
          }
     }
 
-}else{ ?>
+}else{
+
+//,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,notification,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+              //
+              //
+              //
+              //,,,,,,,,,,,,,,,,,,,,,,,,,, //
+              $note="Tutor ID: ". $tutor_id." has submited draft revision results for project ID: ".$project_id." at ".$date_global;
+              $note2="You have submited draft revision results for project ID: ".$project_id." at ".$date_global;
+             $querys="INSERT INTO notifications(user_type, note) VALUES(2,'$note')";
+              $db->query($querys);
+              $querys="INSERT INTO notifications(user_type, note) VALUES(3,'$note2')";
+              $db->query($querys);
+              // ........,,,,,,,,,,,,,,,,,,,,,,,,,,notification,,,,,,,,,,,,,,,,,
+              // 
+              // 
+              // ,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,//
+ ?>
 
             <script>
                 window.location.assign("#files");

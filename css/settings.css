@@ -197,7 +197,7 @@ body {
   font-size: 1.2rem; }
 
 .alert {
-  font-size: 14px; }
+  font-size: 12px; }
 
 .navbar {
   animation-duration: 2s;
@@ -876,28 +876,31 @@ body {
   height: 20rem;
   overflow: auto; }
 
-.dashboard__content {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center; }
-  .dashboard__content--items {
-    background: #00897B;
-    padding: 2.5rem;
-    align-content: center;
-    color: #EEEEEE;
-    min-width: 10rem;
-    border-radius: 2rem;
-    cursor: pointer; }
-    .dashboard__content--items button {
-      background: #494e6b;
-      border: none;
-      color: #EEEEEE;
-      min-width: 16rem;
-      padding: 2rem;
-      border-radius: 2rem;
-      text-transform: uppercase;
-      font-weight: 700;
-      cursor: pointer; }
-  .dashboard__content--items:not(:first-child) {
-    margin-left: 4rem; }
+.dashboard__content a {
+  text-decoration: none;
+  color: #5e6489;
+  font-size: 2rem;
+  max-width: 100%; }
+
+.dashboard__content--items {
+  text-align: left; }
+
+.dashboard__content .list-group-item {
+  box-shadow: 0 1px 1px  green; }
+  .dashboard__content .list-group-item span {
+    float: right;
+    margin-top: 7px; }
+  .dashboard__content .list-group-item .my_pill {
+    display: inline;
+    font-size: 1.1rem;
+    padding: .5rem;
+    border-radius: 1rem;
+    margin-left: 1rem;
+    color: #fff;
+    font-weight: 700; }
+
+.dashboard__content--items:not(:last-child) {
+  margin-bottom: 7px; }
+
+.dashboard__content ul:nth-child(even) {
+  background: #D7DBD6; }

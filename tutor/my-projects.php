@@ -44,7 +44,7 @@ $results=$db->get_results($query);
                                 <tr>
                                     <th>id</th>
                                     <th class="wide">Title</th>
-                                    <th data-toggle="tooltip" title="Price $" data-placement="right">Price</th>
+                                    <th data-toggle="tooltip" title="Price $" data-placement="right">Price($)</th>
                                     <th data-toggle="tooltip" title="pages" data-placement="right">Pg</th>
                                     <th data-toggle="tooltip" title="Slides" data-placement="right">Sl</th>
                                     <th data-toggle="tooltip" title="Problems" data-placement="right">Pr</th>
@@ -62,7 +62,7 @@ $results=$db->get_results($query);
                                     <td class="wide">
                                         <?php echo (strlen($result->title) >35 )? substr($result->title, 0, 35).'...':$result->title; ?>
                                     </td>
-                                    <td><?php echo $result->budget; ?></td>
+                                    <td><?php echo $result->charges; ?></td>
                                     <td><?php echo $result->pages; ?></td>
                                     <td><?php echo $result->slides; ?></td>
                                     <td><?php echo $result->problems; ?></td>
