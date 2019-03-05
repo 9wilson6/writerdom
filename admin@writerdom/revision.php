@@ -41,7 +41,7 @@ $results=$db->get_results($query);
                                        <?php foreach ($results as $result): ?>
                                 <tr>
                                     <td class="smalll"><a
-                                            href="#"><?php echo $result->project_id; ?><i
+                                            href="revision-details?pid=<?php echo urlencode(convert_uuencode($result->project_id)); ?>"><?php echo $result->project_id; ?><i
                                                 class="fas fa-external-link-alt icon-r ml-4"></i></a></td>
                                     <td class="wide">
                                         <?php echo (strlen($result->title) >35 )? substr($result->title, 0, 35).'...':$result->title; ?>

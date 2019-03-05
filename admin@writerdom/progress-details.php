@@ -4,13 +4,9 @@ $project_id=convert_uudecode($_REQUEST['pid']);
 require_once("../dbconfig/dbconnect.php");
 require_once("../inc/utilities.php");
 require_once "../inc/header_links.php";
-require_once "../components/top_nav.php";
+require_once("./inc/topnav.php");
 
-if (isset($_POST['submit'])) {
-	require_once('stud_functions.php');
-	filesUpload($_SESSION['user_id'], $_POST['project_id']);
-}
-$query=("SELECT * FROM revisions left join projects on revisions.project_id=projects.project_id WHERE revisions.project_id='$project_id'");
+$query=("SELECT * FROM on_progress left join projects on on_progress.project_id=projects.project_id WHERE on_progress.project_id='$project_id'");
 $results=$db->get_row($query);
 // print_r($results);
 
@@ -18,8 +14,9 @@ $results=$db->get_row($query);
 
 <div class="display">
     <div class="display__content">
-        <?php $page="revision"; ?>
-        <?php require_once "../components/stud_leftnav.php" ?>
+        <?php $page="";
+        $mainpage="orders"; ?>
+                <?php require_once "inc/leftnav.php" ?>
         <div class="row">
             <div class="col-sm-12 col-md-12 col-lg-12 col-xl-9">
                 <h1 class="headingTertiary text-light">Homework #
@@ -81,12 +78,12 @@ $results=$db->get_row($query);
                                         <td>
                                             <?php echo $results->cost; ?>
                                         </td>
-                                        <th scope="row" class="text-danger bg-dark">Rivision deadline</th>
-                                        <td class="bg-dark">
-                                            <?php $time=getDateTimeDiff($date_global, $results->revision_deadline );
+                                        <th scope="row">Deadline</th>
+                                        <td>
+                                            <?php $time=getDateTimeDiff($date_global, $results->deadline );
                                              $period= explode(" ", $time); ?>
                                             <?php if ($period[1]=="days"): ?>
-                                            <span class="text-light">
+                                            <span class="text-dark">
                                                 <?php echo "{$time}"; ?></span>
                                             <?php elseif($period[1]=="day"): ?>
                                             <span class="text-success">
@@ -120,19 +117,11 @@ $results=$db->get_row($query);
                                         </td>
                                     </tr>
 
-                                    <tr class="bg-dark text-warning">
-                                        <th>Rivision Instructions</th>
-                                        <td colspan="3" class="pl-5">
-
-                                            <?php echo $results->revision_instructions; ?>
-                                        </td>
-                                    </tr>
-
                                 </tbody>
                             </table>
                         </div>
 
-                 
+                     
                        <div class="row">
                                 <div class="col-sm-12 col-md-6 col lg-6">
                                     <div class="card">
@@ -153,14 +142,15 @@ $results=$db->get_row($query);
                                     </div>
 
                                 </div>
+
                                 <div class="col-sm-12 col-md-6 col lg-6">
                                     <div class="card">
                                         <div class="card-header"><strong>Messages:</strong></div>
                                         <div class="card-body messages">
-                                                                                        <div class="messages__view " id="messageBox">
+                                              <div class="messages__view" id="messageBox">
                                                 <script>
                                                     let project_id="<?php echo $results->project_id; ?>";
-                                                   let user_type="<?php echo $_SESSION['user_type'] ?>";
+                                                   let user_type=1;
                                                 </script>
                                                
 
@@ -171,95 +161,27 @@ $results=$db->get_row($query);
                                                     <div class="date">01/02/2018</div>
                                                 </div> -->
                                             </div>
-
-                                
-                                           <form action="../chat" method="POST" id="chat_form"> 
-                                            <p class="messages__form" > 
-                                                <textarea name="message" placeholder="type a message here......." required></textarea>
-                                                
-                                            </p>
-                                            <input type="hidden" name="project_id" value="<?php echo $results->project_id ?>" >
-                                            <input type="hidden" name="user_type" value="<?php echo $_SESSION['user_type'] ?>">
-                                            <input type="hidden" name="student_id" value="<?php echo $results->student_id ?>">
-                                            <input type="hidden" name="tutor_id" value="<?php echo $results->tutor_id ?>">
-                                            <p class="send">
-                                                 <input type="submit" value="Send" class="btn btn-sm btn-info">
-                                                </p>
-                                        </form>                                   </div>
+                                   </div>
                                     </div>
                                 </div>
 
                             </div>
-                                <form action="" enctype="multipart/form-data" method="POST" class="files_edit">
-                                    <div class="my_container">
-                                        <div class="row">
-                                            <div class="col-3 col-sm-3 col-md-3"><label for="files" class="forms2__label">Add
-                                                    More Files &rarr;</label></div>
-                                            <div class="col-6 col-sm-6 col-md-6"><input type="file" class="files_edit__input"
-                                                    name="file[]" class="form-control-file forms2__files" id="files"
-                                                    required multiple />
-                                                <input type="hidden" name="project_id" value="<?php echo $project_id ?>">
-                                            </div>
-                                            <div class="col-3 col-sm-3 col-md-3"><button type="submit" name="submit"
-                                                    class="btn btn-submit btn-block">Upload Files</button>
-
-                                            </div>
-                                        </div>
-                                    </div>
-                                </form>
-                            <?php }
+                               
+                                
+   <?php }
 
                      ?>
                        </div>
 
 
 
-
                 </div>
 
             </div>
-
-            <div class="col-sm-12 col-md-12 col-lg-12 col-xl-3">
-                <h1 class="headingTertiary text-light">Notes</h1>
-                <div class="card">
-                    <div class="card-header text-secondary text-uppercase">
-                        Note that
-                    </div>
-                    <div class="card-body">
-                        <table class="table table-hover table-borderless text-left">
-                            <tbody>
-                                <ul>
-                                    <tr>
-
-                                        <td>
-                                            <li>This service exists to protect your private and personal information,
-                                                you shouldn’t therefore communicate with tutors outside the site.</li>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <li>Sharing third party communication methods (including emails, phone
-                                                numbers, and Skype address) is against our user guidelines and we shall
-                                                therefore NOT be held
-                                                liable
-                                                failure to observe this. See our T.O.S</li>
-                                        </td>
-                                    </tr>
-                                </ul>
-                            </tbody>
-                        </table>
-                    </div>
-                    <div class="card-footer">
-
-                    </div>
-                </div>
-            </div>
-
-
         </div>
     </div>
 </div>
-<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+<!-- <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script> -->
 <?php
 
 require_once"../inc/footer_links.php";

@@ -25,7 +25,7 @@ $results=$db->get_results($query);
                         <table class="table table-bordered">
                             <thead>
                                 <tr>
-                                    <th>id</th>
+                                    <th>Order Number</th>
                                     <th class="wide">Title</th>
                                     <th data-toggle="tooltip" title="Price $" data-placement="right">Price</th>
                                     <th data-toggle="tooltip" title="pages" data-placement="right">Pg</th>
@@ -39,13 +39,11 @@ $results=$db->get_results($query);
                             <tbody id="display">
                                        <?php foreach ($results as $result): ?>
                                 <tr>
-                                    <td class="smalll"><a
-                                            href="#"><?php echo $result->project_id; ?><i
-                                                class="fas fa-external-link-alt icon-r ml-4"></i></a></td>
+                                    <td class="smalll"><?php echo $result->project_id; ?></td>
                                     <td class="wide">
                                         <?php echo (strlen($result->title) >35 )? substr($result->title, 0, 35).'...':$result->title; ?>
                                     </td>
-                                    <td><?php echo $result->price; ?></td>
+                                    <td><?php echo $result->charges; ?></td>
                                     <td><?php echo $result->pages; ?></td>
                                     <td><?php echo $result->slides; ?></td>
                                     <td><?php echo $result->problems; ?></td>

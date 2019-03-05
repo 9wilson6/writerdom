@@ -5,7 +5,6 @@ require_once"../inc/utilities.php";
 
 require_once("../dbconfig/dbconnect.php");
 if (isset($_POST['submit'])) {
-  require_once("../dbconfig/dbconnect.php");
   $student_id=$_POST['student_id'];
   $bid_amount=$_POST['bid_amount'];
   $bid_fee=ceil(($_POST['bid_amount']) * 1.1)-$bid_amount;
@@ -85,7 +84,6 @@ require_once "../components/top_nav.php";
 <div class="display">
     <div class="display__content">
         <?php require_once "../components/tutor_leftnav.php";
-		require_once("../dbconfig/dbconnect.php");
 
 		
 		?>

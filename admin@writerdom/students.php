@@ -34,25 +34,31 @@ $results=$db->get_results($query);
                                 </tr>
                             </thead>
 
+                           
                             <tbody id="display">
                                        <?php foreach ($results as $result): ?>
                                 <tr>
-                                    <td class="smalll"><a
-                                            href="#"><?php echo $result->user_id; ?><i
-                                                class="fas fa-external-link-alt icon-r ml-4"></i></a></td>
+                                    <td class="smalll"><?php echo $result->user_id; ?></td>
                                     <td>
                                         <?php echo $result->username?>
                                     </td>
                                     <td><?php echo $result->email; ?></td>
                                     <td><?php echo $result->created_on; ?></td>
-                                    <td class="wide">action goes here</td>
+                                    <td class="smalll">
+                                        <?php
+                                           if ($result->status==0) {?>
+                                              <span class="alert alert-danger text-uppercase btn-block" role="alert">suspended</span>
+                                         <?php  }elseif ($result->status==1) { ?>
+                                         <span class="alert alert-success text-uppercase btn-block" role="alert">Active</span>
+                                          <?php } ?>
+                                      
+                                    </td>
 
 
                                 </tr>
                                 <?php endforeach ?>
                                 
                             </tbody>
-
                         </table>
                         <?php endif ?>
                    	</div>

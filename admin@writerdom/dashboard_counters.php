@@ -1,6 +1,7 @@
 
 <?php 
 require_once("../dbconfig/dbconnect.php");
+require_once("../inc/utilities.php");
 if (isset($_POST['submit'])) {
 	function available(){
 	global $db;
@@ -158,7 +159,7 @@ if ($_POST['type']=="dues") {
 	if (dues()>0) {
 		echo "<div class='my_pill'>". dues()."</div>";
 	}else{
-		echo "<div class='pill'>". dues()."</div>";
+		echo "<div class='pill'>0</div>";
 	}
 	
 }
@@ -174,7 +175,7 @@ if ($_POST['type']=="balance") {
 	if (balance()>0) {
 		echo "<div class='my_pill'>".balance()."</div>";
 	}else{
-		echo "<div class='pill'>".balance()."</div>";
+		echo "<div class='pill'>0</div>";
 	}
 	
 }

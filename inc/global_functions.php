@@ -1,8 +1,9 @@
 <?php 
 function Register(){
-	global $error, $success;
+	global $error, $success, $date_global;
 	if (isset($_POST['submit'])) {
 		require_once("dbconfig/dbconnect.php");
+
 		/////////////////////////////////RECEIVE FORM DATA/////////////////////////////////////////
 		$username=$db->escape($_POST['username']);
 		$user_type=$db->escape($_POST['user_type']);
@@ -27,7 +28,7 @@ function Register(){
 					 		$date=date("Y-m-d H:i:sa");
 					 			$verif_key=str_shuffle(substr(password_hash($date, PASSWORD_DEFAULT), 30,90));
 					 			
-					 			$query="INSERT INTO users(username, email, password, type, created_on,verif_key) VALUES('$username','$email','$password_', '$user_type','$date','$verif_key')";
+					 			$query="INSERT INTO users(username, email, password, type, created_on,verif_key, status) VALUES('$username','$email','$password_', '$user_type','$date','$verif_key', 1)";
 					 			$results=$db->query($query);
 					 		
 					 			
@@ -229,17 +230,17 @@ function Login(){
 	}else{
 		$diff_timestmp=$now_timeStamp - $other_date;
 	if ($diff_timestmp<60) {
-		return $diff_timestmp . ' sec late';
+		return $diff_timestmp . ' sec ago';
 	} elseif($diff_timestmp>=60 && $diff_timestmp<3600) {
-		return round(($diff_timestmp/60)). ' mins late';
+		return round(($diff_timestmp/60)). ' mins ago';
 	}elseif($diff_timestmp>=3600 && $diff_timestmp<86400) {
-		return round(($diff_timestmp/3600)). ' hours late';
+		return round(($diff_timestmp/3600)). ' hours ago';
 	}elseif($diff_timestmp>=86400 && $diff_timestmp<86400 * 30) {
-		return round(($diff_timestmp/86400)). ' days late';
+		return round(($diff_timestmp/86400)). ' days ago';
 	}elseif($diff_timestmp>=86400 * 30 && $diff_timestmp<86400 * 365) {
-		return round(($diff_timestmp/(86400 * 30))). ' months late';
+		return round(($diff_timestmp/(86400 * 30))). ' months ago';
 	}else{
-		return round(($diff_timestmp/(86400 * 365))). ' years late';
+		return round(($diff_timestmp/(86400 * 365))). ' years ago';
 	}
 	}
 	

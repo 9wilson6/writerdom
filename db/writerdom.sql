@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 04, 2019 at 10:01 PM
+-- Generation Time: Mar 05, 2019 at 03:49 PM
 -- Server version: 10.1.22-MariaDB
 -- PHP Version: 7.1.4
 
@@ -82,7 +82,14 @@ INSERT INTO `chats` (`user_type`, `message`, `date_sent`, `project_id`, `status`
 (2, 'just uploaded a draft', '2019-02-28 11:52:23', 22, 1, 12, 9),
 (1, 'okay boy', '2019-02-28 11:53:42', 22, 1, 12, 9),
 (2, 'okay girl', '2019-02-28 11:54:03', 22, 1, 12, 9),
-(1, 'holla\n', '2019-02-28 12:07:06', 22, 1, 12, 9);
+(1, 'holla\n', '2019-02-28 12:07:06', 22, 1, 12, 9),
+(1, 'hello there', '2019-03-05 09:17:24', 41, 1, 12, 9),
+(2, 'very fine', '2019-03-05 09:20:30', 41, 1, 12, 9),
+(1, 'how is the going', '2019-03-05 09:20:46', 41, 1, 12, 9),
+(1, 'i saw the order', '2019-03-05 09:20:56', 41, 1, 12, 9),
+(2, 'yeah i worked on it perfectly well', '2019-03-05 09:21:18', 41, 0, 12, 9),
+(2, 'and thanks a lot for the assing', '2019-03-05 09:21:34', 41, 0, 12, 9),
+(1, 'i didn\'t at all like what you did', '2019-03-05 10:06:03', 20, 0, 12, 9);
 
 -- --------------------------------------------------------
 
@@ -129,7 +136,6 @@ CREATE TABLE `delivered` (
 --
 
 INSERT INTO `delivered` (`project_num`, `project_id`, `student_id`, `tutor_id`) VALUES
-(1, '20', '12', '9'),
 (4, '16', '12', '9'),
 (5, '21', '12', '9');
 
@@ -224,7 +230,11 @@ INSERT INTO `notifications` (`note_num`, `user_type`, `note`) VALUES
 (72, '2', 'Tutor ID: 9 has submited final results for project ID: 37 at 2019-03-04 14:12:48'),
 (73, '3', 'You have submited final results for project ID: 37 at 2019-03-04 14:12:48'),
 (74, '1', 'Student Id: 12 approved project id: 37 on 2019-03-04 23:58:29'),
-(75, '3', 'You approved project id: 37 on 2019-03-04 23:58:29');
+(75, '3', 'You approved project id: 37 on 2019-03-04 23:58:29'),
+(76, '2', 'Tutor ID: 9 has submited a draft for project ID: 41 at 2019-03-05 09:24:01'),
+(77, '3', 'You have submited a draft for project ID: 41 at 2019-03-05 09:24:01'),
+(78, '1', 'Student Id: 12 sent project id: 20 back for revision at 2019-03-05 09:57:05'),
+(79, '3', 'You sent project id: 20 back for revision at 2019-03-05 09:57:05');
 
 -- --------------------------------------------------------
 
@@ -248,6 +258,23 @@ INSERT INTO `on_progress` (`project_num`, `project_id`, `student_id`, `tutor_id`
 (12, '18', '12', '9'),
 (15, '46', '12', '9'),
 (16, '41', '12', '9');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `others`
+--
+
+CREATE TABLE `others` (
+  `payment_date` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `others`
+--
+
+INSERT INTO `others` (`payment_date`) VALUES
+('1553084301');
 
 -- --------------------------------------------------------
 
@@ -313,29 +340,29 @@ CREATE TABLE `projects` (
 --
 
 INSERT INTO `projects` (`project_id`, `student_id`, `title`, `deadline`, `subject`, `instructions`, `style`, `type_of_paper`, `pages`, `slides`, `problems`, `budget`, `charges`, `cost`, `bids`, `academic_level`, `sources`, `status`, `DATE_CREATED`) VALUES
-(14, 12, 'rules of the game', '1550257165', 'Accounting', '<p>Sharing third party communication methods (including emails,&nbsp; you s,phone numbers, and Skype address)pp</p>\r\n', 'APA', 'Admission Essay', 1, 0, 0, '$750', '525', '578', 2, 'College', 0, 4, '1550169712'),
-(15, 12, 'bserve this. See our T.O.S', '1551173083', 'Accounting', '<p>munication methods (including emails, phone numbers, and Skype address) is against our user guidelines and we shall therefore NOT be held liable failure to observe this. See our T.O.S</p>\r\n', 'APA', 'Article Critique/Review', 1, 1, 1, '$150', '105', '116', 1, 'College', 0, 4, '1550568283'),
+(14, 12, 'rules of the game', '1550257165', 'Accounting', '<p>Sharing third party communication methods (including emails,&nbsp; you s,phone numbers, and Skype address)pp</p>\r\n', 'APA', 'Admission Essay', 1, 0, 0, '$750', '525', '578', 2, 'College', 0, 5, '1550169712'),
+(15, 12, 'bserve this. See our T.O.S', '1551173083', 'Accounting', '<p>munication methods (including emails, phone numbers, and Skype address) is against our user guidelines and we shall therefore NOT be held liable failure to observe this. See our T.O.S</p>\r\n', 'APA', 'Article Critique/Review', 1, 1, 1, '$150', '105', '116', 1, 'College', 0, 5, '1550568283'),
 (16, 12, 'java program', '1551868696', 'Accounting', '<p>munication methods (including emails, phone numbers, and Skype address) is against our user guidelines and we shall therefore NOT be held liable failure to observe this. See our T.O.S</p>\r\n', 'APA', 'Admission Essay', 0, 9, 1, '$150', '105', '116', 1, 'College', 0, 2, '1550571153'),
 (17, 12, 'Sharing third party communication methods (including emails,  you s,phone numbers, and Skype address)', '1551513757', 'Accounting', '<p>haring third party communication methods (including emails, phone numbers, and Skype address) is against our user guidelines and we shall therefore NOT be held liable failure to observe this. See our T.O.S</p>\r\n', 'APA', 'Admission Essay', 1, 0, 1, '$45', '336', '370', 2, 'College', 0, 0, '1550665203'),
 (18, 12, 'mhjv', '1551554459', 'Accounting', '<p>help me</p>\r\n', 'APA', 'Admission Essay', 1, 1, 1, '$45', '32', '36', 2, 'College', 2, 1, '1550677182'),
 (19, 12, 'Sharing third party communication methods (including emails,  you s,phone numbers, and Skype address)', '1551384182', 'Accounting', '<p>Sharing third party communication methods (including emails, phone numbers, and Skype address) is against our user guidelines and we shall therefore NOT be held liable failure to observe this. See our T.O.S</p>\r\n', 'APA', 'Admission Essay', 1, 0, 0, '$45', '32', '36', 2, 'College', 1, 1, '1551209284'),
-(20, 12, 'bserve this. See our T.O.S', '1551470535', 'Accounting', '<p>http://localhost/writerdom/tutor/in-progress</p>\r\n', 'APA', 'Admission Essay', 1, 0, 0, '$150', '105', '116', 2, 'College', 0, 2, '1551209635'),
+(20, 12, 'bserve this. See our T.O.S', '1551956225', 'Accounting', '<p>http://localhost/writerdom/tutor/in-progress</p>\r\n', 'APA', 'Admission Essay', 1, 0, 0, '$150', '105', '116', 2, 'College', 0, 3, '1551209635'),
 (21, 12, 'Sharing third party communication methods (including emails,  you s,phone numbers, and Skype address)', '1551466084', 'Accounting', '<p>http://localhost/writerdom/tutor/in-progress</p>\r\n', 'APA', 'Admission Essay', 4, 3, 3, '$45', '32', '36', 3, 'College', 3, 2, '1551209839'),
-(22, 12, 'Sharing third party communication methods (including emails,  you s,phone numbers, and Skype address)', '1551297713', 'Accounting', '<p>http://localhost/writerdom/tutor/in-progress ls, phone numbers, and Skype address) is against our user guidelines and we shall therefore NOT be held liable failure to observe this. See our T.O.</p>\r\n', 'APA', 'Admission Essay', 7, 76, 6, '$45', '32', '36', 2, 'College', 5, 4, '1551210112'),
+(22, 12, 'Sharing third party communication methods (including emails,  you s,phone numbers, and Skype address)', '1551297713', 'Accounting', '<p>http://localhost/writerdom/tutor/in-progress ls, phone numbers, and Skype address) is against our user guidelines and we shall therefore NOT be held liable failure to observe this. See our T.O.</p>\r\n', 'APA', 'Admission Essay', 7, 76, 6, '$45', '32', '36', 2, 'College', 5, 5, '1551210112'),
 (23, 12, 'Sharing third party communication methods (including emails,  you s,phone numbers, and Skype address)', '1551442815', 'Anthropology', '<p>hello wilson is against our user guidelines and we shall therefore NOT be held liable failure to observe this. See our T.O.S</p>\r\n', 'APA', 'Admission Essay', 1, 1, 1, '$45', '0', '0', 0, 'Undergraduate', 0, 0, '1551356415'),
 (24, 12, 'Sharing third party communication methods (including emails,  you s,phone numbers, and Skype address)', '1551442905', 'Anthropology', '<p>hello wilson is against our user guidelines and we shall therefore NOT be held liable failure to observe this. See our T.O.S</p>\r\n', 'APA', 'Admission Essay', 1, 1, 1, '$45', '0', '0', 0, 'Undergraduate', 0, 0, '1551356505'),
 (25, 12, 'Project is Live and Open for Bidding', '1551442961', 'Architecture', '<p>ring third party communication methods (including emails, phone numbers, and Skype address) is against our user guidelines and we shall therefore NOT be held liable failure to observe this. See our T.O.S</p>\r\n', 'APA', 'Admission Essay', 0, 0, 1, '$45', '0', '0', 0, 'Masters', 0, 0, '1551356561'),
 (26, 12, 'Project is Live and Open for Bidding', '1551443036', 'Architecture', '<p>ring third party communication methods (including emails, phone numbers, and Skype address) is against our user guidelines and we shall therefore NOT be held liable failure to observe this. See our T.O.S</p>\r\n', 'APA', 'Admission Essay', 0, 0, 1, '$45', '0', '0', 0, 'Masters', 0, 0, '1551356636'),
 (27, 12, 'Project is Live and Open for Bidding', '1551443058', 'Architecture', '<p>ring third party communication methods (including emails, phone numbers, and Skype address) is against our user guidelines and we shall therefore NOT be held liable failure to observe this. See our T.O.S</p>\r\n', 'APA', 'Admission Essay', 0, 0, 1, '$45', '0', '0', 0, 'Masters', 0, 0, '1551356658'),
-(28, 12, 'Project is Live and Open for Bidding', '1551443321', 'Architecture', '<p>ring third party communication methods (including emails, phone numbers, and Skype address) is against our user guidelines and we shall therefore NOT be held liable failure to observe this. See our T.O.S</p>\r\n', 'APA', 'Admission Essay', 0, 0, 1, '$45', '32', '36', 1, 'Masters', 2, 4, '1551356680'),
+(28, 12, 'Project is Live and Open for Bidding', '1551443321', 'Architecture', '<p>ring third party communication methods (including emails, phone numbers, and Skype address) is against our user guidelines and we shall therefore NOT be held liable failure to observe this. See our T.O.S</p>\r\n', 'APA', 'Admission Essay', 0, 0, 1, '$45', '32', '36', 1, 'Masters', 2, 5, '1551356680'),
 (29, 12, 'Project is Live and Open for Bidding', '1551443158', 'Architecture', '<p>ring third party communication methods (including emails, phone numbers, and Skype address) is against our user guidelines and we shall therefore NOT be held liable failure to observe this. See our T.O.S</p>\r\n', 'APA', 'Admission Essay', 0, 0, 1, '$45', '0', '0', 0, 'Masters', 0, 0, '1551356758'),
 (30, 12, 'Project is Live and Open for Bidding', '1551537037', 'Architecture', '<p>$user_type$user_type$user_type$user_type$user_type$user_type$user_type$user_type</p>\r\n', 'Oscola', 'Editing', 0, 1, 1, '$280', '0', '0', 1, 'Masters', 1, 0, '1551357037'),
 (31, 12, 'hello world', '1551533762', 'Agricultural Studies', '<p>Sharing third party communication methods (including emails, phone numbers, and Skype address) is against our user guidelines and we shall therefore NOT be held liable failure to observe this. See our T.O.S</p>\r\n', 'APA', 'Admission Essay', 1, 0, 0, '$280', '0', '0', 1, 'College', 0, 0, '1551357362'),
 (32, 12, 'hello world', '1551533858', 'Agricultural Studies', '<p>Sharing third party communication methods (including emails, phone numbers, and Skype address) is against our user guidelines and we shall therefore NOT be held liable failure to observe this. See our T.O.S</p>\r\n', 'APA', 'Admission Essay', 1, 0, 0, '$280', '0', '0', 0, 'College', 0, 0, '1551357458'),
 (35, 12, 'hello world', '1551533938', 'Agricultural Studies', '<p>Sharing third party communication methods (including emails, phone numbers, and Skype address) is against our user guidelines and we shall therefore NOT be held liable failure to observe this. See our T.O.S</p>\r\n', 'APA', 'Admission Essay', 1, 0, 0, '$280', '0', '0', 0, 'College', 0, 0, '1551357538'),
 (36, 12, 'hello world', '1551533978', 'Agricultural Studies', '<p>Sharing third party communication methods (including emails, phone numbers, and Skype address) is against our user guidelines and we shall therefore NOT be held liable failure to observe this. See our T.O.S</p>\r\n', 'APA', 'Admission Essay', 1, 0, 0, '$280', '0', '0', 0, 'College', 0, 0, '1551357578'),
-(37, 12, 'hello world', '1551895728', 'Agricultural Studies', '<p>Sharing third party communication methods (including emails, phone numbers, and Skype address) is against our user guidelines and we shall therefore NOT be held liable failure to observe this. See our T.O.S</p>\r\n', 'APA', 'Admission Essay', 1, 0, 6, '$280', '196', '216', 1, 'College', 0, 4, '1551357607'),
-(40, 12, 'hello world', '1551534864', 'Agricultural Studies', '<p>Sharing third party communication methods (including emails, phone numbers, and Skype address) is against our user guidelines and we shall therefore NOT be held liable failure to observe this. See our T.O.S</p>\r\n', 'APA', 'Admission Essay', 1, 0, 0, '$280', '196', '216', 1, 'College', 0, 4, '1551358464'),
+(37, 12, 'hello world', '1551895728', 'Agricultural Studies', '<p>Sharing third party communication methods (including emails, phone numbers, and Skype address) is against our user guidelines and we shall therefore NOT be held liable failure to observe this. See our T.O.S</p>\r\n', 'APA', 'Admission Essay', 1, 0, 6, '$280', '196', '216', 1, 'College', 0, 5, '1551357607'),
+(40, 12, 'hello world', '1551534864', 'Agricultural Studies', '<p>Sharing third party communication methods (including emails, phone numbers, and Skype address) is against our user guidelines and we shall therefore NOT be held liable failure to observe this. See our T.O.S</p>\r\n', 'APA', 'Admission Essay', 1, 0, 0, '$280', '196', '216', 1, 'College', 0, 5, '1551358464'),
 (41, 12, 'hello world', '1551534950', 'Agricultural Studies', '<p>Sharing third party communication methods (including emails, phone numbers, and Skype address) is against our user guidelines and we shall therefore NOT be held liable failure to observe this. See our T.O.S</p>\r\n', 'APA', 'Admission Essay', 1, 0, 0, '$280', '196', '216', 1, 'College', 0, 1, '1551358550'),
 (46, 12, 'Project is Live and Open for Bidding', '1551445478', 'Anthropology', '<p>&nbsp;$querys=&quot;INSERT INTO notifications(user_type, note) VALUES(&#39;$user_type&#39;,&#39;$note&#39;)&quot;;<br />\r\n&nbsp; $db-&gt;query($querys); Sharing third party communication methods (including emails, phone numbers, and Skype address) is against our user guidelines and we shall therefore NOT be held liable failure to observe this. See our T.O.S</p>\r\n', 'APA', 'Admission Essay', 0, 1, 0, '$45', '32', '36', 1, 'College', 0, 1, '1551359078');
 
@@ -352,6 +379,13 @@ CREATE TABLE `revisions` (
   `revision_instructions` text NOT NULL,
   `revision_deadline` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `revisions`
+--
+
+INSERT INTO `revisions` (`student_id`, `project_id`, `tutor_id`, `revision_instructions`, `revision_deadline`) VALUES
+('12', '20', '9', '<p>poorly&nbsp; done instructions, not at all followed</p>\r\n', '1551956225');
 
 -- --------------------------------------------------------
 
@@ -379,10 +413,11 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`user_id`, `username`, `email`, `password`, `type`, `verified`, `verif_key`, `created_on`, `status`, `rating`, `orders_complited`, `dues`) VALUES
-(9, 'kasuku', 'kasuku96@gmail.com', '$2y$10$CTebPZT4sV8HQlhpLlPUFuzEmYtKKYbrtRItjD3vyneE8iDRpaNii', 2, 1, 'DrErbXmJtZkxJKsOVXaD9ZgYZ22azu', '2018-12-18 21:14:33pm', 1, 10, 0, '588'),
+(9, 'kasuku', 'kasuku96@gmail.com', '$2y$10$CTebPZT4sV8HQlhpLlPUFuzEmYtKKYbrtRItjD3vyneE8iDRpaNii', 2, 1, 'DrErbXmJtZkxJKsOVXaD9ZgYZ22azu', '2018-12-18 21:14:33pm', 1, 10, 0, '0'),
 (12, 'wilson', 'gatheruwilson@gmail.com', '$2y$10$Eg3pmti55Q0KrqaC2gHs4ukbt5T1gYguzw9eQ/S8gwtTwmrjSmifG', 1, 0, '8ZjQ0WkpUKgrzeCgr9bhaLkwJVKTeq', '2018-12-18 21:29:00pm', 1, 0, 0, '0'),
-(13, 'admin', 'hustlemail96@gmail.com', '$2y$10$yarqdpru.hC0tYGDyEnHpeAqAs3HmL3v1edOcY8IdpIiw5H5Ps9Fe', 3, 1, 'vpQvhbS54XXeHkc6KD28h.Iq9gXlJ/', '2019-01-06 17:43:37pm', 0, 3, 0, '0'),
-(14, 'jymo', 'james.dilligan@gmail.com', '$2y$10$EFwexGsGCQTC2g5wdDYi.e6195XhsbTuXEGjaoYLOsNuUVaONrJj.', 2, 1, 'wDFp8WXJKwAUFc5zh4MMAi6Zb/Zlvt', '2019-03-03 13:08:37pm', 0, 0, 0, '0');
+(13, 'admin', 'hustlemail96@gmail.com', '$2y$10$Rvqk.OtJ/uwV3WXKl50bo.mcHL0l2.ZMhF2669k6ESNmzpJ3PaL82', 3, 1, 'vpQvhbS54XXeHkc6KD28h.Iq9gXlJ/', '2019-01-06 17:43:37pm', 1, 3, 0, '0'),
+(14, 'jymo', 'james.dilligan@gmail.com', '$2y$10$EFwexGsGCQTC2g5wdDYi.e6195XhsbTuXEGjaoYLOsNuUVaONrJj.', 2, 1, 'wDFp8WXJKwAUFc5zh4MMAi6Zb/Zlvt', '2019-03-03 13:08:37pm', 0, 0, 0, '0'),
+(19, 'gerald', 'gerald@gmail.com', '$2y$10$T.DzskpulouuVspTAHUDdOVtmh054rqN5RaKgKudcvAbxskJKeoca', 2, 0, '6lcOCqxSZmSnOihpCNsIvpHdHPB2W7', '2019-03-05 09:18:53am', 1, 0, 0, '0');
 
 --
 -- Indexes for dumped tables
@@ -444,7 +479,7 @@ ALTER TABLE `delivered`
 -- AUTO_INCREMENT for table `notifications`
 --
 ALTER TABLE `notifications`
-  MODIFY `note_num` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=76;
+  MODIFY `note_num` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=80;
 
 --
 -- AUTO_INCREMENT for table `on_progress`
@@ -462,7 +497,7 @@ ALTER TABLE `projects`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `user_id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `user_id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

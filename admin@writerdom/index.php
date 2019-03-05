@@ -1,21 +1,24 @@
 <?php
+require_once("./payment.php");
 require_once("../inc/header_links.php");
 require_once("./inc/topnav.php");
 $mainpage="dashboard";
 $page="dashboard";
 require_once("./inc/leftnav.php");
+require_once("../dbconfig/dbconnect.php");
+$result=$db->get_var("SELECT payment_date FROM others");
  ?>
  <div class="display">
     <div class="display__content">
         <?php require_once "inc/leftnav.php" ?>
         <h1 class="headingTertiary text-light text-center text-uppercase">Dashboard </h1>
         <div class="row">
-
           <div class="col-sm-12 col-md-12 col-lg-12 col-xl-7">
+
              <div class="card">
             <div class="card-header text-uppercase">account activities summary</div><!--card header-->
             <div class="card-body">
-
+  <marquee class="bg-dark text-light">Next funds disbursement date: <?php echo date('Y-m-d H:i:s', $result); ?> (. ❛ ᴗ ❛.)</marquee>
                        <div class="dashboard__content mb-5">
                        <div class="row">
 
@@ -71,7 +74,8 @@ require_once("./inc/leftnav.php");
         </div>
     </div>
 </div>
-<?php require_once("../inc/footer_links.php") ?>
+<?php require_once("../inc/footer_links.php");
+ ?>
 <script>
 	$(function(){
 		setInterval(function(){

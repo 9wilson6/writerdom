@@ -28,7 +28,7 @@ session_gen ();
        ?><i class="far fa-user-circle icon"></i></a>
       <div class="dropdown-menu navbar__toggle" aria-labelledby="navbarDropdown">
         <!-- <a class="dropdown-item"  href="#"><i class="fas fa-user icon-r"></i>Profile</a> -->
-        <a class="dropdown-item " href="#"><i class="fas fa-sliders-h icon-r"></i>Change Password</a>
+        <a class="dropdown-item " href="account_details"><i class="fas fa-sliders-h icon-r"></i>Update account</a>
         <a class="dropdown-item " href="../logout"><i class="fas fa-sign-out-alt icon-r"></i>Logout</a>
       </div>
     </li>
