@@ -43,10 +43,10 @@ $results=$db->get_results($query); ?>
                             <td>
                                 <a href="editing-details?pid=<?php echo urlencode(convert_uuencode($result->project_id)) ?>#messageBox" class="btn btn-sm btn-block btn-light">view</a>
                             </td>
-                            <?php elseif($result->status==4): ?>
+                            <?php elseif($result->status>3): ?>
 
                             <td>
-                               <a href="" class="btn btn-sm btn-block btn-light">view</a>
+                               <a href="complited_details?id=<?php echo urlencode(convert_uuencode($result->project_id)) ?>#messageBox" class="btn btn-sm btn-block btn-light">view</a>
                             </td>
                             <?php endif ?>
 

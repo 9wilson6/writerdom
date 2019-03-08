@@ -334,8 +334,9 @@ require_once"../inc/footer_links.php";
       }, 30000);
         $("#assing").submit(function(){
 
-     var c = confirm("Note that in order to assigne tutor ID: <?php if (isset($result->tutor_id)) {echo $result->tutor_id;} ?> \n your homework you will need to load $<?php if (isset( $result->bid_total_amount)) {echo $result->bid_total_amount;} ?> \n to your Writedom account. \nThe funds will be held in your account until you release them.\n Press okay to proceed");
+     var c = confirm("Note that in order to assigne tutor ID: <?php if (isset($result->tutor_id)) {echo $result->tutor_id;} ?> \n your homework you will need to load $<?php if (isset( $result->bid_total_amount)) {echo $result->bid_total_amount;} ?> \n to your Writedom account. \nThe funds will be held in your account until you release them.\n We will guide you through the process\n Press okay to proceed");
     return c; //you can just return c because it will be true or false
       });
      });
  </script>
+.

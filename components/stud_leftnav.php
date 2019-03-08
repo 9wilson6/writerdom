@@ -26,9 +26,7 @@ session_student();
     <a href="../student/messages" <?php if ($page=="messages") { ?>
     	class="active"
    <?php } ?>><li class="list-group-item"><i class="far fa-envelope-open icon-r"></i>Messages<span class=" float-right " id="messages">0</span></li></a>
-  <a href="../student/payment" <?php if ($page=="payment") { ?>
-  	class="active"
- <?php } ?>><li class="list-group-item"><i class="far fa-credit-card icon-r"></i>Payment</li></a>
+
   <a href="../logout" <li class="list-group-item"><i class="fas fa-sign-out-alt icon-r"></i>Logout</li></a>
 </ul>
 	</div>

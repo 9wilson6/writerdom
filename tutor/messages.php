@@ -60,9 +60,9 @@ $results=$db->get_results($query);
                                 <a href="revision-details?pid=<?php echo urlencode(convert_uuencode($result->project_id)) ?>#messageBox" class="btn btn-sm btn-block btn-light">view</a>
                             </td>
                             <?php elseif($result->status>3): ?>
-                             <a href="my-projects-details?pid=<?php echo urlencode(convert_uuencode($result->project_id)) ?>#messageBox" class="btn btn-sm btn-block btn-light">view</a>
+                            
                             <td>
-                               <a href="" class="btn btn-sm btn-block btn-light">view</a>
+                               <a href="my-projects-details?pid=<?php echo urlencode(convert_uuencode($result->project_id)) ?>#messageBox" class="btn btn-sm btn-block btn-light">view</a>
                             </td>
                             <?php endif ?>
 

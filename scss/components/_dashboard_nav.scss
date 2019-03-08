@@ -74,6 +74,7 @@
         width: 25rem;
         transition: all .5s ease-out;
         text-align: left;
+        
         @include tablet1 {
             display: none;
         }

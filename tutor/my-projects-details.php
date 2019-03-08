@@ -7,8 +7,8 @@ require_once("../dbconfig/dbconnect.php");
 
 # //////////////////////////////////////////////////////////////////////////////////// -->
 $tutor_id=$_SESSION['user_id'];
-if (isset($_REQUEST['id'])) {
-	$project_id=convert_uudecode($_REQUEST['id']);
+if (isset($_REQUEST['pid'])) {
+	$project_id=convert_uudecode($_REQUEST['pid']);
 	
 }else{
 	header("location:dashboard");
