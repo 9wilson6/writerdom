@@ -1,30 +1,35 @@
-<section class="forms">
-  <div class="container">
-    <div class="forms__content">
-      <div class="text-center"><h1 class="headingSecondary">Reset Password</h1></div>
-      <form action="" class="forms__form" method="POST">
-        <div class="form__group">
-          <div class="form-row">
-            <div class="col-12 col-md-12 col-lg-4">
-              <label for="email" class="form__label">Email:</label>
-            </div>
-            <div class="col-12 col-md-12 col-lg-8">
-              <input type="email" id="email" name="email" class="form-control form__input" placeholder="email" required>
-            </div>
+<section class="fom">
+	
 
-          </div>
-        </div>
-        <div class="form__group">
-          <input type="hidden" name="user" value="student">
-          <div class="form-row">
-            <div class="col-4"><span>
-               </span></div>
-            <div class="col-12 col-md-12 col-lg-4"><button class="form__buttons">Reset</button></div>
-            <div class="col-12 col-md-12 col-lg-4"><a href="student_login" class=" form__buttons" >login</a></div>
-            
-          </div>
-        </div>
-    </form>
-  </div>
-  </div>
+	<div class="main">
+        <section class="form-header">
+            <div class="home"><a href="student_login">Login</a></div>
+            <div style="clear: both"></div>
+            <div class="image">
+                <div class="cover"></div> <img src="./assets/user.png">
+            </div>
+            <div class="company">WriterDom</div>
+            <div class="heading">Reset Your Account Password</div>
+        </section>
+        <form action="" method="POST" id="form-box">
+
+        	<?php if (!empty($error)) { ?>
+        
+         <div class="text-danger text-uppercase  text-center"><strong><?php  echo $error; ?></strong></div>
+      <?php  } ?>
+      <?php if (!empty($success)) { ?>
+        
+         <div class="text-success text-uppercase text-center"><strong><?php  echo $success; ?></strong></div>
+      <?php  } ?>
+            <!-- //////////////////////////////////// -->
+            <div class="icon"><span class="fa fa-envelope"></span></div>
+            <div class="input">
+                <input type="email" name="email" id="email" class="inp" placeholder="E-mail" required>
+              <input type="hidden" name="user_type" value="1">
+            </div>
+            <!-- //////////////////////////////////// -->
+            <input type="submit" value="RESET NOW" name="submit" class="sub-btn">
+        </form>
+      
+    </div>
 </section>

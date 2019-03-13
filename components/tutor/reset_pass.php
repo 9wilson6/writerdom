@@ -1,36 +1,35 @@
-<section class="forms">
+<section class="fom">
+	
 
-  <div class="container">
+	<div class="main">
+        <section class="form-header">
+            <div class="home"><a href="tutor_login">Login</a></div>
+            <div style="clear: both"></div>
+            <div class="image">
+                <div class="cover"></div> <img src="./assets/user.png">
+            </div>
+            <div class="company">WriterDom</div>
+            <div class="heading">Reset Your Account Password</div>
+        </section>
+        <form action="" method="POST" id="form-box">
 
-    <div class="forms__content">
-      <div class="text-center"><h1 class="headingSecondary">Reset Password</h1>
-      </div>
-
+        	<?php if (!empty($error)) { ?>
+        
+         <div class="text-danger text-uppercase  text-center"><strong><?php  echo $error; ?></strong></div>
+      <?php  } ?>
+      <?php if (!empty($success)) { ?>
+        
+         <div class="text-success text-uppercase text-center"><strong><?php  echo $success; ?></strong></div>
+      <?php  } ?>
+            <!-- //////////////////////////////////// -->
+            <div class="icon"><span class="fa fa-envelope"></span></div>
+            <div class="input">
+                <input type="email" name="email" id="email" class="inp" placeholder="E-mail" required>
+              <input type="hidden" name="user_type" value="2">
+            </div>
+            <!-- //////////////////////////////////// -->
+            <input type="submit" value="RESET NOW" name="submit" class="sub-btn">
+        </form>
       
-      <form action="" class="forms__form" method="POST">
-        <div class="form__group">
-          <div class="form-row">
-            <div class="col-12 col-md-12 col-lg-4">
-              <label for="email" class="form__label">Email:</label>
-            </div>
-            <div class="col-12 col-md-12 col-lg-8">
-              <input type="email" id="email" name="email" id="" class="form-control error form__input" placeholder="email" required>
-            </div>
-
-          </div>
-        </div>
-
-        <div class="form__group">
-          <div class="form-row">
-            <div class="col-4"><span>
-               </span></div>
-            <div class="col-12 col-md-12 col-lg-4"><button class="  form__buttons">Reset</button></div>
-            <div class="col-12 col-md-12 col-lg-4"><a href="TutorLogin" class=" form__buttons" >login</a></div>
-            
-          </div>
-        </div>
-    </form>
-    <!-- <a href="StudentPassReset" class="float-right mt-5"><small>forgot password?</small></a> -->
-  </div>
-  </div>
+    </div>
 </section>

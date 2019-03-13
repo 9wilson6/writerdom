@@ -1,58 +1,42 @@
 <section class="mainSection">
 	<section class="order" id="order">
 		<div class="order__content">
-			<div class="container_">
+			<div class="container">
 				<h1 class="headingSecondary">How to Order a Custom Paper.</h1>
-				<div class="row">
-					<div class="col-xs-12 col-sm-6 col-md-6 col-lg-3" data-aos="zoom-in-down">
-						<div class="card">
-						  <img class="card-img-top" src="./assets/upload.png" alt="Card image">
-						  
-						  <div class="card-body">
-						    <!-- <h4 class="card-title">Place an order online</h4> -->
-						    <h3 class="quaternary mt-3">Place order online</h3>
-						    <p class="card-text">Submit assignment details such as topic, subject, number of pages, formatting style
+				<div class="order__steps" >
+					<div class="row">
+						<div class="col-6 col-sm-6  order__stepx" data-aos="zoom-in-down">
+							<i class="fas fa-upload order__stepx--icon"></i>
+							<br>
+							<h3 class="quaternary">Place an order online</h3>
+							<p class="lead text-center">Submit assignment details such as topic, subject, number of pages, formatting style
 								and order deadline. Upload additional files for your essay writer so they can mirror your writing <br> style.</p>
-						    
-						  </div>
-						</div></div>
-						<div class="col-xs-12 col-sm-6 col-md-6 col-lg-3" data-aos="zoom-in-up">
-						<div class="card">
-						  <img class="card-img-top" src="./assets/student.png" alt="Card image">
-						  
-						  <div class="card-body">
-						    <!-- <h4 class="card-title">Place an order online</h4> -->
-						    <h3 class="quaternary mt-3">Assign a tutor</h3>
-						    <p class="card-text">View tutor bids and choose the best one by price, rating, number of orders, order
+						</div>
+						<div class="col-6 col-sm-6  order__stepx" data-aos="zoom-in-up"><i class="far fa-user order__stepx--icon"></i><br>
+							<h3 class="quaternary">Assign a tutor</h3>
+							<p class="lead text-center">View tutor bids and choose the best one by price, rating, number of orders, order
 								completion rate and reviews. We recommend picking a writer that specializes in your particular essay<br> topic.</p>
-						    
-						  </div>
-						</div></div>
-						<div class="col-xs-12 col-sm-6 col-md-6 col-lg-3" data-aos="zoom-in-up">
-						<div class="card">
-						  <img class="card-img-top" src="./assets/sms-icon.png" alt="Card image">
-						 
-						  <div class="card-body">
-						    <!-- <h4 class="card-title">Place an order online</h4> -->
-						    <h3 class="quaternary mt-3">Chat with the tutor</h3>
-						    <p class="card-text">Your writer will begin working on the order after you reserve the contract
+						</div>
+
+						<!-- Force next columns to break to new line at md breakpoint and up -->
+
+
+						<div class="col-6 col-sm-6  order__stepx" data-aos="zoom-in-up">
+							<i class="far fa-comments order__stepx--icon"></i>
+							<br>
+							<h3 class="quaternary">Chat with the tutor</h3>
+							<p class="lead text-center">Your writer will begin working on the order after you reserve the contract
 								(agreed-upon) amount from your account balance. You can deposit funds using your credit card or PayPal <br>account.</p>
-						    
-						  </div>
-						</div></div>
-							<div class="col-xs-12 col-sm-6 col-md-6 col-lg-3" data-aos="zoom-in-down">
-						<div class="card">
-						  <img class="card-img-top" src="./assets/download.png" alt="Card image">
-						  
-						  <div class="card-body">
-						    <!-- <h4 class="card-title">Place an order online</h4> -->
-						    <h3 class="quaternary mt-3">Download solution</h3>
-						    <p class="card-text">Feel free to chat with the writer anytime during the order process. After
+						</div>
+						<div class="col-6 col-sm-6  order__stepx" data-aos="zoom-in-down">
+							<i class="fas fa-download order__stepx--icon"></i>
+							<br>
+							<h3 class="quaternary">Download solution</h3>
+							<p class="lead text-center">Feel free to chat with the writer anytime during the order process. After
 								downloading
 								the completed paper, make sure that you are completely satisfied with the <br> content.</p>
-						    
-						  </div>
-						</div></div>
+						</div>
+					</div>
 				</div>
 			</div>
 		</div>
@@ -62,7 +46,7 @@
 		<div class="container">
 			<div class="about__content">
 				<div class="row">
-					<div class="col-md-4 col-lg-4" data-aos="fade-bottom" data-aos-offset="300" data-aos-easing="ease-in-sine"
+					<div class="col-md-4 col-lg-4" data-aos="fade-right" data-aos-offset="300" data-aos-easing="ease-in-sine"
 					 data-aos-duration="1500">
 						<h3 class="quaternary quaternary--light">About Us</h3>
 						<p class="paragraph paragraph__about">We are a renowned entity in providing professional tutor services in all
@@ -71,7 +55,7 @@
 							help with their paper at an affordable, negotiated price with the tutor. The forthright interaction creates a
 							win-win relationship that helps students to excel in their academics while tutors make a decent living.</p>
 					</div>
-					<div class="col-md-4 col-lg-4" data-aos="fade-in" data-aos-easing="linear" data-aos-duration="1500">
+					<div class="col-md-4 col-lg-4" data-aos="fade-down" data-aos-easing="linear" data-aos-duration="1500">
 						<h3 class="quaternary quaternary--light">What We Do</h3>
 						<p class="paragraph paragraph__about">WriterDom offers a plethora of educational services that are
 							customized to the client’s needs. You will never miss your match, whatever the discipline or specialization you
@@ -80,7 +64,7 @@
 							statements, admission essays, book and movie reviews, article critique, editing and proofreading, as well as
 							coursework help. Register and chat with tutors for any help.</p>
 					</div>
-					<div class="col-md-4 col-lg-4" data-aos="fade-top" data-aos-offset="300" data-aos-easing="ease-in-sine"
+					<div class="col-md-4 col-lg-4" data-aos="fade-left" data-aos-offset="300" data-aos-easing="ease-in-sine"
 					 data-aos-duration="1500">
 						<h3 class="quaternary quaternary--light">Why Us?</h3>
 						<p class="paragraph paragraph__about">We are simply the best; the market leaders. We have almost 10 years of

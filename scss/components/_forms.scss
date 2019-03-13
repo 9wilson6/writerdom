@@ -1,4 +1,5 @@
-.forms {
+// not in use
+.forms_absolute {
     height: 100vh;
     display: flex;
     flex-direction: row;
@@ -152,3 +153,154 @@
         color: $primary-color-3 !important;
     }
 }
+//not in use
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//  in use
+
+    .fom{
+    //    background: #00838f; 
+    background: $primary-color-3;
+       height:100vh;
+       width:100vw;
+
+    .main {
+            width: 400px;
+            background: #eceff1;
+            margin: 40px auto;
+            // position: relative;
+            padding: 10px;
+            border-radius: 5px;
+            box-shadow: 1px 1px 7px #555;
+            position: absolute;
+            top: 45%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+
+        }
+
+        .form-header {
+            text-align: center;
+        }
+
+        img {
+            width: 70px;
+            height: 70px;
+        }
+
+        .image {
+            position: relative;
+
+
+        }
+
+        .cover {
+            width: 100%;
+            height: 100%;
+            background-color: #000;
+            position: absolute;
+            opacity: .001;
+        }
+
+
+        .company {
+            font-size: 40px;
+            /* font-family: 'Asap', sans-serif; */
+            font-weight: bold;
+            color: #009688;
+        }
+
+        .heading {
+            font-weight: bold;
+            color: #666;
+            font-size: 18px;
+        }
+
+        #form-box {
+            padding: 10px;
+        }
+
+        .inp {
+            width: 100%;
+            padding: 10px 10px 10px 0;
+            margin-bottom: 15px;
+            border: none;
+            border-bottom: 1px solid #999;
+            font-size: 16px;
+            color: #009688;
+            background: #eceff1;
+        }
+
+        .inp:focus {
+            outline: none;
+            color: #009688;
+            font-weight: bolder;
+            border-bottom: 1px solid #009688;
+        }
+       .inp:invalid{
+            outline: none;
+             border-bottom: 1px solid #FF0000;
+              
+        }
+        .sub-btn {
+            width: 100%;
+            padding: 10px;
+            border-radius: 3px;
+            font-weight: bold;
+            font-size: 16px;
+            color: #fff;
+            background: #009688;
+            cursor: pointer;
+        }
+
+        .sub-btn:focus {
+            outline: none;
+
+        }
+
+        .sub-btn:hover {
+            background: #00796b;
+        }
+
+        .form-footer {
+            text-align: center;
+            padding: 10px;
+            font-weight: bolder;
+            color: #546e7a;
+        }
+
+        .form-footer a,
+        .home a {
+            text-decoration: none;
+            color: #1976d2;
+        }
+
+        .home a {
+            float: right;
+            font-size: 12px;
+        }
+
+        .icon {
+            position: absolute;
+            /* display: inline-block; */
+            left: 10px;
+            width: 30px;
+            height: 30px;
+            font-size: 25px;
+            padding: 8px 8px 8px 0;
+            color: #009688;
+        }
+
+        .input {
+            margin-left: 39px;
+        }
+
+        @media (max-width:720px) {
+            .main {
+                width: 90%;
+            }
+        }
+
+    }
+
+//  in use
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
