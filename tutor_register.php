@@ -10,5 +10,5 @@ $success="";
 Register();
 
  ?>
-<?php require_once"components/tutor/Register.php" ?>
+<?php require_once"components/tutor/register.php" ?>
 <?php require_once"inc/footer_links.php"; ?>
