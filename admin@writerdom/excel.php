@@ -38,7 +38,7 @@ $date_global=date('Y-m-d H:i:s');
 
         $db->query($query);
 
-       $query="UPDATE projects SET status=5 WHERE status=4";
+       $query="UPDATE projects SET status=5, DATE_CLOSED='$date_global' WHERE status=4";
        $db->query($query);
 
          $date=strtotime("+15days");

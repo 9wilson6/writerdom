@@ -1,4 +1,4 @@
-<?php 
+<?php
 require_once "../inc/header_links.php";
  $page="projects" ;
 require_once "../components/top_nav.php";
@@ -12,12 +12,12 @@ $count_q="SELECT COUNT(closed.project_id) FROM closed LEFT JOIN projects ON clos
 $result_q=$db->get_var($count_q);
 
 if ($result_q>20) {
- 
-$query="SELECT * FROM closed LEFT JOIN projects ON closed.project_id=projects.project_id WHERE closed.tutor_id='$tutor_id' ORDER BY closed.project_id desc LIMIT 20 "; 
+
+$query="SELECT * FROM closed LEFT JOIN projects ON closed.project_id=projects.project_id WHERE closed.tutor_id='$tutor_id' ORDER BY closed.project_id desc LIMIT 20 ";
 }else{?>
 <!-- <meta http-equiv="refresh" content="30"> -->
 
-<?php 
+<?php
  $query="SELECT * FROM closed LEFT JOIN projects ON closed.project_id=projects.project_id WHERE closed.tutor_id='$tutor_id' ORDER BY closed.project_id desc";
 
 }
@@ -57,7 +57,7 @@ $results=$db->get_results($query);
                                        <?php foreach ($results as $result): ?>
                                 <tr>
                                     <td class="smalll"><a
-                                            href="my-projects-details?id=<?php echo urlencode(convert_uuencode($result->project_id)); ?>"><?php echo $result->project_id; ?><i
+                                            href="my-projects-details?pid=<?php echo urlencode(convert_uuencode($result->project_id)); ?>"><?php echo $result->project_id; ?><i
                                                 class="fas fa-external-link-alt icon-r ml-4"></i></a></td>
                                     <td class="wide">
                                         <?php echo (strlen($result->title) >35 )? substr($result->title, 0, 35).'...':$result->title; ?>
@@ -85,7 +85,7 @@ $results=$db->get_results($query);
 
                                 </tr>
                                 <?php endforeach ?>
-                                
+
                             </tbody>
 
                         </table>
@@ -104,38 +104,7 @@ $results=$db->get_results($query);
                     <?php endif ?>
                 </div>
             </div>
-            <div class="col-sm-12 col-md-12 col-lg-12  col-xl-3">
-                <h1 class="headingTertiary text-light">My Account</h1>
-                <div class="card">
-                    <div class="card-header">My stats</div>
-                    <div class="card-body">
-                        <table class="table  table-bordered table-hover ">
-                            <tbody>
-                                <tr>
-                                    <td>Account Balance</td>
-                                    <td>$0.00</td>
-
-                                </tr>
-                                <tr>
-                                    <td>Account Status</td>
-                                    <td>Regular</td>
-
-                                </tr>
-                                <tr>
-                                    <td>Account Rating (30)</td>
-                                    <td>9</td>
-
-                                </tr>
-                                <tr>
-                                    <td>Account Rating</td>
-                                    <td>4</td>
-
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-            </div>
+<?php require_once("./section_rate.php"); ?>
         </div>
     </div>
 </div>

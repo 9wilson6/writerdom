@@ -1,4 +1,4 @@
-<?php 
+<?php
 require_once "../inc/header_links.php";
 require_once"../inc/utilities.php";
 #//////////////////////////////////////////////////////////////////////////////////// -->
@@ -22,7 +22,7 @@ if (isset($_POST['submit'])) {
 $tutor_id=$_SESSION['user_id'];
 if (isset($_REQUEST['pid'])) {
 	$project_id=convert_uudecode($_REQUEST['pid']);
-	
+
 }else{
 	header("location:dashboard");
 }
@@ -36,7 +36,7 @@ require_once "../components/top_nav.php";
         <?php require_once "../components/tutor_leftnav.php";
 		require_once("../dbconfig/dbconnect.php");
 
-		
+
 		?>
         <div class="row">
 
@@ -197,7 +197,7 @@ require_once "../components/top_nav.php";
                             <p>
                                 <STRONG>Instructions:<br></STRONG>
                                 <div class="pl-5"><?php echo $results->instructions; ?></div>
-                                
+
                             </p>
                             <div class="row">
                                 <div class="col-sm-12 col-md-6 col lg-6">
@@ -213,7 +213,7 @@ require_once "../components/top_nav.php";
                                             <p class="results">
                                             	<?php resultsDownload($results->student_id,$results->project_id) ?>
                                             </p>
-                                            
+
 
                                         </div>
                                     </div>
@@ -231,8 +231,8 @@ require_once "../components/top_nav.php";
 
                                             </div>
 
-                                        <form action="../chat" method="POST" id="chat_form"> 
-                                         <p class="messages__form" > 
+                                        <form action="../chat" method="POST" id="chat_form">
+                                         <p class="messages__form" >
                                          <textarea name="message" placeholder="Messaging not supported for delivered orders (:" required disabled></textarea>
                                          </p>
                                             <input type="hidden" name="project_id" value="<?php echo $results->project_id ?>" >
@@ -248,7 +248,7 @@ require_once "../components/top_nav.php";
                                     </div>
                                 </div>
                             </div>
-                            
+
 
 	<div class="card">
 		<div class="card-header"></div>
@@ -274,50 +274,19 @@ require_once "../components/top_nav.php";
             </form>
 		</div>
 	</div>
-                               
+
 
                         </div>
                     </div>
                     <div class="card-footer">
 
                     </div>
-                   
+
                 </div>
                 <?php } ?>
             </div>
-            
-            <div class="col-sm-12 col-md-12 col-lg-12  col-xl-3">
-                <h1 class="headingTertiary text-light">My Account</h1>
-                <div class="card">
-                    <div class="card-header">My stats</div>
-                    <div class="card-body">
-                        <table class="table  table-bordered table-hover ">
-                            <tbody>
-                                <tr>
-                                    <td>Account Balance</td>
-                                    <td>$0.00</td>
 
-                                </tr>
-                                <tr>
-                                    <td>Account Status</td>
-                                    <td>Regular</td>
-
-                                </tr>
-                                <tr>
-                                    <td>Account Rating (30)</td>
-                                    <td>9</td>
-
-                                </tr>
-                                <tr>
-                                    <td>Account Rating</td>
-                                    <td>4</td>
-
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-            </div>
+<?php require_once("./section_rate.php"); ?>
 
         </div>
 
@@ -448,5 +417,3 @@ require_once"../inc/footer_links.php";
 
 
  ?>
-
- 

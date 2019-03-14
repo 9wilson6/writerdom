@@ -199,6 +199,11 @@ body {
 .alert {
   font-size: 12px; }
 
+.adjust_alert-font {
+  margin-top: 5rem; }
+  .adjust_alert-font .alert {
+    font-size: 2rem; }
+
 .navbar {
   animation-duration: 2s;
   animation-delay: .3s;

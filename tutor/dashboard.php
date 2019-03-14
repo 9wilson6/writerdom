@@ -1,23 +1,23 @@
-<?php 
+<?php
 require_once("../dbconfig/dbconnect.php");
   require_once("../inc/utilities.php");
    $date_global_=strtotime($date_global);
 $count_q="SELECT COUNT(project_id) FROM projects WHERE deadline>{$date_global_}";
 $result_q=$db->get_var($count_q);
 if ($result_q>20) {
- 
-$query="SELECT * FROM projects WHERE deadline>{$date_global_} AND status=0 ORDER BY project_id desc LIMIT 20 "; 
+
+$query="SELECT * FROM projects WHERE deadline>{$date_global_} AND status=0 ORDER BY project_id desc LIMIT 20 ";
 }else{?>
 <!-- <meta http-equiv="refresh" content="30"> -->
 
-<?php 
+<?php
  $query="SELECT * FROM projects WHERE deadline>{$date_global_} AND status=0 ORDER BY project_id desc";
 
 }
 
 $results=$db->get_results($query);
  ?>
-<?php 
+<?php
 require_once "../inc/header_links.php";
  $page="dashboard" ;
 require_once "../components/top_nav.php";
@@ -81,7 +81,7 @@ require_once "../components/top_nav.php";
 
                                 </tr>
                                 <?php endforeach ?>
-                                
+
                             </tbody>
 
                         </table>
@@ -99,38 +99,8 @@ require_once "../components/top_nav.php";
                     <?php endif ?>
                 </div>
             </div>
-            <div class="col-sm-12 col-md-12 col-lg-12  col-xl-3">
-                <h1 class="headingTertiary text-light">My Account</h1>
-                <div class="card">
-                    <div class="card-header">My stats</div>
-                    <div class="card-body">
-                        <table class="table  table-bordered table-hover ">
-                            <tbody>
-                                <tr>
-                                    <td>Account Balance</td>
-                                    <td>$0.00</td>
-
-                                </tr>
-                                <tr>
-                                    <td>Account Status</td>
-                                    <td>Regular</td>
-
-                                </tr>
-                                <tr>
-                                    <td>Account Rating (30)</td>
-                                    <td>9</td>
-
-                                </tr>
-                                <tr>
-                                    <td>Account Rating</td>
-                                    <td>4</td>
-
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-            </div>
+        <?php require_once("./section_rate.php"); ?>
+          
         </div>
     </div>
 </div>

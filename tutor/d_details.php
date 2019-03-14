@@ -1,4 +1,4 @@
-<?php 
+<?php
 require_once "../inc/header_links.php";
 require_once"../inc/utilities.php";
 #//////////////////////////////////////////////////////////////////////////////////// -->
@@ -16,7 +16,7 @@ if (isset($_POST['submit'])) {
 
   $query="INSERT INTO bids(tutor_id, project_id, bid_amount, bid_fee, bid_total_amount, student_id) VALUES('$tutor_id', '$project_id', '$bid_amount','$bid_fee','$bid_total_amount', '$student_id')";
 
-  
+
   $results=$db->query($query);
 
 
@@ -31,11 +31,11 @@ $db->query("UPDATE projects SET bids='$bids' WHERE project_id='$project_id'");
   $note2="You have placed a bid for project ID: ".$project_id." at ".$date_global."bid amnt: ".$bid_total_amount;
  $querys="INSERT INTO notifications(user_type, note) VALUES(2,'$note')";
   $db->query($querys);
-  $querys="INSERT INTO notifications(user_type, note) VALUES(3,'$note2')";
+  $querys="INSERT INTO notifications(user_type, note, user_id) VALUES(3,'$note2','$tutor_id')";
   $db->query($querys);
   // ........,,,,,,,,,,,,,,,,,,,,,,,,,,notification,,,,,,,,,,,,,,,,,
-  // 
-  // 
+  //
+  //
   // ,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,//
 
 }
@@ -55,11 +55,11 @@ if (isset($_POST['delete'])) {
   $note2="You have deleted your bid for project ID: ".$project_id." at ".$date_global;
  $querys="INSERT INTO notifications(user_type, note) VALUES(2,'$note')";
   $db->query($querys);
-  $querys="INSERT INTO notifications(user_type, note) VALUES(3,'$note2')";
+  $querys="INSERT INTO notifications(user_type, note, user_id) VALUES(3,'$note2','$tutor_id')";
   $db->query($querys);
   // ........,,,,,,,,,,,,,,,,,,,,,,,,,,notification,,,,,,,,,,,,,,,,,
-  // 
-  // 
+  //
+  //
   // ,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,//
     ?>
 <script>
@@ -72,7 +72,7 @@ if (isset($_POST['delete'])) {
 $tutor_id=$_SESSION['user_id'];
 if (isset($_REQUEST['id'])) {
 	$project_id=convert_uudecode($_REQUEST['id']);
-	
+
 }else{
 	header("location:dashboard");
 }
@@ -85,7 +85,7 @@ require_once "../components/top_nav.php";
     <div class="display__content">
         <?php require_once "../components/tutor_leftnav.php";
 
-		
+
 		?>
         <div class="row">
 
@@ -109,7 +109,7 @@ require_once "../components/top_nav.php";
                                 <th class="text-center">Order Id</th>
                                 <th class="text-center">Deadline</th>
                                 <th class="text-center">Budget</th>
-                                <th class="text-center">Yor Bid</th>
+                                <th class="text-center">Yuor Bid</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -142,7 +142,7 @@ require_once "../components/top_nav.php";
 
                                 </td>
                                 <td class="text-center">
-                                    <?php 
+                                    <?php
                   ////////////////////////////CHECK IF USER HAS ALREADY APPLIED FOR THIS ORDER////////////////////////////////////////////
                   $check_q=$db->get_row("SELECT * FROM bids WHERE tutor_id=$tutor_id AND project_id= $project_id");
                   ////////////////////////////CHECK IF USER HAS ALREADY APPLIED FOR THIS ORDER////////////////////////////////////////////
@@ -152,7 +152,7 @@ require_once "../components/top_nav.php";
                                         <div class="row">
                                             <div class="col-8">
                                                 <?php $min= ceil(intval(str_replace("$", "", $results->budget)) * 0.7);
-                          
+
                           // echo $results->bids;
                           // die()
                          ?>
@@ -179,23 +179,24 @@ require_once "../components/top_nav.php";
 
                                     <?php else: ?>
 
-                                    <form action="" method="POST">
-                                        <div class="row">
-                                            <div class="col-8">
-                                                <h3 class="bg-warning forms2__input pt-2 text-light">Your Bid amount is:
-                                                    $<?php echo $check_q->bid_amount; ?></h3>
-                                                <input type="hidden" name="project_id"
-                                                    value="<?php echo $project_id ?>">
-                                                <input type="hidden" name="tutor_id" value="<?php echo $tutor_id ?>">
-                                                <input type="hidden" name="bids" value="<?php echo $results->bids ?>">
-                                            </div>
-                                            <div class="col-4">
-                                                <button class="btn btn-danger btn-block btn-sm" name="delete"
-                                                    type="submit">DELETE</button>
-                                            </div>
+                <form action="" method="POST">
+                    <div class="row">
+                        <div class="col-8">
+                            <h3 class="bg-warning forms2__input pt-2 text-light">Your Bid amount is:
+                                $<?php echo $check_q->bid_amount; ?></h3>
+                            <input type="hidden" name="project_id"
+                                value="<?php echo $project_id ?>">
+                            <input type="hidden" name="tutor_id" value="<?php echo $tutor_id ?>">
+                            <input type="hidden" name="bids" value="<?php echo $results->bids ?>">
+                        </div>
+                        <div class="col-4">
+                            <button class="btn btn-danger btn-block btn-sm" name="delete"
+                                type="submit">DELETE</button>
+                        </div>
 
-                                        </div>
-                                    </form>
+                    </div>
+                     <small class="text-danger">Note: 30% of your bid amount will be deducted for account mentainance.</small>
+                </form>
                                     <?php endif ?>
 
 
@@ -301,7 +302,7 @@ require_once "../components/top_nav.php";
                             <p>
                                 <STRONG>Instructions:<br></STRONG>
                                 <div class="pl-5"><?php echo $results->instructions; ?></div>
-                                
+
                             </p>
                             <div class="row">
                                 <div class="col-sm-12 col-md-5 col lg-5">
@@ -331,39 +332,7 @@ require_once "../components/top_nav.php";
                 </div>
             </div>
             <?php } ?>
-            <div class="col-sm-12 col-md-12 col-lg-12  col-xl-3">
-                <h1 class="headingTertiary text-light">My Account</h1>
-                <div class="card">
-                    <div class="card-header">My stats</div>
-                    <div class="card-body">
-                        <table class="table  table-bordered table-hover ">
-                            <tbody>
-                                <tr>
-                                    <td>Account Balance</td>
-                                    <td>$0.00</td>
-
-                                </tr>
-                                <tr>
-                                    <td>Account Status</td>
-                                    <td>Regular</td>
-
-                                </tr>
-                                <tr>
-                                    <td>Account Rating (30)</td>
-                                    <td>9</td>
-
-                                </tr>
-                                <tr>
-                                    <td>Account Rating</td>
-                                    <td>4</td>
-
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-            </div>
-
+<?php require_once("./section_rate.php"); ?>
         </div>
 
     </div>

@@ -1,4 +1,4 @@
-<?php 
+<?php
 require_once("../dbconfig/dbconnect.php");
   require_once("../inc/utilities.php");
 require_once "../inc/header_links.php";
@@ -10,7 +10,7 @@ if (isset($_REQUEST['key'])) {
    $user_id =convert_uudecode($_REQUEST['key']);
    $query="SELECT * FROM users WHERE user_id='$user_id'";
    $results=$db->get_row($query);
-   
+
    }else{
     header("LOCATION:dashboard");
    }
@@ -29,11 +29,11 @@ if (isset($_REQUEST['key'])) {
             if ($db->query($query)) {
                 $success="Password updated successfully";
             }
-   }else{$error="Invalid old password";} 
+   }else{$error="Invalid old password";}
       }else{
             $error="Passwords should be at least 6 characters in length";}
    }else{$error="password confirmation didn't match new password";}
-  
+
  }
 ?>
 <div class="display">
@@ -46,7 +46,7 @@ if (isset($_REQUEST['key'])) {
  <div class="card wide-card">
                     <div class="card-header">PASSWORD DETAILS</div>
                     <div class="card-body">
-                        
+
                    <div class="table-responsive">
                         <table class="table text-center">
                             <thead>
@@ -82,42 +82,11 @@ if (isset($_REQUEST['key'])) {
                          </tbody>
                         </table>
                 </div>
-                   
+
                 </div>
             </div>
         </div>
-            <div class="col-sm-12 col-md-12 col-lg-12  col-xl-3">
-                <h1 class="headingTertiary text-light">My Account</h1>
-                <div class="card">
-                    <div class="card-header">My stats</div>
-                    <div class="card-body">
-                        <table class="table  table-bordered table-hover ">
-                            <tbody>
-                                <tr>
-                                    <td>Account Balance</td>
-                                    <td>$0.00</td>
-
-                                </tr>
-                                <tr>
-                                    <td>Account Status</td>
-                                    <td>Regular</td>
-
-                                </tr>
-                                <tr>
-                                    <td>Account Rating (30)</td>
-                                    <td>9</td>
-
-                                </tr>
-                                <tr>
-                                    <td>Account Rating</td>
-                                    <td>4</td>
-
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-            </div>
+<?php require_once("./section_rate.php"); ?>
         </div>
     </div>
 </div>

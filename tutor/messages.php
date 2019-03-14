@@ -60,7 +60,7 @@ $results=$db->get_results($query);
                                 <a href="revision-details?pid=<?php echo urlencode(convert_uuencode($result->project_id)) ?>#messageBox" class="btn btn-sm btn-block btn-light">view</a>
                             </td>
                             <?php elseif($result->status>3): ?>
-                            
+
                             <td>
                                <a href="my-projects-details?pid=<?php echo urlencode(convert_uuencode($result->project_id)) ?>#messageBox" class="btn btn-sm btn-block btn-light">view</a>
                             </td>
@@ -95,38 +95,7 @@ $results=$db->get_results($query);
                          <?php endif ?>
                 </div>
             </div>
-            <div class="col-sm-12 col-md-12 col-lg-12  col-xl-3">
-                <h1 class="headingTertiary text-light">My Account</h1>
-                <div class="card">
-                    <div class="card-header">My stats</div>
-                    <div class="card-body">
-                        <table class="table  table-bordered table-hover ">
-                            <tbody>
-                                <tr>
-                                    <td>Account Balance</td>
-                                    <td>$0.00</td>
-
-                                </tr>
-                                <tr>
-                                    <td>Account Status</td>
-                                    <td>Regular</td>
-
-                                </tr>
-                                <tr>
-                                    <td>Account Rating (30)</td>
-                                    <td>9</td>
-
-                                </tr>
-                                <tr>
-                                    <td>Account Rating</td>
-                                    <td>4</td>
-
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-            </div>
+<?php require_once("./section_rate.php"); ?>
         </div>
     </div>
 </div>
@@ -157,6 +126,6 @@ require_once"../inc/footer_links.php";
         })
     });
 
-  setTimeout('window.location.href=window.location.href;', 120000);
+  // setTimeout('window.location.href=window.location.href;', 120000);
 });
  </script>
