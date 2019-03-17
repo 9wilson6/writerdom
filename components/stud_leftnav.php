@@ -17,7 +17,7 @@ session_student();
   <a href="../student/delivered" <?php if ($page=="delivered") { ?>
   	class="active"
  <?php } ?>><li class="list-group-item"><i class="fas fa-check icon-r"></i>Delivered<span class=" float-right" id="delivered">0</span></li></a>
- <a href="Editing" <?php if ($page=="revision") { ?>
+ <a href="editing" <?php if ($page=="revision") { ?>
     class="active"
   <?php } ?>><li class="list-group-item"><i class="fas fa-redo-alt icon-r"></i></i>Under Editing <span class=" float-right" id="on_revision">0</span></li></a>
    <a href="../student/completed" <?php if ($page=="completed") { ?>

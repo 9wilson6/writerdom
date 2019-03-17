@@ -8,8 +8,8 @@ $rating=$_POST['rating'];
 $project_id=$_POST['project_id'];
 $student_id=$_POST['student_id'];
 $tutor_id=$_POST['tutor_id'];
-$charges=$_POST['charges'];
-die($charges);
+$charges=ceil($_POST['charges'] * 0.70);
+
 $query="SELECT dues FROM users WHERE user_id='$tutor_id'";
 $result=$db->get_var($query);
 $dues=($result+$charges);
@@ -22,14 +22,14 @@ $query="INSERT INTO closed(comment,rating,date_closed,project_id,student_id,tuto
 
 if ($db->query($query)) {
 
-	$query="UPDATE projects SET status=4,  WHERE project_id='$project_id'";
+	$query="UPDATE projects SET status=4, charges='$charges' WHERE project_id='$project_id'";
 	if ($db->query($query)) {
 		/////////////////////////////////notification/////////////////////////////////////////////
 $note="Student Id: ".$student_id." approved project id: ".$project_id." on ".$date_global;
 $note2="You approved project id: ".$project_id." on ". $date_global;
 $querys="INSERT INTO notifications(user_type, note) VALUES(1,'$note')";
 $db->query($querys);
-$querys="INSERT INTO notifications(user_type, note) VALUES(3,'$note2')";
+$querys="INSERT INTO notifications(user_type, note, user_id) VALUES(3,'$note2','$student_id')";
 $db->query($querys);
 /////////////////////////////////notification/////////////////////////////////////////////
 		$query="DELETE FROM delivered WHERE project_id='$project_id'";

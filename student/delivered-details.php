@@ -268,20 +268,21 @@ $results=$db->get_row($query);
                 <p><form action="rate" method="post" id="revision">
 
                     <div class="form-row">
-                                    <div class="col-8">
-                                        <textarea name="comment"
-                                class="form-control" style="font-size: 18px; height: 35px;"
-                                placeholder="leave a comment.....:)"></textarea>
-                                    </div>
+                                    
 
                                     <div class="col-4">
 
-                                        <input type="number" name="rating" class="form-control forms2__select" max="10" min="0" placeholder="rate out of 10" required>
+                                        <input type="number" name="rating" class="form-control forms2__select" max="10" min="0" value="10" placeholder="rate out of 10" required>
                                              <input type="hidden" name="project_id" value="<?php echo $results->project_id ?>" >
                                             <input type="hidden" name="student_id" value="<?php echo $results->student_id ?>">
                                             <input type="hidden" name="tutor_id" value="<?php echo $results->tutor_id ?>">
                                             <input type="hidden" name="charges" value="<?php echo $results->charges?>">
                                             
+                                    </div>
+                                    <div class="col-8">
+                                        <textarea name="comment"
+                                class="form-control" style="font-size: 18px; height: 35px;"
+                                placeholder="leave a comment.....:)"></textarea>
                                     </div>
                                 </div>
                                 <button type="submit" id="rate" class="btn btn-primary btn-block mt-5" name="rate">OK</button>
@@ -311,41 +312,7 @@ $results=$db->get_row($query);
 
 
                 </div>
-            <div class="col-sm-12 col-md-12 col-lg-12 col-xl-3">
-                <h1 class="headingTertiary text-light">Notes</h1>
-                <div class="card">
-                    <div class="card-header text-secondary text-uppercase">
-                        Note that
-                    </div>
-                    <div class="card-body">
-                        <table class="table table-hover table-borderless text-left">
-                            <tbody>
-                                <ul>
-                                    <tr>
-
-                                        <td>
-                                            <li>This service exists to protect your private and personal information,
-                                                you shouldn’t therefore communicate with tutors outside the site.</li>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <li>Sharing third party communication methods (including emails, phone
-                                                numbers, and Skype address) is against our user guidelines and we shall
-                                                therefore NOT be held
-                                                liable
-                                                failure to observe this. See our T.O.S</li>
-                                        </td>
-                                    </tr>
-                                </ul>
-                            </tbody>
-                        </table>
-                    </div>
-                    <div class="card-footer">
-
-                    </div>
-                </div>
-            </div>
+<?php require_once("section_notes.php") ?>
 
 
         </div>

@@ -3,6 +3,7 @@ require_once("../inc/utilities.php");
 require_once "../inc/header_links.php";
 $page="create";
 require_once "../components/top_nav.php";
+require_once"../dbconfig/dbconnect.php";
 
 ?>
 <?php 
@@ -264,40 +265,7 @@ create_post();
 
                 </div>
             </div>
-            <div class="col-sm-12 col-md-12 col-lg-12  col-xl-3">
-                <h1 class="headingTertiary text-light">Notes</h1>
-                <div class="card">
-                    <div class="card-header text-secondary text-uppercase">
-                        Note that
-                    </div>
-                    <div class="card-body">
-                        <table class="table table-hover table-borderless text-left">
-                            <tbody>
-                                <ul>
-                                    <tr>
-
-                                        <td>
-                                            <li>This service exists to protect your private and personal information,
-                                                you shouldn’t therefore communicate with tutors outside the site.</li>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <li>Sharing third party communication methods (including emails, phone
-                                                numbers, and Skype address) is against our user guidelines and we shall
-                                                therefore NOT be held liable
-                                                failure to observe this. See our T.O.S</li>
-                                        </td>
-                                    </tr>
-                                </ul>
-                            </tbody>
-                        </table>
-                    </div>
-                    <div class="card-footer">
-
-                    </div>
-                </div>
-            </div>
+<?php require_once("section_notes.php") ?>
         </div>
     </div>
 </div>

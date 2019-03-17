@@ -99,55 +99,115 @@
 	<section class="testimonials">
 
 		<div class="container">
-			<div class="testimonials__content">
+			<div class="testimonials__content" data-aos="zoom-in-down">
 				<h1 class="headingSecondary">What Our Customers Say</h1>
-				<div class="row">
-					<div class="col-6 col-sm-6 quaternary--testimonials" data-aos="zoom-in-left">
-						<h3 class="quaternary"><strong>Client #7978970</strong></h3>
-						<p class="paragraph paragraph--dark">My tutor delivered on time. I got help within 6 hours and managed to submit
+				<div class="container">
+        <div class="row">
+            <div class="col-sm-0 col-md-2"></div>
+            <div class="col-sm-12 col-md-8">
+                <div id="testmonial-slider" class="owl-carousel" >
+                    <!-- /////////////////////////////////////////////// -->
+                   <div class="testimonial">
+                    <div class="pic"><img src="./assets/user.png" alt=""></div>
+                    <div class="testimonial-content">
+                        <p>My tutor delivered on time. I got help within 6 hours and managed to submit
 							my work on time.</p>
-					</div>
-					<div class="col-6 col-sm-6 quaternary--testimonials" data-aos="zoom-in-up">
-						<h3 class="quaternary"><strong>Client #7898776</strong></h3>
-						<p class="paragraph paragraph--dark">You helped me a lot with referencing my master’s thesis.
+                            </div>
+                            <h3 class="testimonial-title">
+                                <a href="#">Harry</a>
+                                <small>#79789</small>
+                            </h3>
+                   </div>
+                     <!-- /////////////////////////////////////////////// -->
+                     <div class="testimonial">
+                            <div class="pic"><img src="./assets/user.png" alt=""></div>
+                            <div class="testimonial-content">
+                                <p>Lou helped me a lot with referencing my master’s thesis.
 							My paper finally looked professional through your professional input.</p>
-					</div>
-					<div class="col-6 col-sm-6 quaternary--testimonials" data-aos="zoom-in-down">
-						<h3 class="quaternary"><strong>Client #589871</strong></h3>
-						<p class="paragraph paragraph--dark">WriterDom tutors are the best! I saw a huge, positive improvement in my
+                                    </div>
+                                    <h3 class="testimonial-title">
+                                        <a href="#">Oliver</a>
+                                        <small>#78987</small>
+                                    </h3>
+                           </div>
+                             <!-- /////////////////////////////////////////////// -->
+                   <div class="testimonial">
+                        <div class="pic"><img src="./assets/user.png" alt=""></div>
+                        <div class="testimonial-content">
+                            <p>WriterDom tutors are the best! I saw a huge, positive improvement in my
 							grades. Thank you for tutorship. A+</p>
-					</div>
-					<div class="col-6 col-sm-6 quaternary--testimonials" data-aos="zoom-in-right">
-						<h3 class="quaternary"><strong>Client #578271</strong></h3>
-						<p class="paragraph paragraph--dark">I found it easy to work with your tutors who were knowledgeable on my
+                                </div>
+                                <h3 class="testimonial-title">
+                                    <a href="#">Isabella</a>
+                                    <small>#5898</small>
+                                </h3>
+                       </div>
+                         <!-- /////////////////////////////////////////////// -->
+                   <div class="testimonial">
+                        <div class="pic"><img src="./assets/user.png" alt=""></div>
+                        <div class="testimonial-content">
+                            <p>I found it easy to work with your tutors who were knowledgeable on my
 							subject. Recommend!</p>
-					</div>
-				</div>
-				<hr>
-				<div class="row mt-5">
-					<div class="col-6 col-sm-6 quaternary--testimonials" data-aos="zoom-in-right">
-						<h3 class="quaternary"><strong>Client #7978970</strong></h3>
-						<p class="paragraph paragraph--dark">I was wowed by your competitive prices for the value provided! Your tutors
-							are driven by passion, not money!
-
-						</p>
-					</div>
-					<div class="col-6 col-sm-6 quaternary--testimonials" data-aos="zoom-in-down">
-						<h3 class="quaternary"><strong>Client #789532</strong></h3>
-						<p class="paragraph paragraph--dark">I was almost giving up on my statistics course until I found WriterDom.
+                                </div>
+                                <h3 class="testimonial-title">
+                                    <a href="#">Amelia</a>
+                                    <small>#57827</small>
+                                </h3>
+                       </div>
+                         <!-- /////////////////////////////////////////////// -->
+                   <div class="testimonial">
+                        <div class="pic"><img src="./assets/user.png" alt=""></div>
+                        <div class="testimonial-content">
+                            <p>I was wowed by your competitive prices for the value provided! Your tutors
+							are driven by passion, not money!</p>
+                                </div>
+                                <h3 class="testimonial-title">
+                                    <a href="#">Charlie</a>
+                                    <small>#7978</small>
+                                </h3>
+                       </div>
+                         <!-- /////////////////////////////////////////////// -->
+                   <div class="testimonial">
+                        <div class="pic"><img src="./assets/user.png" alt=""></div>
+                        <div class="testimonial-content">
+                            <p>I was almost giving up on my statistics course until I found WriterDom.
 							Excellent tutors with a customer touch.</p>
-					</div>
-					<div class="col-6 col-sm-6 quaternary--testimonials" data-aos="zoom-in-up">
-						<h3 class="quaternary"><strong>Client #85671</strong></h3>
-						<p class="paragraph paragraph--dark">WriterDom kept their word on safe payment and privacy and
+                                </div>
+                                <h3 class="testimonial-title">
+                                    <a href="#">Mia</a>
+                                    <small>#8567</small>
+                                </h3>
+                       </div>
+                         <!-- /////////////////////////////////////////////// -->
+                   <div class="testimonial">
+                        <div class="pic"><img src="./assets/user.png" alt=""></div>
+                        <div class="testimonial-content">
+                            <p>WriterDom kept their word on safe payment and privacy and
 							confidentiality. I’ll keep using your service. Please, try them.</p>
-					</div>
-					<div class="col-6 col-sm-6 quaternary--testimonials" data-aos="zoom-in-left">
-						<h3 class="quaternary"><strong>Client #89451</strong></h3>
-						<p class="paragraph paragraph--dark">No hidden charges. Your customer service is very efficient. I solved a
+                                </div>
+                                <h3 class="testimonial-title">
+                                    <a href="#">Oscar</a>
+                                    <small>#8567</small>
+                                </h3>
+                       </div>
+                         <!-- /////////////////////////////////////////////// -->
+                   <div class="testimonial">
+                        <div class="pic"><img src="./assets/user.png" alt=""></div>
+                        <div class="testimonial-content">
+                            <p>No hidden charges. Your customer service is very efficient. I solved a
 							dispute in a professional manner. I recommend</p>
-					</div>
-				</div>
+                                </div>
+                                <h3 class="testimonial-title">
+                                    <a href="#">Isla</a>
+                                    <small>#8945</small>
+                                </h3>
+                       </div>
+
+                    
+                </div>
+            </div>
+        </div>
+    </div>
 			</div>
 		</div>
 	</section>

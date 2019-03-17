@@ -83,7 +83,7 @@ if ($db->query($query)) {
     $user_type=$_SESSION['user_type'];
     $querys="INSERT INTO notifications(user_type, note) VALUES('$user_type','$note')";
     $db->query($querys);
-    $querys="INSERT INTO notifications(user_type, note) VALUES(3,'$note2')";
+    $querys="INSERT INTO notifications(user_type, note, user_id) VALUES(3,'$note2','$user_id')";
     $db->query($querys);
       /////////////////////////////////notification/////////////////////////////////////////////
             unset($_SESSION['project_id']);

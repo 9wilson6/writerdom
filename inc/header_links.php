@@ -13,6 +13,7 @@
 <!-- Animate On scroll cdn -->
 <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
   <!-- Custom Css -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.carousel.min.css">
   <?php if(isset($link)) {?>
   	<link rel="stylesheet" href="css/settings.css">
  <?php }else{?>

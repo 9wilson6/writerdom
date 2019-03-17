@@ -29,7 +29,7 @@ if (isset($_POST['submit'])) {
     $note2="You sent project id: ".$project_id." back for revision at ". $date_global;
     $querys="INSERT INTO notifications(user_type, note) VALUES(1,'$note')";
     $db->query($querys);
-    $querys="INSERT INTO notifications(user_type, note) VALUES(3,'$note2')";
+    $querys="INSERT INTO notifications(user_type, note, user_id) VALUES(3,'$note2', '$student_id')";
     $db->query($querys);
       /////////////////////////////////notification/////////////////////////////////////////////
 			$query="DELETE FROM delivered WHERE project_id='$project_id'";

@@ -35,9 +35,9 @@ require_once "../inc/sessios.php";
   	class="active"
   <?php } ?>><li class="list-group-item"><i class="fas fa-sign-out-alt icon-r"></i>messages <span class=" float-right" id="messages">0</span></li></a>
 
-  <a href="announcements"  <?php if ($page=="announcements") { ?>
+  <!-- <a href="announcements"  <?php #if ($page=="announcements") { ?>
   	class="active"
-  <?php } ?>><li class="list-group-item"><i class="fas fa-bullhorn icon-r"></i>Announcements <span class="pill float-right">900</span></li></a>
+  <?php# } ?>><li class="list-group-item"><i class="fas fa-bullhorn icon-r"></i>Announcements <span class="pill float-right">900</span></li></a> -->
 
 
   <a href="feedback"   <?php if ($page=="feedback") { ?>

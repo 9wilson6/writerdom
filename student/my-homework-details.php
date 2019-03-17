@@ -222,24 +222,24 @@ $results=$db->get_row($query);
                                             <td>
                                                 <?php echo $result->tutor_id ?>
                                             </td>
-                                            <?php $query="SELECT * FROM users WHERE user_id='$result->tutor_id'";
+                                            <?php $query="SELECT SUM(rating) as rating, COUNT(rec_num) as complited FROM closed WHERE tutor_id='$result->tutor_id'";
 										$results=$db->get_row($query);
-
+                                        $rate=round($results->rating/$results->complited,0);
 										 ?>
                                             <td>
-                                                <?php echo $results->rating ?>
-                                                <?php if ($results->rating==0): ?>
+                                                <?php echo $rate ?>
+                                                <?php if ($rate==0): ?>
                                                 <img class="img-fluid rating" src="../assets/not_rated.PNG" alt="">
-                                                <?php elseif($results->rating>0 && $results->rating<=4): ?>
+                                                <?php elseif($rate>0 && $rate<=4): ?>
                                                 <img class="img-fluid rating" src="../assets/poor.PNG" alt="">
-                                                <?php elseif($results->rating>4 && $results->rating<=7): ?>
+                                                <?php elseif($rate>4 && $rate<=7): ?>
                                                 <img class="img-fluid rating" src="../assets/average.PNG" alt="">
-                                                <?php elseif($results->rating>7 && $results->rating<=10): ?>
+                                                <?php elseif($rate>7 && $rate<=10): ?>
                                                 <img class="img-fluid rating" src="../assets/excelent.PNG" alt="">
                                                 <?php endif ?>
                                             </td>
                                             <td>
-                                                <?php echo $results->orders_complited ?>
+                                                <?php echo $results->complited ?>
                                             </td>
                                             <td>
                                                 <?php echo $result->bid_total_amount?>
@@ -272,43 +272,7 @@ $results=$db->get_row($query);
                     </div>
                 </div>
             </div>
-
-
-            <div class="col-sm-12 col-md-12 col-lg-12 col-xl-3">
-                <h1 class="headingTertiary text-light">Notes</h1>
-                <div class="card">
-                    <div class="card-header text-secondary text-uppercase">
-                        Note that
-                    </div>
-                    <div class="card-body">
-                        <table class="table table-hover table-borderless text-left">
-                            <tbody>
-                                <ul>
-                                    <tr>
-
-                                        <td>
-                                            <li>This service exists to protect your private and personal information,
-                                                you shouldn’t therefore communicate with tutors outside the site.</li>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <li>Sharing third party communication methods (including emails, phone
-                                                numbers, and Skype address) is against our user guidelines and we shall
-                                                therefore NOT be held
-                                                liable
-                                                failure to observe this. See our T.O.S</li>
-                                        </td>
-                                    </tr>
-                                </ul>
-                            </tbody>
-                        </table>
-                    </div>
-                    <div class="card-footer">
-
-                    </div>
-                </div>
-            </div>
+<?php require_once("section_notes.php") ?>
 
 
         </div>

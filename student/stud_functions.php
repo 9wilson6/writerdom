@@ -50,7 +50,7 @@ $query="SELECT project_id FROM projects WHERE DATE_CREATED='$date_global' AND st
   $user_type=$_SESSION['user_type'];
  $querys="INSERT INTO notifications(user_type, note) VALUES('$user_type','$note')";
   $db->query($querys);
-  $querys="INSERT INTO notifications(user_type, note) VALUES(3,'$note2')";
+  $querys="INSERT INTO notifications(user_type, note, user_id) VALUES(3,'$note2', '$student_id')";
   $db->query($querys);
   // ........,,,,,,,,,,,,,,,,,,,,,,,,,,notification,,,,,,,,,,,,,,,,,
   // 
@@ -117,7 +117,7 @@ global $success, $error, $date_global;
     $user_type=$_SESSION['user_type'];
     $querys="INSERT INTO notifications(user_type, note) VALUES('$user_type','$note')";
     $db->query($querys);
-    $querys="INSERT INTO notifications(user_type, note) VALUES(3,'$note2')";
+    $querys="INSERT INTO notifications(user_type, note, user_id) VALUES(3,'$note2', '$student_id')";
     $db->query($querys);
       /////////////////////////////////notification/////////////////////////////////////////////
       $success="Homework Updated Successfully";
