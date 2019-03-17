@@ -223,7 +223,8 @@
 			</div>
 		</div>
 	</section>
-	<section class="blank">
+<div class="blank-container">
+		<section class="blank">
 		<div class="container">
 			<div class="blank__content" data-aos="fade-zoom-in" data-aos-easing="ease-in-back" data-aos-delay="300"
 			 data-aos-offset="0">
@@ -232,4 +233,5 @@
 			</div>
 		</div>
 	</section>
+</div>
 </section>

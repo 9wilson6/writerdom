@@ -450,25 +450,37 @@ body {
     .footer__content .paypal-logo {
       height: 7rem; }
 
-.blank {
-  margin-top: -2.1rem;
-  -webkit-box-shadow: 0px -4px 3px 0px rgba(0, 0, 0, 0.75);
-  -moz-box-shadow: 0px -4px 3px 0px rgba(0, 0, 0, 0.75);
-  box-shadow: 0px -4px 3px 0px rgba(0, 0, 0, 0.75);
-  min-height: 2vh;
-  text-align: center;
-  background-image: radial-gradient(circle, #eda719, #ffa27e, #ffb6c9, #f8d5f0, #eeeeee); }
-  .blank__content {
-    margin: 2.5rem 0;
-    padding: 2.5rem 0; }
-    .blank__content .headingSecondary {
-      margin-bottom: 5px; }
-  .blank .button--blue {
-    color: #000 !important;
-    background: transparent;
-    border: 2px solid #007ACC;
-    padding: 1rem 7rem !important;
-    font-weight: 700; }
+.blank-container {
+  position: relative;
+  height: 250px;
+  background: #fff; }
+  .blank-container .blank {
+    margin-top: -2.1rem;
+    min-height: 2vh;
+    text-align: center;
+    height: 300px;
+    background: #fff;
+    margin-top: 50px;
+    margin-bottom: -150px;
+    z-index: 1400;
+    position: absolute;
+    left: 50%;
+    top: 30.4%;
+    border-radius: 10%;
+    transform: translate(-50%, -50%); }
+    .blank-container .blank__content {
+      margin: 2.5rem 0;
+      padding: 2.5rem 0; }
+      .blank-container .blank__content .headingSecondary {
+        margin-bottom: 5px;
+        color: #fb8c00; }
+    .blank-container .blank .button--blue {
+      color: #fb8c00;
+      border: 2px solid #007ACC;
+      padding: 1rem 7rem !important;
+      font-weight: 700; }
+      .blank-container .blank .button--blue:hover {
+        background: #00897B; }
 
 .display {
   font-size: 90% !important;
