@@ -105,13 +105,16 @@
             margin-right: 5px;
      
         }
-        .owl-prev:before, .owl-next:before{
-            content: "\f060";
-            font-family: 'Fontawesome';
+       
+    }
+     .owl-prev:before, .owl-next:before{
+            // content: '\f060';
+            content: '\25c4';
+            font-family: FontAwesome;
             font-size: 20px;
         }
         .owl-next:before{
-            content: "\f061";
+           content: '\25ba';
+    // padding-right: 0.5em;
         }
-    }
 }
