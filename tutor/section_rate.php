@@ -13,20 +13,16 @@
                     </tr>
                     <tr>
                         <td>Account Status</td>
-                        <td><?php if (thirty_rating($_SESSION['user_id'])<3) { ?>
+                        <td class="pt-3"><?php if (account_rating($_SESSION['user_id'])<3) { ?>
                             <span class="alert alert-danger">PROBATION</span>
-                      <?php }elseif(thirty_rating($_SESSION['user_id'])>3 and thirty_rating($_SESSION['user_id'])<6){ ?>
+                      <?php }elseif(account_rating($_SESSION['user_id'])>3 and account_rating($_SESSION['user_id'])<6){ ?>
                             <span class="alert alert-warning">REGULAR</span>
                       <?php  }else{ ?>
                             <span class="alert alert-success">EXPERT</span>
                       <?php } ?></td>
 
                     </tr>
-                    <tr>
-                        <td>Account Rating (30)</td>
-                        <td><?php echo thirty_rating($_SESSION['user_id']); ?></td>
-
-                    </tr>
+                   
                     <tr>
                         <td>Account Rating</td>
                         <td><?php echo account_rating($_SESSION['user_id']); ?></td>

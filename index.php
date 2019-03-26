@@ -5,3 +5,6 @@ require_once('layout/header.php');
 require_once('layout/mainsection.php');
 require_once('layout/footer.php');
  require_once("inc/footer_links.php");
+
+ ?>
+<script type="text/javascript" src="js/twakto.js"></script>

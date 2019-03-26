@@ -12,3 +12,4 @@ Register();
  ?>
 <?php require_once"components/tutor/register.php" ?>
 <?php require_once"inc/footer_links.php"; ?>
+<script type="text/javascript" src="js/twakto.js"></script>

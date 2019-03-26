@@ -27,13 +27,16 @@ $results=$db->get_results($query);
                             <thead>
                                 <tr>
                                     <th>id</th>
-                                    <th class="wide">Title</th>
+                                    <th>Title</th>
+                                    <th  class="smalll">Tutor Id</th>
+
+                                    <th  class="smalll">Student Id</th>
                                     <th data-toggle="tooltip" title="Price $" data-placement="right">Price</th>
                                     <th data-toggle="tooltip" title="pages" data-placement="right">Pg</th>
                                     <th data-toggle="tooltip" title="Slides" data-placement="right">Sl</th>
                                     <th data-toggle="tooltip" title="Problems" data-placement="right">Pr</th>
-                                    <th class="smalll">Subject</th>
-                                    <th class="medium">Deadline</th>
+                                    <th>Subject</th>
+                                    <th>Deadline</th>
                                 </tr>
                             </thead>
 
@@ -46,6 +49,8 @@ $results=$db->get_results($query);
                                     <td class="wide">
                                         <?php echo (strlen($result->title) >35 )? substr($result->title, 0, 35).'...':$result->title; ?>
                                     </td>
+                                    <td><?php echo $result->tutor_id; ?></td>
+                                    <td><?php echo $result->student_id; ?></td>
                                     <td><?php echo $result->budget; ?></td>
                                     <td><?php echo $result->pages; ?></td>
                                     <td><?php echo $result->slides; ?></td>

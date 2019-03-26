@@ -6,12 +6,12 @@ $query="SELECT SUM(dues) as bal FROM users where user_id='$tutor_id'";
 $result=$db->get_var($query);
 return $result;
 }
-  function thirty_rating($tutor_id){
-    global $db;
-    $query="SELECT SUM(rating) as rate FROM closed where tutor_id='$tutor_id' LIMIT 30";
-    $result=$db->get_var($query);
-    return round($result/30, 1);
-  }
+  // function thirty_rating($tutor_id){
+  //   global $db;
+  //   $query="SELECT SUM(rating) as rate FROM closed where tutor_id='$tutor_id' LIMIT 30";
+  //   $result=$db->get_var($query);
+  //   return round($result/30, 1);
+  // }
     function account_rating($tutor_id){
       global $db;
       $query="SELECT SUM(rating) as rate FROM closed where tutor_id='$tutor_id'";

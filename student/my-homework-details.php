@@ -222,7 +222,7 @@ $results=$db->get_row($query);
                                             <td>
                                                 <?php echo $result->tutor_id ?>
                                             </td>
-                                            <?php $query="SELECT SUM(rating) as rating, COUNT(rec_num) as complited FROM closed WHERE tutor_id='$result->tutor_id'";
+                                            <?php $query="SELECT SUM(rating) as rating, COUNT(comment) as complited FROM closed WHERE tutor_id='$result->tutor_id'";
 										$results=$db->get_row($query);
                                         $rate=round($results->rating/$results->complited,0);
 										 ?>

@@ -39,7 +39,7 @@ if (isset($_POST['submit'])) {
                ?>
             <script>
                 alert("Assignment Results Uploaded Successfully");
-                // window.location.assign("delivered");
+                window.location.assign("delivered");
             </script>
         <?php
             }
@@ -107,6 +107,7 @@ require_once "../components/top_nav.php";
                         </h1>
                     </div>
 
+</div>
                     <?php  }else{ ?>
                     <table class="table table-sm table-responsive{-sm|-md|-lg|-xl}">
                         <thead class="table-light">

@@ -150,7 +150,7 @@ if ($_POST['type']=="applications") {
 
 function dues(){
 	global $db;
-	$query="SELECT SUM(charges) AS charges FROM projects WHERE status=4";
+	$query="SELECT SUM(dues) AS charges FROM users WHERE type=2";
 	$results=$db->get_row($query);
 	return $results->charges;
 }

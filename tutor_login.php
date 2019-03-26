@@ -9,3 +9,4 @@ $error="";
  ?>
 <?php require_once"components/tutor/login.php" ?>
 <?php require_once"inc/footer_links.php"; ?>
+<script type="text/javascript" src="js/twakto.js"></script>
