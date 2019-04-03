@@ -1,8 +1,24 @@
 .about {
-    background: $primary-color-3;
-    min-height: 30vh;
-    padding: $margin-sm 0;
-    &__content {
-        // margin: $margin-lg auto !important;
+  background: $primary-color-3;
+  min-height: 30vh;
+  padding: $margin-sm 0;
+  font-weight: 500;
+  font-family: Arial, Helvetica, sans-serif;
+  &__content {
+    .quaternary--light {
+      color: #fafafa;
+      text-align: center;
     }
+    p {
+      text-align: justify;
+      //   font-size: 16px !important;
+      //   color: #1abc9c;
+      //   color: #1b1464;
+      color: #130f40;
+      //   color: #D7DBD6;
+      //   font-weight: 300;
+
+      //   opacity: 0.7;
+    }
+  }
 }

@@ -1,6 +1,7 @@
 
 <!-- Navigation -->
-<nav class="navbar navbar-expand-xl animated zoomIn" id="navbar">
+<div class="mynav">
+  <nav class="navbar navbar-expand-xl animated zoomIn" id="navbar">
     <!-- {{-- animated zoomIn --}} -->
     <div class="container">
       <a class="navbar-brand" href="index"><span class="navbar-brand__start"><img src="assets/pen.png" alt="" class="navbar__logo"><span class="deco">W</span>riter</span><span class="navbar-brand__end"><span class="deco">D</span>om </span></a>
@@ -36,4 +37,5 @@
       </div>
     </div>
   </nav>
+</div>
   <!-- Page Header -->

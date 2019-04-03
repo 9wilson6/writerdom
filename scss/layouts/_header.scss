@@ -1,45 +1,50 @@
 .header {
-    animation-duration: 2s;
-  animation-delay: .3s;
-  min-height: 99.2vh;
-  width: 100%;
-  background-image: linear-gradient(to right bottom, rgba(0, 0, 0, .5), rgba(0, 0, 0, .5)),
-  url("../assets/headerbg2.jpeg");
-  background-position: top;
-  background-size: cover;
-  background-attachment: fixed;
-  background-repeat: no-repeat; // display: flex;
-  align-items: center;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  position: relative; // justify-content: center;
-  -webkit-clip-path: polygon(50% 2%,
-  51% 0,
-  100% 0,
-  100% 100%,
-  51% 100%,
-  50% 98%,
-  49% 100%,
-  0 100%,
-  0 0,
-  49% 0);
-  clip-path: polygon(50% 2%,
-  51% 0,
-  100% 0,
-  100% 100%,
-  51% 100%,
-  50% 98%,
-  49% 100%,
-  0 100%,
-  0 0,
-  49% 0);
-    &__content {
-        color: $primary-color-0;
-        text-align: center;
-    }
-    &__headingPrimary {
-        // customize heading primary here
-    }
+  animation-duration: 2s;
+  animation-delay: 0.3s;
+
+  //   background-image: -webkit-linear-gradient(225deg, #00cf8a, #0084d6);
+  //   background-image: linear-gradient(225deg, #00cf8a, #0084d6);
+  //   min-height: 99.2vh;
+  //   width: 100%;
+  //   background-image: linear-gradient(to right bottom, rgba(0, 0, 0, .5), rgba(0, 0, 0, .5)),
+  //   background: url("../assets/headerbg2.jpeg");
+  //   background: url("../assets/lead_bg.jpg");
+  //   background-position: bottom;
+  //   background-size: cover;
+  //   background-attachment: fixed;
+  //   background-repeat: no-repeat; // display: flex;
+  //   align-items: center;
+  //   background: #003c36;
+  background: $primary-color-3;
+  @media only screen and (max-width: 767px) {
+  }
+  &__content {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    // background: #192a56;
+    // background: #192a56;
+    // background: url("../assets/Handshake-Remix-by-Merlin2525.svg");
+    // background: url("../assets/1533518154.svg");
+    //  background: url("../assets/raffaella_biscuso_Stylo.svg");
+    background: url("../assets/1519402404.svg");
+    // background: url("../assets/Chrisdesign_red_glossy_pen.svg"), url("../assets/fountain-pen.svg");
+    // background-position: center;
+    background-position: bottom right;
+    // background: url("../assets/eleve-ordinateur.svg");
+    // background-position: right, left;
+
+    justify-content: center;
+    background-repeat: no-repeat;
+    // background: #003c36;
+    min-height: 99.2vh;
+    width: 100%;
+    color: #fff;
+    text-align: center;
+    // opacity: 0.75;
+    // background: url("../assets/kisspng-clip-art-vector-graphics-computer-student-shutters-amp-quot-5b899546d21f53.3361825315357433028607.jpg");
+  }
+  &__headingPrimary {
+    // customize heading primary here
+  }
 }

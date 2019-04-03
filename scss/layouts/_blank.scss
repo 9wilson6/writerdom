@@ -1,8 +1,7 @@
-.blank-container{
-
+.blank-container {
   position: relative;
-height: 250px;
-background: #fff;
+  height: 20px;
+  background: #fff;
   .blank {
     margin-top: -2.1rem;
     // -webkit-box-shadow: 0px -4px 3px 0px rgba(0, 0, 0, 0.75);
@@ -18,11 +17,11 @@ background: #fff;
     //   #f8d5f0,
     //   #eeeeee
     // );
-  
-    height: 300px;
+
+    height: 60px;
     background: #fff;
-    margin-top: 50px;
-    margin-bottom: -150px;
+    margin-top: 4px;
+    margin-bottom: 0px;
     z-index: 1400;
     position: absolute;
     left: 50%;
@@ -32,7 +31,7 @@ background: #fff;
     &__content {
       margin: $margin-sm 0;
       padding: $margin-sm 0;
-   
+
       .headingSecondary {
         // background-color: $primary-color-0;
         margin-bottom: 5px;
@@ -45,10 +44,9 @@ background: #fff;
       border: 2px solid $primary-color-bright-1;
       padding: 1rem 7rem !important;
       font-weight: 700; // margin: 3px 0;
-      &:hover{
-       background:$primary-color-3;
+      &:hover {
+        background: $primary-color-3;
       }
     }
   }
 }
-

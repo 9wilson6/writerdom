@@ -1,22 +1,27 @@
 .footer {
-    margin-top: -2.5rem;
-    background: $primary-color-0_1;
-    text-align: center;
-    &__content {
-        color: $primary-color-0;
-        padding: $margin-lg;
-        .link,
-        .link--c {
-            text-decoration: none;
-            color: $primary-color-5;
-            font-family: Calibri, 'Trebuchet MS', sans-serif
-        }
-        .link:hover,
-        .link:active {
-            color: $primary-color-6_1;
-        }
-        .paypal-logo {
-            height: 7rem;
-        }
+  margin-top: -2.5rem;
+  background: $primary-color-3;
+  text-align: center;
+  padding-top: $margin-lg;
+  &__content {
+    color: $primary-color-0;
+    padding: $margin-lg;
+    color: #130f40;
+    .link,
+    .link--c {
+      text-decoration: none;
+      //   color: $primary-color-5;
+      font-family: Calibri, "Trebuchet MS", sans-serif;
     }
+    a {
+      color: #130f40;
+    }
+    .link:hover,
+    .link:active {
+      color: $primary-color-6_1;
+    }
+    .paypal-logo {
+      height: 7rem;
+    }
+  }
 }
