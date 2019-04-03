@@ -88,6 +88,7 @@
   </section>
 
   <section class="about" id="about">
+  <div class="bg">
     <div class="container">
       <div class="about__content">
         <div class="row">
@@ -152,6 +153,7 @@
               work.
             </p>
           </div>
+        </div>
         </div>
       </div>
     </div>

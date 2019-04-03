@@ -1,10 +1,26 @@
 .about {
-  background: $primary-color-3;
+  // background: url("../assets/Computer-Handshake-1-by-Merlin2525.svg");
+  // background: url("../assets/1519402404.svg");
+  background: url("../assets/Handshake-Remix-by-Merlin2525");
+  background-repeat: no-repeat;
+  background-position: bottom;
+
   min-height: 30vh;
-  padding: $margin-sm 0;
+
   font-weight: 500;
   font-family: Arial, Helvetica, sans-serif;
+  .bg {
+    padding: $margin-sm 0;
+    // background: $primary-color-3;
+    background: #003c36;
+    width: 100%;
+    opacity: 0.85;
+    -webkit-clip-path: polygon(51% 5%, 100% 0, 100% 100%, 50% 95%, 0 100%, 0 0);
+    clip-path: polygon(51% 5%, 100% 0, 100% 100%, 50% 95%, 0 100%, 0 0);
+  }
   &__content {
+    background-color: transparent;
+
     .quaternary--light {
       color: #fafafa;
       text-align: center;
@@ -14,7 +30,9 @@
       //   font-size: 16px !important;
       //   color: #1abc9c;
       //   color: #1b1464;
-      color: #130f40;
+      // color: #130f40;
+      color: #fff;
+      // color: $primary-color-3;
       //   color: #D7DBD6;
       //   font-weight: 300;
 

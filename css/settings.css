@@ -29,7 +29,7 @@ body {
   font-weight: 400;
   box-sizing: border-box;
   min-width: 767px;
-  background: #D7DBD6; }
+  background: #fff; }
 
 .headingPrimary {
   text-transform: uppercase;
@@ -314,17 +314,27 @@ body {
     margin-bottom: 5rem; }
 
 .about {
-  background: #00897B;
+  background: url("../assets/Handshake-Remix-by-Merlin2525");
+  background-repeat: no-repeat;
+  background-position: bottom;
   min-height: 30vh;
-  padding: 2.5rem 0;
   font-weight: 500;
   font-family: Arial, Helvetica, sans-serif; }
-  .about__content .quaternary--light {
-    color: #fafafa;
-    text-align: center; }
-  .about__content p {
-    text-align: justify;
-    color: #130f40; }
+  .about .bg {
+    padding: 2.5rem 0;
+    background: #003c36;
+    width: 100%;
+    opacity: 0.85;
+    -webkit-clip-path: polygon(51% 5%, 100% 0, 100% 100%, 50% 95%, 0 100%, 0 0);
+    clip-path: polygon(51% 5%, 100% 0, 100% 100%, 50% 95%, 0 100%, 0 0); }
+  .about__content {
+    background-color: transparent; }
+    .about__content .quaternary--light {
+      color: #fafafa;
+      text-align: center; }
+    .about__content p {
+      text-align: justify;
+      color: #fff; }
 
 .testimonials {
   background: #fff;
