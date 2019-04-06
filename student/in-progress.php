@@ -1,4 +1,6 @@
 <?php
+
+ob_start();
 require_once "../inc/header_links.php";
 $page="progress";
 require_once "../components/top_nav.php";
@@ -6,6 +8,7 @@ require_once("../inc/utilities.php");
 
 require_once "../inc/header_links.php";
 require_once("../dbconfig/dbconnect.php");
+ob_flush();
 $user_id= $_SESSION['user_id'];
 
 $query="SELECT * FROM on_progress LEFT JOIN projects ON on_progress.project_id=projects.project_id WHERE on_progress.student_id='$user_id'";

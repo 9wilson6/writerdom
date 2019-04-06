@@ -218,6 +218,8 @@ body {
       text-decoration: none;
       color: #f1b948;
       display: inline-block; }
+    .mynav .navbar__logo {
+      height: 3rem; }
     .mynav .navbar-toggler {
       color: #EDA719;
       font-size: 2.5rem; }
@@ -498,7 +500,7 @@ body {
   font-size: 90% !important;
   margin-left: 25.5rem;
   background: #D7DBD6;
-  padding-top: 3rem; }
+  padding-top: -10rem; }
   @media (max-width: 992px) {
     .display {
       margin-left: -1rem; }
@@ -878,16 +880,19 @@ body {
   color: #EEEEEE; }
 
 .dashboard_nav {
-  position: relative; }
+  position: relative;
+  z-index: 10000; }
   .dashboard_nav .navbar {
     background: #00897B;
     padding: 0 5rem;
     animation-duration: 2s;
     min-height: 30px; }
     .dashboard_nav .navbar-brand {
-      font-size: 2rem; }
+      font-size: 2rem;
+      color: #EDA719;
+      text-decoration: none; }
     .dashboard_nav .navbar .deco {
-      font-family: 'Bungee Inline', cursive;
+      font-family: "Bungee Inline", cursive;
       font-size: 2.5rem; }
     .dashboard_nav .navbar__logo {
       height: 3.5rem; }
@@ -900,8 +905,8 @@ body {
     .dashboard_nav .navbar .nav-link,
     .dashboard_nav .navbar .dropdown-item {
       color: #EDA719;
-      font-family: 'Arvo', serif;
-      transition: all .5s ease-in;
+      font-family: "Arvo", serif;
+      transition: all 0.5s ease-in;
       font-size: 1.5rem;
       font-weight: 700;
       display: inline-block; }
@@ -913,7 +918,7 @@ body {
       background: #EDA719; }
     .dashboard_nav .navbar .btn {
       font-size: 2rem;
-      font-family: 'Bungee Inline', cursive; }
+      font-family: "Bungee Inline", cursive; }
     .dashboard_nav .navbar .nav-link--excemption {
       color: #EEEEEE;
       font-family: calibri; }
@@ -927,7 +932,7 @@ body {
       font-family: calibri !important;
       color: #00897B !important;
       font-size: 1.7rem;
-      margin-top: .3rem;
+      margin-top: 0.3rem;
       -webkit-box-shadow: -2px 3px 5px 0px rgba(0, 0, 0, 0.75);
       -moz-box-shadow: -2px 3px 5px 0px rgba(0, 0, 0, 0.75);
       box-shadow: -2px 3px 5px 0px rgba(0, 0, 0, 0.75); }
@@ -935,7 +940,7 @@ body {
     background: #ffffff;
     min-height: 94%;
     width: 25rem;
-    transition: all .5s ease-out;
+    transition: all 0.5s ease-out;
     text-align: left;
     position: absolute;
     top: 53px;

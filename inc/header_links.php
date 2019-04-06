@@ -1,6 +1,8 @@
+<?php ob_start(); ?>
 <head>
-	<?php session_start(); ?>
-	<title>WriterDom <?php if (isset($title)) {
+	<?php
+	session_start(); ?>
+	<title>PerfectGrader <?php if (isset($title)) {
 		echo"|".$title;
 	}; ?></title>
 
@@ -25,6 +27,6 @@
 	<?php }?>
 	<!-- Custom Css -->
 
-
+	<?php  ?>
 </head>
 <body>

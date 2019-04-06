@@ -1,4 +1,5 @@
 <?php
+ob_start();
 require_once "../inc/header_links.php";
 require_once"../inc/utilities.php";
 #//////////////////////////////////////////////////////////////////////////////////// -->
@@ -79,6 +80,7 @@ if (isset($_REQUEST['id'])) {
 
 $page="dashboard" ;
 require_once "../components/top_nav.php";
+ob_flush();
 ?>
 
 <div class="display">

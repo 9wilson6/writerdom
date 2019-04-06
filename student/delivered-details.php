@@ -1,4 +1,3 @@
-<!-- <meta http-equiv="refresh" content="300"> -->
 <?php
 if (isset($_REQUEST['id'])) {
 
@@ -6,12 +5,12 @@ if (isset($_REQUEST['id'])) {
 }else{
     $project_id=convert_uudecode($_REQUEST['pid']);
 }
-
+ob_start();
 require_once("../dbconfig/dbconnect.php");
 require_once("../inc/utilities.php");
 require_once "../inc/header_links.php";
 require_once "../components/top_nav.php";
-
+ob_flush();
 if (isset($_POST['submit'])) {
 	require_once('stud_functions.php');
 	filesUpload($_SESSION['user_id'], $_POST['project_id']);

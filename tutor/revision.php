@@ -8,9 +8,6 @@ $query="SELECT * FROM revisions LEFT JOIN projects ON revisions.project_id=proje
 $results=$db->get_results($query)
 
 ?>
-<!-- <pre>
-    <?php #print_r($results) ?>
-</pre> -->
 <div class="display">
     <div class="display__content">
         <?php require_once "../components/tutor_leftnav.php" ?>
@@ -37,48 +34,48 @@ $results=$db->get_results($query)
                                 <?php foreach ($results as $result): ?>
                                     <tr>
 
-                                    <td class="smalll"><a href="revision-details?pid=<?php echo urlencode(convert_uuencode($result->project_id)); ?>"><?php echo $result->project_id; ?><i
-                                                class="fas fa-external-link-alt icon-r ml-4"></i></a></td>
-                                    <td><?php echo $result->title; ?></td>
-                                    <td><?php echo $result->charges; ?></td>
-                                     <td class="bg-light">
-                                            <?php $time=getDateTimeDiff($date_global, $result->revision_deadline );
-                                             $period= explode(" ", $time); ?>
-                                            <?php if ($period[1]=="days"): ?>
-                                            <span class="text-dark">
-                                                <?php echo "{$time}"; ?></span>
-                                            <?php elseif($period[1]=="day"): ?>
-                                            <span class="text-success">
-                                                <?php echo "{$time}"; ?></span>
-                                            <?php elseif($period[1]=="hours" || $period[1]=="hour"): ?>
-                                            <span class="text-warning">
-                                                <?php echo "{$time}"; ?></span>
-                                            <?php elseif($period[1]=="mins" || $period[1]=="min"): ?>
-                                            <span class="text-danger">
-                                                <?php echo "{$time}"; ?></span>
-                                            <?php elseif($period[1]=="secs" || $period[1]=="sec"): ?>
-                                            <span class="text-danger">
-                                                <?php echo "{$time}"; ?></span>
-                                            <?php else: ?>
-                                            <span class="text-danger">
-                                                <?php echo "{$time}"; ?></span>
-                                            <?php endif ?>
-                                        </td>
-                                </tr>
-                                <?php endforeach ?>
+                                        <td class="smalll"><a href="revision-details?pid=<?php echo urlencode(convert_uuencode($result->project_id)); ?>"><?php echo $result->project_id; ?><i
+                                            class="fas fa-external-link-alt icon-r ml-4"></i></a></td>
+                                            <td><?php echo $result->title; ?></td>
+                                            <td><?php echo $result->charges; ?></td>
+                                            <td class="bg-light">
+                                                <?php $time=getDateTimeDiff($date_global, $result->revision_deadline );
+                                                $period= explode(" ", $time); ?>
+                                                <?php if ($period[1]=="days"): ?>
+                                                    <span class="text-dark">
+                                                        <?php echo "{$time}"; ?></span>
+                                                        <?php elseif($period[1]=="day"): ?>
+                                                            <span class="text-success">
+                                                                <?php echo "{$time}"; ?></span>
+                                                                <?php elseif($period[1]=="hours" || $period[1]=="hour"): ?>
+                                                                    <span class="text-warning">
+                                                                        <?php echo "{$time}"; ?></span>
+                                                                        <?php elseif($period[1]=="mins" || $period[1]=="min"): ?>
+                                                                            <span class="text-danger">
+                                                                                <?php echo "{$time}"; ?></span>
+                                                                                <?php elseif($period[1]=="secs" || $period[1]=="sec"): ?>
+                                                                                    <span class="text-danger">
+                                                                                        <?php echo "{$time}"; ?></span>
+                                                                                        <?php else: ?>
+                                                                                            <span class="text-danger">
+                                                                                                <?php echo "{$time}"; ?></span>
+                                                                                            <?php endif ?>
+                                                                                        </td>
+                                                                                    </tr>
+                                                                                <?php endforeach ?>
 
-                            </tbody>
-                        </table>
-                       <?php } ?>
-                    </div>
-                </div>
-            </div>
-<?php require_once("./section_rate.php"); ?>
-        </div>
-    </div>
-</div>
+                                                                            </tbody>
+                                                                        </table>
+                                                                    <?php } ?>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <?php require_once("./section_rate.php"); ?>
+                                                    </div>
+                                                </div>
+                                            </div>
 
 
-<?php
-require_once"../inc/footer_links.php";
- ?>
+                                            <?php
+                                            require_once"../inc/footer_links.php";
+                                            ?>

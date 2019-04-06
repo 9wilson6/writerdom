@@ -1,9 +1,11 @@
 <?php 
+ob_start();
 require_once("../dbconfig/dbconnect.php");
   require_once("../inc/utilities.php");
 require_once "../inc/header_links.php";
  $page="profile" ;
 require_once "../components/top_nav.php";
+
 if (isset($_REQUEST['key'])) {
    $user_id =convert_uudecode($_REQUEST['key']);
    $query="SELECT * FROM users WHERE user_id='$user_id'";
@@ -12,7 +14,7 @@ if (isset($_REQUEST['key'])) {
    }else{
     header("LOCATION:createpost");
    }
- 
+   ob_flush();
 ?>
 <div class="display">
     <div class="display__content">

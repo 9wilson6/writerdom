@@ -1,23 +1,23 @@
 .display {
-    font-size: 90% !important; // background-image: url(../assets/noise_d.png);
-    margin-left: 25.5rem; // background-image: radial-gradient(circle, #ffffff, #fbfbfb, #f6f6f6, #f2f2f2, #eeeeee);
-    background: $primary-color-3_1;
-    @include tablet1 {
-        margin-left: -1rem;
-        .headingTertiary {
-            font-size: 3rem;
-        }
+  font-size: 90% !important; // background-image: url(../assets/noise_d.png);
+  margin-left: 25.5rem; // background-image: radial-gradient(circle, #ffffff, #fbfbfb, #f6f6f6, #f2f2f2, #eeeeee);
+  background: $primary-color-3_1;
+  @include tablet1 {
+    margin-left: -1rem;
+    .headingTertiary {
+      font-size: 3rem;
     }
-    padding-top: 3rem;
-    &__content {
-        min-height: 795px;
-        text-align: center;
-        padding: $margin-sm $margin-sm;
-        .btn {
-            font-size: inherit;
-        }
-        .btn:not(:last-child) {
-            margin-top: $margin-md;
-        }
+  }
+  padding-top: -10rem;
+  &__content {
+    min-height: 795px;
+    text-align: center;
+    padding: $margin-sm $margin-sm;
+    .btn {
+      font-size: inherit;
     }
+    .btn:not(:last-child) {
+      margin-top: $margin-md;
+    }
+  }
 }

@@ -1,4 +1,5 @@
 <?php
+ob_start();
 require_once "../inc/header_links.php";
 $page="revision";
 require_once "../components/top_nav.php";
@@ -6,6 +7,7 @@ require_once("../inc/utilities.php");
 
 require_once "../inc/header_links.php";
 require_once("../dbconfig/dbconnect.php");
+ob_flush();
 $user_id=$_SESSION['user_id'];
 $query="SELECT * FROM revisions LEFT JOIN projects ON revisions.project_id=projects.project_id WHERE revisions.student_id='$user_id'";
 $results=$db->get_results($query);

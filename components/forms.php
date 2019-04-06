@@ -39,7 +39,7 @@
           <div class="form-row">
             <div class="col-12 col-md-12 col-lg-4"><label for="password" class="form__label">Password:</label></div>
             <div class="col-12 col-md-12 col-lg-8"><input type="password" class="form-control error form__input" name="password"
-                placeholder="password" id="password"></div>
+              placeholder="password" id="password"></div>
             <!-- <div class="col-12 col-md-12 col-lg-2">
               password error
             </div> -->
@@ -52,7 +52,7 @@
             </div>
             <div class="col-12 col-md-12 col-lg-8">
               <input type="password" class="form-control error form__input" name="C_password" placeholder="Confirm password"
-                id="Confirm password">
+              id="Confirm password">
             </div>
             <!-- <div class="col-12 col-md-12 col-lg-2">
               Confirm password error
@@ -62,16 +62,16 @@
         <div class="form__group">
           <div class="form-row">
             <div class="col-4"><span>
-                <!-- register --></span></div>
-            <div class="col-12 col-md-12 col-lg-4"><button class="form__buttons">Register</button></div>
-            <div class="col-12 col-md-12 col-lg-4"><button class="form__buttons">login</button></div>
-            <!-- <div class="col-2"><span> -->
-            <!-- login --></span>
+              <!-- register --></span></div>
+              <div class="col-12 col-md-12 col-lg-4"><button class="form__buttons">Register</button></div>
+              <div class="col-12 col-md-12 col-lg-4"><button class="form__buttons">login</button></div>
+              <!-- <div class="col-2"><span> -->
+                <!-- login --></span>
+              </div>
+              <!-- <div class="col-3"><button class="form__buttons">home</button></div> -->
+            </div>
           </div>
-          <!-- <div class="col-3"><button class="form__buttons">home</button></div> -->
-        </div>
+        </form>
+      </div>
     </div>
-    </form>
-  </div>
-  </div>
-</section>
+  </section>

@@ -1,11 +1,13 @@
 <?php $link=1 ?>
-<?php require_once("inc/header_links.php");
+<?php
+ob_start();
+require_once("inc/header_links.php");
 require_once('layout/nav.php');
 require_once('layout/header.php');
 require_once('layout/mainsection.php');
 require_once('layout/footer.php');
 require_once("inc/footer_links.php");
-
+ob_flush();
 ?>
 <script type="text/javascript" src="js/twakto.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/flickity/2.2.0/flickity.pkgd.min.js"></script>

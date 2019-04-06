@@ -15,53 +15,53 @@ require_once"../dbconfig/dbconnect.php";
                     <div class="card-header">Feedback</div>
                     <div class="card-body">
                         <?php $tutor_id=$_SESSION['user_id'];
-                        $query="SELECT * FROM closed WHERE tutor_id='$tutor_id' order by rec_num desc LIMIT 100";
+                        $query="SELECT * FROM closed WHERE tutor_id='$tutor_id' order by project_id desc LIMIT 100";
                         $results=$db->get_results($query);
-                       ?>
-                       <?php if ($results>0): ?>
-                           
-                       
-                        <table class="table table-bordered">
-                            <thead>
-                                <tr>
-                                    <th>Project id</th>
-                                    <th class="wide">Comment</th>
-                                    <th >Rating</th>
-                                    <th>Date closed</th>
+                        ?>
+                        <?php if ($results>0): ?>
+                         
+                         
+                            <table class="table table-bordered">
+                                <thead>
+                                    <tr>
+                                        <th>Project id</th>
+                                        <th class="wide">Comment</th>
+                                        <th >Rating</th>
+                                        <th>Date closed</th>
 
-                                </tr>
-                            </thead>
-                            <tbody>
-                            <?php foreach ($results as $result): ?>
-                                
-                                <tr>
-                                    <td><a
-                                            href="my-projects-details?pid=<?php echo urlencode(convert_uuencode($result->project_id)); ?>"><?php echo $result->project_id; ?><i
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <?php foreach ($results as $result): ?>
+                                        
+                                        <tr>
+                                            <td><a
+                                                href="my-projects-details?pid=<?php echo urlencode(convert_uuencode($result->project_id)); ?>"><?php echo $result->project_id; ?><i
                                                 class="fas fa-external-link-alt icon-r ml-4"></i></a></td>
-                                    <td class="wide"><?php echo $result->comment; ?></td>
-                                    <td><?php echo $result->rating; ?></td>
-                                    <td><?php echo $result->date_closed; ?></td>
+                                                <td class="wide"><?php echo $result->comment; ?></td>
+                                                <td><?php echo $result->rating; ?></td>
+                                                <td><?php echo $result->date_closed; ?></td>
 
-                                </tr>
+                                            </tr>
 
-                           
-                            <?php endforeach ?>
-                             </tbody>
-                        </table>
-                        <?php else: ?>
-                            <h1 class="headingTertiary">
-                                Nothing To show yet
-                            </h1>
-                        <?php endif ?>
+                                            
+                                        <?php endforeach ?>
+                                    </tbody>
+                                </table>
+                                <?php else: ?>
+                                    <h1 class="headingTertiary">
+                                        Nothing To show yet
+                                    </h1>
+                                <?php endif ?>
+                            </div>
+                        </div>
                     </div>
+                    <?php require_once("./section_rate.php"); ?>
                 </div>
             </div>
-<?php require_once("./section_rate.php"); ?>
         </div>
-    </div>
-</div>
 
 
-<?php
-require_once"../inc/footer_links.php";
- ?>
+        <?php
+        require_once"../inc/footer_links.php";
+        ?>
