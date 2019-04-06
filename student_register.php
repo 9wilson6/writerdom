@@ -9,6 +9,6 @@ $success="";
 Register();
 
  ?>
-<?php require_once"components/student/Register.php" ?>
+<?php require_once"components/student/register.php" ?>
 <?php require_once"inc/footer_links.php"; ?>
 <script type="text/javascript" src="js/twakto.js"></script>

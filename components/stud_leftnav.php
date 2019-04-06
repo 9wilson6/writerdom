@@ -2,7 +2,7 @@
 ob_start();
 require_once "../inc/sessios.php";
 session_student();
-ob_end();
+ob_flush();
 ?>
 <section class="dashboard_nav_left">
 	<div class="dashboard_nav_left__content">
