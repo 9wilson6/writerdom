@@ -36,11 +36,18 @@ if (isset($_POST['submit'])) {
 			if ($db->query($query)) {
 				$query="UPDATE projects SET status=3, deadline='$datetyme' WHERE project_id='$project_id'";
 				if ($db->query($query)) {
-
+					require_once("../inc/global_functions.php");
+					$student_email=$db->get_var("SELECT email FROM users WHERE user_id='$tutor_id' AND type='2'");
+					$subject="Revision for Order ID: ". $project_id;
+					$details="Order ID: ". $project_id ." has been sent back for revision. <br> Please act on it immediately. <br> Instructions: ". $instructions;
+					sendMail($details,$student_email, $subject);
+					sendMail($details,"admin@perfectgrader.com", $subject);
 					exit(header("location:editing?pid=$pid"));
 				}
 			}
 		}
+		
+		
 	}
 	ob_flush();
 }

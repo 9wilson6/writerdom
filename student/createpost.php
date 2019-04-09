@@ -2,6 +2,7 @@
 ob_start();
 require_once("../inc/utilities.php");
 require_once "../inc/header_links.php";
+require_once ("../inc/global_functions.php");
 $page="create";
 require_once "../components/top_nav.php";
 require_once"../dbconfig/dbconnect.php";
@@ -12,7 +13,6 @@ require_once"../dbconfig/dbconnect.php";
 $error=null;
 $success=null;
 require_once("stud_functions.php");
-
 create_post();
 ob_flush();
 ////////////////////////////////////////////////////////////////////////

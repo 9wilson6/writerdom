@@ -1,4 +1,5 @@
 <?php
+ob_start();
 use PayPal\Api\Amount;
 use PayPal\Api\Payer;
 use PayPal\Api\Payment;
@@ -6,6 +7,9 @@ use PayPal\Api\RedirectUrls;
 use PayPal\Api\Transaction;
 if (isset($_POST['assing'])) {
 	session_start();
+	require_once("../dbconfig/dbconnect.php");
+	$query="SELECT * from users WHERE user_id={$_POST["tutor_id"]} and type=2";
+	$_SESSION['tutor_info']=$db->get_row($query);
 	$_SESSION['project_id']=$_POST['project_id'];
 	$_SESSION['user_id']=$_POST['user_id'];
 	$_SESSION['user_type_pass']=$_POST['user_type'];
@@ -44,5 +48,6 @@ if (isset($_POST['assing'])) {
 	}
 
 	header('location:' . $payment->getApprovalLink());
+	ob_flush();
 	exit(1);
 }

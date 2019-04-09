@@ -97,6 +97,7 @@ function Login(){
 				$_SESSION['user_id']=$results->user_id;
 				if ($user_type==1) {
 					if ($results->status==1) {
+						$_SESSION["info"]=$results;
 						$_SESSION['user_type']=1; ?>
 						<script>
 							window.location.assign("student/createpost");
@@ -110,6 +111,7 @@ function Login(){
 					if ($results->status==1) {
 						if ($results->verified==1) {
 							$_SESSION['user_type']=2;
+							$_SESSION["info"]=$results;
 							header("location:tutor/dashboard");
 						}else{
 							header("location:tutor/not_active");
@@ -119,6 +121,7 @@ function Login(){
 					}
 				}elseif ($user_type==3) {
 					$_SESSION['user_type']=3;
+					$_SESSION["info"]=$results;
 					header("location:./index");
 				}
 			}else{
@@ -477,4 +480,59 @@ function deleteFiles($student_id, $project_id){
 }
 
 ?>
+<?php 
+function sendMail($details,$to, $subject){
+	require_once("../phpmailer/PHPMailerAutoload.php");
+	$mail= new PHPMailer;
+	$mail->Host="smtp.gmail.com";
+	$mail->Port=587;
+	$mail->SMTPAuth=true;
+		$mail->SMTPSecure="TLS";// or ssl
+	// $mail->isSMTP();
+		$mail->SMTPdebug=2;
+		$mail->isHTML(true);
+		$mail->Username="admin@perfectgrader.com";
+		$mail->Password="perfectgrader.com";
+		$mail->setFrom("admin@perfectgrader.com", "PerfectGrader");
+		$mail->addAddress($to);
+ //or 465 if ssl
+		$mail->Subject=$subject;
+		$message = '<html lang="en">
+		<head>
+		<meta charset="UTF-8">
+		<title>PerferctGrader</title>
+		</head>
+		<body style="background-color: #fff;
 
+		min-height: 50vh;">
+		<div style="
+		width: 60%;
+		margin: 20px auto;
+		padding: 20px;
+		border-radius: 13px;
+		min-height: 20vh;
+		color: #000;
+		background-color: #ecf0f1;">
+		<div style="min-height: 50px; background: #27ae60; border-radius: 10px; margin-top: 10px; margin-left: 20px; text-align: left; padding-left: 30px; padding-top: 5px;">
+		<img style="height: 30px; width:30px; position: relative; bottom: -10px; right: -3px;" src="https://www.perfectgrader.com/assets/pen.png">
+		<span style="color: #f1c40f;">PerfectGrders</span></div>
+		<div class="mainsection" style="font-size: 20px; line-height: 30px;"> <br>'.$details .'<br>
+		<a href="https://www.perfectgrader.com" target="blank">For more details follow this link....</a>
+		<br>
+		<small>Date: '.date("Y-m-d H:i:s").'</small>
+		</div>
+		<div style="background: #27ae60; margin: 15px auto; color: #f1c40f; padding-top: 20px; border-radius: 10px; text-align: center; min-height: 40px;">Copyright © '.date("Y").' <a style="text-decoration:none; color: #f1c40f;" href="https://www.perfectgrader.com"> PerfectGrader.com </a>,All rights reserved.</div>
+		</div>
+
+		</body>
+		</html>';
+		$mail->Body=$message;
+
+		if ($mail->send()) {
+		// echo "Mail sent";
+		}else{
+			echo $mail->ErrorInfo;
+		}
+	}
+
+	?>

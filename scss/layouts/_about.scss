@@ -3,7 +3,7 @@
   // background: url("../assets/1519402404.svg");
   background: url("../assets/Handshake-Remix-by-Merlin2525");
   background-repeat: no-repeat;
-  background-position: bottom;
+  background-position: center;
 
   min-height: 30vh;
 
@@ -14,7 +14,7 @@
     // background: $primary-color-3;
     background: #003c36;
     width: 100%;
-    opacity: 0.85;
+    opacity: 0.95;
     -webkit-clip-path: polygon(51% 5%, 100% 0, 100% 100%, 50% 95%, 0 100%, 0 0);
     clip-path: polygon(51% 5%, 100% 0, 100% 100%, 50% 95%, 0 100%, 0 0);
   }
@@ -31,12 +31,15 @@
       //   color: #1abc9c;
       //   color: #1b1464;
       // color: #130f40;
-      color: #fff;
+      // color: red;
+      color: #95afc0;
       // color: $primary-color-3;
       //   color: #D7DBD6;
       //   font-weight: 300;
 
       //   opacity: 0.7;
     }
+  }
+  @media (max-width: 700px) {
   }
 }

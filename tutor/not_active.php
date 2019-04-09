@@ -1,11 +1,12 @@
-<?php 
+<?php
+ob_start(); 
 require_once("../dbconfig/dbconnect.php");
 require_once("../inc/utilities.php");
 $date_global_=strtotime($date_global);
 $count_q="SELECT COUNT(project_id) FROM projects WHERE deadline>{$date_global_}";
 $result_q=$db->get_var($count_q);
 if ($result_q>20) {
-   
+
     $query="SELECT * FROM projects WHERE deadline>{$date_global_} AND status=0 ORDER BY project_id desc LIMIT 20 "; 
 }else{?>
     <!-- <meta http-equiv="refresh" content="30"> -->
@@ -21,6 +22,7 @@ $results=$db->get_results($query);
 require_once "../inc/header_links.php";
 $page="dashboard" ;
 require_once "../components/top_nav.php";
+ob_clean(); 
 ?>
 <div class="display">
     <div class="display__content">
@@ -32,7 +34,7 @@ require_once "../components/top_nav.php";
                 <div class="card wide-card">
                     <div class="card-header">Your account is not approved yet....</div>
                     <div class="card-body">
-                        <div class="text-center" ><h1>contact admin at <strong><mark>admin@admin@perfectgrader.com</mark></strong></h1></div>
+                        <div class="text-center" ><h1>contact admin at <strong><mark>admin@perfectgrader.com</mark></strong></h1></div>
                     </div>
                     <?php if ($result_q>10): ?>
                         <div class="card-footer">

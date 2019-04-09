@@ -1,6 +1,5 @@
-<?php ob_start();
-?>
-<meta http-equiv="refresh" content="300">
+<?php ob_start();?>
+<meta http-equiv="refresh" content="30000">
 <?php 
 require_once("../dbconfig/dbconnect.php");
 

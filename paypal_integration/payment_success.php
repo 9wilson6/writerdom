@@ -1,10 +1,13 @@
 <?php
+ob_start();
 session_start();
 use PayPal\Api\Payment;
 use PayPal\Api\PaymentExecution;
 require 'bootstrap.php';
 require_once("../inc/utilities.php");
 require_once("../dbconfig/dbconnect.php");
+require_once("../inc/global_functions.php");
+ob_flush();
 if (empty($_GET['paymentId']) || empty($_GET['PayerID'])) {
     throw new Exception('The response is missing the paymentId and PayerID');
 }
@@ -47,13 +50,13 @@ function addPayment($data)
 {
     global $db;
     if (is_array($data)) {
-    $transaction_id=  $data['transaction_id'];
+        $transaction_id=  $data['transaction_id'];
         $payment_amount=  $data['payment_amount'];
         $payment_status=  $data['payment_status'];
-          $invoice_id=$data['invoice_id'];
+        $invoice_id=$data['invoice_id'];
         $date=  date('Y-m-d H:i:s');
         $project_id=$_SESSION['project_id'];
-      $query="INSERT INTO paypal_payments(item_no, transaction_id, payment_amount, payment_status,invoice_id, createdtime ) VALUES('$project_id','$transaction_id', '$payment_amount','$payment_status',  '$invoice_id','$date')";
+        $query="INSERT INTO paypal_payments(item_no, transaction_id, payment_amount, payment_status,invoice_id, createdtime ) VALUES('$project_id','$transaction_id', '$payment_amount','$payment_status',  '$invoice_id','$date')";
         $db->query($query);
     }
     return false;
@@ -61,46 +64,50 @@ function addPayment($data)
 ?>
 <html>
 <head>
-<title>PayPal Integration - Payment Completed Successfully</title>
+    <title>PayPal Integration - Payment Completed Successfully</title>
 </head>
 <body>
-<h1><?php   
-             $project_id=$_SESSION['project_id'];
-             $user_id=$_SESSION['user_id'];
-             $tutor_id= $_SESSION['tutor_id'];
-             $cost= $_SESSION['cost'];
-             $charges=  $_SESSION['charges'];
+    <h1><?php   
+    $project_id=$_SESSION['project_id'];
+    $user_id=$_SESSION['user_id'];
+    $tutor_id= $_SESSION['tutor_id'];
+    $cost= $_SESSION['cost'];
+    $charges=  $_SESSION['charges'];
     $query="INSERT INTO on_progress(project_id, student_id, tutor_id) VALUES ('$project_id', '$user_id', '$tutor_id')";
-if ($db->query($query)) {
-    $query="UPDATE projects SET status=1, cost=$cost, charges=$charges WHERE project_id='$project_id'";
     if ($db->query($query)) {
-
-        $query="DELETE FROM bids WHERE project_id='$project_id'";
+        $query="UPDATE projects SET status=1, cost=$cost, charges=$charges WHERE project_id='$project_id'";
         if ($db->query($query)) {
+
+            $query="DELETE FROM bids WHERE project_id='$project_id'";
+            if ($db->query($query)) {
              /////////////////////////////////notification/////////////////////////////////////////////
-    $note="Student Id: ".$user_id." assigned project id: ".$project_id." to Tutor id:".$tutor_id." at ".$date_global;
-    $note2="You Assigned project id: ".$project_id." to Tutor id:".$tutor_id." at ". $date_global;
-    $user_type=$_SESSION['user_type'];
-    $querys="INSERT INTO notifications(user_type, note) VALUES('$user_type','$note')";
-    $db->query($querys);
-    $querys="INSERT INTO notifications(user_type, note, user_id) VALUES(3,'$note2','$user_id')";
-    $db->query($querys);
+                $note="Student Id: ".$user_id." assigned project id: ".$project_id." to Tutor id:".$tutor_id." at ".$date_global;
+                $note2="You Assigned project id: ".$project_id." to Tutor id:".$tutor_id." at ". $date_global;
+                $user_type=$_SESSION['user_type'];
+                $querys="INSERT INTO notifications(user_type, note) VALUES('$user_type','$note')";
+                $db->query($querys);
+                $querys="INSERT INTO notifications(user_type, note, user_id) VALUES(3,'$note2','$user_id')";
+                $db->query($querys);
+                $subject="You have been assigned order ID: ". $project_id;
+                $details="Hello ".$_SESSION['info']->username .",<br> We Have good news for you. You have been awarded order ID: ". $project_id ." You may start working it.";
+                sendMail($details, $_SESSION['tutor_info']->email, $subject);
+                sendMail($details, "admin@perfectgrader.com", $subject);
       /////////////////////////////////notification/////////////////////////////////////////////
-            unset($_SESSION['project_id']);
+                unset($_SESSION['project_id']);
             // unset($_SESSION['user_id']);
-            unset($_SESSION['tutor_id']);
-            unset($_SESSION['charges']);
-            unset($_SESSION['user_type_pass']);
-            ?>
-        <script>
-            let x="<?php echo $tutor_id ?>"
-            alert(" Payment Completed Successfully....\n Project successfully assigned to tutor id: " +x );
-              window.location.assign("../student/in-progress");
-        </script>
-    <?php
+                unset($_SESSION['tutor_id']);
+                unset($_SESSION['charges']);
+                unset($_SESSION['user_type_pass']);
+                ?>
+                <script>
+                    let x="<?php echo $tutor_id ?>"
+                    alert(" Payment Completed Successfully....\n Project successfully assigned to tutor id: " +x );
+                    window.location.assign("../student/in-progress");
+                </script>
+                <?php
+            }
         }
-     }
-}
- ?></h1>
+    }
+    ?></h1>
 </body>
 </html>

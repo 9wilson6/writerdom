@@ -177,14 +177,14 @@ $results=$db->get_row($query);
                                                 <input type="hidden" name="tutor_id" value="<?php echo $results->tutor_id ?>">
 
                                                 <p class="send">
-                                                 <input type="submit" value="Send" class="btn btn-sm btn-info">
-                                             </p>
-                                         </form>                                   </div>
-                                     </div>
-                                 </div>
+                                                   <input type="submit" value="Send" class="btn btn-sm btn-info">
+                                               </p>
+                                           </form>                                   </div>
+                                       </div>
+                                   </div>
 
-                             </div>
-                             <form action="" enctype="multipart/form-data" method="POST" class="files_edit">
+                               </div>
+                               <form action="" enctype="multipart/form-data" method="POST" class="files_edit">
                                 <div class="my_container">
                                     <div class="row">
                                         <div class="col-3 col-sm-3 col-md-3"><label for="files" class="forms2__label">Add

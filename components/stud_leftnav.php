@@ -30,7 +30,7 @@ ob_flush();
                class="active"
                <?php } ?>><li class="list-group-item"><i class="far fa-envelope-open icon-r"></i>Messages<span class=" float-right " id="messages">0</span></li></a>
 
-               <a href="../logout" <li class="list-group-item"><i class="fas fa-sign-out-alt icon-r"></i>Logout</li></a>
+               <a href="../logout"> <li class="list-group-item"><i class="fas fa-sign-out-alt icon-r"></i>Logout</li></a>
              </ul>
            </div>
          </section>

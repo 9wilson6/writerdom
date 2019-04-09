@@ -11,7 +11,6 @@ function create_post(){
     $papertype=$db->escape($_POST['papertype']);
     $date=$_POST['date'];
     $time=$_POST['tyme'];
-
     $datetyme= strtotime("+ {$date}days +{$time}hours");
     $pages=$db->escape($_POST['pages']);
     $slides=$db->escape($_POST['slides']);
@@ -64,9 +63,11 @@ function create_post(){
 
     }
    // $success="Homework Posted Successfully";
-
+    $details="Hello ".$_SESSION["info"]->username.", <br> Your homework, Title: ". $title. " <br> Has been successfully uploaded. Our team of tutors are now analyzing it. <br> You should start getting bids from our experts highly skilled in your research area. <br>Reference ID: ".$results->project_id."  <br> , Thank You.";
+    sendMail($details, $_SESSION["info"]->email, $title);
+    sendMail($details, "admin@perfectgrader.com", $title);
   }else{
-    $error="Was not Successfully Posted try again";
+    $error="Homework Was not Successfully Posted try again";
   }
 }
 }
