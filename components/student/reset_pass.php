@@ -5,10 +5,10 @@
     <section class="form-header">
       <div class="home"><a href="student_login">Login</a></div>
       <div style="clear: both"></div>
-      <div class="image">
+     <!--  <div class="image">
         <div class="cover"></div> <img src="./assets/user.png">
-      </div>
-      <div class="company">PerfectGrader</div>
+      </div> -->
+      <!-- <div class="company">PerfectGrader</div> -->
       <div class="heading">Reset Your Account Password</div>
     </section>
     <form action="" method="POST" id="form-box">

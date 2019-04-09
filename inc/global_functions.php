@@ -506,7 +506,7 @@ function sendMail($details,$to, $subject){
 
 		min-height: 50vh;">
 		<div style="
-		width: 60%;
+		width: 90%;
 		margin: 20px auto;
 		padding: 20px;
 		border-radius: 13px;
@@ -516,12 +516,12 @@ function sendMail($details,$to, $subject){
 		<div style="min-height: 50px; background: #27ae60; border-radius: 10px; margin-top: 10px; margin-left: 20px; text-align: left; padding-left: 30px; padding-top: 5px;">
 		<img style="height: 30px; width:30px; position: relative; bottom: -10px; right: -3px;" src="https://www.perfectgrader.com/assets/pen.png">
 		<span style="color: #f1c40f;">PerfectGrders</span></div>
-		<div class="mainsection" style="font-size: 20px; line-height: 30px;"> <br>'.$details .'<br>
+		<div class="mainsection" style="font-size: 14px; line-height: 25px;"> <br>'.$details .'<br>
 		<a href="https://www.perfectgrader.com" target="blank">For more details follow this link....</a>
 		<br>
 		<small>Date: '.date("Y-m-d H:i:s").'</small>
 		</div>
-		<div style="background: #27ae60; margin: 15px auto; color: #f1c40f; padding-top: 20px; border-radius: 10px; text-align: center; min-height: 40px;">Copyright © '.date("Y").' <a style="text-decoration:none; color: #f1c40f;" href="https://www.perfectgrader.com"> PerfectGrader.com </a>,All rights reserved.</div>
+		<div style="background: #27ae60; margin: 15px auto; color: #f1c40f; font-size: 14px; padding-top: 20px; border-radius: 10px; text-align: center; min-height: 40px;">Copyright © '.date("Y").' <a style="text-decoration:none; color: #f1c40f;" href="https://www.perfectgrader.com"> PerfectGrader.com </a>,All rights reserved.</div>
 		</div>
 
 		</body>

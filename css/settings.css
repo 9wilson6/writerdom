@@ -14,12 +14,12 @@ html {
 
 ::-webkit-scrollbar-thumb {
   border-radius: 10px;
-  background: #EEEEEE;
+  background: #eeeeee;
   box-shadow: inset 0 0 0.6rem rgba(0, 0, 0, 0.3); }
 
 ::-webkit-scrollbar-track {
   border-radius: 10px;
-  background-color: #00897B;
+  background-color: #00897b;
   box-shadow: inset 0 0 0.6rem rgba(0, 0, 0, 0.3); }
 
 body {
@@ -29,7 +29,7 @@ body {
   font-weight: 400;
   box-sizing: border-box;
   min-width: 767px;
-  background: #fff; }
+  background: #f5f5f5; }
 
 .headingPrimary {
   text-transform: uppercase;
@@ -62,7 +62,7 @@ body {
   font-size: 3rem;
   text-align: center; }
   .headingSecondary--light {
-    color: #EEEEEE; }
+    color: #eeeeee; }
 
 .headingTertiary {
   text-transform: uppercase;
@@ -101,7 +101,7 @@ body {
   font-weight: 400; }
 
 .paragraph {
-  color: #EEEEEE;
+  color: #eeeeee;
   font-family: Calibri, "Gill Sans", "Gill Sans MT", "Trebuchet MS", sans-serif;
   font-weight: 400;
   font-size: 1.7rem !important; }
@@ -112,7 +112,7 @@ body {
     font-weight: 400; }
 
 .icon {
-  color: #00897B;
+  color: #00897b;
   margin-left: 0.7rem;
   font-size: 1.7rem; }
   .icon-r {
@@ -124,14 +124,14 @@ body {
     padding-top: 0.7rem; }
 
 .active {
-  background: #EEEEEE; }
+  background: #eeeeee; }
 
 .pill {
-  background: #00897B;
+  background: #00897b;
   border-radius: 30%;
   padding: 3px 5px;
   font-size: 1.2rem;
-  color: #EEEEEE; }
+  color: #eeeeee; }
 
 .wide {
   width: 40%; }
@@ -193,7 +193,7 @@ body {
   min-height: 25px;
   text-align: center;
   margin: 0;
-  color: #EEEEEE;
+  color: #eeeeee;
   border-radius: 12.5px;
   font-size: 1.2rem; }
 
@@ -225,7 +225,7 @@ body {
     .mynav .navbar__logo {
       height: 3rem; }
     .mynav .navbar-toggler {
-      color: #EDA719;
+      color: #eda719;
       font-size: 2.5rem; }
     .mynav .navbar__toggle {
       background: #f5f5f5;
@@ -244,7 +244,7 @@ body {
       padding: 0.5rem 0.1rem;
       transform: translateX(5rem); }
     .mynav .navbar .nav-link {
-      color: #EDA719;
+      color: #eda719;
       font-family: "Arvo", serif;
       transition: all 0.5s ease-in;
       font-size: 1.5rem;
@@ -253,7 +253,7 @@ body {
     .mynav .navbar .nav-link:hover,
     .mynav .navbar .nav-link:active {
       color: #494e6b;
-      background: #EDA719; }
+      background: #eda719; }
     .mynav .navbar .btn {
       font-size: 2rem;
       font-family: "Bungee Inline", cursive; }
@@ -261,7 +261,7 @@ body {
 .header {
   animation-duration: 2s;
   animation-delay: 0.3s;
-  background: #00897B; }
+  background: #00897b; }
   .header__content {
     display: flex;
     flex-direction: row;
@@ -276,7 +276,7 @@ body {
     text-align: center; }
 
 .order {
-  background: #ffffff;
+  background: #f5f5f5;
   overflow-x: hidden;
   text-align: center;
   padding-top: 4rem; }
@@ -299,7 +299,7 @@ body {
     border-top-left-radius: 30px;
     border-bottom-right-radius: 30px;
     border-top-color: transparent;
-    background: #00897B;
+    background: #00897b;
     color: #130f40; }
     .order .card .quaternary {
       color: #fff;
@@ -308,7 +308,7 @@ body {
       height: 100px;
       width: 100px;
       background: #ffffff;
-      color: #00897B;
+      color: #00897b;
       display: block;
       margin: 0 auto;
       display: flex;
@@ -333,9 +333,7 @@ body {
     padding: 2.5rem 0;
     background: #003c36;
     width: 100%;
-    opacity: 0.95;
-    -webkit-clip-path: polygon(51% 5%, 100% 0, 100% 100%, 50% 95%, 0 100%, 0 0);
-    clip-path: polygon(51% 5%, 100% 0, 100% 100%, 50% 95%, 0 100%, 0 0); }
+    opacity: 0.95; }
   .about__content {
     background-color: transparent; }
     .about__content .quaternary--light {
@@ -346,7 +344,7 @@ body {
       color: #95afc0; }
 
 .testimonials {
-  background: #fff;
+  background: #f5f5f5;
   padding: 5rem 0; }
   .testimonials__content {
     background: url("../assets/kid_01.svg"), url("../assets/kid_jump.svg");
@@ -355,7 +353,7 @@ body {
     min-height: 300px;
     font-family: Arial, "Helvetica Neue", Helvetica, sans-serif; }
     .testimonials__content .headingSecondary {
-      color: #00897B; }
+      color: #00897b; }
     .testimonials__content .carousel {
       background: transparent; }
     .testimonials__content .carousel-cell {
@@ -390,7 +388,7 @@ body {
         left: 0;
         width: 100%;
         height: 100%;
-        background-color: #00897B;
+        background-color: #00897b;
         border-radius: 30px;
         z-index: -1; }
       .testimonials__content .testimonial .pic {
@@ -409,7 +407,7 @@ body {
         letter-spacing: 1px;
         line-height: 30px;
         margin-bottom: 20px;
-        color: #EEEEEE;
+        color: #eeeeee;
         font-weight: bolder; }
       .testimonials__content .testimonial .testimonial-title a {
         display: inline-block;
@@ -427,7 +425,7 @@ body {
         margin-left: 1rem; }
 
 .tutor {
-  background: #00897B;
+  background: #00897b;
   width: auto;
   padding: 5rem 1rem;
   background-repeat: no-repeat;
@@ -451,11 +449,11 @@ body {
 
 .footer {
   margin-top: -2.5rem;
-  background: #00897B;
+  background: #00897b;
   text-align: center;
   padding-top: 7rem; }
   .footer__content {
-    color: #EEEEEE;
+    color: #eeeeee;
     padding: 7rem;
     color: #130f40; }
     .footer__content .link,
@@ -466,7 +464,7 @@ body {
       color: #130f40; }
     .footer__content .link:hover,
     .footer__content .link:active {
-      color: #F76A0D; }
+      color: #f76a0d; }
     .footer__content .paypal-logo {
       height: 7rem; }
 
@@ -496,16 +494,15 @@ body {
         color: #fb8c00; }
     .blank-container .blank .button--blue {
       color: #fb8c00;
-      border: 2px solid #007ACC;
+      border: 2px solid #007acc;
       padding: 1rem 7rem !important;
       font-weight: 700; }
       .blank-container .blank .button--blue:hover {
-        background: #00897B; }
+        background: #00897b; }
 
 .display {
   font-size: 90% !important;
   margin-left: 25.5rem;
-  background: #D7DBD6;
   padding-top: -10rem; }
   @media (max-width: 992px) {
     .display {
@@ -542,7 +539,7 @@ body {
     .d_table_1 [class^="col-"]:last-child {
       padding-right: 20px !important; } }
   .d_table_1__b th {
-    color: #00897B;
+    color: #00897b;
     font-size: 1.3rem; }
   .d_table_1__b td {
     font-size: 1.3rem; }
@@ -582,8 +579,8 @@ body {
 .button:hover,
 .button:active {
   border: 2px solid #f5f5f5;
-  color: #EEEEEE !important;
-  background: #00897B;
+  color: #eeeeee !important;
+  background: #00897b;
   text-decoration: none; }
 
 .button__small,
@@ -662,12 +659,12 @@ body {
       padding: 1rem;
       transition: all .5 ease-in;
       background: transparent;
-      border-bottom: 1px solid #00897B;
-      color: #00897B; }
+      border-bottom: 1px solid #00897b;
+      color: #00897b; }
       .forms_absolute .form__input:focus {
         outline: none;
         box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.1);
-        border-bottom: 3px solid #00897B; }
+        border-bottom: 3px solid #00897b; }
       .forms_absolute .form__input:focus:invalid {
         border: none;
         color: red;
@@ -678,7 +675,7 @@ body {
       font-weight: 700;
       display: block;
       text-align: left;
-      color: #00897B; }
+      color: #00897b; }
       @media (min-width: 768px) and (max-width: 989px) {
         .forms_absolute .form__label {
           display: none; } }
@@ -695,8 +692,8 @@ body {
       display: block;
       margin: 0 auto;
       width: 100%;
-      border: 2px solid #00897B;
-      color: #00897B !important;
+      border: 2px solid #00897b;
+      color: #00897b !important;
       background: transparent;
       font-weight: 700;
       border-radius: .8rem;
@@ -717,15 +714,15 @@ body {
         margin-top: 1.5rem; } }
     .forms_absolute .form__buttons:hover, .forms_absolute .form__buttons:active,
     .forms_absolute .form a {
-      border: 2px solid #EEEEEE !important;
-      color: #EEEEEE !important;
+      border: 2px solid #eeeeee !important;
+      color: #eeeeee !important;
       text-decoration: none;
-      background: #00897B; }
+      background: #00897b; }
   .forms_absolute .headingSecondary {
-    color: #00897B !important; }
+    color: #00897b !important; }
 
 .fom {
-  background: #00897B;
+  background: #00897b;
   height: 100vh;
   width: 100vw; }
   .fom .main {
@@ -837,7 +834,7 @@ body {
     -moz-box-shadow: 0px 1.2px 0px 0px rgba(204, 204, 204, 0.2);
     box-shadow: 0px 1.2px 0px 0px rgba(204, 204, 204, 0.2); }
   .forms2 small {
-    color: #00897B; }
+    color: #00897b; }
   .forms2__files {
     font-size: inherit;
     height: 3.2rem !important; }
@@ -847,7 +844,7 @@ body {
   .forms2__button {
     font-size: inherit;
     text-transform: uppercase;
-    background: #00897B;
+    background: #00897b;
     color: #f5f5f5;
     font-weight: 700; }
   .forms2 .form-group {
@@ -859,43 +856,43 @@ body {
   width: 100% !important;
   border-radius: .7rem;
   height: 3.7rem;
-  border: 1px solid #00897B;
+  border: 1px solid #00897b;
   border-left: none;
   border-right: none; }
 
 .files_edit__input {
   margin-top: 3px;
   padding-top: 1px;
-  background: #00897B;
+  background: #00897b;
   border-radius: .5rem;
-  color: #EEEEEE; }
+  color: #eeeeee; }
 
 .files_edit label {
   height: 100%;
   padding-top: 4px;
   padding-top: 4px;
-  color: #00897B; }
+  color: #00897b; }
 
 .files_edit .btn {
-  background: #00897B;
+  background: #00897b;
   height: 31px;
   width: 90% !important;
   padding-top: 1px;
   margin-top: 1.35px;
   margin-bottom: 10px;
-  color: #EEEEEE; }
+  color: #eeeeee; }
 
 .dashboard_nav {
   position: relative;
   z-index: 10000; }
   .dashboard_nav .navbar {
-    background: #00897B;
+    background: #00897b;
     padding: 0 5rem;
     animation-duration: 2s;
     min-height: 30px; }
     .dashboard_nav .navbar-brand {
       font-size: 2rem;
-      color: #EDA719;
+      color: #eda719;
       text-decoration: none; }
     .dashboard_nav .navbar .deco {
       font-family: "Bungee Inline", cursive;
@@ -903,14 +900,14 @@ body {
     .dashboard_nav .navbar__logo {
       height: 3.5rem; }
     .dashboard_nav .navbar-toggler {
-      color: #EDA719;
+      color: #eda719;
       font-size: 2.5rem; }
     .dashboard_nav .navbar .nav-item {
       padding: 0.5rem 0.1rem;
       transform: translateX(0); }
     .dashboard_nav .navbar .nav-link,
     .dashboard_nav .navbar .dropdown-item {
-      color: #EDA719;
+      color: #eda719;
       font-family: "Arvo", serif;
       transition: all 0.5s ease-in;
       font-size: 1.5rem;
@@ -921,22 +918,22 @@ body {
     .dashboard_nav .navbar .dropdown-item:hover,
     .dashboard_nav .navbar .dropdown-item:active {
       color: #494e6b;
-      background: #EDA719; }
+      background: #eda719; }
     .dashboard_nav .navbar .btn {
       font-size: 2rem;
       font-family: "Bungee Inline", cursive; }
     .dashboard_nav .navbar .nav-link--excemption {
-      color: #EEEEEE;
+      color: #eeeeee;
       font-family: calibri; }
       .dashboard_nav .navbar .nav-link--excemption:hover {
-        background: #EEEEEE;
-        color: #00897B;
+        background: #eeeeee;
+        color: #00897b;
         -webkit-box-shadow: -2px 3px 5px 0px rgba(0, 0, 0, 0.75);
         -moz-box-shadow: -2px 3px 5px 0px rgba(0, 0, 0, 0.75);
         box-shadow: -2px 3px 5px 0px rgba(0, 0, 0, 0.75); }
     .dashboard_nav .navbar .dropdown-item {
       font-family: calibri !important;
-      color: #00897B !important;
+      color: #00897b !important;
       font-size: 1.7rem;
       margin-top: 0.3rem;
       -webkit-box-shadow: -2px 3px 5px 0px rgba(0, 0, 0, 0.75);
@@ -962,7 +959,7 @@ body {
       cursor: pointer; }
     .dashboard_nav_left__content .list-group-item {
       background: transparent;
-      color: #00897B;
+      color: #00897b;
       font-weight: 700;
       padding: 2.5rem 2rem;
       font-size: 1.8rem; }
@@ -979,7 +976,7 @@ body {
       .dashboard_nav .left-toggler {
         display: inherit; } }
   .dashboard_nav .icon-m {
-    color: #EDA719;
+    color: #eda719;
     font-size: 2.5rem; }
   .dashboard_nav #check {
     display: none; }
@@ -1025,7 +1022,7 @@ body {
       padding: 17px;
       font-size: 1.4rem; }
     .messages__view .date {
-      color: #00897B;
+      color: #00897b;
       font-size: 1.2rem;
       margin-top: 7px;
       float: right;

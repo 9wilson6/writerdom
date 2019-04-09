@@ -5,24 +5,24 @@
         <section class="form-header">
             <div class="home"><a href="index">Home</a></div>
             <div style="clear: both"></div>
-            <div class="image">
+           <!--  <div class="image">
                 <div class="cover"></div> <img src="./assets/user.png">
-            </div>
-            <div class="company">PerfectGrader</div>
+            </div> -->
+            <!-- <div class="company">PerfectGrader</div> -->
             <div class="heading">Create User account</div>
         </section>
         <form action="" method="POST" id="form-box">
 
         	<?php if (!empty($error)) { ?>
                 
-               <div class="text-danger text-uppercase  text-center"><strong><?php  echo $error; ?></strong></div>
-           <?php  } ?>
-           <?php if (!empty($success)) { ?>
+             <div class="text-danger text-uppercase  text-center"><strong><?php  echo $error; ?></strong></div>
+         <?php  } ?>
+         <?php if (!empty($success)) { ?>
             
-               <div class="text-success text-uppercase text-center"><strong><?php  echo $success; ?></strong></div>
-           <?php  } ?>
-           <div class="icon"><span class="fa fa-user"></span></div>
-           <div class="input">
+             <div class="text-success text-uppercase text-center"><strong><?php  echo $success; ?></strong></div>
+         <?php  } ?>
+         <div class="icon"><span class="fa fa-user"></span></div>
+         <div class="input">
             <input type="text" name="username" id="username" class="inp" required placeholder="Username">
         </div>
         <!-- //////////////////////////////////// -->
