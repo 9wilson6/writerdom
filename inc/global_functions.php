@@ -516,8 +516,8 @@ function sendMail($details,$to, $subject){
 		<div style="min-height: 50px; background: #27ae60; border-radius: 10px; margin-top: 10px; margin-left: 20px; text-align: left; padding-left: 30px; padding-top: 5px;">
 		<img style="height: 30px; width:30px; position: relative; bottom: -10px; right: -3px;" src="https://www.perfectgrader.com/assets/pen.png">
 		<span style="color: #f1c40f;">PerfectGrders</span></div>
-		<div class="mainsection" style="font-size: 14px; line-height: 25px;"> <br>'.$details .'<br>
-		<a href="https://www.perfectgrader.com" target="blank">For more details follow this link....</a>
+		<div style="font-size: 16px; line-height: 25px; color:#000;"> <br>'. $details .'<br>
+		<small style="font-size:13px;"><a href="https://www.perfectgrader.com" target="blank">For more details follow this link....</a></small>
 		<br>
 		<small>Date: '.date("Y-m-d H:i:s").'</small>
 		</div>
