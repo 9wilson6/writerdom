@@ -21,7 +21,7 @@ $result=$db->get_var("SELECT payment_date FROM others");
           <div class="card-header text-uppercase">account activities summary</div>
           <!--card header-->
           <div class="card-body">
-            <marquee class="bg-dark text-light">Next funds disbursement date:
+            <marquee class="bg-dark" style="color: #fff">Next funds disbursement date:
               <?php echo date('Y-m-d H:i:s', $result); ?> (. ❛ ᴗ ❛.)</marquee>
               <div class="dashboard__content mb-5">
                 <div class="row">

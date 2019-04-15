@@ -293,12 +293,12 @@
     <h2 class="headingSecondary headingSecondary--light">
       Become a Tutor & Earn With Us.
     </h2>
-    <p class="tutor__paragraph">
+    <p class="paragraph">
       Do you have a verifiable degree certificate & can tutor students
       online? <br />
       If yes, we have good news! We hire tutors on a rolling basis.
     </p>
-    <a class="button button__small" href="tutor_register">Become a tutor</a>
+    <a class="button button__small" href="https://www.perfectgrader.com/tutor_register">Become a tutor</a>
   </div>
 </div>
 </section>

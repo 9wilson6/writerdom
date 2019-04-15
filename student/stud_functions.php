@@ -54,7 +54,7 @@ function create_post(){
   // 
   // 
   // ,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,//
-    if(count($_FILES['file']['name'])==0) {
+    if($_FILES['file']['name'][0]=="") {
       $success="Homework Posted files Successfully";
     }else{
 

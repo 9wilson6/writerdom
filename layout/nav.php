@@ -18,20 +18,20 @@
             <a class="nav-link" href="#about">About us</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">FAQ</a>
+            <a class="nav-link" href="https://www.perfectgrader.com/#">FAQ</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Blog</a>
+            <a class="nav-link" href="https://www.perfectgrader.com/#">Blog</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Terms of use</a>
+            <a class="nav-link" href="https://www.perfectgrader.com/#">Terms of use</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Privacy policy</a>
+            <a class="nav-link" href="https://www.perfectgrader.com/#">Privacy policy</a>
           </li>
 
           <li class="nav-item">
-            <a class="nav-link" href="student_login">Log In</a>
+            <a class="nav-link" href="https://www.perfectgrader.com/student_login">Log In</a>
           </li>
         </ul>
       </div>

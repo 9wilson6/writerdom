@@ -135,6 +135,42 @@ function Login(){
 	}
 
 }
+
+
+
+function reset_pass(){
+	require_once("dbconfig/dbconnect.php");
+	global $error, $success;
+	if (isset($_POST['reset'])) {
+		$email=$_POST['email'];
+		if (filter_var($email, FILTER_VALIDATE_EMAIL)) {
+			$user_type=$_POST['user_type'];
+			$query="SELECT *  FROM users WHERE type='$user_type' AND email='$email'";
+			$results=$db->get_row($query);
+			if ($db->num_rows>0) {
+				$date=date("Y-m-d H:i:sa");
+				$verif_key=str_shuffle(substr(password_hash($date, PASSWORD_DEFAULT), 30,10));
+				$password=password_hash($verif_key, PASSWORD_DEFAULT);
+				$query="UPDATE users set password='$password' WHERE email='$email' AND type='$user_type'";
+				if ($db->query($query)) {
+					$success="Password sent to your email";
+					$subject="Password reset successful";
+					$details="Hello ". $results->username ." your password was successfully reset. <br> New password: ".$verif_key. "<br> You can always adjust this password after you log in to you user account.";
+					sendMail($details,$email, $subject, 1);
+				}
+				
+
+			}else{
+				$error=$email ." is not registered with us";
+			}
+			
+			// sendMail("hello wilson your new password is here ",$email, "email reset", 1);
+		}else{
+			$error="The email you entered is invalid";	
+		}
+
+	}
+}
 ?>
 
 <?php function getDateTimeDiff($current_date, $other_date){
@@ -481,14 +517,21 @@ function deleteFiles($student_id, $project_id){
 
 ?>
 <?php 
-function sendMail($details,$to, $subject){
-	require_once("../phpmailer/PHPMailerAutoload.php");
+function sendMail($details,$to, $subject, $reset=0){
+	
+	if ($reset==1) {
+		require_once("./phpmailer/PHPMailerAutoload.php");
+		// $mail->isSMTP();
+	}else{
+		require_once("../phpmailer/PHPMailerAutoload.php");
+	}
+	
 	$mail= new PHPMailer;
 	$mail->Host="smtp.gmail.com";
 	$mail->Port=587;
 	$mail->SMTPAuth=true;
 		$mail->SMTPSecure="TLS";// or ssl
-	// $mail->isSMTP();
+		
 		$mail->SMTPdebug=2;
 		$mail->isHTML(true);
 		$mail->Username="admin@perfectgrader.com";
@@ -534,5 +577,20 @@ function sendMail($details,$to, $subject){
 			echo $mail->ErrorInfo;
 		}
 	}
+/* 
+ * php delete function that deals with directories recursively
+ */
+function delete_files($target) {
+	if(is_dir($target)){
+        $files = glob( $target . '*', GLOB_MARK ); //GLOB_MARK adds a slash to directories returned
 
-	?>
+        foreach( $files as $file ){
+        	delete_files( $file );      
+        }
+
+        rmdir( $target );
+    } elseif(is_file($target)) {
+    	unlink( $target );  
+    }
+}
+?>

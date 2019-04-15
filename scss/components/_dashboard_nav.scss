@@ -1,6 +1,7 @@
 .dashboard_nav {
   position: relative;
   z-index: 10000;
+  min-width: 767px;
   .navbar {
     background: $primary-color-3;
     padding: 0 $margin-md;

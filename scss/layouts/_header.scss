@@ -1,23 +1,7 @@
 .header {
   animation-duration: 2s;
   animation-delay: 0.3s;
-
-  //   background-image: -webkit-linear-gradient(225deg, #00cf8a, #0084d6);
-  //   background-image: linear-gradient(225deg, #00cf8a, #0084d6);
-  //   min-height: 99.2vh;
-  //   width: 100%;
-  //   background-image: linear-gradient(to right bottom, rgba(0, 0, 0, .5), rgba(0, 0, 0, .5)),
-  //   background: url("../assets/headerbg2.jpeg");
-  //   background: url("../assets/lead_bg.jpg");
-  //   background-position: bottom;
-  //   background-size: cover;
-  //   background-attachment: fixed;
-  //   background-repeat: no-repeat; // display: flex;
-  //   align-items: center;
-  //   background: #003c36;
   background: $primary-color-3;
-  @media only screen and (max-width: 767px) {
-  }
   &__content {
     display: flex;
     flex-direction: row;
@@ -46,5 +30,30 @@
   }
   &__headingPrimary {
     // customize heading primary here
+  }
+  @media only screen and (max-width: 767px) {
+    &__content {
+      background: url("../assets/Chrisdesign_red_glossy_pen.svg");
+      background-position: right;
+      background-repeat: no-repeat;
+      // color: #000;
+    }
+    .headingPrimary {
+      font-size: 20px;
+      font-weight: bolder;
+      // font-family: "Times New Roman", Times, serif;
+      line-height: 30px;
+    }
+    .headingTertiary {
+      font-size: 15px;
+      line-height: 30px;
+      font-weight: bolder;
+      font-family: sans-serif;
+    }
+    .button {
+      width: 250px;
+      // height: 70px;
+      // font-size: 10px;
+    }
   }
 }

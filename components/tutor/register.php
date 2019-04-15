@@ -3,7 +3,7 @@
 
 	<div class="main">
         <section class="form-header">
-            <div class="home"><a href="index">Home</a></div>
+            <div class="home"><a href="https://www.perfectgrader.com/index">Home</a></div>
             <div style="clear: both"></div>
            <!--  <div class="image">
                 <div class="cover"></div> <img src="./assets/user.png">
@@ -46,7 +46,7 @@
         <input type="submit" value="REGISTER NOW" name="submit" class="sub-btn">
     </form>
     <section class="form-footer">
-        <p>Already have an account? &nbsp; <a href="tutor_login">Login</a></p>
+        <p>Already have an account? &nbsp; <a href="https://www.perfectgrader.com/tutor_login">Login</a></p>
     </section>
 </div>
 </section>

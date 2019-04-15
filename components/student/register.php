@@ -3,7 +3,7 @@
 
 	<div class="main">
         <section class="form-header">
-            <div class="home"><a href="index">Home</a></div>
+            <div class="home"><a href="https://www.perfectgrader.com/index">Home</a></div>
             <div style="clear: both"></div>
            <!--  <div class="image">
                 <div class="cover"></div> <img src="./assets/user.png">
@@ -15,14 +15,14 @@
 
         	<?php if (!empty($error)) { ?>
                 
-             <div class="text-danger text-uppercase  text-center"><strong><?php  echo $error; ?></strong></div>
-         <?php  } ?>
-         <?php if (!empty($success)) { ?>
+               <div class="text-danger text-uppercase  text-center"><strong><?php  echo $error; ?></strong></div>
+           <?php  } ?>
+           <?php if (!empty($success)) { ?>
             
-             <div class="text-success text-uppercase text-center"><strong><?php  echo $success; ?></strong></div>
-         <?php  } ?>
-         <div class="icon"><span class="fa fa-user"></span></div>
-         <div class="input">
+               <div class="text-success text-uppercase text-center"><strong><?php  echo $success; ?></strong></div>
+           <?php  } ?>
+           <div class="icon"><span class="fa fa-user"></span></div>
+           <div class="input">
             <input type="text" name="username" id="username" class="inp" required placeholder="Username">
         </div>
         <!-- //////////////////////////////////// -->
@@ -46,7 +46,7 @@
         <input type="submit" value="REGISTER NOW" name="submit" class="sub-btn">
     </form>
     <section class="form-footer">
-        <p>Already have an account? &nbsp; <a href="student_login">Login</a></p>
+        <p>Already have an account? &nbsp; <a href="https://www.perfectgrader.com/student_login">Login</a></p>
     </section>
 </div>
 </section>

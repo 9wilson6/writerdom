@@ -1,6 +1,5 @@
 <?php
 ob_start();
-
 require_once("../dbconfig/dbconnect.php");
 require_once("../inc/utilities.php");
 $date_global_=strtotime($date_global);

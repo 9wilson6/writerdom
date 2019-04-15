@@ -41,5 +41,15 @@
     }
   }
   @media (max-width: 700px) {
+    background: transparent;
+    .bg {
+      background: $primary-color-3;
+      opacity: 1;
+    }
+    p {
+      color: #130f40;
+      font-weight: bolder;
+      text-align: center !important;
+    }
   }
 }

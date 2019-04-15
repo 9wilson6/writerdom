@@ -1,9 +1,7 @@
 <section class="fom">
-	
-
-	<div class="main">
+  <div class="main">
     <section class="form-header">
-      <div class="home"><a href="index">Home</a></div>
+      <div class="home"><a href="https://www.perfectgrader.com/index">Home</a></div>
       <div style="clear: both"></div>
      <!--  <div class="image">
         <div class="cover"></div> <img src="./assets/user.png">
@@ -14,11 +12,11 @@
     <form action="" method="POST" id="form-box">
 
      <?php if (!empty($error)) { ?>
-      
+
        <div class="text-danger text-uppercase  text-center"><strong><?php  echo $error; ?></strong></div>
      <?php  } ?>
      <?php if (!empty($success)) { ?>
-      
+
        <div class="text-success text-uppercase text-center"><strong><?php  echo $success; ?></strong></div>
      <?php  } ?>
      <!-- //////////////////////////////////// -->
@@ -43,8 +41,8 @@
     <input type="submit" value="LOGIN NOW" name="submit" class="sub-btn">
   </form>
   <section class="form-footer">
-    <p>Don't have account? &nbsp; <a href="student_register">Register</a></p>
-    <div class="home"><a href="student_pass_reset">forgot password?</a></div>
+    <p>Don't have account? &nbsp; <a href="https://www.perfectgrader.com/student_register">Register</a></p>
+    <div class="home"><a href="https://www.perfectgrader.com/student_pass_reset">forgot password?</a></div>
   </section>
 </div>
 </section>

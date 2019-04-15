@@ -27,10 +27,23 @@
     .headingSecondary {
       margin-bottom: $margin-md;
     }
-  }
-  &__paragraph {
-    // color: #130f40;
-    // color: #95afc0;
-    font-weight: bolder;
+    .paragraph {
+      color: $primary-color-5;
+      font-weight: bolder;
+      font-size: 22px !important;
+    }
+    @media only screen and (max-width: 767px) {
+      background: transparent;
+
+      .headingSecondary {
+        font-size: 23px;
+        color: #fff;
+        font-weight: bolder;
+      }
+      .paragraph {
+        color: #130f40;
+        // font-size: 20px !important;
+      }
+    }
   }
 }
