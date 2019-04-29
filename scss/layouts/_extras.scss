@@ -1,0 +1,49 @@
+.good_paper {
+  background: $primary-color-3;
+  padding: 10rem 0;
+
+  .container {
+    text-align: center;
+    .card {
+      text-align: left;
+      width: 100%;
+      &-header {
+        text-align: center;
+        background: $primary-color-0_2 !important;
+        span {
+          font-size: 16px;
+        }
+      }
+      p {
+        font-size: 16px;
+        color: $primary-color-3;
+      }
+      u {
+        display: block;
+        text-align: center;
+      }
+      span {
+        color: darken($color: $primary-color-3, $amount: 10);
+        margin-right: 7px;
+        font-size: 16px;
+      }
+      mark {
+        color: darken($color: $primary-color-3, $amount: 2);
+        font-weight: bolder;
+        background: transparent;
+      }
+      &-link {
+        text-decoration: none;
+        color: $primary-color-3;
+        font-family: "Montserrat", serif;
+        font-weight: 700;
+        font-size: 25px;
+      }
+      @media only screen and (max-width: 767px) {
+        &-link {
+          font-size: 15px;
+        }
+      }
+    }
+  }
+}

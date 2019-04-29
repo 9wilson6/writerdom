@@ -15,7 +15,7 @@ require_once "../dbconfig/dbconnect.php";
 <div class="card-header">Feedback</div>
 <div class="card-body">
 <?php $tutor_id = $_SESSION['user_id'];
-$query = "SELECT * FROM closed LEFT JOIN projects on closed.project_id=projects.project_id WHERE closed.tutor_id='$tutor_id' and projects.status=5 order by rec_num desc LIMIT 100";
+$query = "SELECT * FROM closed LEFT JOIN projects on closed.project_id=projects.project_id WHERE closed.tutor_id='$tutor_id' and projects.status=5 order by closed.project_id desc LIMIT 100";
 $results = $db->get_results($query);
 ?>
 <?php if ($results > 0): ?>
@@ -38,7 +38,7 @@ class="fas fa-external-link-alt icon-r ml-4"></i></a></td>
 <td><?php echo $result->charges; ?></td>
 <td><?php echo $result->rating; ?></td>
 <td><?php echo $result->date_closed; ?></td>
-<td><?php echo $result->DATE_CLOSED; ?></td>
+<td><?php echo $result->DATE_PAID; ?></td>
 </tr>
 <?php endforeach?>
 </tbody>

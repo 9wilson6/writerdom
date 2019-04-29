@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Lato|Pacifico|Roboto|Black+Han+Sans|Bungee+Inline|Arvo|Oswald:700|Merriweather|Khand:300,400,500,700|Prompt:400,600,700i|Cardo:400:700');
+@import url("https://fonts.googleapis.com/css?family=Lato|Pacifico|Roboto|Black+Han+Sans|Bungee+Inline|Arvo|Oswald:700|Merriweather|Khand:300,400,500,700|Prompt:400,600,700i|Cardo:400:700");
 @import "abstracts/functions";
 @import "abstracts/mixins";
 @import "abstracts/variables";
@@ -16,6 +16,7 @@
 @import "layouts/blank";
 @import "layouts/display";
 @import "layouts/d_table_1";
+@import "layouts/extras";
 @import "components/button";
 @import "components/forms";
 @import "components/forms2";

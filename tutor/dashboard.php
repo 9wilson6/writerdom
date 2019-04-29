@@ -91,13 +91,16 @@ ob_flush();
                                         </div>
                                         <?php if ($result_q>10): ?>
                                             <div class="card-footer">
-                                                <select name="select" class="custom-select mb-2 ml-0 mr-sm-2 mb-sm-0" id="select">
+                                                <div class="customSelect">
+                                                   <select name="select" class=" mb-2 ml-0 mr-sm-2 mb-sm-0" id="select">
                                                     <option value="20">20</option>
                                                     <option value="50">50</option>
                                                     <option value="100">100</option>
                                                     <option value="100">250</option>
                                                     <option value="100">500</option>
-                                                </select></div>
+                                                </select> 
+                                                </div>
+                                                </div>
                                             <?php endif ?>
                                         </div>
                                     </div>
