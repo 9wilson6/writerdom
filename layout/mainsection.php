@@ -327,7 +327,7 @@ data-aos-offset="0"
 <div class="card">
 <a class="card-link collapsed" data-toggle="collapse" href="#collapseOne" aria-expanded="false">
 <div class="card-header">
-Contact Information <span  class="far fa-hand-point-down" style="float: right; margin-top: 15px; clear: both;"></span>
+Contact Information <span  class="far fa-hand-point-down pull-up" style="float: right; margin-top: 15px; clear: both;"></span>
 </div>
 </a>
 
@@ -357,7 +357,7 @@ Contact Information <span  class="far fa-hand-point-down" style="float: right; m
 <div class="card">
 <a class="card-link" data-toggle="collapse" href="#collapseTwo">
 <div class="card-header">
-Money Back Policy <span  class="far fa-hand-point-down" style="float: right; margin-top: 15px; clear: both;"></span>
+Money Back Policy <span  class="far fa-hand-point-down pull-up" style="float: right; margin-top: 15px; clear: both;"></span>
 </div>
 </a>
 <div id="collapseTwo" class="collapse" data-parent="#accordion">
