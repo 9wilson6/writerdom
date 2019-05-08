@@ -475,46 +475,50 @@ function manageFiles($student_id, $project_id){
 
 ////////////////////Show Files Without download////////
 function deleteFiles($student_id, $project_id){
-	$dir="../FILES/{$student_id}/{$project_id}/";
-	$dir_="FILES/{$student_id}/{$project_id}/";
 
-	if (!file_exists($dir)) {
-	// rmdir("../FILES/{$student_id}/{$project_id}");
-	}else{
+$dir="../FILES/{$student_id}/{$project_id}/";
+$dir_="FILES/{$student_id}/{$project_id}/";
 
-		$allFiles=scandir($dir);
-		$files=array_diff($allFiles, array('.', '..'));
-		
-		if(empty($files)) {
-			rmdir("../FILES/{$student_id}/{$project_id}");
-		}else{
-			// $files = array('readme.txt', 'test.html', 'image.gif');\
-			$zipname =$dir."Order_". $project_id."_.zip";
-			foreach ($files as  $file) {
-				unlink("../FILES/{$student_id}/{$project_id}/".$file);
-			}
-			if (file_exists($zipname)) {
-				unlink($zipname);
+if (!file_exists($dir)) {
+// rmdir("../FILES/{$student_id}/{$project_id}");
+}else{
 
-			}
-			rmdir("../FILES/{$student_id}/{$project_id}");
+$allFiles=scandir($dir);
+$files=array_diff($allFiles, array('.', '..'));
 
-		}
+if(empty($files)) {
+rmdir("../FILES/{$student_id}/{$project_id}");
+}else{
+// $files = array('readme.txt', 'test.html', 'image.gif');\
+$zipname =$dir."Order_". $project_id."_.zip";
+foreach ($files as  $file) {
+unlink("../FILES/{$student_id}/{$project_id}/".$file);
+}
+if (file_exists($zipname)) {
+unlink($zipname);
 
-	}
-// Directory
-	$directory = "../FILES/{$student_id}/";
+}
+rmdir("../FILES/{$student_id}/{$project_id}");
 
-// Returns array of files
-	$files = scandir($directory);
-
-// Count number of files and store them to variable..
-	$num_files = count($files)-2;
-	if ($num_files==0) {
-		rmdir("../FILES/{$student_id}");
-	}
 }
 
+}
+$directory = "../FILES/{$student_id}/";
+if(file_exists($directory)){
+// Directory
+
+
+// Returns array of files
+$files = scandir($directory);
+
+// Count number of files and store them to variable..
+$num_files = count($files)-2;
+if ($num_files==0) {
+rmdir("../FILES/{$student_id}");
+}
+}
+
+}
 ?>
 <?php 
 function sendMail($details,$to, $subject, $reset=0){
