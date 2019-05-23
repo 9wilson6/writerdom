@@ -101,7 +101,7 @@ session_tutor(); ?>
          user_id: user_id,
          user_type: user_type
        });
-      }, 300);
+      }, 3000);
   /////////////////////////Reset messages when messages is checked///////
 
 });

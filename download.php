@@ -10,7 +10,7 @@ if (!$filePath) {
 }else{
 header("Cache-Control: public");
 header("Content-Description: File Transfer");
-header("Content-Disposition: attachment; filename=".$fileName);
+header('Content-Disposition: attachment; filename="'.$fileName.'"');
 header("Content-Type: application/zip");
 header("Content-Transfer-Encoding: binary");
 while (ob_get_level()) {

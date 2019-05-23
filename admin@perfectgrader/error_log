@@ -1,0 +1,11 @@
+[06-Apr-2019 20:28:32 Africa/Nairobi] PHP Warning:  session_start(): Cannot send session cache limiter - headers already sent (output started at /home2/perfectgrade/public_html/inc/global_functions.php:82) in /home2/perfectgrade/public_html/inc/header_links.php on line 4
+[07-Apr-2019 20:59:18 Africa/Nairobi] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home2/perfectgrade/public_html/admin@perfectgrader/excel.php:1) in /home2/perfectgrade/public_html/admin@perfectgrader/excel.php on line 48
+[07-Apr-2019 20:59:18 Africa/Nairobi] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home2/perfectgrade/public_html/admin@perfectgrader/excel.php:1) in /home2/perfectgrade/public_html/admin@perfectgrader/excel.php on line 49
+[07-Apr-2019 21:00:48 Africa/Nairobi] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home2/perfectgrade/public_html/admin@perfectgrader/excel.php:1) in /home2/perfectgrade/public_html/admin@perfectgrader/excel.php on line 48
+[07-Apr-2019 21:00:48 Africa/Nairobi] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home2/perfectgrade/public_html/admin@perfectgrader/excel.php:1) in /home2/perfectgrade/public_html/admin@perfectgrader/excel.php on line 49
+[10-Apr-2019 13:44:03 Africa/Nairobi] PHP Warning:  You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'status=1' at line 1 in /home2/perfectgrade/public_html/dbconfig/ez_sql_mysqli.php on line 412
+[11-Apr-2019 21:44:41 Africa/Nairobi] PHP Fatal error:  Uncaught ArgumentCountError: Too few arguments to function deleteFiles(), 1 passed in /home2/perfectgrade/public_html/admin@perfectgrader/manage_order.php on line 18 and exactly 2 expected in /home2/perfectgrade/public_html/inc/global_functions.php:441
+Stack trace:
+#0 /home2/perfectgrade/public_html/admin@perfectgrader/manage_order.php(18): deleteFiles('../FILES/12/32/')
+#1 {main}
+  thrown in /home2/perfectgrade/public_html/inc/global_functions.php on line 441

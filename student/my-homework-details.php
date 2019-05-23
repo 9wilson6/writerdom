@@ -225,7 +225,11 @@ if ($db->num_rows < 1) {?>
 </td>
 <?php $query = "SELECT SUM(rating) as rating, COUNT(comment) as complited FROM closed WHERE tutor_id='$result->tutor_id'";
     $results = $db->get_row($query);
+    if ($results->complited>0) {
     $rate = round($results->rating / $results->complited, 0);
+   } else{
+    	$rate=0;
+    }
     ?>
 <td>
 <?php echo $rate ?>

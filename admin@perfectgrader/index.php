@@ -117,8 +117,8 @@ $result=$db->get_var("SELECT payment_date FROM others");
 ?>
 <script>
   $(function () {
-    setInterval(function () {
-      $("#available").load('dashboard_counters', {
+     setInterval(function () {
+ $("#available").load('dashboard_counters', {
         type: 'available',
         submit: 'submit'
       });
@@ -126,6 +126,9 @@ $result=$db->get_var("SELECT payment_date FROM others");
         type: 'progress',
         submit: 'submit'
       });
+      }, 3000);
+     setInterval(function () { 
+ 
       $("#delivered").load('dashboard_counters', {
         type: 'delivered',
         submit: 'submit'
@@ -134,7 +137,15 @@ $result=$db->get_var("SELECT payment_date FROM others");
         type: 'revision',
         submit: 'submit'
       });
-      $("#closed").load('dashboard_counters', {
+
+      
+      $("#tutors").load('dashboard_counters', {
+        type: 'tutors',
+        submit: 'submit'
+      });
+     }, 5000);
+     setInterval(function () {
+$("#closed").load('dashboard_counters', {
         type: 'closed',
         submit: 'submit'
       });
@@ -142,10 +153,17 @@ $result=$db->get_var("SELECT payment_date FROM others");
         type: 'students',
         submit: 'submit'
       });
-      $("#tutors").load('dashboard_counters', {
-        type: 'tutors',
+          $("#balance").load('dashboard_counters', {
+        type: 'balance',
         submit: 'submit'
       });
+      $("#dues").load('dashboard_counters', {
+        type: 'dues',
+        submit: 'submit'
+      });
+      }, 7000);
+    setInterval(function () {
+ 
       $("#suspended").load('dashboard_counters', {
         type: 'suspended',
         submit: 'submit'
@@ -154,16 +172,7 @@ $result=$db->get_var("SELECT payment_date FROM others");
         type: 'applications',
         submit: 'submit'
       });
-      $("#dues").load('dashboard_counters', {
-        type: 'dues',
-        submit: 'submit'
-      });
-
-      $("#balance").load('dashboard_counters', {
-        type: 'balance',
-        submit: 'submit'
-      });
       $("#cbody").load("notifications.php", { limit: 10 });
-    }, 300);
+    }, 4000);
   });
 </script>

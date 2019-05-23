@@ -108,17 +108,19 @@ function Login(){
 					}
 					
 				}elseif($user_type==2){
-					if ($results->status==1) {
+					
 						if ($results->verified==1) {
+
 							$_SESSION['user_type']=2;
 							$_SESSION["info"]=$results;
+							if ($results->status==0) { $_SESSION['suspended']=1; }
 							header("location:tutor/dashboard");
 						}else{
 							header("location:tutor/not_active");
 						}
-					}else{
-						$error="Sorry your account is under suspension. <br> contact admin for further details";
-					}
+					// }else{
+					// 	$error="Sorry your account is under suspension. <br> contact admin for further details";
+					// }
 				}elseif ($user_type==3) {
 					$_SESSION['user_type']=3;
 					$_SESSION["info"]=$results;
@@ -292,7 +294,37 @@ function reset_pass(){
 
 } ?>
 
-<?php  
+<?php 
+function ImagePath($post_id, $x=0){
+	global $file_name;
+	if ($x==0) {
+		$dir="../POSTS/{$post_id}/";
+	}else{
+		$dir="./POSTS/{$post_id}/";
+	}
+	if (!file_exists($dir)) {
+		// echo "No Files Attached"; 
+	}else{
+
+		$allFiles=scandir($dir);
+		$files=array_diff($allFiles, array('.', '..'));
+		
+		if(empty($files)) {
+			// echo "No Files Attached";
+		}else{
+			foreach ($files as $file) {
+				$file_name=$dir."". $file;
+			}
+
+			}
+
+			?>
+
+		</ul>
+		<?php
+	}
+
+} 
 # ////////////////////////////FILES////////////////////////////////////////// -->
 function filesDownload($student_id, $project_id){
 	$dir="../FILES/{$student_id}/{$project_id}/";

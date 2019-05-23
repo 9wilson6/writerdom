@@ -159,13 +159,13 @@
 
     .fom{
     //    background: #00838f; 
-    background: $primary-color-3;
+    background: #d6d6d6;
        height:100vh;
        width:100vw;
 
     .main {
             width: 400px;
-            background: #eceff1;
+            background: #E3E3E3;
             margin: 40px auto;
             // position: relative;
             padding: 10px;
@@ -226,13 +226,13 @@
             border: none;
             border-bottom: 1px solid #999;
             font-size: 16px;
-            color: #009688;
-            background: #eceff1;
+            color: #000;
+            background: transparent;
         }
 
         .inp:focus {
             outline: none;
-            color: #009688;
+            color: #000;
             font-weight: bolder;
             border-bottom: 1px solid #009688;
         }
@@ -241,6 +241,7 @@
              border-bottom: 1px solid #FF0000;
               
         }
+    
         .sub-btn {
             width: 100%;
             padding: 10px;
@@ -248,7 +249,7 @@
             font-weight: bold;
             font-size: 16px;
             color: #fff;
-            background: #009688;
+            background: #A4A4A4;
             cursor: pointer;
         }
 
@@ -258,7 +259,7 @@
         }
 
         .sub-btn:hover {
-            background: #00796b;
+            background: #A8A8A8;
         }
 
         .form-footer {
@@ -271,7 +272,7 @@
         .form-footer a,
         .home a {
             text-decoration: none;
-            color: #1976d2;
+            color: #009688;
         }
 
         .home a {
@@ -287,11 +288,13 @@
             height: 30px;
             font-size: 25px;
             padding: 8px 8px 8px 0;
-            color: #009688;
+            // color: #009688;
+            color:#A4A4A4;
         }
 
         .input {
             margin-left: 39px;
+           
         }
 
         @media (max-width:720px) {
