@@ -23,6 +23,7 @@ $results = $db->get_results($query);
 <div class="headingTertiary">There is nothing to show Yet</div>
 <?php } else {?>
 <div class="card-body">
+	<div class="table-responsive" style="overflow-y: hidden;">
 <table class="table table-bordered">
 <thead>
 <tr>
@@ -65,6 +66,7 @@ $results = $db->get_results($query);
 <?php endforeach?>
 </tbody>
 </table>
+</div>
 </div>
 <?php }?>
 </div>

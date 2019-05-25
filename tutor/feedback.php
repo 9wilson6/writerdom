@@ -19,6 +19,7 @@ $query = "SELECT * FROM closed WHERE tutor_id='$tutor_id' order by project_id de
 $results = $db->get_results($query);
 ?>
 <?php if ($results > 0): ?>
+	<div class="table-responsive" style="overflow-y: hidden;">
 <table class="table table-bordered">
 <thead>
 <tr>
@@ -41,6 +42,7 @@ class="fas fa-external-link-alt icon-r ml-4"></i></a></td>
 <?php endforeach?>
 </tbody>
 </table>
+</div>
 <?php else: ?>
 <div class="headingTertiary">
 Nothing To show yet

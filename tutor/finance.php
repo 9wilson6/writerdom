@@ -19,6 +19,7 @@ $query = "SELECT * FROM closed LEFT JOIN projects on closed.project_id=projects.
 $results = $db->get_results($query);
 ?>
 <?php if ($results > 0): ?>
+	<div class="table-responsive" style="overflow-y: hidden;">
 <table class="table table-bordered">
 <thead>
 <tr>
@@ -43,6 +44,7 @@ class="fas fa-external-link-alt icon-r ml-4"></i></a></td>
 <?php endforeach?>
 </tbody>
 </table>
+</div>
 <?php else: ?>
 <h1 class="headingTertiary">
 Nothing To show yet

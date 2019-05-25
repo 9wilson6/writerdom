@@ -29,7 +29,7 @@ $results=$db->get_results($query); ?>
             <div class="headingTertiary">There is Nothing To show Yet</div>
             <?php elseif($db->num_rows>0): ?>
             <div class="table-responsive" id="display">
-              <table class="table table-bordered">
+              <table class="table table-bordered table-sm">
                 <thead>
                   <tr>
                     <th>id</th>

@@ -36,6 +36,7 @@ if (isset($_POST['delete'])) {
             <?php if ($db->num_rows<1): ?>
               <div class="headingTertiary">There is Nothing To show Yet</div>
               <?php elseif($db->num_rows>0): ?>
+                   <div class="table-responsive" style="overflow-y: hidden;">
                 <table class="table table-bordered">
                   <thead>
                     <tr>
@@ -79,6 +80,7 @@ if (isset($_POST['delete'])) {
                     </tbody>
 
                   </table>
+                </div>
                 <?php endif ?>
               </div>
             </div>

@@ -42,7 +42,7 @@ if (isset($_POST['submit'])) {
             <div class="card-body">
                                 
                         
-                   <div class="table-responsive">
+                      <div class="table-responsive" style="overflow-y: hidden;">
                         <table class="table text-center">
                             <thead>
                                 <tr>

@@ -28,6 +28,7 @@ You have 0 posted assignments
 <?php if ($db->num_rows <= 0): ?>
 <div class="headingTertiary">Nothing to Show Yet</div>
 <?php elseif ($db->num_rows > 0): ?>
+	<div class="table-responsive" style="overflow-y: hidden;">
 <table class="table table-bordered">
 <thead>
 <tr>
@@ -62,6 +63,7 @@ href="complited_details?id=<?php echo urlencode(convert_uuencode($result->projec
 <?php }?>
 </tbody>
 </table>
+</div>
 <?php endif?>
 </div>
 <!--  <?php #if (!$result_q<20 ||$result_q>$result_q): ?>

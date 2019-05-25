@@ -23,6 +23,7 @@ $results = $db->get_results($query);
 <div class="headingSecondary text-light text-dark">There is nothing to show Yet</div>
 <?php } else {?>
 <div class="card-body">
+	<div class="table-responsive" style="overflow-y: hidden;">
 <table class="table table-bordered">
 <thead>
 <tr>
@@ -66,6 +67,7 @@ class="fas fa-external-link-alt icon-r ml-4"></i></a></td>
 <?php endforeach?>
 </tbody>
 </table>
+</div>
 </div>
 <?php }?>
 </div>

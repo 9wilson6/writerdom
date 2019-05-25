@@ -23,10 +23,11 @@ $results=$db->get_results($query);
                   <?php if ($db->num_rows<1): ?>
                         <div class="headingTertiary">There is Nothing To show Yet</div>
                         <?php elseif($db->num_rows>0): ?>
-                        <table class="table table-bordered">
+                             <div class="table-responsive" style="overflow-y: hidden;">
+                        <table class="table table-bordered table-sm">
                             <thead>
                                 <tr>
-                                    <th>id</th>
+                                    <th class="medium">id</th>
                                     <th class="wide">Title</th>
                                     <th data-toggle="tooltip" title="Price $" data-placement="right">Price</th>
                                     <th data-toggle="tooltip" title="pages" data-placement="right">Pg</th>
@@ -40,7 +41,7 @@ $results=$db->get_results($query);
                             <tbody id="display">
                                        <?php foreach ($results as $result): ?>
                                 <tr>
-                                    <td class="smalll"><a
+                                    <td class=""><a
                                             href="available-details?pid=<?php echo urlencode(convert_uuencode($result->project_id)); ?>"><?php echo $result->project_id; ?><i
                                                 class="fas fa-external-link-alt icon-r ml-4"></i></a></td>
                                     <td class="wide">
@@ -73,6 +74,7 @@ $results=$db->get_results($query);
                             </tbody>
 
                         </table>
+                    </div>
                         <?php endif ?>
                    	</div>
                    	<div class="card-footer"></div>

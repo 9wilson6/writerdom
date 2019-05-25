@@ -17,11 +17,12 @@ $results = $db->get_results($query);
 <div class="col-sm-12 col-md-12 col-lg-12 col-xl-9">
 <h1 class="headingTertiary text-light">RESULTS</h1>
 <div class="card">
-<div class="headingSecondary text-dark">Your homework results</div>
-<?php if ($db->num_rows < 1) {?>
 <div class="card-header">Assignments pending your approval</div>
+<?php if ($db->num_rows < 1) {?>
+<div class="card-body"> <div class="headingTertiary">There is nothing to show yet</div> </div>
 <?php } else {?>
 <div class="card-body">
+	<div class="table-responsive" style="overflow-y: hidden;">
 <table class="table table-bordered">
 <thead>
 <tr>
@@ -66,6 +67,7 @@ $results = $db->get_results($query);
 <?php endforeach?>
 </tbody>
 </table>
+</div>
 </div>
 <?php }?>
 </div>

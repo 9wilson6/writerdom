@@ -50,6 +50,7 @@ if ($db->query($query)) { ?>
              <?php if ($db->num_rows<1): ?>
                <div class="headingTertiary">There are no posts</div>
                 <?php else: ?>
+                     <div class="table-responsive" style="overflow-y: hidden;">
                  <table class="table table-hover">
                 <thead>
                   <tr>
@@ -89,6 +90,7 @@ if ($db->query($query)) { ?>
                 <?php endforeach ?>
                </tbody>
               </table>
+            </div>
              <?php endif ?>
         </div>
       </div>

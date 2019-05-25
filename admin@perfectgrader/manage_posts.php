@@ -50,7 +50,8 @@ if ($db->query($query)) {
              <?php if ($db->num_rows<1): ?>
                <h3>There are no posts</h3>
                 <?php else: ?>
-                 <table class="table table-hover">
+                     <div class="table-responsive" style="overflow-y: hidden;">
+                 <table class="table table-bordered table-sm">
                 <thead>
                   <tr>
                     <th scope="col" width="50%">Title</th>
@@ -70,14 +71,14 @@ if ($db->query($query)) {
 
                     <td>
                       <div class="form-row">
-                     <div class="col-6">
+                     <div class="col-12 col-md-6 mb-3">
                        
                      <form action="post_edit" method="POST">
                       <input type="hidden" name="post_id" value="<?php echo $result->post_id ?>">
                        <input type="submit" class="btn btn-success btn-block" name="edit" value="EDIT">
                      </form>
                  </div>
-                  <div class="col-6">
+                  <div class="col-12 col-md-6">
                     <form action="" method="POST">
                        <input type="hidden" name="post_id" value="<?php echo $result->post_id ?>">
                        <input type="submit" class="btn btn-danger btn-block" name="delete" value="DELETE!!">
@@ -90,6 +91,7 @@ if ($db->query($query)) {
                 <?php endforeach ?>
                </tbody>
               </table>
+            </div>
              <?php endif ?>
         </div>
       </div>

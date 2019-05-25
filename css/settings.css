@@ -559,15 +559,29 @@ body {
   margin-left: 25.5rem;
   font-family: "Montserrat" !important;
   padding-top: 5rem; }
+  @media only screen and (max-width: 767px) {
+    .display {
+      font-size: 70% !important; } }
   @media (max-width: 992px) {
     .display {
       margin-left: -1rem; }
       .display .headingTertiary {
         font-size: 2rem; } }
+    @media only screen and (max-width: 992px) and (max-width: 767px) {
+      .display .headingTertiary {
+        font-size: 1.2rem; } }
   .display .card-header {
     background: #00897b !important;
     color: #fff;
     font-weight: bolder; }
+    @media only screen and (max-width: 767px) {
+      .display .card-header {
+        font-size: 10px !important; } }
+  .display .card-body {
+    font-size: 16px !important; }
+    @media only screen and (max-width: 767px) {
+      .display .card-body {
+        font-size: 10px !important; } }
   .display__content {
     min-height: 795px;
     text-align: center;

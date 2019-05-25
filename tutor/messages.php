@@ -37,7 +37,7 @@ $results = $db->get_results($query);
 <td><?php echo $result->student_id; ?></td>
 <td>
 <?php $project_id = $result->project_id;?>
-<p style="max-height: 30px; overflow: auto;"><?php echo $result->message; ?></p>
+<?php echo $result->message; ?>
 </td>
 <td><?php echo $result->date_sent; ?></td>
 <?php if ($result->status == 1): ?>

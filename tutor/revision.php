@@ -20,7 +20,8 @@ $results = $db->get_results($query)
 <?php if ($db->num_rows < 1) {?>
 <div class="headingTertiary">Nothing to show Yet</div>
 <?php } else {?>
-<table class="table table-bordered">
+	<div class="table-responsive" style="overflow-y: hidden;">
+<table class="table table-bordered table-sm">
 <thead>
 <tr>
 <th>Order id</th>
@@ -63,6 +64,7 @@ class="fas fa-external-link-alt icon-r ml-4"></i></a></td>
 <?php endforeach?>
 </tbody>
 </table>
+</div>
 <?php }?>
 </div>
 </div>

@@ -23,6 +23,7 @@ $results=$db->get_results($query);
                   <?php if ($db->num_rows<1): ?>
                         <div class="headingTertiary">There is Nothing To show Yet</div>
                         <?php elseif($db->num_rows>0): ?>
+                               <div class="table-responsive" style="overflow-y: hidden;">
                         <table class="table table-bordered">
                             <thead>
                                 <tr>
@@ -78,6 +79,7 @@ $results=$db->get_results($query);
                             </tbody>
 
                         </table>
+                    </div>
                         <?php endif ?>
                    	</div>
                    	<div class="card-footer"></div>
