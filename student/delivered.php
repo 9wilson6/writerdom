@@ -17,7 +17,7 @@ $results = $db->get_results($query);
 <div class="col-sm-12 col-md-12 col-lg-12 col-xl-9">
 <h1 class="headingTertiary text-light">RESULTS</h1>
 <div class="card">
-<h1 class="headingSecondary text-dark">Your homework results</h1>
+<div class="headingSecondary text-dark">Your homework results</div>
 <?php if ($db->num_rows < 1) {?>
 <div class="card-header">Assignments pending your approval</div>
 <?php } else {?>

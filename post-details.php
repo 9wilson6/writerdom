@@ -20,6 +20,9 @@
 
   <link rel="stylesheet" href="css/style.css">
 <style>
+  body{
+    background: #f1f2f6;
+  }
 	.blog{
   position: relative;
   min-height: 60vh;
@@ -35,7 +38,7 @@
     left: 50%;
     top: 50%;
     text-align: center;
-    font-family: "Roboto", sans-serif;
+   font-family: montserrat;
     background: rgba(14, 14, 14, 0.5);
     border-radius: 10px;
     padding: 20px 10px;
@@ -45,6 +48,9 @@
     transform: translate(-50%, -50%);
     min-width: 70%;
 	}
+  .card{
+background: #dfe6e9;
+  }
 	 @media (max-width: 768px) {
 	 	.blog>.blog__image{
 
@@ -100,9 +106,9 @@ body{
                 <li><a href="https://www.perfectgrader.com/index#services-section" class="nav-link">Getting Started</a></li>
                 <li><a href="https://www.perfectgrader.com/index#about-section" class="nav-link">About Us</a></li>
                 <li><a href="https://www.perfectgrader.com/index#testimonials-section" class="nav-link">Testimonials</a></li>
-                <li><a href="#" class="nav-link">FAQ</a></li>
+                <li><a href="https://www.perfectgrader.com/faq" class="nav-link">FAQ</a></li>
                  <li><a href="https://www.perfectgrader.com/blog" class="nav-link" style="border-bottom: 2px solid #D9A440;" >Blog</a></li>
-                <li><a href="https://www.perfectgrader.com/index#site-footer" class="nav-link">Terms of Use</a></li>
+                <li><a href="https://www.perfectgrader.com/terms-of-service" class="nav-link">Terms of Use</a></li>
                 <li><a href="https://www.perfectgrader.com/student_login" class="nav-link">Log in</a></li>
               </ul>
             </nav>
@@ -149,7 +155,7 @@ $results=$db->get_row($query);
           			<img class="blog__image" src="<?php echo $file_name;  ?>" alt="">
           			
           		</div>
-          		<div class="blog__content text-left">
+          		<div class="blog__content text-dark text-left">
           				<p class="lead"><?php echo $results->details; ?></p>
           			</div>
           	<?php else: ?>

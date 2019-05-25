@@ -9,7 +9,7 @@ require_once "../components/top_nav.php";
 <div class="row">
 <div class="col-sm-12 col-md-12 col-lg-12 col-xl-8">
 <div class="card">
-<div class="card-header text-light">Payment</div>
+<div class="card-header">Payment</div>
 <div class="card-body">
 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magni ut possimus quas nemo aliquam
 tempora ratione debitis, laudantium quis, id, nihil ex earum libero minus et eos excepturi hic
@@ -18,9 +18,9 @@ reprehenderit!
 </div>
 </div>
 <div class="col-sm-12 col-md-12 col-lg-12  col-xl-4">
-<h1 class="headingTertiary text-light">Notes</h1>
+<div class="headingTertiary">Notes</div>
 <div class="card">
-<div class="card-header text-secondary text-uppercase">
+<div class="card-header text-uppercase">
 Note that
 </div>
 <div class="card-body">

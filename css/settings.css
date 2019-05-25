@@ -28,7 +28,8 @@ body {
   line-height: 1.7;
   font-weight: 400;
   box-sizing: border-box;
-  background: #f5f5f5; }
+  background: #f5f5f5;
+  overflow-x: hidden; }
 
 .headingPrimary {
   text-transform: uppercase;
@@ -58,7 +59,7 @@ body {
   font-family: Calibri, sans-serif;
   font-weight: normal;
   display: block;
-  font-size: 3rem;
+  font-size: 1.4rem;
   text-align: center; }
   .headingSecondary--light {
     color: #eeeeee; }
@@ -71,7 +72,7 @@ body {
   font-weight: 400; }
   @media (min-width: 990px) {
     .headingTertiary {
-      font-size: 3rem; } }
+      font-size: 1.8rem; } }
   @media (min-width: 768px) and (max-width: 989px) {
     .headingTertiary {
       font-size: 2.8rem; } }
@@ -107,7 +108,7 @@ body {
   .paragraph--dark {
     color: #383838;
     text-align: center;
-    font-family: Calibri, "Gill Sans", "Gill Sans MT", "Trebuchet MS", sans-serif;
+    font-family: Calibri, "Gill Sans", "Gill Sans MT", "Trebuchet MS", sans-serif;
     font-weight: 400; }
 
 .icon {
@@ -129,7 +130,7 @@ body {
   background: #00897b;
   border-radius: 30%;
   padding: 3px 5px;
-  font-size: 1.2rem;
+  font-size: 1rem;
   color: #eeeeee; }
 
 .wide {
@@ -179,6 +180,9 @@ body {
   height: 90%;
   padding: 0;
   margin: 0; }
+  @media only screen and (max-width: 767px) {
+    .modal-dialog {
+      max-width: 100% !important; } }
 
 .modal-content {
   border-radius: 0 !important;
@@ -188,8 +192,8 @@ body {
 .my_pill,
 .mypill1 {
   background-color: #f39c12 !important;
-  min-width: 25px;
-  min-height: 25px;
+  min-width: 18px;
+  min-height: 18px;
   text-align: center;
   margin: 0;
   color: #eeeeee;
@@ -551,15 +555,19 @@ body {
         background: #00897b; }
 
 .display {
-  font-size: 90% !important;
+  font-size: 80% !important;
   margin-left: 25.5rem;
-  min-width: 767px;
-  padding-top: -10rem; }
+  font-family: "Montserrat" !important;
+  padding-top: 5rem; }
   @media (max-width: 992px) {
     .display {
       margin-left: -1rem; }
       .display .headingTertiary {
-        font-size: 3rem; } }
+        font-size: 2rem; } }
+  .display .card-header {
+    background: #00897b !important;
+    color: #fff;
+    font-weight: bolder; }
   .display__content {
     min-height: 795px;
     text-align: center;
@@ -972,12 +980,16 @@ body {
   margin-bottom: 10px;
   color: #eeeeee; }
 
-.dashboard_nav {
+.top-nav-container {
   position: relative;
+  width: 100vw; }
+
+.dashboard_nav {
+  position: absolute;
   z-index: 10000;
-  min-width: 767px; }
+  width: 100%; }
   .dashboard_nav .navbar {
-    background: #00897b;
+    background: #e6e6e6;
     padding: 0 5rem;
     animation-duration: 2s;
     min-height: 30px; }
@@ -998,7 +1010,7 @@ body {
       transform: translateX(0); }
     .dashboard_nav .navbar .nav-link,
     .dashboard_nav .navbar .dropdown-item {
-      color: #eda719;
+      color: #f1b948;
       font-family: "Arvo", serif;
       transition: all 0.5s ease-in;
       font-size: 1.5rem;
@@ -1014,7 +1026,7 @@ body {
       font-size: 2rem;
       font-family: "Bungee Inline", cursive; }
     .dashboard_nav .navbar .nav-link--excemption {
-      color: #eeeeee;
+      color: #00897b;
       font-family: calibri; }
       .dashboard_nav .navbar .nav-link--excemption:hover {
         background: #eeeeee;
@@ -1031,7 +1043,7 @@ body {
       -moz-box-shadow: -2px 3px 5px 0px rgba(0, 0, 0, 0.75);
       box-shadow: -2px 3px 5px 0px rgba(0, 0, 0, 0.75); }
   .dashboard_nav_left {
-    background: #ffffff;
+    background: #fff;
     min-height: 94%;
     width: 25rem;
     transition: all 0.5s ease-out;
@@ -1052,8 +1064,8 @@ body {
       background: transparent;
       color: #00897b;
       font-weight: 700;
-      padding: 2.5rem 2rem;
-      font-size: 1.8rem; }
+      padding: 1.5rem 2rem;
+      font-size: 1.5rem; }
   .dashboard_nav .left-toggler {
     font-family: calibri !important;
     padding: 1px 5px;
@@ -1068,7 +1080,7 @@ body {
         display: inherit; } }
   .dashboard_nav .icon-m {
     color: #eda719;
-    font-size: 2.5rem; }
+    font-size: 1.5rem; }
   .dashboard_nav #check {
     display: none; }
 

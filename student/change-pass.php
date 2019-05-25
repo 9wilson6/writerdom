@@ -40,7 +40,7 @@ if (isset($_POST['submit'])) {
 <?php require_once "../components/stud_leftnav.php"?>
 <div class="row">
 <div class="col-sm-12 col-md-12 col-lg-12 col-xl-9">
-<h1 class="headingTertiary text-light">CHANGE ACCOUNT PASSSWORD</h1>
+<div class="headingTertiary text-light">CHANGE ACCOUNT PASSSWORD</div>
 <div class="card wide-card">
 <div class="card-header">PASSWORD DETAILS</div>
 <div class="card-body">

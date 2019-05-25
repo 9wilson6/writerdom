@@ -12,7 +12,7 @@ $results = $db->get_results($query);
 <?php require_once "../components/tutor_leftnav.php"?>
 <div class="row">
 <div class="col-sm-12 col-md-12 col-lg-12 col-xl-9">
-<h1 class="headingTertiary text-light">Messages</h1>
+<div class="headingTertiary text-light">Messages</div>
 <div class="card">
 <div class="card-header">Your recent messages</div>
 <div class="card-body">

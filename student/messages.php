@@ -95,7 +95,7 @@ let user_type="<?php echo $_SESSION['user_type'] ?>";
 </table>
 </div>
 <?php else: ?>
-<h2 class="headingSecondary">No Messages Yet</h2>
+<div class="headingSecondary">No Messages Yet</div>
 <?php endif?>
 </div>
 <?php if ($db->num_rows > 9): ?>

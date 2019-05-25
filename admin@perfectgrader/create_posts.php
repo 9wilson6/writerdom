@@ -67,9 +67,9 @@ function filesUpload($post_id){
 <div class="display">
   <div class="display__content">
     <?php require_once "inc/leftnav.php" ?>
-    <h1 class="headingTertiary text-light text-uppercase">
+    <div class="headingTertiary text-uppercase">
      CREATE NEW BLOG POST.
-    </h1>
+    </div>
     <div class="row">
       <div class="col-sm-0 col-md-0 col-lg-2"></div>
       <div class="col-sm-12 col-md-12 col-lg-8">

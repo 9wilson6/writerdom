@@ -13,7 +13,7 @@ $result=$db->get_var("SELECT payment_date FROM others");
 <div class="display">
   <div class="display__content">
     <?php require_once "inc/leftnav.php" ?>
-    <h1 class="headingTertiary text-light text-center text-uppercase">Dashboard </h1>
+    <div class="headingTertiary text-light text-center text-uppercase">Dashboard </div>
     <div class="row">
       <div class="col-sm-12 col-md-12 col-lg-12 col-xl-7">
 

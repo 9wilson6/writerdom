@@ -1,6 +1,6 @@
 <div class="col-sm-12 col-md-12 col-lg-12  col-xl-3">
 <?php require_once "./sammary_functions.php"?>
-<h1 class="headingTertiary text-light">My Account</h1>
+<div class="headingTertiary text-light">My Account</div>
 <div class="card">
 <div class="card-header">My stats</div>
 <div class="card-body">
@@ -14,7 +14,7 @@
 <td>Account Status</td>
 <td class="pt-3"><?php if (account_rating($_SESSION['user_id']) < 3) {?>
 <span class="alert alert-danger">PROBATION</span>
-<?php } elseif (account_rating($_SESSION['user_id']) > 3 and account_rating($_SESSION['user_id']) < 6) {?>
+<?php } elseif (account_rating($_SESSION['user_id']) > 3 and account_rating($_SESSION['user_id']) < 7) {?>
 <span class="alert alert-warning">REGULAR</span>
 <?php } else {?>
 <span class="alert alert-success">EXPERT</span>

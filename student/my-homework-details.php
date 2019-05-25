@@ -22,9 +22,9 @@ ob_flush();
 <?php require_once "../components/stud_leftnav.php"?>
 <div class="row">
 <div class="col-sm-12 col-md-12 col-lg-12 col-xl-9">
-<h1 class="headingTertiary text-light">ORDER NUMBER
+<div class="headingTertiary text-light">ORDER NUMBER
 <?php echo $project_id; ?>
-</h1>
+</div>
 <div class="card">
 <div class="card-header text-uppercase">details</div>
 <div class="card-body">
@@ -127,50 +127,57 @@ if ($db->num_rows < 1) {
 <?php }
 
 ?>
-<div class="card">
-<div class="card-header">
-<h1 class="headingSecondary mb-3">Manage files</h1>
 </div>
+<div class="card pb-5">
+<div class="card-header">
+Manage files
+</div>
+<div class="card-body"></div>
 <div class="showFiles" id="files">
 
 <?php manageFiles($_SESSION['user_id'], $project_id)?>
 
 </div>
-<p>
+</div>
+
+<div class="card mb-5">
+    <div class="card-header">Add more files</div>
+    <div class="card-body">
+
 <form action="" enctype="multipart/form-data" method="POST" class="files_edit">
-<div class="my_container">
-<div class="row">
-<div class="col-3 col-sm-3 col-md-3"><label for="files"
+<!-- <div class="my_container"> -->
+<div class="row pb-5">
+<div class="col-4 col-sm-4 col-md-3 py-3"><label for="files"
 class="forms2__label">Add More Files
 &rarr;</label></div>
-<div class="col-6 col-sm-6 col-md-6"><input type="file"
+<div class="col-8 col-sm-8 col-md-6 py-3"><input type="file"
 class="files_edit__input" name="file[]"
 class="form-control-file forms2__files" id="files" required
 multiple />
 <input type="hidden" name="project_id"
 value="<?php echo $project_id ?>">
 </div>
-<div class="col-3 col-sm-3 col-md-3"><button type="submit" name="submit"
-class="btn btn-submit btn-block">Upload
-Files</button>
+<div class="col-12 col-sm-12 col-md-3">
+    <button type="submit" name="submit" class="btn btn-submit btn-block">Upload Files</button>
 
 </div>
 </div>
-</div>
+<!-- </div> -->
 </form>
-</p>
 
+    </div>
 </div>
+
 
 
 
 <div class="card-footer">
 <div class="row">
-<div class="col-md-6 col-sm-12"><button
+<div class="col-md-6 col-sm-12 mb-4"><button
 class="btn btn-lg btn-block btn-danger text-uppercase"
 onclick="deleletconfig()">delete
 project</button></div>
-<div class="col-md-6 col-sm-12"><a href="homework_edit?id=<?php echo urlencode(convert_uuencode($project_id)) ?>"
+<div class="col-md-6 col-sm-12 mb-4"><a href="homework_edit?id=<?php echo urlencode(convert_uuencode($project_id)) ?>"
 class="btn btn-lg btn-block btn-info text-uppercase">edit
 project</a></div>
 <script>

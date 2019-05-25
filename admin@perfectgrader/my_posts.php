@@ -13,7 +13,6 @@ $post_id=$_POST['post_id'];
 $query="UPDATE posts SET status=1 WHERE post_id='$post_id'";
 if ($db->query($query)) { ?>
  <script>
-  
    window.location.assign("my_posts");
  </script>
 <?php 
@@ -35,9 +34,9 @@ if ($db->query($query)) { ?>
 <div class="display">
   <div class="display__content">
     <?php require_once "inc/leftnav.php" ?>
-    <h1 class="headingTertiary text-light text-uppercase">
+    <div class="headingTertiary text-uppercase">
    Current blog posts.
-    </h1>
+    </div>
     <div class="row">
       <div class="col-sm-0 col-md-0 col-lg-2"></div>
       <div class="col-sm-12 col-md-12 col-lg-8">
@@ -49,7 +48,7 @@ if ($db->query($query)) { ?>
             $results=$db->get_results($query);
              ?>
              <?php if ($db->num_rows<1): ?>
-               <h3>There are no posts</h3>
+               <div class="headingTertiary">There are no posts</div>
                 <?php else: ?>
                  <table class="table table-hover">
                 <thead>

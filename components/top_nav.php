@@ -4,7 +4,8 @@ require_once"../inc/sessios.php";
 session_gen ();
 ob_flush();
 ?>
-<section class="dashboard_nav">
+<div class="top-nav-container">
+  <section class="dashboard_nav">
   <label for="check" class="left-toggler"><i class="fas fa-bars icon-m"></i></label>
   <input type="checkbox" name="check" id="check" class="left-toggler">
   <nav class="navbar navbar-expand-lg" >
@@ -34,3 +35,4 @@ ob_flush();
 
     </nav>
   </section>
+</div>

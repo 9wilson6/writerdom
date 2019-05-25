@@ -29,6 +29,8 @@ class="fas fa-external-link-alt icon-r ml-4"></i></a></td>
 <span class="text-danger"><?php echo "{$time}"; ?></span>
 <?php elseif ($period[1] == "secs" || $period[1] == "sec"): ?>
 <span class="text-danger"><?php echo "{$time}"; ?></span>
+<?php else:?>
+    <span class="text-secondary"><?php echo "{$time}"; ?></span>
 <?php endif?>
 </td>
 </tr>

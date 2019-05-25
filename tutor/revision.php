@@ -13,12 +13,12 @@ $results = $db->get_results($query)
 <!-- <h1 class="headingTertiary text-left">Available</h1> -->
 <div class="row">
 <div class="col-sm-12 col-md-12 col-lg-12 col-xl-9">
-<h1 class="headingTertiary text-light">Orders On Rivision</h1>
+<div class="headingTertiary text-light">Orders On Rivision</div>
 <div class="card">
 <div class="card-header">On Revision</div>
 <div class="card-body">
 <?php if ($db->num_rows < 1) {?>
-<div class="headingSecondary">Nothing to show Yet</div>
+<div class="headingTertiary">Nothing to show Yet</div>
 <?php } else {?>
 <table class="table table-bordered">
 <thead>

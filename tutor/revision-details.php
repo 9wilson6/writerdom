@@ -85,15 +85,15 @@ require_once "../dbconfig/dbconnect.php";
 ?>
 <div class="row">
 <div class="col-sm-12 col-md-12 col-lg-12 col-xl-9">
-<h1 class="headingTertiary text-light">Project # <?php echo $project_id . " Details"; ?></h1>
+<div class="headingTertiary text-light">Project # <?php echo $project_id . " Details"; ?></div>
 <ul class="d_table_1 mb-5">
 <?php $query = ("SELECT * FROM revisions left join projects on revisions.project_id=projects.project_id WHERE revisions.project_id='$project_id'");
 $results = $db->get_row($query);
 if ($db->num_rows < 1) {?>
 <div class="card-body">
-<h1 class="headingSeconadry text-uppercase">
+<div class="headingSeconadry text-uppercase">
 This project Is no longer Available
-</h1>
+</div>
 </div>
 </div>
 <?php } else {?>
@@ -129,6 +129,8 @@ This project Is no longer Available
 <?php elseif ($period[1] == "secs" || $period[1] == "sec"): ?>
 <span class="text-danger">
 <?php echo "{$time}"; ?></span>
+<?php else:?>
+    <span class="text-secondary"><?php echo "{$time}"; ?></span>
 <?php endif?>
 </td>
 <td class="text-center mt-5">
@@ -142,7 +144,7 @@ Assigned
 </table>
 </ul>
 <div class="card bg-light mb-5">
-<div class="card-header bg-transparent ">Order Info</div>
+<div class="card-header ">Order Info</div>
 <div class="card-body d_table_1__c ">
 <ul class="d_table_1 d_table_1__b mb-5 mt-3">
 <div class="row">
@@ -233,7 +235,7 @@ Assigned
 <div class="pl-5 bg-dark text-warning"><?php echo $results->revision_instructions; ?></div>
 </div>
 <div class="row">
-<div class="col-sm-12 col-md-6 col lg-6">
+<div class="col-sm-12 col-md-6 col-lg-6">
 <div class="card">
 <div class="card-header"><strong>Files:</strong></div>
 <div class="card-body files" id="files">
@@ -250,7 +252,7 @@ Assigned
 </div>
 </div>
 </div>
-<div class="col-sm-12 col-md-6 col lg-6">
+<div class="col-sm-12 col-md-6 col-lg-6">
 <div class="card">
 <div class="card-header"><strong>Messages:</strong></div>
 <div class="card-body messages">
@@ -280,21 +282,22 @@ let user_type="<?php echo $_SESSION['user_type'] ?>";
 <div class="card-header"></div>
 <div class="card-body">
 <form action="" enctype="multipart/form-data" method="POST" class="files_edit py-2">
-<div class="my_container">
-<div class="row">
-<div class="col-3 col-sm-3 col-md-3 pb-5">
-<select name="result_type" class="custom-select mb-2 ml-0 mr-sm-2 mb-sm-0 mt-1 ml-5 pt-2" id="select" required >
+
+<div class="row mr-3">
+<div class="col-4 col-sm-4 col-md-3">
+<select name="result_type" style="width: 100%; display: block; position: relative; left: -10px" class="custom-select mb-2 ml-0 mr-sm-2 mb-sm-0 mt-1 ml-5 pt-2" id="select" required >
 <option value="final">final</option>
 <option value="draft">draft</option>
 </select></div>
-<div class="col-6 col-sm-6 col-md-6 pb-5"><input type="file" class="files_edit__input" name="file[]" class="form-control-file forms2__files" id="files" required multiple />
+<div class="col-8 col-sm-8 col-md-6 mb-3">
+    <input type="file" class="files_edit__input" style="width: 100%;" name="file[]" class="form-control-file forms2__files" id="files" required multiple />
 <input type="hidden" name="project_id" value="<?php echo $project_id ?>">
 <input type="hidden" name="student_id" value="<?php echo $results->student_id ?>">
 </div>
-<div class="col-3 col-sm-3 col-md-3 pb-5"><button type="submit" name="submit" class="btn btn-submit btn-block">Upload Results</button>
+<div class="col-12 col-sm-12 col-md-3 pb-3"><button type="submit" name="submit" class="btn btn-submit btn-block">Upload Results</button>
 </div>
 </div>
-</div>
+
 </form>
 </div>
 </div>

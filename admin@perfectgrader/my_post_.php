@@ -42,7 +42,7 @@ $results=$db->get_row($query);
           				<p class="lead"><?php echo $results->details; ?></p>
           			</div>
           	<?php else: ?>
-				<h2 >This post is no longer available</h2>
+				<div class="headingTertiary" >This post is no longer available</div>
           	<?php endif ?>
         </div>
       </div>

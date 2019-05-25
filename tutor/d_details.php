@@ -89,9 +89,9 @@ $results = $db->get_row($query);
 if ($db->num_rows < 1) {?>
 
 <div class="card-body">
-<h1 class="headingSeconadry text-uppercase">
+<div class="headingTertiary text-uppercase">
 This project Is no longer Available
-</h1>
+</div>
 </div>
 </div>
 <?php } else {?>
@@ -127,6 +127,8 @@ This project Is no longer Available
 <?php elseif ($period[1] == "secs" || $period[1] == "sec"): ?>
 <span class="text-danger">
 <?php echo "{$time}"; ?></span>
+<?php else:?>
+    <span class="text-secondary"><?php echo "{$time}"; ?></span>
 <?php endif?>
 </td>
 <td class="text-center mt-5">
@@ -185,7 +187,7 @@ type="submit">DELETE</button>
 </table>
 </ul>
 <div class="card bg-light mb-5">
-<div class="card-header bg-transparent ">Order Info</div>
+<div class="card-header">Order Info</div>
 <div class="card-body d_table_1__c ">
 <ul class="d_table_1 d_table_1__b mb-5 mt-3">
 <div class="row">
@@ -271,8 +273,12 @@ type="submit">DELETE</button>
 <STRONG>Instructions:<br></STRONG>
 <div class="pl-5"><?php echo $results->instructions; ?></div>
 </p>
+
+</div>
+</div>
+<div class="card-footer"></div>
 <div class="row">
-<div class="col-sm-12 col-md-5 col lg-5">
+<div class="col-sm-12 col-md-5 col-lg-5">
 <div class="card">
 <div class="card-header"><strong>Files:</strong></div>
 <div class="card-body files">
@@ -280,7 +286,7 @@ type="submit">DELETE</button>
 </div>
 </div>
 </div>
-<div class="col-sm-12 col-md-7 col lg-7">
+<div class="col-sm-12 col-md-7 col-lg-7">
 <div class="card">
 <div class="card-header"><strong>Messages:</strong></div>
 <div class="card-body messages">
@@ -289,9 +295,6 @@ type="submit">DELETE</button>
 </div>
 </div>
 </div>
-</div>
-</div>
-<div class="card-footer"></div>
 </div>
 </div>
 <?php }?>

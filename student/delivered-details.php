@@ -24,9 +24,9 @@ $results = $db->get_row($query);
 <?php require_once "../components/stud_leftnav.php"?>
 <div class="row">
 <div class="col-sm-12 col-md-12 col-lg-12 col-xl-9">
-<h1 class="headingTertiary text-light">ORDER NUMBER
+<div class="headingTertiary text-light">ORDER NUMBER
 <?php echo $project_id; ?>
-</h1>
+</div>
 <div class="card">
 <div class="card-header text-uppercase">details</div>
 <div class="card-body">
@@ -124,10 +124,10 @@ if ($db->num_rows < 1) {
 </div>
 <div class="card">
 <div class="card-header mb-3">
-<h1 class="headingSecondary mb-3">FILES/MESSAGES</h1>
+<div class="headingTertiary mb-3">FILES/MESSAGES</div>
 </div>
 <div class="row">
-<div class="col-sm-12 col-md-6 col lg-6">
+<div class="col-sm-12 col-md-6 col-lg-6">
 <div class="card">
 <div class="card-header"><strong>Files:</strong></div>
 <div class="card-body files" id="files">
@@ -143,7 +143,7 @@ if ($db->num_rows < 1) {
 </div>
 </div>
 </div>
-<div class="col-sm-12 col-md-6 col lg-6">
+<div class="col-sm-12 col-md-6 col-lg-6">
 <div class="card">
 <div class="card-header"><strong>Messages:</strong></div>
 <div class="card-body messages">

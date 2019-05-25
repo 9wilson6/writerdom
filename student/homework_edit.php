@@ -35,7 +35,7 @@ ob_flush();
 <h1 class="headingTertiary text-light">Edit Assignment</h1>
 <div class="card text-center">
 <div class="card-header">
-<h1 class="text-secondary text-uppercase">Please Edit Assignment Details Below</h1>
+<div class="text-secondary text-uppercase">Please Edit Assignment Details Below</div>
 </div>
 <div class="card-body">
 <div class="forms2">

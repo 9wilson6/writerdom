@@ -18,7 +18,7 @@ $results = $db->get_results($query);
 <div class="card-header">Delivered Orders</div>
 <div class="card-body">
 <?php if ($db->num_rows < 1) {?>
-<div class="headingSecondary">Nothing to show Yet</div>
+<div class="headingTertiary">Nothing to show Yet</div>
 <?php } else {?>
 <table class="table table-bordered">
 <thead>
@@ -48,6 +48,8 @@ class="fas fa-external-link-alt icon-r ml-4"></i></a></td>
 <span class="text-danger"><?php echo "{$time}"; ?></span>
 <?php elseif ($period[1] == "secs" || $period[1] == "sec"): ?>
 <span class="text-danger"><?php echo "{$time}"; ?></span>
+<?php else:?>
+	<span class="text-secondary"><?php echo "{$time}"; ?></span>
 <?php endif?>
 </td>
 </tr>

@@ -8,7 +8,7 @@ require_once("./inc/leftnav.php");
  <div class="display">
     <div class="display__content">
         <?php require_once "inc/leftnav.php" ?>
-        <h1 class="headingTertiary text-light text-center text-uppercase">notifications </h1>
+        <div class="headingTertiary text-light text-center text-uppercase">notifications </div>
         <div class="row">
 
           <div class="col-sm-12 col-md-12 col-lg-12 col-xl-10">

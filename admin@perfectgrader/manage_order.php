@@ -24,9 +24,9 @@ if (isset($_POST['delete'])) {
 <div class="display">
   <div class="display__content">
     <?php require_once "inc/leftnav.php" ?>
-    <h1 class="headingTertiary text-light text-uppercase">
+    <div class="headingTertiary text-uppercase">
       CLEAN UP TIMED OUT AND UNASSIGNED ORDERS
-    </h1>
+    </div>
     <div class="row">
       <div class="col-sm-0 col-md-0 col-lg-2"></div>
       <div class="col-sm-12 col-md-12 col-lg-8">
@@ -34,7 +34,7 @@ if (isset($_POST['delete'])) {
           <div class="card-header">The following orders have run out of time and have not been assigned to any tutor soo far</div>
           <div class="card-body">
             <?php if ($db->num_rows<1): ?>
-              <h1 class="classHeadingSecondary">There is Nothing To show Yet</h1>
+              <div class="headingTertiary">There is Nothing To show Yet</div>
               <?php elseif($db->num_rows>0): ?>
                 <table class="table table-bordered">
                   <thead>

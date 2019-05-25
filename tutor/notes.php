@@ -7,7 +7,11 @@ require_once "../dbconfig/dbconnect.php";
 <div class="display">
 <div class="display__content">
 <div class="container adjust_alert-font">
-<?php require_once "../components/tutor_leftnav.php"?>
+	<?php require_once "../components/tutor_leftnav.php"?>
+	<div class="card" >
+	<div class="card-header">List of your latest events</div>
+	<div class="card-body">
+
 <?php
 $tutor_id = $_SESSION['user_id'];
 $query = "SELECT * FROM notifications where user_id='$tutor_id' ORDER BY note_num desc limit 300";
@@ -22,6 +26,9 @@ if ($db->num_rows > 0) {?>
 <div class="text-dark">No Activities</div>
 <?php }
 ?>
+</div>
+</div>
+
 </div>
 </div>
 </div>

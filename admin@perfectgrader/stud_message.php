@@ -37,9 +37,9 @@ if (isset($_POST['mail'])) {
 <div class="display">
   <div class="display__content">
     <?php require_once "inc/leftnav.php" ?>
-    <h1 class="headingTertiary text-light text-uppercase">
+    <div class="headingTertiary text-uppercase">
       MESSAGE ALL students
-    </h1>
+    </div>
     <div class="row">
       <div class="col-sm-12 col-md-6">
         <div class="card">

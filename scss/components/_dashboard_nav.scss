@@ -1,9 +1,13 @@
-.dashboard_nav {
+.top-nav-container {
   position: relative;
+  width: 100vw;
+}
+.dashboard_nav {
+  position: absolute;
   z-index: 10000;
-  min-width: 767px;
+  width: 100%;
   .navbar {
-    background: $primary-color-3;
+    background: darken($color: #fff, $amount: 10);
     padding: 0 $margin-md;
     animation-duration: 2s;
     min-height: 30px;
@@ -29,7 +33,7 @@
     }
     .nav-link,
     .dropdown-item {
-      color: $primary-color-6;
+      color: $primary-color-7;
       font-family: "Arvo", serif;
       transition: all 0.5s ease-in;
       font-size: 1.5rem;
@@ -48,7 +52,7 @@
       font-family: "Bungee Inline", cursive;
     }
     .nav-link--excemption {
-      color: $primary-color-0;
+      color: $primary-color-3;
       font-family: calibri;
       &:hover {
         background: $primary-color-0;
@@ -56,9 +60,6 @@
         -webkit-box-shadow: -2px 3px 5px 0px rgba(0, 0, 0, 0.75);
         -moz-box-shadow: -2px 3px 5px 0px rgba(0, 0, 0, 0.75);
         box-shadow: -2px 3px 5px 0px rgba(0, 0, 0, 0.75); // -ms-transform: scale(1.2, 1.2); // /* IE 9 */
-        // -webkit-transform: scale(1.2, 1.2);
-        // /* Safari */
-        // transform: scale(1.2, 1.2);
       }
     }
     .dropdown-item {
@@ -73,7 +74,7 @@
     }
   } //side bar navigation
   &_left {
-    background: $primary-color-0_2; // background: $primary-color-5 !important;
+    background: #fff; // background: $primary-color-5 !important;
     min-height: 94%;
     width: 25rem;
     transition: all 0.5s ease-out;
@@ -98,8 +99,8 @@
           background: transparent;
           color: $primary-color-3;
           font-weight: 700;
-          padding: $margin-sm 2rem;
-          font-size: 1.8rem;
+          padding: $margin-xsm 2rem;
+          font-size: 1.5rem;
         }
       }
     }
@@ -119,7 +120,7 @@
   }
   .icon-m {
     color: $primary-color-6;
-    font-size: 2.5rem;
+    font-size: 1.5rem;
   }
   #check {
     display: none;

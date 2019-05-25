@@ -26,7 +26,7 @@ ob_clean();
 <!-- <h1 class="headingTertiary text-left">Available</h1> -->
 <div class="row">
 <div class="col-sm-12 col-md-12 col-lg-12 col-xl-9">
-<h1 class="headingTertiary text-danger">Your account is pending admins approval</h1>
+<div class="headingTertiary text-danger">Your account is pending admins approval</div>
 <div class="card wide-card">
 <div class="card-header">Your account is not approved yet....</div>
 <div class="card-body">

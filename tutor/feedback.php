@@ -42,9 +42,9 @@ class="fas fa-external-link-alt icon-r ml-4"></i></a></td>
 </tbody>
 </table>
 <?php else: ?>
-<h1 class="headingTertiary">
+<div class="headingTertiary">
 Nothing To show yet
-</h1>
+</div>
 <?php endif?>
 </div>
 </div>

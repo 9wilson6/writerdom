@@ -21,12 +21,12 @@ $results=$db->get_results($query); ?>
     <!-- <h1 class="headingTertiary text-left">Available</h1> -->
     <div class="row">
       <div class="col-sm-12 col-md-12 col-lg-12 col-xl-9">
-        <h1 class="headingTertiary text-light">Available Projects</h1>
+        <div class="headingTertiary text-light">Available Projects</div>
         <div class="card wide-card">
           <div class="card-header">Available Orders</div>
           <div class="card-body">
             <?php if ($db->num_rows<1): ?>
-            <h1 class="classHeadingSecondary">There is Nothing To show Yet</h1>
+            <div class="headingTertiary">There is Nothing To show Yet</div>
             <?php elseif($db->num_rows>0): ?>
             <div class="table-responsive" id="display">
               <table class="table table-bordered">
@@ -99,6 +99,8 @@ $results=$db->get_results($query); ?>
                       <span class="text-danger"><?php echo "{$time}"; ?></span>
                       <?php elseif($period[1]=="secs" || $period[1]=="sec"): ?>
                       <span class="text-danger"><?php echo "{$time}"; ?></span>
+                      <?php else:?>
+  <span class="text-secondary"><?php echo "{$time}"; ?></span>
                       <?php endif ?>
                     </td>
                   </tr>

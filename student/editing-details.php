@@ -19,9 +19,9 @@ $results = $db->get_row($query);
 <?php require_once "../components/stud_leftnav.php"?>
 <div class="row">
 <div class="col-sm-12 col-md-12 col-lg-12 col-xl-9">
-<h1 class="headingTertiary text-light">ORDER NUMBER
+<div class="headingTertiary text-light">ORDER NUMBER
 <?php echo $project_id; ?>
-</h1>
+</div>
 <div class="card">
 <div class="card-header text-uppercase">details</div>
 <div class="card-body">
@@ -77,8 +77,8 @@ if ($db->num_rows < 1) {
 <td>
 <?php echo $results->cost; ?>
 </td>
-<th scope="row" class="text-danger bg-dark">Rivision deadline</th>
-<td class="bg-dark">
+<th scope="row" class="text-danger bg-warning">Rivision deadline</th>
+<td class="bg-warning">
 <?php $time = getDateTimeDiff($date_global, $results->revision_deadline);
     $period = explode(" ", $time);?>
 <?php if ($period[1] == "days"): ?>
@@ -124,7 +124,7 @@ if ($db->num_rows < 1) {
 </table>
 </div>
 <div class="row">
-<div class="col-sm-12 col-md-6 col lg-6">
+<div class="col-sm-12 col-md-6 col-lg-6">
 <div class="card">
 <div class="card-header"><strong>Files:</strong></div>
 <div class="card-body files" id="files">
@@ -140,7 +140,7 @@ if ($db->num_rows < 1) {
 </div>
 </div>
 </div>
-<div class="col-sm-12 col-md-6 col lg-6">
+<div class="col-sm-12 col-md-6 col-lg-6">
 <div class="card">
 <div class="card-header"><strong>Messages:</strong></div>
 <div class="card-body messages">
@@ -165,19 +165,18 @@ let user_type="<?php echo $_SESSION['user_type'] ?>";
 </div>
 </div>
 </div>
-<form action="" enctype="multipart/form-data" method="POST" class="files_edit">
-<div class="my_container">
+<form action="" enctype="multipart/form-data" method="POST" class="files_edit pb-5">
+
 <div class="row">
-<div class="col-3 col-sm-3 col-md-3"><label for="files" class="forms2__label">Add
+<div class="col-4 col-sm-4 col-md-3 py-3"><label for="files" class="forms2__label">Add
 More Files &rarr;</label></div>
-<div class="col-6 col-sm-6 col-md-6"><input type="file" class="files_edit__input"
+<div class="col-8 col-sm-8 col-md-6 py-3"><input type="file" class="files_edit__input"
 name="file[]" class="form-control-file forms2__files" id="files"
 required multiple />
 <input type="hidden" name="project_id" value="<?php echo $project_id ?>">
 </div>
-<div class="col-3 col-sm-3 col-md-3"><button type="submit" name="submit"
+<div class="col-12 col-sm-12 col-md-3"><button type="submit" name="submit"
 class="btn btn-submit btn-block">Upload Files</button>
-</div>
 </div>
 </div>
 </form>

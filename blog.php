@@ -35,6 +35,7 @@
   font-weight: bolder;
 }
 .blog-details {
+color: #718093;;
 }
 
 </style>
@@ -71,9 +72,9 @@
                 <li><a href="https://www.perfectgrader.com/index#services-section" class="nav-link">Getting Started</a></li>
                 <li><a href="https://www.perfectgrader.com/index#about-section" class="nav-link">About Us</a></li>
                 <li><a href="https://www.perfectgrader.com/index#testimonials-section" class="nav-link">Testimonials</a></li>
-                <li><a href="#" class="nav-link">FAQ</a></li>
+                <li><a href="https://www.perfectgrader.com/faq" class="nav-link">FAQ</a></li>
                  <li><a href="https://www.perfectgrader.com/blog" class="nav-link" style="border-bottom: 2px solid #D9A440;" >Blog</a></li>
-                <li><a href="https://www.perfectgrader.com/index#site-footer" class="nav-link">Terms of Use</a></li>
+                <li><a href="https://www.perfectgrader.com/terms-of-service" class="nav-link">Terms of Use</a></li>
                 <li><a href="https://www.perfectgrader.com/student_login" class="nav-link">Log in</a></li>
               </ul>
             </nav>

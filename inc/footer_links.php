@@ -8,7 +8,6 @@ src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 
 
 <?php if(isset($link)) {?>
-  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
   <script type="text/javascript" src="js/custom.js"></script>
 <?php }else{?>
   <script type="text/javascript" src="../js/custom.js"></script>
@@ -21,13 +20,6 @@ src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 <!-- <script src="https://cdn.ckeditor.com/4.11.1/standard/ckeditor.js"></script> -->
 <!-- Animation On Scrol Trigger  -->
 
-<script>
-  AOS.init(
-
-    { offset:200,
-      duration:1000,}
-      );
-    </script>
 
   </body>
   </html>

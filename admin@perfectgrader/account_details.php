@@ -33,7 +33,7 @@ if (isset($_POST['submit'])) {
  <div class="display">
     <div class="display__content">
         <?php require_once "inc/leftnav.php" ?>
-        <h1 class="headingTertiary text-light text-center text-uppercase">Update account details </h1>
+        <div class="headingTertiary text-light text-center text-uppercase">Update account details </div>
         <div class="row">
 
           <div class="col-sm-12 col-md-12 col-lg-12 col-xl-7">
@@ -148,7 +148,7 @@ if (isset($_POST['submit'])) {
         submit: 'submit'
       });
       $("#cbody").load("notifications.php", {limit:10});
-		}, 300);
+		}, 5000);
 	});
 </script>
 

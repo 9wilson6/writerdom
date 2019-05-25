@@ -16,9 +16,9 @@ $results=$db->get_row($query);
         <?php require_once "inc/leftnav.php" ?>
         <div class="row">
             <div class="col-sm-12 col-md-12 col-lg-12 col-xl-11">
-                <h1 class="headingTertiary text-light">Homework #
+                <div class="headingTertiary text-light">Homework #
                     <?php echo $project_id ; ?>
-                </h1>
+                </div>
                
 
                 <div class="card">
@@ -125,7 +125,7 @@ $results=$db->get_row($query);
                      ?>
 
                         <div class="row">
-                                     <div class="col-sm-12 col-md-6 col lg-6">
+                                     <div class="col-sm-12 col-md-6 col-lg-6">
                                              <div class="card">
                                                      <div class="card-header"><strong>Files:</strong></div>
                                                      <div class="card-body files" id="files">
@@ -144,7 +144,7 @@ $results=$db->get_row($query);
                                              </div>
 
                                      </div>
-                 <div class="col-sm-12 col-md-6 col lg-6">
+                 <div class="col-sm-12 col-md-6 col-lg-6">
                              <div class="card">
                                      <div class="card-header"><strong>Messages:</strong></div>
                                      <div class="card-body messages">

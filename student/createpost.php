@@ -23,10 +23,10 @@ ob_flush();
 		<?php require_once "../components/stud_leftnav.php"?>
 		<div class="row">
 			<div class="col-sm-12 col-md-12 col-lg-12 col-xl-9">
-				<h1 class="headingTertiary text-light">Post Assignment</h1>
+				<div class="headingTertiary text-light">Post Assignment</div>
 				<div class="card text-center">
 					<div class="card-header">
-						<h1 class="text-secondary text-uppercase">Please Add Assignment Details Below</h1>
+						<div class="text-uppercase">Please Add Assignment Details Below</div>
 					</div>
 					<div class="card-body">
 						<div class="forms2">

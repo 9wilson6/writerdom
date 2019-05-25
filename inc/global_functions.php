@@ -378,7 +378,7 @@ function resultsDownload($student_id, $project_id){
 	$dir="../RESULTS/{$student_id}/{$project_id}/DRAFT";
 	$dir_="RESULTS/{$student_id}/{$project_id}/DRAFT";
 	if (!file_exists($dir)) {
-		echo "No Files Attached"; 
+		// echo "No Files Attached"; 
 	}else{
 
 		$allFiles=scandir($dir);

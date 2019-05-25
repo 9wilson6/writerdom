@@ -20,7 +20,7 @@ $results = $db->get_results($query);
 <div class="card">
 <div class="card-header">Relax our expert Tutors are working on your Homework</div>
 <?php if ($db->num_rows < 1) {?>
-<h1 class="headingSecondary text-light text-dark">There is nothing to show Yet</h1>
+<div class="headingSecondary text-light text-dark">There is nothing to show Yet</div>
 <?php } else {?>
 <div class="card-body">
 <table class="table table-bordered">

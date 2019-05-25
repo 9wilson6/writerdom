@@ -14,9 +14,9 @@ function events($student_id)
 <div class="text-dark">No Activities</div>
 <?php }}?>
 <div class="col-sm-12 col-md-12 col-lg-12  col-xl-3">
-<h1 class="headingTertiary text-light">Notes</h1>
+<div class="headingTertiary text-light">Notes</div>
 <div class="card">
-<div class="card-header text-secondary text-uppercase">
+<div class="card-header text-uppercase">
 Note that
 </div>
 <div class="card-body">

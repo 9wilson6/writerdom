@@ -34,9 +34,9 @@ $results = $db->get_row($query);
 if ($db->num_rows < 1) {?>
 
 <div class="card-body">
-<h1 class="headingSeconadry text-uppercase">
+<div class="headingTertiary text-uppercase">
 This project Is no longer Available
-</h1>
+</div>
 </div>
 </div>
 <?php } else {?>
@@ -73,7 +73,7 @@ This project Is no longer Available
 </ul>
 
 <div class="card bg-light mb-5">
-<div class="card-header bg-transparent ">Order Info</div>
+<div class="card-header ">Order Info</div>
 <div class="card-body d_table_1__c ">
 <ul class="d_table_1 d_table_1__b mb-5 mt-3">
 
@@ -169,8 +169,14 @@ This project Is no longer Available
 <div class="pl-5"><?php echo $results->instructions; ?></div>
 
 </p>
+
+
+
+</div>
+</div>
+<div class="card-footer"></div>
 <div class="row">
-<div class="col-sm-12 col-md-5 col lg-5">
+<div class="col-sm-12 col-md-5 col-lg-5">
 <div class="card">
 <div class="card-header"><strong>Files:</strong></div>
 <div class="card-body files">
@@ -180,7 +186,7 @@ This project Is no longer Available
 </div>
 
 </div>
-<div class="col-sm-12 col-md-7 col lg-7">
+<div class="col-sm-12 col-md-7 col-lg-7">
 <div class="card">
 <div class="card-header"><strong>Messages:</strong></div>
 <div class="card-body messages">
@@ -190,11 +196,6 @@ This project Is no longer Available
 </div>
 </div>
 
-
-
-</div>
-</div>
-<div class="card-footer"></div>
 </div>
 </div>
 <?php }?>

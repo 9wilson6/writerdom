@@ -26,16 +26,16 @@ require_once "./inc/topnav.php";
         <div class="row">
 
             <div class="col-sm-12 col-md-12 col-lg-12 col-xl-9">
-                <h1 class="headingTertiary text-light">Project # <?php echo $project_id. " Details"; ?></h1>
+                <div class="headingTertiary text-light">Project # <?php echo $project_id. " Details"; ?></div>
                 <ul class="d_table_1 mb-5">
                     <?php  $query=("SELECT * FROM delivered left join projects on delivered.project_id=projects.project_id WHERE delivered.project_id='$project_id'");
      $results=$db->get_row($query);
      if ($db->num_rows<1) {?>
 
                     <div class="card-body">
-                        <h1 class="headingSeconadry text-uppercase">
+                        <div class="headingTertiary text-uppercase">
                             This project Is no longer Available
-                        </h1>
+                        </div>
                     </div>
 
                     <?php  }else{ ?>
@@ -88,7 +88,7 @@ require_once "./inc/topnav.php";
                 </ul>
 
                 <div class="card bg-light mb-5">
-                    <div class="card-header bg-transparent ">Order Info</div>
+                    <div class="card-header">Order Info</div>
                     <div class="card-body d_table_1__c ">
                         <ul class="d_table_1 d_table_1__b mb-5 mt-3">
 
@@ -185,7 +185,7 @@ require_once "./inc/topnav.php";
                                 
                             </p>
                             <div class="row">
-                                <div class="col-sm-12 col-md-6 col lg-6">
+                                <div class="col-sm-12 col-md-6 col-lg-6">
                                     <div class="card">
                                         <div class="card-header"><strong>Files:</strong></div>
                                         <div class="card-body files" id="files">
@@ -204,7 +204,7 @@ require_once "./inc/topnav.php";
                                     </div>
 
                                 </div>
-                                <div class="col-sm-12 col-md-6 col lg-6">
+                                <div class="col-sm-12 col-md-6 col-lg-6">
                                     <div class="card">
                                         <div class="card-header"><strong>Messages:</strong></div>
                                         <div class="card-body messages">

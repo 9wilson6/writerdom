@@ -15,13 +15,13 @@ $results=$db->get_results($query);
         <?php require_once "inc/leftnav.php" ?>
         <div class="row">
             <div class="col-sm-12 col-md-12 col-lg-12 col-xl-11">
-                <h1 class="headingTertiary text-light text-uppercase">Tutors</h1>
+                <div class="headingTertiary text-light text-uppercase">Tutors</div>
 
                 <div class="card">
                    	<div class="card-header text-uppercase">Tutors</div>
                    	<div class="card-body">
                   <?php if ($db->num_rows<1): ?>
-                        <h1 class="classHeadingSecondary">There is Nothing To show Yet</h1>
+                        <div class="headingTertiary">There is Nothing To show Yet</div>
                         <?php elseif($db->num_rows>0): ?>
                         <table class="table table-bordered text-center">
                             <thead>

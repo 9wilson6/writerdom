@@ -16,7 +16,7 @@ ob_flush();
 <?php require_once "../components/stud_leftnav.php"?>
 <div class="row">
 <div class="col-sm-12 col-md-12 col-lg-12 col-xl-9">
-<h1 class="headingTertiary text-light">My Homeworks</h1>
+<div class="headingTertiary text-light">My Homeworks</div>
 <div class="card">
 <div class="card-header">
 <?php if ($db->num_rows > 0): ?>
@@ -27,7 +27,7 @@ You have 0 posted assignments
 </div>
 <div class="card-body">
 <?php if ($db->num_rows <= 0): ?>
-<h2 class="headingTertiary">Nothing to Show Yet</h2>
+<div class="headingTertiary">Nothing to Show Yet</div>
 <?php elseif ($db->num_rows > 0): ?>
 <table class="table table-bordered">
 <thead>
