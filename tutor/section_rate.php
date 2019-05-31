@@ -12,12 +12,14 @@
 </tr>
 <tr>
 <td>Account Status</td>
-<td class="pt-3"><?php if (account_rating($_SESSION['user_id']) < 3) {?>
-<span class="alert alert-danger">PROBATION</span>
-<?php } elseif (account_rating($_SESSION['user_id']) > 3 and account_rating($_SESSION['user_id']) < 7) {?>
-<span class="alert alert-warning">REGULAR</span>
+<td class="pt-3"><?php if (account_rating($_SESSION['user_id']) < 2) {?>
+<span class="alert alert-danger">New Tutor</span>
+<?php } elseif (account_rating($_SESSION['user_id']) > 2 and account_rating($_SESSION['user_id']) < 5) {?>
+<span class="alert alert-warning">Premium Tutor</span>
+<?php } elseif (account_rating($_SESSION['user_id']) > 5 and account_rating($_SESSION['user_id']) < 8) {?>
+<span class="alert alert-warning">Elite Tutor</span>
 <?php } else {?>
-<span class="alert alert-success">EXPERT</span>
+<span class="alert alert-success">Perfect Tutor</span>
 <?php }?></td>
 </tr>
 <tr>

@@ -38,20 +38,21 @@ if ($db->query($query)) { ?>
    Current blog posts.
     </div>
     <div class="row">
-      <div class="col-sm-0 col-md-0 col-lg-2"></div>
-      <div class="col-sm-12 col-md-12 col-lg-8">
-        <div class="card">
-          <div class="card-header">List of all you blog posts</div>
-          <div class="card-body">
-            <?php 
+      <div class="col-sm-0 col-md-0 col-lg-1"></div>
+      <div class="col-sm-12 col-md-12 col-lg-9">
+        <div class="jumbotron bg-light">
+   
+          <div class="card-header">List of all your blog posts</div>
+                      <?php 
             $query="SELECT * FROM posts order by post_id desc";
             $results=$db->get_results($query);
              ?>
              <?php if ($db->num_rows<1): ?>
                <div class="headingTertiary">There are no posts</div>
                 <?php else: ?>
+                  
                      <div class="table-responsive" style="overflow-y: hidden;">
-                 <table class="table table-hover">
+                 <table class="table table-hover table-borderless">
                 <thead>
                   <tr>
                     <th scope="col" width="50%">Title</th>
@@ -91,8 +92,10 @@ if ($db->query($query)) { ?>
                </tbody>
               </table>
             </div>
+            
              <?php endif ?>
-        </div>
-      </div>
+     
+      
+    </div>
     </div>
     <?php require_once("../inc/footer_links.php") ?>

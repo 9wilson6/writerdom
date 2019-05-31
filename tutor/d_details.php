@@ -20,8 +20,8 @@ if (isset($_POST['submit'])) {
     //
     //
     //,,,,,,,,,,,,,,,,,,,,,,,,,, //
-    $note = "Tutor ID: " . $tutor_id . " has placed a bid for project ID: " . $project_id . " at " . $date_global . "bid amnt: " . $bid_total_amount;
-    $note2 = "You have placed a bid for project ID: " . $project_id . " at " . $date_global . "bid amnt: " . $bid_total_amount;
+    $note = "Tutor " . $_SESSION['info']->username . " has placed a bid for project ID: " . $project_id . " at " . $date_global . "bid amnt: " . $bid_total_amount;
+    $note2 = "You have placed a bid for project ID: " . $project_id . " at " . $date_global . "bid amnt: " . $bid_amount;
     $querys = "INSERT INTO notifications(user_type, note) VALUES(2,'$note')";
     $db->query($querys);
     $querys = "INSERT INTO notifications(user_type, note, user_id) VALUES(3,'$note2','$tutor_id')";
@@ -32,7 +32,7 @@ if (isset($_POST['submit'])) {
     // ,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,//
     $queryx = "SELECT email FROM users where user_id='$student_id' and type='1'";
     $result = $db->get_var($queryx);
-    $details = "Tutor id: " . $tutor_id . " has placed a bid of $" . $bid_total_amount . " for order ID: " . $project_id;
+    $details = "Tutor: " . $_SESSION['info']->username . " has placed a bid of $" . $bid_total_amount . " for order ID: " . $project_id;
     $subject = "Bid for Order ID: " . $project_id;
 
     sendMail($details, $result, $subject);
@@ -101,7 +101,7 @@ This project Is no longer Available
 <th class="text-center">Order Id</th>
 <th class="text-center">Deadline</th>
 <th class="text-center">Budget</th>
-<th class="text-center">Yuor Bid</th>
+<th class="text-center">Your Bid</th>
 </tr>
 </thead>
 <tbody>
@@ -144,10 +144,10 @@ This project Is no longer Available
 <form action="" method="POST">
 <div class="row">
 <div class="col-8">
-<?php $min = ceil(intval(str_replace("$", "", $results->budget)) * 0.7);?>
+<!-- <?php $min #= ceil(intval(str_replace("$", "", $results->budget)) * 0.7);?> -->
 <input type="number" name="bid_amount"
 class="form-control forms2__input" required
-min="<?php echo $min ?>">
+min="5">
 <input type="hidden" name="project_id"
 value="<?php echo $project_id ?>">
 <input type="hidden" name="tutor_id" value="<?php echo $tutor_id ?>">

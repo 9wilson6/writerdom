@@ -159,7 +159,10 @@ let user_type="<?php echo $_SESSION['user_type'] ?>";
 </div>
 </div>
 </div>
-<form action="" enctype="multipart/form-data" method="POST" class="files_edit">
+<div class="card">
+	<div class="card-header">Add more files</div>
+	<div class="card-body">
+		<form action="" enctype="multipart/form-data" method="POST" class="files_edit">
 
 <div class="row">
 <div class="col-4 col-sm-4 col-md-3 py-4"><label for="files" class="forms2__label">Add
@@ -169,12 +172,14 @@ name="file[]" class="form-control-file forms2__files" id="files"
 required multiple />
 <input type="hidden" name="project_id" value="<?php echo $project_id ?>">
 </div>
-<div class="col-12 col-sm-12 col-md-3"><button type="submit" name="submit"
-class="btn btn-submit btn-block">Upload Files</button>
+<div class="col-12 col-sm-12 col-md-3 my-4"><button type="submit" name="submit"
+class="btn btn-submit btn-block ">Upload Files</button>
 </div>
 </div>
 
 </form>
+	</div>
+</div>
 <?php }?>
 </div>
 </div>

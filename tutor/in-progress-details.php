@@ -26,7 +26,7 @@ if (isset($_POST['submit'])) {
 //,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,notification,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
                     //
                     //,,,,,,,,,,,,,,,,,,,,,,,,,, //
-                    $note = "Tutor ID: " . $tutor_id . " has submited final results for project ID: " . $project_id . " at " . $date_global;
+                    $note = "Tutor: " .$_SESSION['info']->username . " has submited final results for project ID: " . $project_id . " at " . $date_global;
                     $note2 = "You have submited final results for project ID: " . $project_id . " at " . $date_global;
                     $querys = "INSERT INTO notifications(user_type, note) VALUES(2,'$note')";
                     $db->query($querys);
@@ -46,7 +46,7 @@ window.location.assign("delivered");
             }
         }
         $subject = "Final results for order ID: " . $project_id;
-        $details = "Tutor ID: " . $tutor_id . " has submited final results for project ID: " . $project_id;
+        $details = "Tutor, " .$_SESSION['info']->username . " has submited final results for project ID: " . $project_id;
         sendMail($details, $student_email, $subject);
         sendMail($details, "admin@perfectgrader.com", $subject);
     } else {
@@ -54,7 +54,7 @@ window.location.assign("delivered");
         //
         //
         //,,,,,,,,,,,,,,,,,,,,,,,,,, //
-        $note = "Tutor ID: " . $tutor_id . " has submited a draft for project ID: " . $project_id . " at " . $date_global;
+        $note = "Tutor, " . $_SESSION['info']->username . " has submited a draft for project ID: " . $project_id . " at " . $date_global;
         $note2 = "You have submited a draft for project ID: " . $project_id . " at " . $date_global;
         $querys = "INSERT INTO notifications(user_type, note) VALUES(2,'$note')";
         $db->query($querys);
@@ -62,7 +62,7 @@ window.location.assign("delivered");
         $db->query($querys);
 // ........,,,,,,,,,,,,,,,,,,,,,,,,,,notification,,,,,,,,,,,,,,,,,
         $subject = "Draft results for order ID: " . $project_id;
-        $details = "Tutor ID: " . $tutor_id . " has submited a draft for project ID: " . $project_id;
+        $details = "Tutor,  " . $_SESSION['info']->username . " has submited a draft for project ID: " . $project_id;
         sendMail($details, $student_email, $subject);
         sendMail($details, "admin@perfectgrader.com", $subject);
 // ,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,//
@@ -101,7 +101,7 @@ This project Is no longer Available
 </div>
 </div>
 <?php } else {?>
-<table class="table table-sm table-responsive{-sm|-md|-lg|-xl}">
+<table class="table table-sm">
 <thead class="table-light">
 <tr>
 <th class="text-center">Order Id</th>
@@ -153,7 +153,7 @@ Assigned
 <ul class="d_table_1 d_table_1__b mb-5 mt-3">
 <div class="row">
 <div class="col-sm-12 col-md-12 col-lg-5">
-<table class="table table-sm table-responsive{-sm|-md|-lg|-xl}">
+<table class="table table-sm">
 <thead class="table-light ml-5">
 <tr>
 <th class="text-center">Status</th>
@@ -179,7 +179,7 @@ Assigned
 </table>
 </div>
 <div class="col-sm-12 col-md-12 col-lg-3">
-<table class="table table-sm table-responsive{-sm|-md|-lg|-xl}">
+<table class="table table-sm">
 <thead class="table-light">
 <tr>
 <th class="text-center">Slides</th>
@@ -197,7 +197,7 @@ Assigned
 </table>
 </div>
 <div class="col-sm-12 col-md-12 col-lg-4">
-<table class="table table-sm table-responsive{-sm|-md|-lg|-xl}">
+<table class="table table-sm">
 <thead class="table-light">
 <tr>
 <th class="text-center">Type of paper</th>

@@ -19,25 +19,14 @@
   <link rel="stylesheet" href="css/aos.css">
   <link rel="stylesheet" href="css/style.css">
 <style>
- * {
-  box-sizing: border-box;
-}
+  .blog-item{
 
-/* Create three equal columns that floats next to each other */
-.column {
-  float: left;
-  width: 33.33%;
-  padding: 10px;
-  height: 700px; /* Should be removed. Only for demonstration */
-  overflow-y: auto;
-}
-
-/* Clear floats after the columns */
-.row:after {
-  content: "";
-  display: table;
-  clear: both;
-}
+    width: 33.3% !important;
+    display: inline-block;
+    clear: both;
+    margin-top: 0px !important;
+    height: 200px;
+  }
   .blog-image {
    
     height: 300px;
@@ -123,27 +112,20 @@ color: #718093;;
          ?>
          <?php if ($db->num_rows==0): ?>
           <h1>No posts</h1>
-          <div class="row">
-            <?php else: $x=0 ?>
+            <?php else: ?>
     <?php foreach ($results as $result): ?>
-        <?php if ($x==3): ?>
-          <div class="row">
-             <hr>
-        <?php endif ?>
-        <div class="column">
-            <?php $file_name="./POSTS/default.jpg";
-        ImagePath($result->post_id, 1); ?>
-         <div class="blog-image"><img class="image" src="<?php echo $file_name ?>" alt="blog image"></div>
+
+    <div class="blog-item">
+      <?php $file_name="./POSTS/default.jpg";
+        ImagePath($result->post_id, 1);
+     ?>
+       
+          <div class="blog-image"><img class="image" src="<?php echo $file_name ?>" alt="blog image"></div>
           <div class="blog-title"><?php echo $result->title; ?></div>
           <div class="blog-details"><?php echo  substr($result->details, 0, 215)."....." ?>
           <a href="post-details?token=<?php echo urlencode(convert_uuencode($result->post_id)) ?>">Read more</a> </div>
-          </div>
-  <?php if ($x==3): $x==0 ?>
-
-          </div>
-         
-        <?php endif ?>
-
+      
+        </div>
     <?php endforeach ?>
          <?php endif ?>
 

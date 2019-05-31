@@ -67,15 +67,16 @@ function filesUpload($post_id){
 <div class="display">
   <div class="display__content">
     <?php require_once "inc/leftnav.php" ?>
+    <div class="jumbotron bg-light"></div>
     <div class="headingTertiary text-uppercase">
      CREATE NEW BLOG POST.
     </div>
     <div class="row">
       <div class="col-sm-0 col-md-0 col-lg-2"></div>
       <div class="col-sm-12 col-md-12 col-lg-8">
-        <div class="card">
+        <
           <div class="card-header">Add blog details below</div>
-          <div class="card-body">
+         
               <?php if (!empty($error)): ?>
                 <div class="bg-danger mx-5 px-3 text-center text-light">
                   <strong><?php echo $error; ?></strong> </div>

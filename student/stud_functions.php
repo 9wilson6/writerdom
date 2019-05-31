@@ -55,12 +55,13 @@ function create_post(){
   // 
   // ,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,//
     if($_FILES['file']['name'][0]=="") {
-      $success="Homework Posted files Successfully";
+      $success="Homework Posted Successfully";
+      header("Refresh:1; url=my-homework");
     }else{
 
       filesUpload($student_id, $results->project_id);
       $success="Homework Posted Successfully";
-
+      header("Refresh:1; url=my-homework");
     }
    // $success="Homework Posted Successfully";
     $details="Hello ".$_SESSION["info"]->username.", <br> Your homework, Title: ". $title. " <br> Has been successfully uploaded. Our team of tutors are now analyzing it. <br> You should start getting bids from our experts highly skilled in your research area. <br>Reference ID: ".$results->project_id."  <br> , Thank You.";

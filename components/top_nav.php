@@ -9,7 +9,7 @@ ob_flush();
   <label for="check" class="left-toggler"><i class="fas fa-bars icon-m"></i></label>
   <input type="checkbox" name="check" id="check" class="left-toggler">
   <nav class="navbar navbar-expand-lg" >
-    <a class="navbar-brand" href="../index"><span class="navbar-brand__start"><img src="../assets/pen.png" alt="" class="navbar__logo"></span>PerfectGrader</a>
+    <a class="navbar-brand" href="#"><span class="navbar-brand__start"><img src="../assets/pen.png" alt="" class="navbar__logo"></span>PerfectGrader</a>
     <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
       <i class="fas fa-bars"></i>
     </button>

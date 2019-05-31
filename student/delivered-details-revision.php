@@ -25,7 +25,7 @@ window.location.href="delivered-details?id=<?php echo $project_id ?>#chat_form";
         $query = "INSERT INTO revisions(student_id, tutor_id, project_id, revision_instructions,revision_deadline)VALUES('$student_id','$tutor_id','$project_id','$instructions','$datetyme')";
         if ($db->query($query)) {
 /////////////////////////////////notification/////////////////////////////////////////////
-            $note = "Student Id: " . $student_id . " sent project id: " . $project_id . " back for revision at " . $date_global;
+            $note = "Student, " . $_SESSION['info']->username . " sent project id: " . $project_id . " back for revision at " . $date_global;
             $note2 = "You sent project id: " . $project_id . " back for revision at " . $date_global;
             $querys = "INSERT INTO notifications(user_type, note) VALUES(1,'$note')";
             $db->query($querys);

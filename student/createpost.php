@@ -31,11 +31,11 @@ ob_flush();
 					<div class="card-body">
 						<div class="forms2">
 							<?php if (!empty($error)): ?>
-								<div class="bg-danger mx-5 px-3 text-center text-light">
-									<strong><?php echo $error; ?></strong> </div>
+								<div class="alert mx-5 px-3 text-center alert-danger">
+									<strong class="text-light"><?php echo $error; ?></strong> </div>
 									<?php elseif (!empty($success)): ?>
-										<div class="bg-success mx-5 px-3 text-center text-light">
-											<strong><?php echo $success; ?></strong> </div>
+										<div class="alert mx-5 px-3 text-center text-light alert-success">
+											<strong class="text-light"><?php echo $success; ?></strong> </div>
 										<?php endif?>
 										<form enctype="multipart/form-data" method="POST" action="createpost">
 											<!-- /////// -->
@@ -166,7 +166,7 @@ ob_flush();
 														<label for="datetime" class="forms2__label">days (<small>to
 														deadline</small>)</label>
 														<input type="number" name="date" class="form-control forms2__select"
-														min="0" max="12" id="datetyme" required>
+														min="0"  id="datetyme" required>
 													</div>
 													<div class="col">
 														<label for="datetime" class="forms2__label">hours (<small>to
@@ -226,11 +226,18 @@ ob_flush();
 												<label for="budget" class="forms2__label">budget</label>
 												<select name="budget" class="form-control forms2__select" id="" required>
 													<option value=""> Select one </option>
-													<option value="$45">$45 (up to 3 pages) </option>
-													<option value="$150">$150 (up to 10 pages)</option>
-													<option value="$280">$280(up to 20 pages)</option>
-													<option value="$480 ">$480 (up to 35 pages)</option>
-													<option value="$750">$600 (more than 45 pages) </option>
+													<option value="$10-$20">$10-$20</option>
+													<option value="$20-$30">$20-$30</option>
+													<option value="$30-$50">$30-$50</option>
+													<option value="$50-$80">$50-$80</option>
+													<option value="$80-$120">$80-$120 </option>
+													<option value="$120-$150">$120-$150</option>
+													<option value="$150-$200">$150-$200</option>
+													<option value="$200-$250">$200-$250</option>
+													<option value="$250-$300">$250-$300</option>
+													<option value="$300-$400">$300-$400</option>
+													<option value="$400-$500">$400-$500</option>
+													<option value="over $500">over $500</option>
 												</select>
 											</div>
 											<div class="col">

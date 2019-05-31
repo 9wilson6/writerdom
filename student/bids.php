@@ -24,7 +24,11 @@ if (isset($_POST['project_id'])) {
 <?php foreach ($results as $result) {?>
 <tr>
 <td>
-<?php echo $result->tutor_id ?>
+<?php 
+$username_query="SELECT username from users where user_id='$result->tutor_id'";
+     $username_query_results=$db->get_var($username_query);
+ echo $username_query_results
+ ?>
 </td>
 <?php $query = "SELECT SUM(rating) as rating, COUNT(comment) as complited FROM closed WHERE tutor_id='$result->tutor_id'";
         $results = $db->get_row($query);
@@ -76,7 +80,7 @@ if (isset($_POST['project_id'])) {
 <?php require_once "../inc/footer_links.php";?>
 <script>
 $("#assing").submit(function(){
-var c = confirm("Note that in order to assigne tutor ID: <?php if (isset($result->tutor_id)) {echo $result->tutor_id;}?> \n your homework you will need to load $<?php if (isset($result->bid_total_amount)) {echo $result->bid_total_amount;}?> \n to your PerfectGrader account. \nThe funds will be held in your account until you release them.\n Press okay to proceed");
+var c = confirm("Note that in order to assigne  <?php if (isset($username_query_results)) {echo $username_query_results;}?> \n your homework you will need to load $<?php if (isset($result->bid_total_amount)) {echo $result->bid_total_amount;}?> \n to your PerfectGrader account. \nThe funds will be held in your account until you release them.\n Press okay to proceed");
 return c; //you can just return c because it will be true or false
 });
 

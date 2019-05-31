@@ -157,7 +157,7 @@ multiple />
 <input type="hidden" name="project_id"
 value="<?php echo $project_id ?>">
 </div>
-<div class="col-12 col-sm-12 col-md-3">
+<div class="col-12 col-sm-12 col-md-3 my-4">
     <button type="submit" name="submit" class="btn btn-submit btn-block">Upload Files</button>
 
 </div>
@@ -202,7 +202,7 @@ window.location.href = "my-homework";
 
 <div class="card">
 <div class="card-header">
-<h1 class="headingSecondary mb-3">Bids</h1>
+Bids
 </div>
 <div class="card-body">
 
@@ -212,7 +212,7 @@ $query = "SELECT * FROM bids WHERE project_id=$project_id";
 $results = $db->get_results($query);
 
 if ($db->num_rows < 1) {?>
-<h1 class="headingSecondary">Nothing To Show Yet</h1>
+<div class="headingTertiary">Nothing To Show Yet</div>
 <?php } else {?>
 
 <table class="table">
@@ -228,7 +228,11 @@ if ($db->num_rows < 1) {?>
 <?php foreach ($results as $result) {?>
 <tr>
 <td>
-<?php echo $result->tutor_id ?>
+
+<?php
+     $username_query="SELECT username from users where user_id='$result->tutor_id'";
+     $username_query_results=$db->get_var($username_query);
+ echo $username_query_results ?>
 </td>
 <?php $query = "SELECT SUM(rating) as rating, COUNT(comment) as complited FROM closed WHERE tutor_id='$result->tutor_id'";
     $results = $db->get_row($query);
@@ -283,7 +287,7 @@ if ($db->num_rows < 1) {?>
 </div>
 </div>
 </div>
-</div>
+
 <?php require_once "section_notes.php"?>
 
 
@@ -310,7 +314,8 @@ project_id: project_id
 }, 60000);
 $("#assing").submit(function(){
 
-var c = confirm("Note that in order to assigne tutor ID: <?php if (isset($result->tutor_id)) {echo $result->tutor_id;}?> \n your homework you will need to load $<?php if (isset($result->bid_total_amount)) {echo $result->bid_total_amount;}?> \n to your PerfectGrader account. \nThe funds will be held in your account until you release them.\n We will guide you through the process\n Press okay to proceed");
+var c = confirm("Note that in order to assigne  <?php if (isset($username_query_results)) {echo $username_query_results;}?> \n your homework you will need to load $<?php if (isset($result->bid_total_amount)) {echo $result->bid_total_amount;}?> \n to your PerfectGrader account. \nThe funds will be held in your account until you release them.\n Press okay to proceed");
+
 return c; //you can just return c because it will be true or false
 });
 });

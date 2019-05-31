@@ -78,7 +78,7 @@ if ($db->num_rows < 1) {
 <?php echo $results->cost; ?>
 </td>
 <th scope="row" class="text-danger bg-warning">Rivision deadline</th>
-<td class="bg-warning">
+<td class="bg-light">
 <?php $time = getDateTimeDiff($date_global, $results->revision_deadline);
     $period = explode(" ", $time);?>
 <?php if ($period[1] == "days"): ?>

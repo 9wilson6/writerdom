@@ -81,7 +81,7 @@ function addPayment($data)
             $query="DELETE FROM bids WHERE project_id='$project_id'";
             if ($db->query($query)) {
              /////////////////////////////////notification/////////////////////////////////////////////
-                $note="Student Id: ".$user_id." assigned project id: ".$project_id." to Tutor id:".$tutor_id." at ".$date_global;
+                $note="Student : ".$_SESSION['info']->username." assigned project id: ".$project_id." to Tutor id:".$tutor_id." at ".$date_global;
                 $note2="You Assigned project id: ".$project_id." to Tutor id:".$tutor_id." at ". $date_global;
                 $user_type=$_SESSION['user_type'];
                 $querys="INSERT INTO notifications(user_type, note) VALUES('$user_type','$note')";
@@ -89,7 +89,7 @@ function addPayment($data)
                 $querys="INSERT INTO notifications(user_type, note, user_id) VALUES(3,'$note2','$user_id')";
                 $db->query($querys);
                 $subject="You have been assigned order ID: ". $project_id;
-                $details="Hello ".$_SESSION['info']->username .",<br> We Have good news for you. You have been awarded order ID: ". $project_id ." You may start working it.";
+                $details="Hello ".$_SESSION['tutor_info']->username .",<br> We Have good news for you. You have been awarded order ID: ". $project_id ." You may start working it.";
                 sendMail($details, $_SESSION['tutor_info']->email, $subject);
                 sendMail($details, "admin@perfectgrader.com", $subject);
       /////////////////////////////////notification/////////////////////////////////////////////
@@ -100,8 +100,8 @@ function addPayment($data)
                 unset($_SESSION['user_type_pass']);
                 ?>
                 <script>
-                    let x="<?php echo $tutor_id ?>"
-                    alert(" Payment Completed Successfully....\n Project successfully assigned to tutor id: " +x );
+                    let x="<?php echo $_SESSION['tutor_info']->username ?>";
+                    alert(" Payment Completed Successfully....\n Project successfully assigned to tutor: " +x );
                     window.location.assign("../student/in-progress");
                 </script>
                 <?php
