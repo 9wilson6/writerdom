@@ -101,7 +101,7 @@ if (isset($_POST['submit'])) {
 <?php require_once("../inc/footer_links.php") ?>
 <script>
 	$(function(){
-		setInterval(function(){
+		// setInterval(function(){
 			$("#available").load('dashboard_counters', {
 				type:'available',
 				submit: 'submit'
@@ -148,7 +148,7 @@ if (isset($_POST['submit'])) {
         submit: 'submit'
       });
       $("#cbody").load("notifications.php", {limit:10});
-		}, 5000);
+		// }, 5000);
 	});
 </script>
 

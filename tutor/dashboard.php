@@ -70,13 +70,18 @@ $results=$db->get_results($query);
 href="d_details?id=<?php echo urlencode(convert_uuencode($result->project_id)); ?>"><?php echo $result->project_id; ?><i
 class="fas fa-external-link-alt icon-r ml-4"></i></a></td>
 <td class="wide">
-<?php echo (strlen($result->title) >35 )? substr($result->title, 0, 35).'...':$result->title; ?>
+	<a
+href="d_details?id=<?php echo urlencode(convert_uuencode($result->project_id)); ?>"><?php echo (strlen($result->title) >35 )? substr($result->title, 0, 35).'...':$result->title; ?>
+</a>
 </td>
 <td><?php echo $result->budget; ?></td>
 <td><?php echo $result->pages; ?></td>
 <td><?php echo $result->slides; ?></td>
 <td><?php echo $result->problems; ?></td>
-<td class="smalll"><?php echo $result->subject; ?></td>
+<td class="smalll">
+<a
+href="d_details?id=<?php echo urlencode(convert_uuencode($result->project_id)); ?>"><?php echo $result->subject;?>
+</a></td>
 <td><?php $time=getDateTimeDiff($date_global, $result->deadline );
 $period= explode(" ", $time); ?>
 <?php if ($period[1]=="days"): ?>
@@ -140,14 +145,14 @@ $("#display").load("dashboard_.php", {
 limit: limit
 })
 });
-setInterval(function() {
-let limit = $("#select").val();
-if (limit == null) {
-limit = 30;
-}
-$("#display").load("dashboard_.php", {
-limit: limit
-})
-}, 3000);
+// setInterval(function() {
+// let limit = $("#select").val();
+// if (limit == null) {
+// limit = 30;
+// }
+// $("#display").load("dashboard_.php", {
+// limit: limit
+// })
+// }, 3000);
 });
 </script>

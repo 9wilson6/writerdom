@@ -108,7 +108,7 @@ function Login(){
 					}
 					
 				}elseif($user_type==2){
-					
+							$_SESSION['tutor_id']=$results->user_id;										
 						if ($results->verified==1) {
 
 							$_SESSION['user_type']=2;
@@ -276,17 +276,17 @@ function reset_pass(){
 	}else{
 		$diff_timestmp=$now_timeStamp - $other_date;
 		if ($diff_timestmp<60) {
-			return $diff_timestmp . ' sec ago';
+			return $diff_timestmp . ' secs ago';
 		} elseif($diff_timestmp>=60 && $diff_timestmp<3600) {
-			return round(($diff_timestmp/60)). ' mins ago';
+			return round(($diff_timestmp/60)). ' mns ago';
 		}elseif($diff_timestmp>=3600 && $diff_timestmp<86400) {
-			return round(($diff_timestmp/3600)). ' hours ago';
+			return round(($diff_timestmp/3600)). ' hrs ago';
 		}elseif($diff_timestmp>=86400 && $diff_timestmp<86400 * 30) {
 			return round(($diff_timestmp/86400)). ' days ago';
 		}elseif($diff_timestmp>=86400 * 30 && $diff_timestmp<86400 * 365) {
-			return round(($diff_timestmp/(86400 * 30))). ' months ago';
+			return round(($diff_timestmp/(86400 * 30))). ' mnths ago';
 		}else{
-			return round(($diff_timestmp/(86400 * 365))). ' years ago';
+			return round(($diff_timestmp/(86400 * 365))). ' yrs ago';
 		}
 	}
 	

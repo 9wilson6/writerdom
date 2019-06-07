@@ -2,7 +2,6 @@
 if (isset($_POST['limit'])) {
 	$limit=$_POST['limit'];
 	require_once("../dbconfig/dbconnect.php");
-
 	$query="SELECT * FROM notifications ORDER BY note_num desc LIMIT  $limit ";}
 	$results=$db->get_results($query);
 	if ($db->num_rows>0) {

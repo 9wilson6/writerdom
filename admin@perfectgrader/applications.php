@@ -6,7 +6,7 @@ $mainpage="tutor";
 $page="tutor";
 require_once("../inc/global_functions.php");
 require_once("../dbconfig/dbconnect.php");
-$query="SELECT * FROM users WHERE type=2 and verified=0";
+$query="SELECT * FROM users WHERE type=2 and verified=0 and about_me !=\"\"";
 $results=$db->get_results($query);
 
 if (isset($_POST['submit'])) {
@@ -21,6 +21,17 @@ if (isset($_POST['submit'])) {
    <?php } 
 }
  ?>
+ <head>
+   <style>
+.tooltip {
+  font-family: Georgia;
+  font-size: 13px;
+}
+.tooltip .tooltip-inner {
+  min-width: 500px;
+}
+   </style>
+ </head>
  <div class="display">
     <div class="display__content">
         <?php require_once "inc/leftnav.php" ?>
@@ -41,7 +52,7 @@ if (isset($_POST['submit'])) {
                                     <th >Tutor Id</th>
                                     <th >Username</th>
                                     <th >Email</th>
-                                    <th class="wide">Date Registered</th>
+                                    <th class="wide">Date Created</th>
                                     <th class="wide">Action</th>
                                 </tr>
                             </thead>
@@ -49,12 +60,14 @@ if (isset($_POST['submit'])) {
                             <tbody id="display">
                                        <?php foreach ($results as $result): ?>
                                 <tr>
-                                    <td class="smalll"><?php echo $result->user_id; ?></td>
+                                    <td class="smalll"><?php echo $result->user_id; ?>
+                                    <i class="fas fa-info-circle" data-toggle="tooltip" title="<?php  echo $result->about_me ?>" data-placement="bottom" ></i></td>
                                     <td>
+
                                         <?php echo $result->username?>
                                     </td>
                                     <td><?php echo $result->email; ?></td>
-                                    <td><?php echo $result->created_on; ?></td>
+                                    <td ><?php echo $result->created_on; ?></td>
                                     <td class="wide">
                                         <form action="" method="POST">
                                             <input type="hidden" name="user_id" value="<?php echo $result->user_id?>">

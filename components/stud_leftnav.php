@@ -41,49 +41,49 @@ ob_flush();
 
           $(function(){
 
-           setInterval(function() {
+           // setInterval(function() {
 
              let user_id= "<?php echo $_SESSION['user_id']; ?>";
              let user_type="<?php echo $_SESSION['user_type']; ?>";
 
-             $("#messages").load("../inc/counters", {
+             $("#messages").load("../inc/counters.php", {
               target: "messages",
               user_id: user_id,
               user_type: user_type
 
             });
-             $("#available").load("../inc/counters",{
+             $("#available").load("../inc/counters.php",{
               target: "available",
               user_id: user_id,
               user_type: user_type
             });
-             $("#delivered").load("../inc/counters", {
+             $("#delivered").load("../inc/counters.php", {
               target: "delivered",
               user_id: user_id,
               user_type: user_type
 
             });
 
-             $("#in_progress").load("../inc/counters",
+             $("#in_progress").load("../inc/counters.php",
              {
                target: "in_progress",
                user_id: user_id,
                user_type: user_type
              });
 
-             $("#on_revision").load("../inc/counters",
+             $("#on_revision").load("../inc/counters.php",
              {
                target: "on_revision",
                user_id: user_id,
                user_type: user_type
              });
-             $("#closed").load("../inc/counters",
+             $("#closed").load("../inc/counters.php",
              {
                target: "closed",
                user_id: user_id,
                user_type: user_type
              });
-           }, 3000);
+           // }, 3000);
 
 
 

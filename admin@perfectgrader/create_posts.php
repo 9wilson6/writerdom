@@ -67,7 +67,7 @@ function filesUpload($post_id){
 <div class="display">
   <div class="display__content">
     <?php require_once "inc/leftnav.php" ?>
-    <div class="jumbotron bg-light"></div>
+    <div class="jumbotron bg-light">
     <div class="headingTertiary text-uppercase">
      CREATE NEW BLOG POST.
     </div>

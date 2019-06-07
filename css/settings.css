@@ -576,12 +576,12 @@ body {
     font-weight: bolder; }
     @media only screen and (max-width: 767px) {
       .display .card-header {
-        font-size: 10px !important; } }
+        font-size: 14px !important; } }
   .display .card-body {
     font-size: 16px !important; }
     @media only screen and (max-width: 767px) {
       .display .card-body {
-        font-size: 10px !important; } }
+        font-size: 14px !important; } }
   .display__content {
     min-height: 795px;
     text-align: center;

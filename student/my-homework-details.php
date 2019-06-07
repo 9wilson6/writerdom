@@ -232,7 +232,10 @@ if ($db->num_rows < 1) {?>
 <?php
      $username_query="SELECT username from users where user_id='$result->tutor_id'";
      $username_query_results=$db->get_var($username_query);
- echo $username_query_results ?>
+ ?>
+ <a
+href="tutor-profile?key=<?php echo urlencode(convert_uuencode($result->tutor_id)); ?>">
+<?php echo  $username_query_results . "<i class='fas fa-external-link-alt icon-r ml-4'></i>"; ?></a>
 </td>
 <?php $query = "SELECT SUM(rating) as rating, COUNT(comment) as complited FROM closed WHERE tutor_id='$result->tutor_id'";
     $results = $db->get_row($query);
@@ -294,7 +297,7 @@ if ($db->num_rows < 1) {?>
 </div>
 </div>
 </div>
-<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
 
 
 <?php
@@ -302,7 +305,6 @@ if ($db->num_rows < 1) {?>
 require_once "../inc/footer_links.php";
 
 ?>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.2/jquery-confirm.min.js"></script>
 <script>
 $(function(){
 setInterval(function(){

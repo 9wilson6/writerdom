@@ -292,22 +292,23 @@ let user_type="<?php echo $_SESSION['user_type'] ?>";
 <div class="card-header text-center ">Upload results</div>
 <div class="card-body">
 <form action="" enctype="multipart/form-data" method="POST" class="files_edit py-2">
-<div class="my_container">
+<!-- <div class="my_container"> -->
 <div class="row">
 <div class="col-3 col-sm-3 col-md-3 mb-3">
 <select name="result_type" class="custom-select mb-2 ml-0 mr-sm-2 mb-sm-0 mt-1 ml-5 pt-2" id="select" required >
 <option value="final">final</option>
 <option value="draft">draft</option>
 </select></div>
-<div class="col-9 col-sm-9 col-md-6"><input type="file" class="files_edit__input" name="file[]" class="form-control-file forms2__files" id="files" required multiple />
+<div class="col-9 col-sm-9 col-md-6">
+    <input type="file" class="files_edit__input" name="file[]" class="form-control-file forms2__files" id="files" style="background: #009432; height: 35px; color: #fff;" required multiple />
 <input type="hidden" name="project_id" value="<?php echo $project_id ?>">
 <input type="hidden" name="student_id" value="<?php echo $results->student_id ?>">
 </div>
 <div class="col-12 col-sm-4 col-md-3">
-    <button type="submit" name="submit" class="btn btn-submit btn-block">Upload Reulsts</button>
+    <button type="submit" name="submit" class="btn btn-submit btn-block" style="background: #009432; color: #fff; padding-top: 5px; height: 35px;">Upload Results</button>
 </div>
 </div>
-</div>
+<!-- </div> -->
 </form>
 </div>
 </div>

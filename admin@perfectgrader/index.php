@@ -117,7 +117,7 @@ $result=$db->get_var("SELECT payment_date FROM others");
 ?>
 <script>
   $(function () {
-     setInterval(function () {
+     // setInterval(function () {
  $("#available").load('dashboard_counters', {
         type: 'available',
         submit: 'submit'
@@ -126,8 +126,8 @@ $result=$db->get_var("SELECT payment_date FROM others");
         type: 'progress',
         submit: 'submit'
       });
-      }, 3000);
-     setInterval(function () { 
+      // }, 3000);
+     // setInterval(function () { 
  
       $("#delivered").load('dashboard_counters', {
         type: 'delivered',
@@ -143,8 +143,8 @@ $result=$db->get_var("SELECT payment_date FROM others");
         type: 'tutors',
         submit: 'submit'
       });
-     }, 5000);
-     setInterval(function () {
+     // }, 5000);
+     // setInterval(function () {
 $("#closed").load('dashboard_counters', {
         type: 'closed',
         submit: 'submit'
@@ -161,8 +161,8 @@ $("#closed").load('dashboard_counters', {
         type: 'dues',
         submit: 'submit'
       });
-      }, 7000);
-    setInterval(function () {
+      // }, 7000);
+    // setInterval(function () {
  
       $("#suspended").load('dashboard_counters', {
         type: 'suspended',
@@ -173,6 +173,6 @@ $("#closed").load('dashboard_counters', {
         submit: 'submit'
       });
       $("#cbody").load("notifications.php", { limit: 10 });
-    }, 4000);
+    // }, 4000);
   });
 </script>

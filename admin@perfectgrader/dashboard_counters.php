@@ -2,13 +2,17 @@
 <?php 
 require_once("../dbconfig/dbconnect.php");
 require_once("../inc/utilities.php");
-if (isset($_POST['submit'])) {
-	function available(){
-		global $db;
-		$query="SELECT * FROM projects WHERE status=0";
-		$results=$db->get_results($query);
-		return $db->num_rows;
-	}
+require_once("./dashboard-counters/applications.php");
+require_once("./dashboard-counters/available.php");
+require_once("./dashboard-counters/balance.php");
+require_once("./dashboard-counters/closed.php");
+require_once("./dashboard-counters/delivered.php");
+require_once("./dashboard-counters/dues.php");
+require_once("./dashboard-counters/progress.php");
+require_once("./dashboard-counters/revision.php");
+require_once("./dashboard-counters/students.php");
+require_once("./dashboard-counters/suspended.php");
+require_once("./dashboard-counters/tutors.php");
 	if ($_POST['type']=="available") {
 		if (available()>0) {
 			echo "<div class='mypill1'>".available()."</div>";
@@ -17,12 +21,7 @@ if (isset($_POST['submit'])) {
 		}
 		
 	}
-	function progress(){
-		global $db;
-		$query="SELECT * FROM on_progress";
-		$results=$db->get_results($query);
-		return $db->num_rows;
-	}
+	
 	if ($_POST['type']=="progress") {
 
 		if (progress()>0) {
@@ -32,12 +31,7 @@ if (isset($_POST['submit'])) {
 		}
 		
 	}
-	function revision(){
-		global $db;
-		$query="SELECT * FROM revisions";
-		$results=$db->get_results($query);
-		return $db->num_rows;
-	}
+
 	if ($_POST['type']=="revision") {
 
 		if (revision()>0) {
@@ -48,12 +42,7 @@ if (isset($_POST['submit'])) {
 		
 	}
 
-	function delivered(){
-		global $db;
-		$query="SELECT * FROM delivered";
-		$results=$db->get_results($query);
-		return $db->num_rows;
-	}
+
 	if ($_POST['type']=="delivered") {
 
 		if (delivered()>0) {
@@ -63,12 +52,7 @@ if (isset($_POST['submit'])) {
 		}
 		
 	}
-	function closed(){
-		global $db;
-		$query="SELECT * FROM closed";
-		$results=$db->get_results($query);
-		return $db->num_rows;
-	}
+
 	if ($_POST['type']=="closed") {
 		if ( closed()>0) {
 			if (closed()>1000000000) {
@@ -81,12 +65,7 @@ if (isset($_POST['submit'])) {
 		}
 		
 	}
-	function tutors(){
-		global $db;
-		$query="SELECT * FROM users WHERE type=2";
-		$results=$db->get_results($query);
-		return $db->num_rows;
-	}
+
 	if ($_POST['type']=="tutors") {
 
 		if ( tutors()>0) {
@@ -97,12 +76,7 @@ if (isset($_POST['submit'])) {
 		
 
 	}
-	function students(){
-		global $db;
-		$query="SELECT * FROM users WHERE type=1";
-		$results=$db->get_results($query);
-		return $db->num_rows;
-	}
+
 	if ($_POST['type']=="students") {
 
 		if (students()>0) {
@@ -113,12 +87,7 @@ if (isset($_POST['submit'])) {
 		
 	}
 
-	function suspended(){
-		global $db;
-		$query="SELECT * FROM users WHERE status=0";
-		$results=$db->get_results($query);
-		return $db->num_rows;
-	}
+
 	if ($_POST['type']=="suspended") {
 
 		if (suspended()>0) {
@@ -130,12 +99,7 @@ if (isset($_POST['submit'])) {
 	}
 
 
-	function applications(){
-		global $db;
-		$query="SELECT * FROM users WHERE type=2 and verified=0";
-		$results=$db->get_results($query);
-		return $db->num_rows;
-	}
+
 	if ($_POST['type']=="applications") {
 
 		if (applications()>0) {
@@ -148,12 +112,7 @@ if (isset($_POST['submit'])) {
 
 
 
-	function dues(){
-		global $db;
-		$query="SELECT SUM(dues) AS charges FROM users WHERE type=2";
-		$results=$db->get_row($query);
-		return $results->charges;
-	}
+	
 	if ($_POST['type']=="dues") {
 
 		if (dues()>0) {
@@ -164,12 +123,7 @@ if (isset($_POST['submit'])) {
 		
 	}
 
-	function balance(){
-		global $db;
-		$query="SELECT SUM(cost) AS cost FROM projects WHERE status=4";
-		$results=$db->get_row($query);
-		return $results->cost;
-	}
+
 	if ($_POST['type']=="balance") {
 
 		if (balance()>0) {
@@ -179,5 +133,5 @@ if (isset($_POST['submit'])) {
 		}
 		
 	}
-}
+
 ?>

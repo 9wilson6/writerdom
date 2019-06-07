@@ -15,11 +15,6 @@ src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 <?php }?>
 <!-- custom timer Js -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.carousel.min.js"></script>
-<!-- <script src="https://cdn.ckeditor.com/ckeditor5/11.2.0/classic/ckeditor.js"></script> -->
-<!-- Ck Editor -->
-<!-- <script src="https://cdn.ckeditor.com/4.11.1/standard/ckeditor.js"></script> -->
-<!-- Animation On Scrol Trigger  -->
-
 
   </body>
   </html>

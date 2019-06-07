@@ -77,7 +77,8 @@ $username_query="SELECT username from users where user_id='$result->tutor_id'";
 </div>
 <?php }
 ?>
-<?php require_once "../inc/footer_links.php";?>
+<!-- <?php #require_once "../inc/footer_links.php";?> -->
+
 <script>
 $("#assing").submit(function(){
 var c = confirm("Note that in order to assigne  <?php if (isset($username_query_results)) {echo $username_query_results;}?> \n your homework you will need to load $<?php if (isset($result->bid_total_amount)) {echo $result->bid_total_amount;}?> \n to your PerfectGrader account. \nThe funds will be held in your account until you release them.\n Press okay to proceed");

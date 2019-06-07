@@ -19,9 +19,7 @@
 
 	<?php if(isset($link)) { ?>
 		<meta name="google-site-verification" content="0zqlW0pUM9AWu8uqoGjKo8Pp3XYrzr4zCIAizaSNF_0" />
-		<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
-		<!-- Custom Css -->
-		<link rel="stylesheet"  href="https://cdnjs.cloudflare.com/ajax/libs/flickity/2.2.0/flickity.min.css">
+		<!--  -->
 		<link rel="stylesheet" href="css/settings.css">
 	<?php }else{?>
 		<link rel="stylesheet" href="../css/settings.css">

@@ -70,7 +70,8 @@ $mainpage="orders";
 
                         <div class="row">
                             <div class="col-sm-12 col-md-12 col-lg-5">
-                                <table class="table table-sm table-responsive{-sm|-md|-lg|-xl}">
+                                <div class="table-responsive">
+                                <table class="table table-sm">
                                     <thead class="table-light ml-5">
                                         <tr>
                                             <th class="text-center">Status</th>
@@ -95,9 +96,10 @@ $mainpage="orders";
                                       </tr>
                                   </tbody>
                               </table>
+                              </div>
                           </div>
                           <div class="col-sm-12 col-md-12 col-lg-3">
-                            <table class="table table-sm table-responsive{-sm|-md|-lg|-xl}">
+                            <table class="table table-sm">
                                 <thead class="table-light">
                                     <tr>
                                         <th class="text-center">Slides</th>
@@ -118,7 +120,7 @@ $mainpage="orders";
                         </div>
 
                         <div class="col-sm-12 col-md-12 col-lg-4">
-                            <table class="table table-sm table-responsive{-sm|-md|-lg|-xl}">
+                            <table class="table table-sm">
 
                                 <thead class="table-light">
                                     <tr>

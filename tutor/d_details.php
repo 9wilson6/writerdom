@@ -95,10 +95,11 @@ This project Is no longer Available
 </div>
 </div>
 <?php } else {?>
-<table class="table table-sm table-responsive{-sm|-md|-lg|-xl}">
+    <div class="table-responsive-sm">
+<table class="table table-sm">
 <thead class="table-light">
 <tr>
-<th class="text-center">Order Id</th>
+<th class="text-center">Student Id</th>
 <th class="text-center">Deadline</th>
 <th class="text-center">Budget</th>
 <th class="text-center">Your Bid</th>
@@ -106,8 +107,8 @@ This project Is no longer Available
 </thead>
 <tbody>
 <tr>
-<th scope="row" class="text-center mt-5">
-<?php echo $results->project_id; ?>
+<th scope="row" class="text-center mt-5" width="100px">
+    <a href="student-profile?key=<?php echo urlencode(convert_uuencode($results->student_id)); ?>"><?php echo $results->student_id; ?><i class="fas fa-external-link-alt icon-r ml-4"></i></a>
 </th>
 <td class="text-center mt-5">
 <?php $time = getDateTimeDiff($date_global, $results->deadline);
@@ -185,6 +186,7 @@ type="submit">DELETE</button>
 </tr>
 </tbody>
 </table>
+</div>
 </ul>
 <div class="card bg-light mb-5">
 <div class="card-header">Order Info</div>
@@ -192,7 +194,7 @@ type="submit">DELETE</button>
 <ul class="d_table_1 d_table_1__b mb-5 mt-3">
 <div class="row">
 <div class="col-sm-12 col-md-12 col-lg-5">
-<table class="table table-sm table-responsive{-sm|-md|-lg|-xl}">
+<table class="table table-sm">
 <thead class="table-light ml-5">
 <tr>
 <th class="text-center">Status</th>

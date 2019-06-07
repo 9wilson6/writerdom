@@ -81,8 +81,8 @@ function addPayment($data)
             $query="DELETE FROM bids WHERE project_id='$project_id'";
             if ($db->query($query)) {
              /////////////////////////////////notification/////////////////////////////////////////////
-                $note="Student : ".$_SESSION['info']->username." assigned project id: ".$project_id." to Tutor id:".$tutor_id." at ".$date_global;
-                $note2="You Assigned project id: ".$project_id." to Tutor id:".$tutor_id." at ". $date_global;
+                $note="Student : ".$_SESSION['info']->username." assigned project id: ".$project_id." to Tutor, ".$_SESSION['tutor_info']->username." at ".$date_global;
+                $note2="You Assigned project id: ".$project_id." to Tutor, ".$_SESSION['tutor_info']->username." at ". $date_global;
                 $user_type=$_SESSION['user_type'];
                 $querys="INSERT INTO notifications(user_type, note) VALUES('$user_type','$note')";
                 $db->query($querys);

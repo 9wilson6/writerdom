@@ -12,7 +12,7 @@ session_gen ();
   <nav class="navbar navbar-expand-lg">
     <!-- {{-- animated zoomIn --}} -->
 
-    <a class="navbar-brand" href="../index"
+    <a class="navbar-brand" href="#"
       ><span class="navbar-brand__start"
         ><img src="../assets/pen.png" alt="" class="navbar__logo" />PerfectGraders</a
     >

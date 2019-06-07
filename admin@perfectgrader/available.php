@@ -6,7 +6,7 @@ $mainpage="orders";
 $page="";
 require_once("../inc/global_functions.php");
 require_once("../dbconfig/dbconnect.php");
-$query="SELECT * FROM projects where status=0";
+$query="SELECT * FROM projects where status=0 order by project_id desc";
 $results=$db->get_results($query);
 
  ?>
@@ -27,14 +27,14 @@ $results=$db->get_results($query);
                         <table class="table table-bordered table-sm">
                             <thead>
                                 <tr>
-                                    <th class="medium">id</th>
-                                    <th class="wide">Title</th>
+                                    <th width="100px">id</th>
+                                    <th class="">Title</th>
                                     <th data-toggle="tooltip" title="Price $" data-placement="right">Price</th>
                                     <th data-toggle="tooltip" title="pages" data-placement="right">Pg</th>
                                     <th data-toggle="tooltip" title="Slides" data-placement="right">Sl</th>
                                     <th data-toggle="tooltip" title="Problems" data-placement="right">Pr</th>
-                                    <th class="smalll">Subject</th>
-                                    <th class="medium">Deadline</th>
+                                    <th class="">Subject</th>
+                                    <th class="">Deadline</th>
                                 </tr>
                             </thead>
 
@@ -45,7 +45,7 @@ $results=$db->get_results($query);
                                             href="available-details?pid=<?php echo urlencode(convert_uuencode($result->project_id)); ?>"><?php echo $result->project_id; ?><i
                                                 class="fas fa-external-link-alt icon-r ml-4"></i></a></td>
                                     <td class="wide">
-                                        <?php echo (strlen($result->title) >35 )? substr($result->title, 0, 35).'...':$result->title; ?>
+                                        <?php echo (strlen($result->title) >60 )? substr($result->title, 0, 60).'...':$result->title; ?>
                                     </td>
                                     <td><?php echo $result->budget; ?></td>
                                     <td><?php echo $result->pages; ?></td>
@@ -64,6 +64,8 @@ $results=$db->get_results($query);
                                         <span class="text-danger"><?php echo "{$time}"; ?></span>
                                         <?php elseif($period[1]=="secs" || $period[1]=="sec"): ?>
                                         <span class="text-danger"><?php echo "{$time}"; ?></span>
+                                        <?php else: ?>
+                                             <span class="text-dark"><?php echo "{$time}"; ?></span>
                                         <?php endif ?>
                                     </td>
 

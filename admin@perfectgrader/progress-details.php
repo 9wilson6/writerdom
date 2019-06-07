@@ -1,11 +1,11 @@
-<!-- <meta http-equiv="refresh" content="300"> -->
 <?php 
 $project_id=convert_uudecode($_REQUEST['pid']);
+ob_start();
 require_once("../dbconfig/dbconnect.php");
 require_once("../inc/utilities.php");
 require_once "../inc/header_links.php";
 require_once("./inc/topnav.php");
-
+ob_flush();
 $query=("SELECT * FROM on_progress left join projects on on_progress.project_id=projects.project_id WHERE on_progress.project_id='$project_id'");
 $results=$db->get_row($query);
 // print_r($results);

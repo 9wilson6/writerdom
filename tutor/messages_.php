@@ -28,19 +28,19 @@ if (isset($_POST['submit'])) {
 <td><?php echo $result->date_sent; ?></td>
 <?php if ($result->status == 1): ?>
 <td>
-<a href="in-progress-details?pid=<?php echo urlencode(convert_uuencode($result->project_id)) ?>#messageBox" class="btn btn-sm btn-block btn-light">view</a>
+<a href="in-progress-details?pid=<?php echo urlencode(convert_uuencode($result->project_id)) ?>#messageBox" class="btn btn-sm btn-block" style="background: #00897b; color:white;">view</a>
 </td>
 <?php elseif ($result->status == 2): ?>
 <td>
-<a href="delivered-details?pid=<?php echo urlencode(convert_uuencode($result->project_id)) ?>#messageBox" class="btn btn-sm btn-block btn-light">view</a>
+<a href="delivered-details?pid=<?php echo urlencode(convert_uuencode($result->project_id)) ?>#messageBox" class="btn btn-sm btn-block" style="background: #00897b; color:white;">view</a>
 </td>
 <?php elseif ($result->status == 3): ?>
 <td>
-<a href="revision-details?pid=<?php echo urlencode(convert_uuencode($result->project_id)) ?>#messageBox" class="btn btn-sm btn-block btn-light">view</a>
+<a href="revision-details?pid=<?php echo urlencode(convert_uuencode($result->project_id)) ?>#messageBox" class="btn btn-sm btn-block" style="background: #00897b; color:white;">view</a>
 </td>
 <?php elseif ($result->status > 3): ?>
 <td>
-<a href="my-projects-details?pid=<?php echo urlencode(convert_uuencode($result->project_id)) ?>#messageBox" class="btn btn-sm btn-block btn-light">view</a>
+<a href="my-projects-details?pid=<?php echo urlencode(convert_uuencode($result->project_id)) ?>#messageBox" class="btn btn-sm btn-block" style="background: #00897b; color:white;">view</a>
 </td>
 <?php endif?>
 </tr>
@@ -55,19 +55,19 @@ if (isset($_POST['submit'])) {
 <td><?php echo $result->date_sent; ?></td>
 <?php if ($result->status == 1): ?>
 <td>
-<a href="in-progress-details?pid=<?php echo urlencode(convert_uuencode($result->project_id)) ?>#messageBox" class="btn btn-sm btn-block btn-light">view</a>
+<a href="in-progress-details?pid=<?php echo urlencode(convert_uuencode($result->project_id)) ?>#messageBox" class="btn btn-sm btn-block" style="background: #00897b; color:white;">view</a>
 </td>
 <?php elseif ($result->status == 2): ?>
 <td>
-<a href="delivered-details?pid=<?php echo urlencode(convert_uuencode($result->project_id)) ?>#messageBox" class="btn btn-sm btn-block btn-light">view</a>
+<a href="delivered-details?pid=<?php echo urlencode(convert_uuencode($result->project_id)) ?>#messageBox" class="btn btn-sm btn-block" style="background: #00897b; color:white;">view</a>
 </td>
 <?php elseif ($result->status == 3): ?>
 <td>
-<a href="revision-details?pid=<?php echo urlencode(convert_uuencode($result->project_id)) ?>#messageBox" class="btn btn-sm btn-block btn-light">view</a>
+<a href="revision-details?pid=<?php echo urlencode(convert_uuencode($result->project_id)) ?>#messageBox" class="btn btn-sm btn-block" style="background: #00897b; color:white;">view</a>
 </td>
 <?php elseif ($result->status > 3): ?>
 <td>
-<a href="my-projects-details?pid=<?php echo urlencode(convert_uuencode($result->project_id)) ?>#messageBox" class="btn btn-sm btn-block btn-light">view</a>
+<a href="my-projects-details?pid=<?php echo urlencode(convert_uuencode($result->project_id)) ?>#messageBox" class="btn btn-sm btn-block" style="background: #00897b; color:white;">view</a>
 </td>
 </tr>
 <?php endif?>
