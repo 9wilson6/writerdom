@@ -1,9 +1,9 @@
 <?php 
 function dues(){
-		global $db;
+		global $db, $dues;
 		$query="SELECT SUM(dues) AS charges FROM users WHERE type=2";
 		$results=$db->get_row($query);
-		return $results->charges;
+		$dues= $results->charges;
 	}
-
+dues();
  ?>

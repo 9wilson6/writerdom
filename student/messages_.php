@@ -1,9 +1,9 @@
 <?php
 if (isset($_POST['submit'])) {
     $limit = $_POST['limit'];
+    $student_id = $_POST['student_id'];
     require_once "../dbconfig/dbconnect.php";
-    $query = "SELECT chats.user_type, chats.message, chats.date_sent, chats.project_id, chats.student_id, chats.tutor_id,projects.status, chats.status as me FROM chats LEFT JOIN projects on chats.project_id=projects.project_id where chats.user_type=2 ORDER BY date_sent DESC LIMIT " . $limit;
-    $results = $db->get_results($query);?>
+   ?>
 <table class="table">
 <table class="table table-bordered">
 <thead>
@@ -15,7 +15,10 @@ if (isset($_POST['submit'])) {
 <th class="wide">Action</th>
 </tr>
 </thead><tbody>
-<?php foreach ($results as $result): ?>
+<?php
+ $query = "SELECT chats.user_type, chats.message, chats.date_sent, chats.project_id, chats.student_id, chats.tutor_id,projects.status, chats.status as me FROM chats LEFT JOIN projects on chats.project_id=projects.project_id where chats.user_type=2 and chats.student_id='$student_id' ORDER BY date_sent DESC LIMIT " . $limit;
+    $results = $db->get_results($query);
+ foreach ($results as $result): ?>
 <?php if ($result->me == 0): ?>
 <tr style="background: #9B8889">
 <td><?php echo $result->project_id; ?></td>
@@ -72,8 +75,10 @@ if (isset($_POST['submit'])) {
 </tr>
 <?php endif?>
 <?php endforeach?>
-<script>let project_id="<?php echo $project_id; ?>";
+<script>
+let project_id="<?php echo $project_id; ?>";
 let user_type="<?php echo $_SESSION['user_type'] ?>";
+require_once "../inc/footer_links.php";
 </script>
 </tbody>
 </table>

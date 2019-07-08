@@ -10,7 +10,7 @@ setInterval(function() {
     //     $('#files').stop().animate({ scrollTop: $('#files')[0].scrollHeight});
     // $('#messageBox').stop().animate({ scrollTop: $('#messageBox')[0].scrollHeight});
     
-    }, 1000);
+    }, 100);
 
  $('#messageBox').stop().animate({ scrollTop: $('#messageBox')[0].scrollHeight});
 

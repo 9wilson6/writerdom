@@ -75,7 +75,7 @@ function addPayment($data)
     $charges=  $_SESSION['charges'];
     $query="INSERT INTO on_progress(project_id, student_id, tutor_id) VALUES ('$project_id', '$user_id', '$tutor_id')";
     if ($db->query($query)) {
-        $query="UPDATE projects SET status=1, cost=$cost, charges=$charges WHERE project_id='$project_id'";
+        $query="UPDATE projects SET status=1, cost='$cost', charges='$charges' WHERE project_id='$project_id'";
         if ($db->query($query)) {
 
             $query="DELETE FROM bids WHERE project_id='$project_id'";

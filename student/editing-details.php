@@ -165,18 +165,18 @@ let user_type="<?php echo $_SESSION['user_type'] ?>";
 </div>
 </div>
 </div>
-<form action="" enctype="multipart/form-data" method="POST" class="files_edit pb-5">
+<form action="" enctype="multipart/form-data" method="POST" class="files_edit py-5">
 
 <div class="row">
-<div class="col-4 col-sm-4 col-md-3 py-3"><label for="files" class="forms2__label">Add
+<div class="col-3 col-sm-3 col-md-3 py-3"><label for="files" class="forms2__label">Add
 More Files &rarr;</label></div>
 <div class="col-8 col-sm-8 col-md-6 py-3"><input type="file" class="files_edit__input"
-name="file[]" class="form-control-file forms2__files" id="files"
+name="file[]"  class="form-control-file forms2__files" style="background: #009432; height: 35px; color: #fff;" id="files"
 required multiple />
 <input type="hidden" name="project_id" value="<?php echo $project_id ?>">
 </div>
-<div class="col-12 col-sm-12 col-md-3"><button type="submit" name="submit"
-class="btn btn-submit btn-block">Upload Files</button>
+<div class="col-12 col-sm-12 col-md-3 py-3"><button type="submit" name="submit"
+class="btn btn-submit btn-block" style="background: #009432; color: #fff; padding-top: 5px; height: 35px;">Upload Files</button>
 </div>
 </div>
 </form>

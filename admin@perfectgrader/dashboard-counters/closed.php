@@ -1,9 +1,9 @@
 <?php 
 	function closed(){
-		global $db;
+		global $db, $closed;
 		$query="SELECT * FROM closed";
 		$results=$db->get_results($query);
-		return $db->num_rows;
+		 $closed= $db->num_rows;
 	}
-
+closed();
  ?>

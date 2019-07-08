@@ -101,54 +101,7 @@ if (isset($_POST['submit'])) {
 <?php require_once("../inc/footer_links.php") ?>
 <script>
 	$(function(){
-		// setInterval(function(){
-			$("#available").load('dashboard_counters', {
-				type:'available',
-				submit: 'submit'
-			});
-			$("#progress").load('dashboard_counters', {
-				type:'progress',
-				submit: 'submit'
-			});
-			$("#delivered").load('dashboard_counters', {
-				type:'delivered',
-				submit: 'submit'
-			});
-			$("#revision").load('dashboard_counters', {
-				type:'revision',
-				submit: 'submit'
-			});
-			$("#closed").load('dashboard_counters', {
-				type:'closed',
-				submit: 'submit'
-			});
-			$("#students").load('dashboard_counters', {
-				type:'students',
-				submit: 'submit'
-			});
-			$("#tutors").load('dashboard_counters', {
-				type:'tutors',
-				submit: 'submit'
-			});
-      $("#suspended").load('dashboard_counters', {
-        type:'suspended',
-        submit: 'submit'
-      });
-      $("#applications").load('dashboard_counters', {
-        type:'applications',
-        submit: 'submit'
-      });
-      $("#dues").load('dashboard_counters', {
-        type:'dues',
-        submit: 'submit'
-      });
-
-       $("#balance").load('dashboard_counters', {
-        type:'balance',
-        submit: 'submit'
-      });
       $("#cbody").load("notifications.php", {limit:10});
-		// }, 5000);
 	});
 </script>
 

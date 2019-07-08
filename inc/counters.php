@@ -1,4 +1,10 @@
 <?php
+$available=0;
+$closed=0;
+$delivered=0;
+$messages=0;
+$progress=0;
+$revision=0;
 require_once("../dbconfig/dbconnect.php");
 require_once("counters/progress.php");
 require_once("counters/available.php");
@@ -15,10 +21,10 @@ require_once("counters/messages.php");
 
 ////////////////////////////////////////////////////////////////////
 if ($_POST['target']=="in_progress") {
-	if (in_progress($_POST['user_type'], $_POST['user_id'])>0) {
-		echo "<div class='mypill1'>".in_progress($_POST['user_type'], $_POST['user_id'])."</div>";
+	if ($progress>0) {
+		echo "<div class='mypill1'>".$progress."</div>";
 	}else{
-		echo "<div class='pill'>".in_progress($_POST['user_type'], $_POST['user_id'])."</div>";
+		echo "<div class='pill'>".$progress."</div>";
 	}
 
 }
@@ -40,10 +46,10 @@ if ($_POST['target']=="in_progress") {
 
 ////////////////////////////////////////////////////////////////////
 if ($_POST['target']=="closed") {
-	if (closed($_POST['user_type'], $_POST['user_id'])>0) {
-		echo "<div class='mypill1'>".closed($_POST['user_type'], $_POST['user_id'])."</div>";
+	if ($closed>0) {
+		echo "<div class='mypill1'>".$closed."</div>";
 	}else{
-		echo "<div class='pill'>".closed($_POST['user_type'], $_POST['user_id'])."</div>";
+		echo "<div class='pill'>".$closed."</div>";
 	}
 
 }
@@ -57,10 +63,10 @@ if ($_POST['target']=="closed") {
 ////////////////////////////////////////////////////////////////////
 if ($_POST['target']=="on_revision") {
 
-	if (on_revision($_POST['user_type'], $_POST['user_id'])>0) {
-		echo "<div class='mypill1'>".on_revision($_POST['user_type'], $_POST['user_id'])."</div>";
+	if ($revision>0) {
+		echo "<div class='mypill1'>".$revision."</div>";
 	}else{
-		echo "<div class='pill'>".on_revision($_POST['user_type'], $_POST['user_id'])."</div>";
+		echo "<div class='pill'>".$revision."</div>";
 	}
 }
 function assigned(){
@@ -76,10 +82,10 @@ function assigned(){
 ////////////////////////////////////////////////////////////////////////////////
 if ($_POST['target']=="delivered") {
 
-	if (delivered($_POST['user_type'], $_POST['user_id'])>0) {
-		echo "<div class='mypill1'>".delivered($_POST['user_type'], $_POST['user_id'])."</div>";
+	if ($delivered>0) {
+		echo "<div class='mypill1'>".$delivered."</div>";
 	}else{
-		echo "<div class='pill'>".delivered($_POST['user_type'], $_POST['user_id'])."</div>";
+		echo "<div class='pill'>".$delivered."</div>";
 	}
 }
 //////////////////////////DELIVERED//////////////////////////////////////////////
@@ -97,10 +103,10 @@ if ($_POST['target']=="delivered") {
 ///////////////////////////////////////////////////////////////////////////////////
 if ($_POST['target']=="available") {
 
-	if (available($_POST['user_type'], $_POST['user_id'])>0) {
-		echo "<div class='mypill1'>".available($_POST['user_type'], $_POST['user_id'])."</div>";
+	if ($available>0) {
+		echo "<div class='mypill1'>".$available."</div>";
 	}else{
-		echo "<div class='pill'>".available($_POST['user_type'], $_POST['user_id'])."</div>";
+		echo "<div class='pill'>".$available."</div>";
 	}
 }
 
@@ -119,10 +125,10 @@ if ($_POST['target']=="available") {
 ///////////////////////////////////////////////////////////////////////////////////
 if ($_POST['target']=="messages") {
 
-	if (messages($_POST["user_id"], $_POST["user_type"])>0) {
-		echo "<div class='my_pill'>".messages($_POST["user_id"], $_POST["user_type"])."</div>";
+	if ($messages>0) {
+		echo "<div class='my_pill'>".$messages."</div>";
 	}else{
-		echo "<div class='pill'>".messages($_POST["user_id"], $_POST["user_type"])."</div>";
+		echo "<div class='pill'>".$messages."</div>";
 	}
 }
 //////////////////////////MESSAGES//////////////////////////////////////////////

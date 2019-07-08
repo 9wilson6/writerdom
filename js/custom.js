@@ -34,6 +34,7 @@ $("#chat_form").submit(function(event) {
 	let student_id=$("input[name='student_id']").val();
 	let tutor_id=$("input[name='tutor_id']").val();
 	let submit = "submit";
+	$("#submit").attr("disabled", true);
 	$.post("../chat", 
 	{
 		project_id: project_id,
@@ -44,6 +45,7 @@ $("#chat_form").submit(function(event) {
 		tutor_id: tutor_id
 	} ,
 	function(data, status){
+		$("#submit").attr("disabled", false);
 		$("textarea").val("");
 		$('#files').stop().animate({ scrollTop: $('#files')[0].scrollHeight});
 		$('#messageBox').stop().animate({ scrollTop: $('#messageBox')[0].scrollHeight});
@@ -52,6 +54,7 @@ $("#chat_form").submit(function(event) {
 
 
 });
+
 
 
 //////////////////CHAT////////////

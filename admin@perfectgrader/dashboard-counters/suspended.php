@@ -1,8 +1,9 @@
 <?php 
 	function suspended(){
-		global $db;
+		global $db, $suspended;
 		$query="SELECT * FROM users WHERE status=0";
 		$results=$db->get_results($query);
-		return $db->num_rows;
+		$suspended= $db->num_rows;
 	}
+	suspended();
  ?>

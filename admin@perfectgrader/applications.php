@@ -2,8 +2,8 @@
 require_once("../inc/header_links.php");
 require_once("./inc/topnav.php");
 require_once("../inc/utilities.php");
-$mainpage="tutor";
-$page="tutor";
+$mainpage="dashboard";
+$page="dashboard";
 require_once("../inc/global_functions.php");
 require_once("../dbconfig/dbconnect.php");
 $query="SELECT * FROM users WHERE type=2 and verified=0 and about_me !=\"\"";
@@ -11,7 +11,7 @@ $results=$db->get_results($query);
 
 if (isset($_POST['submit'])) {
     $user_id=$_POST['user_id'];
-     $query="UPDATE users SET verified=1 WHERE type =2 AND user_id=$user_id";
+     $query="UPDATE users SET verified=1 WHERE type =2 AND user_id='$user_id'";
    if ($db->query($query)) { ?>
       <script>
         alert("Tutor ID: <?php echo $user_id  ?> account has been marked as verified");
@@ -60,8 +60,9 @@ if (isset($_POST['submit'])) {
                             <tbody id="display">
                                        <?php foreach ($results as $result): ?>
                                 <tr>
-                                    <td class="smalll"><?php echo $result->user_id; ?>
-                                    <i class="fas fa-info-circle" data-toggle="tooltip" title="<?php  echo $result->about_me ?>" data-placement="bottom" ></i></td>
+                                    <td class="smalll">
+                                    <a href="applications-details?pid=<?php echo urlencode(convert_uuencode($result->user_id)); ?>"><?php echo $result->user_id; ?><i class="fas fa-external-link-alt icon-r ml-4"></i>
+                                     </td>
                                     <td>
 
                                         <?php echo $result->username?>

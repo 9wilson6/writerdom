@@ -35,6 +35,6 @@
 <div class="card-body" id="cbody">
 <?php events($_SESSION['user_id'])?>
 </div><!--card body-->
-<div class="card-footer"><a href="notes" class="btn btn-info btn-block">VIEW ALL</a></div>
+<!-- <div class="card-footer"><a href="notes" class="btn btn-info btn-block">VIEW ALL</a></div> -->
 </div><!--card-->
 </div>

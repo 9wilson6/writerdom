@@ -3,8 +3,9 @@ require_once "../inc/header_links.php";
 $page = "messages";
 require_once "../components/top_nav.php";
 require_once "../dbconfig/dbconnect.php";
+$tutor_id=$_SESSION['info']->user_id;
 ?>
-<?php $query = "SELECT chats.user_type, chats.message, chats.date_sent, chats.project_id, chats.student_id, chats.tutor_id,projects.status, chats.status as me FROM chats LEFT JOIN projects on chats.project_id=projects.project_id where chats.user_type=1 ORDER BY date_sent DESC LIMIT 10";
+<?php $query = "SELECT chats.user_type, chats.message, chats.date_sent, chats.project_id, chats.student_id, chats.tutor_id,projects.status, chats.status as me FROM chats LEFT JOIN projects on chats.project_id=projects.project_id where chats.user_type=1 and chats.tutor_id='$tutor_id' ORDER BY date_sent DESC LIMIT 10";
 $results = $db->get_results($query);
 ?>
 <div class="display">

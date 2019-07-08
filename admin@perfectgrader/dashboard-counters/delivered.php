@@ -1,9 +1,9 @@
 <?php 
 	function delivered(){
-		global $db;
+		global $db, $delivered;
 		$query="SELECT * FROM delivered";
 		$results=$db->get_results($query);
-		return $db->num_rows;
+		$delivered = $db->num_rows;
 	}
-
+delivered();
  ?>

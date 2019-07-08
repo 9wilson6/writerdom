@@ -4,8 +4,9 @@ require_once "../inc/header_links.php";
 $page = "messages";
 require_once "../components/top_nav.php";
 require_once "../dbconfig/dbconnect.php";
+$student_id=$_SESSION['info']->user_id;
 ob_flush();
-$query = "SELECT chats.user_type, chats.message, chats.date_sent, chats.project_id, chats.student_id, chats.tutor_id,projects.status, chats.status as me FROM chats LEFT JOIN projects on chats.project_id=projects.project_id where chats.user_type=2 ORDER BY date_sent DESC LIMIT 10";
+$query = "SELECT chats.user_type, chats.message, chats.date_sent, chats.project_id, chats.student_id, chats.tutor_id,projects.status, chats.status as me FROM chats LEFT JOIN projects on chats.project_id=projects.project_id where chats.user_type=2 and chats.student_id='$student_id' ORDER BY date_sent DESC LIMIT 10";
 $results = $db->get_results($query);
 ?>
 <div class="display">
@@ -133,8 +134,10 @@ event: "keylistener"
 $("#select").change(function() {
 let limit = $("#select").val();
 let submit="submit";
+let student_id="<?php echo $student_id; ?>"
 $("#meso").load("messages_.php", {
 limit: limit,
+student_id:student_id,
 submit:submit
 })
 });

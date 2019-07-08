@@ -1,8 +1,9 @@
 <?php 
 	function students(){
-		global $db;
+		global $db, $students;
 		$query="SELECT * FROM users WHERE type=1";
 		$results=$db->get_results($query);
-		return $db->num_rows;
+		$students= $db->num_rows;
 	}
+	students();
  ?>

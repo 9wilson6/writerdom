@@ -1,10 +1,10 @@
 <?php 
 
 	function available(){
-		global $db;
+		global $db, $available;
 		$query="SELECT * FROM projects WHERE status=0";
 		$results=$db->get_results($query);
-		return $db->num_rows;
+		 $available= $db->num_rows;
 	}
-
+available();
  ?>

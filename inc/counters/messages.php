@@ -1,6 +1,6 @@
 <?php
  function messages($user_id, $user_type){
-	global $db;
+	global $db, $messages;
 	if ($user_type==1) {
 
 		$query="SELECT * FROM chats WHERE student_id='$user_id' AND status=0 AND user_type=2";
@@ -9,7 +9,7 @@
 	}
 
 	$results=$db->get_results($query);
-	return $db->num_rows;
+	$messages= $db->num_rows;
 }
-
+messages($_POST["user_id"], $_POST["user_type"]);
  ?>
